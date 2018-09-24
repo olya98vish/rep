@@ -24,3 +24,4 @@ C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csprojR
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Form2.resources
