@@ -1,0 +1,26 @@
+D:\Рабочий стол\WindowsFormsApplication1\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
+D:\Рабочий стол\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\Рабочий стол\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\Рабочий стол\WindowsFormsApplication1\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache
+D:\Рабочий стол\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\Рабочий стол\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\Рабочий стол\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\Рабочий стол\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Евгения\Source\Repos\myrepos\Desktop\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\Евгения\Source\Repos\myrepos\Desktop\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Евгения\Source\Repos\myrepos\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\Евгения\Source\Repos\myrepos\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Евгения\Source\Repos\myrepos\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
+C:\Users\Евгения\Source\Repos\myrepos\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Евгения\Source\Repos\myrepos\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Евгения\Source\Repos\myrepos\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache
+C:\Users\Евгения\Source\Repos\myrepos\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Евгения\Source\Repos\myrepos\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Евгения\Source\Repos\KursProject\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Евгения\Source\Repos\KursProject\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache
