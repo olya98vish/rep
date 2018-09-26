@@ -90,7 +90,7 @@
             this.Controls.Add(this.Head);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Matricula";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
