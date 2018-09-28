@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form3
+    partial class FormAB
     {
         /// <summary>
         /// Required designer variable.
@@ -325,7 +325,7 @@
             this.strokiA.Size = new System.Drawing.Size(46, 20);
             this.strokiA.TabIndex = 44;
             // 
-            // Form3
+            // FormAB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -361,7 +361,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.strokiA);
-            this.Name = "Form3";
+            this.MaximumSize = new System.Drawing.Size(923, 536);
+            this.MinimumSize = new System.Drawing.Size(923, 536);
+            this.Name = "FormAB";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matricula";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
