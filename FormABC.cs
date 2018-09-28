@@ -37,7 +37,6 @@ namespace WindowsFormsApplication1
                 textBox.Size = new System.Drawing.Size(303, 20);
                 Controls.Add(textBox);
                 textBox.Name = "textBox" + i;
-     
             }
         }
 
