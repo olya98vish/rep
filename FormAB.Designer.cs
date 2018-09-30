@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAB));
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -58,6 +59,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.strokiA = new System.Windows.Forms.TextBox();
+            this.Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +68,7 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(339, 431);
+            this.button7.Location = new System.Drawing.Point(338, 444);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 29);
             this.button7.TabIndex = 73;
@@ -77,7 +79,7 @@
             // 
             this.button6.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(67, 431);
+            this.button6.Location = new System.Drawing.Point(71, 443);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 29);
             this.button6.TabIndex = 72;
@@ -86,70 +88,70 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(294, 404);
+            this.textBox10.Location = new System.Drawing.Point(293, 417);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(203, 20);
             this.textBox10.TabIndex = 71;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(294, 377);
+            this.textBox9.Location = new System.Drawing.Point(293, 390);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(203, 20);
             this.textBox9.TabIndex = 70;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(294, 351);
+            this.textBox8.Location = new System.Drawing.Point(293, 364);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(203, 20);
             this.textBox8.TabIndex = 69;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(294, 324);
+            this.textBox7.Location = new System.Drawing.Point(293, 337);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(203, 20);
             this.textBox7.TabIndex = 68;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(294, 297);
+            this.textBox6.Location = new System.Drawing.Point(293, 310);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(203, 20);
             this.textBox6.TabIndex = 67;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(294, 169);
+            this.textBox5.Location = new System.Drawing.Point(293, 182);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(203, 20);
             this.textBox5.TabIndex = 66;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(294, 143);
+            this.textBox4.Location = new System.Drawing.Point(293, 156);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(203, 20);
             this.textBox4.TabIndex = 65;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(294, 117);
+            this.textBox3.Location = new System.Drawing.Point(293, 130);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(203, 20);
             this.textBox3.TabIndex = 64;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(295, 91);
+            this.textBox2.Location = new System.Drawing.Point(294, 104);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(202, 20);
             this.textBox2.TabIndex = 63;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(295, 65);
+            this.textBox1.Location = new System.Drawing.Point(294, 78);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(202, 20);
             this.textBox1.TabIndex = 62;
@@ -158,7 +160,7 @@
             // 
             this.button5.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(339, 195);
+            this.button5.Location = new System.Drawing.Point(338, 208);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 29);
             this.button5.TabIndex = 61;
@@ -169,7 +171,7 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(67, 195);
+            this.button4.Location = new System.Drawing.Point(71, 208);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 29);
             this.button4.TabIndex = 60;
@@ -179,7 +181,7 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 297);
+            this.dataGridView2.Location = new System.Drawing.Point(9, 309);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(246, 128);
             this.dataGridView2.TabIndex = 59;
@@ -188,7 +190,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(336, 243);
+            this.label10.Location = new System.Drawing.Point(335, 256);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 17);
             this.label10.TabIndex = 58;
@@ -198,7 +200,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(265, 241);
+            this.label9.Location = new System.Drawing.Point(264, 254);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 55;
@@ -209,7 +211,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(336, 4);
+            this.label7.Location = new System.Drawing.Point(335, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 17);
             this.label7.TabIndex = 57;
@@ -220,7 +222,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(261, 4);
+            this.label6.Location = new System.Drawing.Point(260, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 56;
@@ -231,7 +233,7 @@
             // 
             this.button3.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(400, 255);
+            this.button3.Location = new System.Drawing.Point(399, 268);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 29);
             this.button3.TabIndex = 54;
@@ -242,7 +244,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(400, 21);
+            this.button2.Location = new System.Drawing.Point(399, 34);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 29);
             this.button2.TabIndex = 53;
@@ -253,7 +255,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(316, 262);
+            this.label4.Location = new System.Drawing.Point(315, 275);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 21);
             this.label4.TabIndex = 52;
@@ -261,7 +263,7 @@
             // 
             // stolbciB
             // 
-            this.stolbciB.Location = new System.Drawing.Point(339, 262);
+            this.stolbciB.Location = new System.Drawing.Point(338, 275);
             this.stolbciB.Name = "stolbciB";
             this.stolbciB.Size = new System.Drawing.Size(46, 20);
             this.stolbciB.TabIndex = 51;
@@ -270,7 +272,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(8, 261);
+            this.label5.Location = new System.Drawing.Point(6, 274);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(249, 21);
             this.label5.TabIndex = 50;
@@ -278,7 +280,7 @@
             // 
             // strokiB
             // 
-            this.strokiB.Location = new System.Drawing.Point(267, 261);
+            this.strokiB.Location = new System.Drawing.Point(266, 274);
             this.strokiB.Name = "strokiB";
             this.strokiB.Size = new System.Drawing.Size(46, 20);
             this.strokiB.TabIndex = 49;
@@ -287,7 +289,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(316, 24);
+            this.label2.Location = new System.Drawing.Point(315, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 21);
             this.label2.TabIndex = 48;
@@ -295,7 +297,7 @@
             // 
             // stolbciA
             // 
-            this.stolbciA.Location = new System.Drawing.Point(339, 25);
+            this.stolbciA.Location = new System.Drawing.Point(338, 38);
             this.stolbciA.Name = "stolbciA";
             this.stolbciA.Size = new System.Drawing.Size(46, 20);
             this.stolbciA.TabIndex = 47;
@@ -303,7 +305,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(246, 124);
             this.dataGridView1.TabIndex = 46;
@@ -312,7 +314,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(8, 21);
+            this.label1.Location = new System.Drawing.Point(6, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(250, 21);
             this.label1.TabIndex = 45;
@@ -320,10 +322,21 @@
             // 
             // strokiA
             // 
-            this.strokiA.Location = new System.Drawing.Point(264, 24);
+            this.strokiA.Location = new System.Drawing.Point(263, 37);
             this.strokiA.Name = "strokiA";
             this.strokiA.Size = new System.Drawing.Size(46, 20);
             this.strokiA.TabIndex = 44;
+            // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.Color.Transparent;
+            this.Back.Image = ((System.Drawing.Image)(resources.GetObject("Back.Image")));
+            this.Back.Location = new System.Drawing.Point(1, 3);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(25, 28);
+            this.Back.TabIndex = 74;
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
             // FormAB
             // 
@@ -331,6 +344,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(907, 497);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox10);
@@ -405,6 +419,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox strokiA;
-
+        private System.Windows.Forms.Button Back;
     }
 }
