@@ -22,5 +22,6 @@ namespace WindowsFormsApplication1
             form1.Show();
             this.Hide();
         }
+
     }
 }
