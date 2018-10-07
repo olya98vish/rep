@@ -28,56 +28,71 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if ((strokiA.Text != "") && (Convert.ToInt32(strokiA.Text) > 0))
+            if ((strokiA.Text != "") && (stolbciA.Text != ""))
             {
-                //Controls.Add(myPanel);
-                if (button2.Text == "ОК")
+                if ((Convert.ToInt32(strokiA.Text) > 0) && (Convert.ToInt32(strokiA.Text) > 0))
                 {
-                    strokiA.ReadOnly = true;
                     stolbciA.ReadOnly = true;
-                    button2.Text = "Изменить";
+                    strokiA.ReadOnly = true;
 
-                    int k = 0;
-                    string str = strokiA.Text;
-                    k = Convert.ToInt32(str);
-                    for (int i = 1; i <= k; i++)
+                    if (button2.Text == "ОК")
                     {
-                        TextBox textBox = new TextBox();
-                        textBox.Visible = true;
-                        textBox.Location = new System.Drawing.Point(100, 100 + 20 * i);
-                        textBox.Size = new System.Drawing.Size(303, 20);
-                        Controls.Add(textBox);
-                        //myPanel.Controls.Add(textBox);
-                        textBox.Name = "textBox" + i;
+                        strokiA.ReadOnly = true;
+                        stolbciA.ReadOnly = true;
+                        button2.Text = "Изменить";
+
+                        //DataGridViewTextBoxColumn clmnA = new DataGridViewTextBoxColumn();
+                        //int rows = 0;
+                        //string str = strokiA.Text;
+                        //rows = Convert.ToInt32(str);
+                        //int clmn = 0;
+                        //string str1 = strokiA.Text;
+                        //clmn = Convert.ToInt32(str1);
+
+                        //clmnA.Width = 100;
+                        ////datagrA.Rows.Add(rows);
+                        //A.Columns.Add(clmnA);
+
+                        //int k = 0;
+                        //string str = strokiA.Text;
+                        //k = Convert.ToInt32(str);
+                        //for (int i = 1; i <= k; i++)
+                        //{
+                        //    TextBox textBox = new TextBox();
+                        //    textBox.Visible = true;
+                        //    textBox.Location = new System.Drawing.Point(100, 100 + 20 * i);
+                        //    textBox.Size = new System.Drawing.Size(303, 20);
+                        //    Controls.Add(textBox);
+                        //    textBox.Name = "textBox" + i;
+                    }
+                    else
+                    {
+                        button2.Text = "ОК";
+                        strokiA.ReadOnly = false;
+                        stolbciA.ReadOnly = false;
+                        strokiA.Clear();
+                        stolbciA.Clear();
                     }
                 }
                 else
                 {
-                    //int k = 0;
-                    //string str = strokiA.Text;
-                    //k = Convert.ToInt32(str);
-                    //for (int i = 0; i < k; i++)
-                    //{
-                    //    myPanel.Controls.Clear();
-                    //}
-
-                    //button2.Text = "ОК";
-                    //strokiA.ReadOnly = false;
-                    //stolbciA.ReadOnly = false;
-                    //strokiA.Clear();
-                    //stolbciA.Clear();
+                    stolbciA.Clear();
+                    strokiA.Clear();
+                    MessageBox.Show("Значения числа строк и столбцов должны быть положительными!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
-                MessageBox.Show("Значение числа строк положительно и больше нуля!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                stolbciA.Clear();
+                strokiA.Clear();
+                MessageBox.Show("Введите числа строк и столбцов!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void Back_Click(object sender, EventArgs e)
         {
             Form form1 = new Form1();
             form1.Show();
             this.Hide();
         }
-
     }
 }

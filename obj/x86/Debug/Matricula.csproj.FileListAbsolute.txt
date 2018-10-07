@@ -24,7 +24,6 @@ C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csprojR
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache
-C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Form2.resources
 C:\Users\megad\Desktop\KursProject-master\obj\x86\Debug\WindowsFormsApplication1.exe
 C:\Users\megad\Desktop\KursProject-master\obj\x86\Debug\WindowsFormsApplication1.pdb
 C:\Users\megad\Desktop\KursProject-master\bin\Debug\WindowsFormsApplication1.exe
@@ -59,3 +58,6 @@ C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAB.resourc
 C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAC.resources
 C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\megad\KursProject\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormABC.resources
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAB.resources
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAC.resources

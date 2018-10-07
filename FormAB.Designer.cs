@@ -86,6 +86,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strokiA = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -323,7 +324,7 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(513, 831);
+            this.button7.Location = new System.Drawing.Point(513, 833);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 29);
             this.button7.TabIndex = 173;
@@ -334,7 +335,7 @@
             // 
             this.button6.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(137, 831);
+            this.button6.Location = new System.Drawing.Point(136, 833);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 29);
             this.button6.TabIndex = 172;
@@ -434,7 +435,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(283, -4);
+            this.label6.Location = new System.Drawing.Point(282, -4);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 162;
@@ -486,9 +487,9 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(32, 441);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(250, 21);
+            this.label5.Size = new System.Drawing.Size(249, 21);
             this.label5.TabIndex = 156;
-            this.label5.Text = "Введите размерность матрицы C:";
+            this.label5.Text = "Введите размерность матрицы В:";
             // 
             // strokiC
             // 
@@ -544,8 +545,16 @@
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label13.Location = new System.Drawing.Point(1, 421);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(1324, 3);
+            this.label13.Size = new System.Drawing.Size(815, 3);
             this.label13.TabIndex = 215;
+            // 
+            // label3
+            // 
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Location = new System.Drawing.Point(814, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(3, 840);
+            this.label3.TabIndex = 217;
             // 
             // FormAB
             // 
@@ -554,6 +563,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1344, 697);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox7);
@@ -685,5 +695,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox strokiA;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label3;
     }
 }

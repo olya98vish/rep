@@ -543,9 +543,9 @@
             // label13
             // 
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label13.Location = new System.Drawing.Point(1, 421);
+            this.label13.Location = new System.Drawing.Point(1, 420);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(1340, 3);
+            this.label13.Size = new System.Drawing.Size(815, 3);
             this.label13.TabIndex = 215;
             // 
             // label3
