@@ -22,11 +22,6 @@ namespace WindowsFormsApplication1
             form1.Show();
             this.Hide();
         }
-
-        private void textBox29_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
+
 }

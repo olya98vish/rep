@@ -23,5 +23,10 @@ namespace WindowsFormsApplication1
             this.Hide();
         }
 
+        private void FormAB_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

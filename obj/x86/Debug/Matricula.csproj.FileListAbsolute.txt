@@ -47,3 +47,15 @@ C:\Users\Евгения\Source\Repos\KursProject2\obj\x86\Debug\Matricula.csproj
 C:\Users\Евгения\Source\Repos\KursProject2\obj\x86\Debug\WindowsFormsApplication1.FormABC.resources
 C:\Users\Евгения\Source\Repos\KursProject2\obj\x86\Debug\WindowsFormsApplication1.FormAB.resources
 C:\Users\Евгения\Source\Repos\KursProject2\obj\x86\Debug\WindowsFormsApplication1.FormAC.resources
+C:\Users\megad\KursProject\KursProject\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\megad\KursProject\KursProject\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\megad\KursProject\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\megad\KursProject\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormABC.resources
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAB.resources
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAC.resources
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\megad\KursProject\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache
