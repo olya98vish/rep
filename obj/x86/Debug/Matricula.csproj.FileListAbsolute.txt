@@ -60,3 +60,4 @@ C:\Users\megad\KursProject\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormABC.resources
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAB.resources
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAC.resources
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache

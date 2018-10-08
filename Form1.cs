@@ -49,8 +49,9 @@ namespace WindowsFormsApplication1
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if((checkBox1.Checked == true) && (checkBox2.Checked == true))
+            if((checkBox1.Checked == true) && (checkBox2.Checked == true))//+
             {
+                label1.Text = "x = Ax + Bu";
                 label1.Visible = true;
                 label1.Location = new System.Drawing.Point(273, 26);//x
        
@@ -63,8 +64,9 @@ namespace WindowsFormsApplication1
                 label4.Visible = true;
                 label4.Location = new System.Drawing.Point(275, 64);//.
             }
-            if ((checkBox1.Checked == true) && (checkBox2.Checked == false))
+            if ((checkBox1.Checked == true) && (checkBox2.Checked == false))//+
             {
+                label1.Text = "x = Ax + Bu";
                 label1.Visible = true;
                 label1.Location = new System.Drawing.Point(273, 52);//x
 
@@ -79,20 +81,22 @@ namespace WindowsFormsApplication1
             }
             if ((checkBox1.Checked == false) && (checkBox2.Checked == true))
             {
-                label1.Visible = false;
-                label1.Location = new System.Drawing.Point(273, 24);//x
+                label1.Text = "x = Ax";
+                label1.Visible = true;
+                label1.Location = new System.Drawing.Point(273, 26);//x
 
                 label2.Visible = true;
-                label2.Location = new System.Drawing.Point(273, 58);//y
+                label2.Location = new System.Drawing.Point(273, 94);//y
 
-                label3.Visible = false;
-                label3.Location = new System.Drawing.Point(280, 12);//.
+                label3.Visible = true;
+                label3.Location = new System.Drawing.Point(275, -4);//.
 
                 label4.Visible = true;
-                label4.Location = new System.Drawing.Point(275, 28);//.
+                label4.Location = new System.Drawing.Point(275, 64);//.
             }
-            if ((checkBox1.Checked == false) && (checkBox2.Checked == false))
+            if ((checkBox1.Checked == false) && (checkBox2.Checked == false))//+
             {
+                label1.Text = "x = Ax + Bu";
                 label1.Visible = false;
                 label1.Location = new System.Drawing.Point(273, 26);//x
 
@@ -109,8 +113,9 @@ namespace WindowsFormsApplication1
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if ((checkBox1.Checked == true) && (checkBox2.Checked == true))
+            if ((checkBox1.Checked == true) && (checkBox2.Checked == true))//+
             {
+                label1.Text = "x = Ax + Bu";
                 label1.Visible = true;
                 label1.Location = new System.Drawing.Point(273, 26);//x
 
@@ -125,20 +130,22 @@ namespace WindowsFormsApplication1
             }
             if ((checkBox1.Checked == false) && (checkBox2.Checked == true))
             {
-                label1.Visible = false;
-                label1.Location = new System.Drawing.Point(273, 24);//x
+                label1.Text = "x = Ax";
+                label1.Visible = true;
+                label1.Location = new System.Drawing.Point(273, 26);//x
 
                 label2.Visible = true;
-                label2.Location = new System.Drawing.Point(273, 58);//y
+                label2.Location = new System.Drawing.Point(273, 94);//y
 
-                label3.Visible = false;
-                label3.Location = new System.Drawing.Point(280, 12);//.
+                label3.Visible = true;
+                label3.Location = new System.Drawing.Point(275, -4);//.
 
                 label4.Visible = true;
-                label4.Location = new System.Drawing.Point(275, 28);//.
+                label4.Location = new System.Drawing.Point(275, 64);//.
             }
-            if ((checkBox1.Checked == true) && (checkBox2.Checked == false))
+            if ((checkBox1.Checked == true) && (checkBox2.Checked == false))//+
             {
+                label1.Text = "x = Ax + Bu";
                 label1.Visible = true;
                 label1.Location = new System.Drawing.Point(273, 52);//x
 
@@ -151,8 +158,9 @@ namespace WindowsFormsApplication1
                 label4.Visible = false;
                 label4.Location = new System.Drawing.Point(280, 64);//.
             }
-            if ((checkBox1.Checked == false) && (checkBox2.Checked == false))
+            if ((checkBox1.Checked == false) && (checkBox2.Checked == false))//+
             {
+                label1.Text = "x = Ax + Bu";
                 label1.Visible = false;
                 label1.Location = new System.Drawing.Point(273, 26);//x
 
