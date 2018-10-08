@@ -20,7 +20,6 @@ C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsAppli
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.pdb
 C:\Users\Евгения\Source\Repos\KursProject\bin\Debug\WindowsFormsApplication1.exe
 C:\Users\Евгения\Source\Repos\KursProject\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache
