@@ -18,6 +18,15 @@ namespace WindowsFormsApplication1
 
         private void FormABC_Load(object sender, EventArgs e)
         {
+            A.RowCount = 15;
+            A.ColumnCount = 15;
+
+            B.RowCount = 15;
+            B.ColumnCount = 15;
+
+            C.RowCount = 15;
+            C.ColumnCount = 15;
+
             //отрисовка границ на форме
             //Pen blackPen = new Pen(Color.FromArgb(255, 0, 0, 0), 5);
             //e.Graphics.DrawRectangle(blackPen, 10, 10, 100, 50);
@@ -40,6 +49,7 @@ namespace WindowsFormsApplication1
                         strokiA.ReadOnly = true;
                         stolbciA.ReadOnly = true;
                         button2.Text = "Изменить";
+
 
                         //DataGridViewTextBoxColumn clmnA = new DataGridViewTextBoxColumn();
                         //int rows = 0;
@@ -94,5 +104,6 @@ namespace WindowsFormsApplication1
             form1.Show();
             this.Hide();
         }
+
     }
 }
