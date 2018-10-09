@@ -25,8 +25,16 @@ namespace WindowsFormsApplication1
 
         private void FormAB_Load(object sender, EventArgs e)
         {
+            A.RowCount = 15;
+            A.ColumnCount = 15;
 
+            B.RowCount = 15;
+            B.ColumnCount = 15;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

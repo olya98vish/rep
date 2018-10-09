@@ -47,7 +47,7 @@
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.B = new System.Windows.Forms.DataGridView();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
             this.textBox32 = new System.Windows.Forms.TextBox();
@@ -82,13 +82,13 @@
             this.strokiC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.stolbciA = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.A = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.strokiA = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox6
@@ -217,13 +217,19 @@
             this.textBox36.Size = new System.Drawing.Size(400, 20);
             this.textBox36.TabIndex = 188;
             // 
-            // dataGridView2
+            // B
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 467);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(401, 360);
-            this.dataGridView2.TabIndex = 187;
+            this.B.AllowUserToAddRows = false;
+            this.B.AllowUserToDeleteRows = false;
+            this.B.AllowUserToResizeRows = false;
+            this.B.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.B.ColumnHeadersVisible = false;
+            this.B.Location = new System.Drawing.Point(2, 467);
+            this.B.Name = "B";
+            this.B.RowHeadersVisible = false;
+            this.B.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.B.Size = new System.Drawing.Size(401, 360);
+            this.B.TabIndex = 187;
             // 
             // textBox30
             // 
@@ -463,6 +469,7 @@
             this.button2.TabIndex = 159;
             this.button2.Text = "OK";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -480,6 +487,7 @@
             this.stolbciC.Name = "stolbciC";
             this.stolbciC.Size = new System.Drawing.Size(46, 20);
             this.stolbciC.TabIndex = 157;
+            this.stolbciC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -497,6 +505,7 @@
             this.strokiC.Name = "strokiC";
             this.strokiC.Size = new System.Drawing.Size(46, 20);
             this.strokiC.TabIndex = 155;
+            this.strokiC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -514,14 +523,21 @@
             this.stolbciA.Name = "stolbciA";
             this.stolbciA.Size = new System.Drawing.Size(46, 20);
             this.stolbciA.TabIndex = 153;
+            this.stolbciA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dataGridView1
+            // A
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(401, 340);
-            this.dataGridView1.TabIndex = 152;
+            this.A.AllowUserToAddRows = false;
+            this.A.AllowUserToDeleteRows = false;
+            this.A.AllowUserToResizeRows = false;
+            this.A.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.A.ColumnHeadersVisible = false;
+            this.A.Location = new System.Drawing.Point(2, 42);
+            this.A.Name = "A";
+            this.A.RowHeadersVisible = false;
+            this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.A.Size = new System.Drawing.Size(401, 340);
+            this.A.TabIndex = 152;
             // 
             // label1
             // 
@@ -539,6 +555,7 @@
             this.strokiA.Name = "strokiA";
             this.strokiA.Size = new System.Drawing.Size(46, 20);
             this.strokiA.TabIndex = 150;
+            this.strokiA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -583,7 +600,7 @@
             this.Controls.Add(this.textBox34);
             this.Controls.Add(this.textBox35);
             this.Controls.Add(this.textBox36);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.B);
             this.Controls.Add(this.textBox30);
             this.Controls.Add(this.textBox31);
             this.Controls.Add(this.textBox32);
@@ -618,7 +635,7 @@
             this.Controls.Add(this.strokiC);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.stolbciA);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.A);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.strokiA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -629,8 +646,8 @@
             this.Text = "Matricula";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormAB_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,7 +673,7 @@
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.TextBox textBox35;
         private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView B;
         private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.TextBox textBox31;
         private System.Windows.Forms.TextBox textBox32;
@@ -691,7 +708,7 @@
         private System.Windows.Forms.TextBox strokiC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox stolbciA;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView A;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox strokiA;
         private System.Windows.Forms.Label label13;

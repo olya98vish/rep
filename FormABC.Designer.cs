@@ -124,6 +124,7 @@
             this.strokiA.Name = "strokiA";
             this.strokiA.Size = new System.Drawing.Size(46, 20);
             this.strokiA.TabIndex = 3;
+            this.strokiA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -137,6 +138,9 @@
             // 
             // A
             // 
+            this.A.AllowUserToAddRows = false;
+            this.A.AllowUserToDeleteRows = false;
+            this.A.AllowUserToResizeRows = false;
             this.A.ColumnHeadersVisible = false;
             this.A.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -147,6 +151,7 @@
             this.A.Name = "A";
             this.A.ReadOnly = true;
             this.A.RowHeadersVisible = false;
+            this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.A.Size = new System.Drawing.Size(401, 360);
             this.A.TabIndex = 6;
             // 
@@ -176,6 +181,7 @@
             this.stolbciA.Name = "stolbciA";
             this.stolbciA.Size = new System.Drawing.Size(46, 20);
             this.stolbciA.TabIndex = 7;
+            this.stolbciA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -215,6 +221,7 @@
             this.stolbciB.Name = "stolbciB";
             this.stolbciB.Size = new System.Drawing.Size(46, 20);
             this.stolbciB.TabIndex = 13;
+            this.stolbciB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -232,6 +239,7 @@
             this.strokiB.Name = "strokiB";
             this.strokiB.Size = new System.Drawing.Size(46, 20);
             this.strokiB.TabIndex = 11;
+            this.strokiB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button3
             // 
@@ -303,6 +311,7 @@
             this.stolbciC.Name = "stolbciC";
             this.stolbciC.Size = new System.Drawing.Size(46, 20);
             this.stolbciC.TabIndex = 21;
+            this.stolbciC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // strokiC
             // 
@@ -310,6 +319,7 @@
             this.strokiC.Name = "strokiC";
             this.strokiC.Size = new System.Drawing.Size(46, 20);
             this.strokiC.TabIndex = 20;
+            this.strokiC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -334,11 +344,16 @@
             // 
             // B
             // 
-            this.B.ColumnHeadersVisible = false;
+            this.B.AllowUserToAddRows = false;
+            this.B.AllowUserToDeleteRows = false;
+            this.B.AllowUserToResizeRows = false;
             this.B.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.B.ColumnHeadersVisible = false;
             this.B.Location = new System.Drawing.Point(0, 488);
             this.B.Name = "B";
             this.B.ReadOnly = true;
+            this.B.RowHeadersVisible = false;
+            this.B.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.B.Size = new System.Drawing.Size(401, 360);
             this.B.TabIndex = 26;
             // 
@@ -350,7 +365,6 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 17);
             this.label11.TabIndex = 27;
-            this.B.RowHeadersVisible = false;
             this.label11.Text = "строки";
             // 
             // label12
@@ -365,12 +379,16 @@
             // 
             // C
             // 
-            this.C.ColumnHeadersVisible = false;
+            this.C.AllowUserToAddRows = false;
+            this.C.AllowUserToDeleteRows = false;
+            this.C.AllowUserToResizeRows = false;
             this.C.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.C.ColumnHeadersVisible = false;
             this.C.Location = new System.Drawing.Point(0, 944);
             this.C.Name = "C";
-            this.C.Size = new System.Drawing.Size(401, 360);
             this.C.RowHeadersVisible = false;
+            this.C.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.C.Size = new System.Drawing.Size(401, 360);
             this.C.TabIndex = 29;
             // 
             // button4
@@ -388,12 +406,13 @@
             // 
             this.button5.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(565, 409);
+            this.button5.Location = new System.Drawing.Point(557, 409);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 29);
             this.button5.TabIndex = 31;
             this.button5.Text = "Изменить";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -410,7 +429,7 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(565, 853);
+            this.button7.Location = new System.Drawing.Point(557, 853);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 29);
             this.button7.TabIndex = 43;
@@ -486,7 +505,7 @@
             // 
             this.button10.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.Location = new System.Drawing.Point(565, 1310);
+            this.button10.Location = new System.Drawing.Point(557, 1310);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(107, 29);
             this.button10.TabIndex = 273;

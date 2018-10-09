@@ -22,6 +22,15 @@ namespace WindowsFormsApplication1
             form1.Show();
             this.Hide();
         }
+
+        private void FormAC_Load(object sender, EventArgs e)
+        {
+            A.RowCount = 15;
+            A.ColumnCount = 15;
+
+            C.RowCount = 15;
+            C.ColumnCount = 15;
+        }
     }
 
 }
