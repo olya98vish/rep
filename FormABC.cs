@@ -38,6 +38,7 @@ namespace WindowsFormsApplication1
         private void button2_Click(object sender, EventArgs e)
         {
             int strA = 0;
+            int stlbA = 0;
             if ((strokiA.Text != "") && (stolbciA.Text != ""))
             {
                 if ((Convert.ToInt32(strokiA.Text) > 0) && (Convert.ToInt32(strokiA.Text) > 0))
@@ -49,13 +50,15 @@ namespace WindowsFormsApplication1
                         button2.Text = "Изменить";
 
                         strA = Convert.ToInt32(strokiA.Text);
+                        stlbA = Convert.ToInt32(stolbciA.Text);
+
                         stolbciA.ReadOnly = true;
                         strokiA.ReadOnly = true;
 
                         strokiB.Text = strA.ToString();
                         strokiB.ReadOnly = true;
-                        strokiC.Text = strA.ToString();
-                        strokiC.ReadOnly = true;
+                        stolbciC.Text = stlbA.ToString();
+                        stolbciC.ReadOnly = true;
 
                     }
                     else
@@ -67,7 +70,7 @@ namespace WindowsFormsApplication1
                         strokiA.Clear();
                         stolbciA.Clear();
                         strokiB.Clear();
-                        strokiC.Clear();
+                        stolbciC.Clear();
                     }
                 }
                 else
