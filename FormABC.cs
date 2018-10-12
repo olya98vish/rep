@@ -14,7 +14,22 @@ namespace WindowsFormsApplication1
         public FormABC()
         {
             InitializeComponent();
+            //SetReadOnlyInTextBoxA();.
+            for (int i = 1; i < 16; i++)
+            {
+                this.Controls["A" + i.ToString()].Enabled = false;
+                this.Controls["B" + i.ToString()].Enabled = false;
+                this.Controls["C" + i.ToString()].Enabled = false;
+            }
         }
+        //private void SetReadOnlyInTextBoxA(Control.ControlCollection control)
+        //{
+        //    foreach (Control _control in control)
+        //    {
+        //        if (_control is TextBox & _control.Name.Contains("A"))
+        //            ((TextBox)_control).ReadOnly = true;
+        //    }
+        //}
 
         private void FormABC_Load(object sender, EventArgs e)
         {
@@ -39,51 +54,56 @@ namespace WindowsFormsApplication1
         {
             int strA = 0;
             int stlbA = 0;
-            if ((strokiA.Text != "") && (stolbciA.Text != ""))
+            if ((a_stroki.Text != "") && (a_stolbci.Text != ""))
             {
-                if ((Convert.ToInt32(strokiA.Text) > 0) && (Convert.ToInt32(strokiA.Text) > 0))
+                if ((Convert.ToInt32(a_stroki.Text) > 0) && (Convert.ToInt32(a_stroki.Text) > 0))
                 {
                     if (button2.Text == "ОК")
                     {
-                        strokiA.ReadOnly = true;
-                        stolbciA.ReadOnly = true;
+                        a_stroki.ReadOnly = true;
+                        a_stolbci.ReadOnly = true;
                         button2.Text = "Изменить";
 
-                        strA = Convert.ToInt32(strokiA.Text);
-                        stlbA = Convert.ToInt32(stolbciA.Text);
+                        strA = Convert.ToInt32(a_stroki.Text);
+                        stlbA = Convert.ToInt32(a_stolbci.Text);
 
-                        stolbciA.ReadOnly = true;
-                        strokiA.ReadOnly = true;
+                        a_stolbci.ReadOnly = true;
+                        a_stroki.ReadOnly = true;
 
-                        strokiB.Text = strA.ToString();
-                        strokiB.ReadOnly = true;
-                        stolbciC.Text = stlbA.ToString();
-                        stolbciC.ReadOnly = true;
+                        b_stroki.Text = strA.ToString();
+                        b_stroki.ReadOnly = true;
+                        c_stolbci.Text = stlbA.ToString();
+                        c_stolbci.ReadOnly = true;
 
+                        //активация нужных строк из текстбоксов, остальное неактивно
+                        for (int i = 1; i <= strA; i++)
+                        {
+                            this.Controls["A" + i.ToString()].Enabled = true;
+                        }
                     }
                     else
                     {
                         button2.Text = "ОК";
-                        strokiA.ReadOnly = false;
-                        stolbciA.ReadOnly = false;
+                        a_stroki.ReadOnly = false;
+                        a_stolbci.ReadOnly = false;
 
-                        strokiA.Clear();
-                        stolbciA.Clear();
-                        strokiB.Clear();
-                        stolbciC.Clear();
+                        a_stroki.Clear();
+                        a_stolbci.Clear();
+                        b_stroki.Clear();
+                        c_stolbci.Clear();
                     }
                 }
                 else
                 {
-                    stolbciA.Clear();
-                    strokiA.Clear();
+                    a_stolbci.Clear();
+                    a_stroki.Clear();
                     MessageBox.Show("Значения числа строк и столбцов должны быть положительными!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                stolbciA.Clear();
-                strokiA.Clear();
+                a_stolbci.Clear();
+                a_stroki.Clear();
                 MessageBox.Show("Введите число строк и столбцов!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

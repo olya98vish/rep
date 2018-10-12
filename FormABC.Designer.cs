@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormABC));
-            this.strokiA = new System.Windows.Forms.TextBox();
+            this.a_stroki = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.A = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stolbciA = new System.Windows.Forms.TextBox();
+            this.a_stolbci = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.stolbciB = new System.Windows.Forms.TextBox();
+            this.b_stolbci = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.strokiB = new System.Windows.Forms.TextBox();
+            this.b_stroki = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.stolbciC = new System.Windows.Forms.TextBox();
-            this.strokiC = new System.Windows.Forms.TextBox();
+            this.c_stolbci = new System.Windows.Forms.TextBox();
+            this.c_stroki = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.B = new System.Windows.Forms.DataGridView();
@@ -118,13 +118,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
             this.SuspendLayout();
             // 
-            // strokiA
+            // a_stroki
             // 
-            this.strokiA.Location = new System.Drawing.Point(285, 16);
-            this.strokiA.Name = "strokiA";
-            this.strokiA.Size = new System.Drawing.Size(46, 20);
-            this.strokiA.TabIndex = 3;
-            this.strokiA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.a_stroki.Location = new System.Drawing.Point(285, 16);
+            this.a_stroki.Name = "a_stroki";
+            this.a_stroki.Size = new System.Drawing.Size(46, 20);
+            this.a_stroki.TabIndex = 3;
+            this.a_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -175,13 +175,13 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // stolbciA
+            // a_stolbci
             // 
-            this.stolbciA.Location = new System.Drawing.Point(360, 16);
-            this.stolbciA.Name = "stolbciA";
-            this.stolbciA.Size = new System.Drawing.Size(46, 20);
-            this.stolbciA.TabIndex = 7;
-            this.stolbciA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.a_stolbci.Location = new System.Drawing.Point(360, 16);
+            this.a_stolbci.Name = "a_stolbci";
+            this.a_stolbci.Size = new System.Drawing.Size(46, 20);
+            this.a_stolbci.TabIndex = 7;
+            this.a_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -215,13 +215,13 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "*";
             // 
-            // stolbciB
+            // b_stolbci
             // 
-            this.stolbciB.Location = new System.Drawing.Point(359, 461);
-            this.stolbciB.Name = "stolbciB";
-            this.stolbciB.Size = new System.Drawing.Size(46, 20);
-            this.stolbciB.TabIndex = 13;
-            this.stolbciB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.b_stolbci.Location = new System.Drawing.Point(359, 461);
+            this.b_stolbci.Name = "b_stolbci";
+            this.b_stolbci.Size = new System.Drawing.Size(46, 20);
+            this.b_stolbci.TabIndex = 13;
+            this.b_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -233,13 +233,13 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Введите размерность матрицы B:";
             // 
-            // strokiB
+            // b_stroki
             // 
-            this.strokiB.Location = new System.Drawing.Point(287, 460);
-            this.strokiB.Name = "strokiB";
-            this.strokiB.Size = new System.Drawing.Size(46, 20);
-            this.strokiB.TabIndex = 11;
-            this.strokiB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.b_stroki.Location = new System.Drawing.Point(287, 460);
+            this.b_stroki.Name = "b_stroki";
+            this.b_stroki.Size = new System.Drawing.Size(46, 20);
+            this.b_stroki.TabIndex = 11;
+            this.b_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button3
             // 
@@ -305,21 +305,21 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "*";
             // 
-            // stolbciC
+            // c_stolbci
             // 
-            this.stolbciC.Location = new System.Drawing.Point(359, 913);
-            this.stolbciC.Name = "stolbciC";
-            this.stolbciC.Size = new System.Drawing.Size(46, 20);
-            this.stolbciC.TabIndex = 21;
-            this.stolbciC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.c_stolbci.Location = new System.Drawing.Point(359, 913);
+            this.c_stolbci.Name = "c_stolbci";
+            this.c_stolbci.Size = new System.Drawing.Size(46, 20);
+            this.c_stolbci.TabIndex = 21;
+            this.c_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // strokiC
+            // c_stroki
             // 
-            this.strokiC.Location = new System.Drawing.Point(287, 913);
-            this.strokiC.Name = "strokiC";
-            this.strokiC.Size = new System.Drawing.Size(46, 20);
-            this.strokiC.TabIndex = 20;
-            this.strokiC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.c_stroki.Location = new System.Drawing.Point(287, 913);
+            this.c_stroki.Name = "c_stroki";
+            this.c_stroki.Size = new System.Drawing.Size(46, 20);
+            this.c_stroki.TabIndex = 20;
+            this.c_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -498,6 +498,7 @@
             this.A1.Location = new System.Drawing.Point(407, 42);
             this.A1.Multiline = true;
             this.A1.Name = "A1";
+            this.A1.ReadOnly = true;
             this.A1.Size = new System.Drawing.Size(400, 23);
             this.A1.TabIndex = 232;
             // 
@@ -517,6 +518,7 @@
             this.A2.Location = new System.Drawing.Point(407, 65);
             this.A2.Multiline = true;
             this.A2.Name = "A2";
+            this.A2.ReadOnly = true;
             this.A2.Size = new System.Drawing.Size(400, 23);
             this.A2.TabIndex = 274;
             // 
@@ -525,6 +527,7 @@
             this.A3.Location = new System.Drawing.Point(407, 88);
             this.A3.Multiline = true;
             this.A3.Name = "A3";
+            this.A3.ReadOnly = true;
             this.A3.Size = new System.Drawing.Size(400, 23);
             this.A3.TabIndex = 275;
             // 
@@ -533,6 +536,7 @@
             this.A6.Location = new System.Drawing.Point(407, 154);
             this.A6.Multiline = true;
             this.A6.Name = "A6";
+            this.A6.ReadOnly = true;
             this.A6.Size = new System.Drawing.Size(400, 23);
             this.A6.TabIndex = 278;
             // 
@@ -541,6 +545,7 @@
             this.A5.Location = new System.Drawing.Point(407, 132);
             this.A5.Multiline = true;
             this.A5.Name = "A5";
+            this.A5.ReadOnly = true;
             this.A5.Size = new System.Drawing.Size(400, 23);
             this.A5.TabIndex = 277;
             // 
@@ -549,6 +554,7 @@
             this.A4.Location = new System.Drawing.Point(407, 110);
             this.A4.Multiline = true;
             this.A4.Name = "A4";
+            this.A4.ReadOnly = true;
             this.A4.Size = new System.Drawing.Size(400, 23);
             this.A4.TabIndex = 276;
             // 
@@ -557,6 +563,7 @@
             this.A12.Location = new System.Drawing.Point(407, 286);
             this.A12.Multiline = true;
             this.A12.Name = "A12";
+            this.A12.ReadOnly = true;
             this.A12.Size = new System.Drawing.Size(400, 23);
             this.A12.TabIndex = 284;
             // 
@@ -565,6 +572,7 @@
             this.A11.Location = new System.Drawing.Point(407, 265);
             this.A11.Multiline = true;
             this.A11.Name = "A11";
+            this.A11.ReadOnly = true;
             this.A11.Size = new System.Drawing.Size(400, 23);
             this.A11.TabIndex = 283;
             // 
@@ -573,6 +581,7 @@
             this.A10.Location = new System.Drawing.Point(407, 242);
             this.A10.Multiline = true;
             this.A10.Name = "A10";
+            this.A10.ReadOnly = true;
             this.A10.Size = new System.Drawing.Size(400, 23);
             this.A10.TabIndex = 282;
             // 
@@ -581,6 +590,7 @@
             this.A9.Location = new System.Drawing.Point(407, 220);
             this.A9.Multiline = true;
             this.A9.Name = "A9";
+            this.A9.ReadOnly = true;
             this.A9.Size = new System.Drawing.Size(400, 23);
             this.A9.TabIndex = 281;
             // 
@@ -589,6 +599,7 @@
             this.A8.Location = new System.Drawing.Point(407, 198);
             this.A8.Multiline = true;
             this.A8.Name = "A8";
+            this.A8.ReadOnly = true;
             this.A8.Size = new System.Drawing.Size(400, 23);
             this.A8.TabIndex = 280;
             // 
@@ -597,6 +608,7 @@
             this.A7.Location = new System.Drawing.Point(407, 176);
             this.A7.Multiline = true;
             this.A7.Name = "A7";
+            this.A7.ReadOnly = true;
             this.A7.Size = new System.Drawing.Size(400, 23);
             this.A7.TabIndex = 279;
             // 
@@ -605,6 +617,7 @@
             this.A15.Location = new System.Drawing.Point(407, 351);
             this.A15.Multiline = true;
             this.A15.Name = "A15";
+            this.A15.ReadOnly = true;
             this.A15.Size = new System.Drawing.Size(400, 23);
             this.A15.TabIndex = 287;
             // 
@@ -613,6 +626,7 @@
             this.A14.Location = new System.Drawing.Point(407, 330);
             this.A14.Multiline = true;
             this.A14.Name = "A14";
+            this.A14.ReadOnly = true;
             this.A14.Size = new System.Drawing.Size(400, 23);
             this.A14.TabIndex = 286;
             // 
@@ -621,6 +635,7 @@
             this.A13.Location = new System.Drawing.Point(407, 307);
             this.A13.Multiline = true;
             this.A13.Name = "A13";
+            this.A13.ReadOnly = true;
             this.A13.Size = new System.Drawing.Size(400, 23);
             this.A13.TabIndex = 285;
             // 
@@ -870,7 +885,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1361, 697);
+            this.ClientSize = new System.Drawing.Size(1361, 706);
             this.Controls.Add(this.C15);
             this.Controls.Add(this.C14);
             this.Controls.Add(this.C13);
@@ -935,22 +950,22 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.stolbciC);
-            this.Controls.Add(this.strokiC);
+            this.Controls.Add(this.c_stolbci);
+            this.Controls.Add(this.c_stroki);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.stolbciB);
+            this.Controls.Add(this.b_stolbci);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.strokiB);
+            this.Controls.Add(this.b_stroki);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.stolbciA);
+            this.Controls.Add(this.a_stolbci);
             this.Controls.Add(this.A);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.strokiA);
+            this.Controls.Add(this.a_stroki);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximumSize = new System.Drawing.Size(1600, 900);
             this.MinimumSize = new System.Drawing.Size(1350, 726);
@@ -968,24 +983,24 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox strokiA;
+        private System.Windows.Forms.TextBox a_stroki;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView A;
-        private System.Windows.Forms.TextBox stolbciA;
+        private System.Windows.Forms.TextBox a_stolbci;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox stolbciB;
+        private System.Windows.Forms.TextBox b_stolbci;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox strokiB;
+        private System.Windows.Forms.TextBox b_stroki;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox stolbciC;
-        private System.Windows.Forms.TextBox strokiC;
+        private System.Windows.Forms.TextBox c_stolbci;
+        private System.Windows.Forms.TextBox c_stroki;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView B;
