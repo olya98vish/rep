@@ -37,16 +37,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonC = new System.Windows.Forms.Button();
+            this.buttonA = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.stolbciC = new System.Windows.Forms.TextBox();
+            this.c_stolbci = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.strokiC = new System.Windows.Forms.TextBox();
+            this.c_stroki = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.stolbciA = new System.Windows.Forms.TextBox();
+            this.a_stolbci = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.strokiA = new System.Windows.Forms.TextBox();
+            this.a_stroki = new System.Windows.Forms.TextBox();
             this.Back = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -142,7 +142,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(357, 439);
+            this.label10.Location = new System.Drawing.Point(344, 438);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 17);
             this.label10.TabIndex = 88;
@@ -152,7 +152,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(282, 439);
+            this.label9.Location = new System.Drawing.Point(269, 438);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 85;
@@ -163,7 +163,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(357, -4);
+            this.label7.Location = new System.Drawing.Point(353, -4);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 17);
             this.label7.TabIndex = 87;
@@ -174,106 +174,108 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(282, -4);
+            this.label6.Location = new System.Drawing.Point(285, -4);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 86;
             this.label6.Text = "строки";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // buttonC
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(421, 452);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 29);
-            this.button3.TabIndex = 84;
-            this.button3.Text = "ОК";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonC.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonC.Location = new System.Drawing.Point(408, 451);
+            this.buttonC.Name = "buttonC";
+            this.buttonC.Size = new System.Drawing.Size(97, 29);
+            this.buttonC.TabIndex = 84;
+            this.buttonC.Text = "ОК";
+            this.buttonC.UseVisualStyleBackColor = false;
+            this.buttonC.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // buttonA
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(421, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 29);
-            this.button2.TabIndex = 83;
-            this.button2.Text = "OK";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonA.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonA.Location = new System.Drawing.Point(408, 9);
+            this.buttonA.Name = "buttonA";
+            this.buttonA.Size = new System.Drawing.Size(97, 29);
+            this.buttonA.TabIndex = 83;
+            this.buttonA.Text = "ОК";
+            this.buttonA.UseVisualStyleBackColor = false;
+            this.buttonA.Click += new System.EventHandler(this.buttonA_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(337, 441);
+            this.label4.Location = new System.Drawing.Point(324, 440);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 21);
             this.label4.TabIndex = 82;
             this.label4.Text = "*";
             // 
-            // stolbciC
+            // c_stolbci
             // 
-            this.stolbciC.Location = new System.Drawing.Point(360, 459);
-            this.stolbciC.Name = "stolbciC";
-            this.stolbciC.Size = new System.Drawing.Size(46, 20);
-            this.stolbciC.TabIndex = 81;
-            this.stolbciC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.c_stolbci.Location = new System.Drawing.Point(347, 458);
+            this.c_stolbci.Name = "c_stolbci";
+            this.c_stolbci.Size = new System.Drawing.Size(46, 20);
+            this.c_stolbci.TabIndex = 81;
+            this.c_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(29, 456);
+            this.label5.Location = new System.Drawing.Point(16, 455);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(250, 21);
             this.label5.TabIndex = 80;
             this.label5.Text = "Введите размерность матрицы C:";
             // 
-            // strokiC
+            // c_stroki
             // 
-            this.strokiC.Location = new System.Drawing.Point(285, 459);
-            this.strokiC.Name = "strokiC";
-            this.strokiC.Size = new System.Drawing.Size(46, 20);
-            this.strokiC.TabIndex = 79;
-            this.strokiC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.c_stroki.Location = new System.Drawing.Point(272, 458);
+            this.c_stroki.Name = "c_stroki";
+            this.c_stroki.Size = new System.Drawing.Size(46, 20);
+            this.c_stroki.TabIndex = 79;
+            this.c_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(337, 16);
+            this.label2.Location = new System.Drawing.Point(338, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 21);
             this.label2.TabIndex = 78;
             this.label2.Text = "*";
             // 
-            // stolbciA
+            // a_stolbci
             // 
-            this.stolbciA.Location = new System.Drawing.Point(360, 16);
-            this.stolbciA.Name = "stolbciA";
-            this.stolbciA.Size = new System.Drawing.Size(46, 20);
-            this.stolbciA.TabIndex = 77;
-            this.stolbciA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.a_stolbci.Location = new System.Drawing.Point(356, 13);
+            this.a_stolbci.Name = "a_stolbci";
+            this.a_stolbci.Size = new System.Drawing.Size(46, 20);
+            this.a_stolbci.TabIndex = 77;
+            this.a_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(32, 13);
+            this.label1.Location = new System.Drawing.Point(32, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(250, 21);
             this.label1.TabIndex = 75;
             this.label1.Text = "Введите размерность матрицы А:";
             // 
-            // strokiA
+            // a_stroki
             // 
-            this.strokiA.Location = new System.Drawing.Point(285, 16);
-            this.strokiA.Name = "strokiA";
-            this.strokiA.Size = new System.Drawing.Size(46, 20);
-            this.strokiA.TabIndex = 74;
-            this.strokiA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.a_stroki.Location = new System.Drawing.Point(288, 13);
+            this.a_stroki.Name = "a_stroki";
+            this.a_stroki.Size = new System.Drawing.Size(46, 20);
+            this.a_stroki.TabIndex = 74;
+            this.a_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Back
             // 
@@ -670,19 +672,19 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonC);
+            this.Controls.Add(this.buttonA);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.stolbciC);
+            this.Controls.Add(this.c_stolbci);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.strokiC);
+            this.Controls.Add(this.c_stroki);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.stolbciA);
+            this.Controls.Add(this.a_stolbci);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.strokiA);
+            this.Controls.Add(this.a_stroki);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximumSize = new System.Drawing.Size(1600, 900);
-            this.MinimumSize = new System.Drawing.Size(1350, 726);
+            this.MaximumSize = new System.Drawing.Size(1360, 757);
+            this.MinimumSize = new System.Drawing.Size(1360, 757);
             this.Name = "FormAC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matricula";
@@ -705,16 +707,16 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonC;
+        private System.Windows.Forms.Button buttonA;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox stolbciC;
+        private System.Windows.Forms.TextBox c_stolbci;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox strokiC;
+        private System.Windows.Forms.TextBox c_stroki;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox stolbciA;
+        private System.Windows.Forms.TextBox a_stolbci;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox strokiA;
+        private System.Windows.Forms.TextBox a_stroki;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label3;

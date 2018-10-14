@@ -38,16 +38,16 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.a_stolbci = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonA = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.b_stolbci = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.b_stroki = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonB = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonC = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.c_stolbci = new System.Windows.Forms.TextBox();
             this.c_stroki = new System.Windows.Forms.TextBox();
@@ -193,17 +193,17 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "*";
             // 
-            // button2
+            // buttonA
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(421, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 29);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "ОК";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonA.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonA.Location = new System.Drawing.Point(421, 9);
+            this.buttonA.Name = "buttonA";
+            this.buttonA.Size = new System.Drawing.Size(97, 29);
+            this.buttonA.TabIndex = 15;
+            this.buttonA.Text = "ОК";
+            this.buttonA.UseVisualStyleBackColor = false;
+            this.buttonA.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -241,16 +241,17 @@
             this.b_stroki.TabIndex = 11;
             this.b_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button3
+            // buttonB
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(420, 454);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 29);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "ОК";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonB.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonB.Location = new System.Drawing.Point(420, 454);
+            this.buttonB.Name = "buttonB";
+            this.buttonB.Size = new System.Drawing.Size(97, 29);
+            this.buttonB.TabIndex = 16;
+            this.buttonB.Text = "ОК";
+            this.buttonB.UseVisualStyleBackColor = false;
+            this.buttonB.Click += new System.EventHandler(this.button3_Click);
             // 
             // label6
             // 
@@ -284,16 +285,17 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Введите размерность матрицы C:";
             // 
-            // button1
+            // buttonC
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(420, 908);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 29);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "ОК";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonC.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonC.Location = new System.Drawing.Point(420, 908);
+            this.buttonC.Name = "buttonC";
+            this.buttonC.Size = new System.Drawing.Size(97, 29);
+            this.buttonC.TabIndex = 23;
+            this.buttonC.Text = "ОК";
+            this.buttonC.UseVisualStyleBackColor = false;
+            this.buttonC.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
@@ -948,15 +950,15 @@
             this.Controls.Add(this.B);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonC);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.c_stolbci);
             this.Controls.Add(this.c_stroki);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonB);
+            this.Controls.Add(this.buttonA);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.b_stolbci);
             this.Controls.Add(this.label5);
@@ -967,8 +969,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.a_stroki);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximumSize = new System.Drawing.Size(1600, 900);
-            this.MinimumSize = new System.Drawing.Size(1350, 726);
+            this.MaximumSize = new System.Drawing.Size(1377, 745);
+            this.MinimumSize = new System.Drawing.Size(1377, 745);
             this.Name = "FormABC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matricula";
@@ -988,16 +990,16 @@
         private System.Windows.Forms.DataGridView A;
         private System.Windows.Forms.TextBox a_stolbci;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonA;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox b_stolbci;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox b_stroki;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonB;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonC;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox c_stolbci;
         private System.Windows.Forms.TextBox c_stroki;
