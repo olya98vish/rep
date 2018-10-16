@@ -149,31 +149,27 @@
             this.dataGridViewTextBoxColumn4});
             this.A.Location = new System.Drawing.Point(1, 42);
             this.A.Name = "A";
-            this.A.ReadOnly = true;
             this.A.RowHeadersVisible = false;
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.A.Size = new System.Drawing.Size(401, 360);
             this.A.TabIndex = 6;
+            this.A.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.A_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // a_stolbci
             // 
@@ -353,7 +349,6 @@
             this.B.ColumnHeadersVisible = false;
             this.B.Location = new System.Drawing.Point(0, 488);
             this.B.Name = "B";
-            this.B.ReadOnly = true;
             this.B.RowHeadersVisible = false;
             this.B.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.B.Size = new System.Drawing.Size(401, 360);

@@ -83,7 +83,7 @@ namespace WindowsFormsApplication1
                         //активация нужных строк из текстбоксов, остальное неактивно
                         for (int i = 1; i <= strA; i++)
                         {
-                            this.Controls["A" + i.ToString()].Enabled = false;
+                            this.Controls["A" + i.ToString()].Enabled = true;
                         }
                         //работа с активацией матрицы
                         A.RowCount = strA;
@@ -277,5 +277,24 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Введите число строк и столбцов!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void A_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            TextBox tb = (TextBox)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(tb_KeyPress);
+        }
+
+        void tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == ',')) &&!((e.KeyChar == '.')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == ';')))
+            {
+                if (e.KeyChar != (char)Keys.Back)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
     }
 }
