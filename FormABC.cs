@@ -11,6 +11,12 @@ namespace WindowsFormsApplication1
 {
     public partial class FormABC : Form
     {
+        //иницилизация глобальных переменных
+        int[,] masA;//массив данных из datagrid A
+        int[,] masB;//массив данных из datagrid B
+        int[,] masC;//массив данных из datagrid C
+
+
         public FormABC()
         {
             InitializeComponent();
@@ -53,6 +59,13 @@ namespace WindowsFormsApplication1
             c_stroki.ReadOnly = true;
             c_stolbci.ReadOnly = true;
             b_stolbci.ReadOnly = true;
+
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
+            button10.Enabled = false;
+            button9.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -65,15 +78,15 @@ namespace WindowsFormsApplication1
                 {
                     if (buttonA.Text == "ОК")
                     {
+                        button4.Enabled = true;
+                        button5.Enabled = true;
+
                         a_stroki.ReadOnly = true;
                         a_stolbci.ReadOnly = true;
                         buttonA.Text = "Изменить";
 
                         strA = Convert.ToInt32(a_stroki.Text);
                         stlbA = Convert.ToInt32(a_stolbci.Text);
-
-                        a_stolbci.ReadOnly = true;
-                        a_stroki.ReadOnly = true;
 
                         b_stroki.Text = strA.ToString();
                         b_stroki.ReadOnly = true;
@@ -94,6 +107,9 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        button4.Enabled = false;
+                        button5.Enabled = false;
+
                         buttonA.Text = "ОК";
                         buttonB.Text = "ОК";
                         buttonC.Text = "ОК";
@@ -167,6 +183,9 @@ namespace WindowsFormsApplication1
 
                     if (buttonB.Text == "ОК")
                     {
+                        button6.Enabled = true;
+                        button7.Enabled = true;
+
                         b_stroki.ReadOnly = true;
                         b_stolbci.ReadOnly = true;
                         buttonB.Text = "Изменить";
@@ -184,7 +203,9 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        
+                        button6.Enabled = false;
+                        button7.Enabled = false;
+
                         buttonB.Text = "ОК";
                         //b_stroki.ReadOnly = false;
                         b_stolbci.ReadOnly = false;
@@ -229,6 +250,9 @@ namespace WindowsFormsApplication1
 
                     if (buttonC.Text == "ОК")
                     {
+                        button10.Enabled = true;
+                        button9.Enabled = true;
+
                         c_stroki.ReadOnly = true;
                         c_stolbci.ReadOnly = true;
                         buttonC.Text = "Изменить";
@@ -246,6 +270,8 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        button10.Enabled = false;
+                        button9.Enabled = false;
 
                         buttonC.Text = "ОК";
                         c_stroki.ReadOnly = false;
@@ -278,16 +304,10 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void A_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            TextBox tb = (TextBox)e.Control;
-            tb.KeyPress += new KeyPressEventHandler(tb_KeyPress);
-        }
-
         void tb_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == ',')) &&!((e.KeyChar == '.')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == ';')))
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == ',')) && !((e.KeyChar == '.')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == ';')))
             {
                 if (e.KeyChar != (char)Keys.Back)
                 {
@@ -296,5 +316,70 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void A_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            TextBox tb = (TextBox)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(tb_KeyPress);
+        }
+
+        private void B_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            TextBox tb = (TextBox)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(tb_KeyPress);
+        }
+
+        private void C_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            TextBox tb = (TextBox)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(tb_KeyPress);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (button4.Text == "OK")
+            {
+                A.ReadOnly = true;
+                //текстбоксы недоступны для пользователя
+                for (int i = 1; i < 16; i++)
+                {
+                    this.Controls["A" + i.ToString()].Enabled = false;
+                }
+
+                for (int i = 0; i <= A.RowCount; i++)
+                {
+                    for (int j = 0; j <= A.ColumnCount; j++)
+                    {
+                        if (A.Rows[i].Cells[j].Value.ToString() == "")//заполнение непроставленных пользователем строк нулями
+                        {
+                            A.Rows[i].Cells[j].Value = 0;
+                        }
+
+                        masA[i, j] = Convert.ToInt32(A.Rows[i].Cells[j].Value);
+                    }
+                }
+
+                int strA = 0;
+                int stlbA = 0;
+                strA = Convert.ToInt32(a_stroki.Text);
+                stlbA = Convert.ToInt32(a_stolbci.Text);
+
+                //проставление в нужные текстбоксы значений из таблицы
+                for (int i = 1; i <= strA; i++)//strA == RowsCount of datagrid A
+                {
+                    for (int j = 1; j <= stlbA; j++)
+                    {
+                        this.Controls["A" + i.ToString()].Text = masA[i, j].ToString();
+                        this.Controls["A" + i.ToString()].Text = ";";
+                    }
+                }
+
+                button4.Text = "Изменить";
+            }
+            else
+            {
+                A.ReadOnly = false;
+                button4.Text = "OK";
+            }
+        }
     }
 }

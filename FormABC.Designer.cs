@@ -353,6 +353,7 @@
             this.B.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.B.Size = new System.Drawing.Size(401, 360);
             this.B.TabIndex = 26;
+            this.B.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.B_EditingControlShowing);
             // 
             // label11
             // 
@@ -387,6 +388,7 @@
             this.C.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.C.Size = new System.Drawing.Size(401, 360);
             this.C.TabIndex = 29;
+            this.C.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.C_EditingControlShowing);
             // 
             // button4
             // 
@@ -396,8 +398,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 29);
             this.button4.TabIndex = 30;
-            this.button4.Text = "Изменить";
+            this.button4.Text = "OK";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -407,7 +410,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 29);
             this.button5.TabIndex = 31;
-            this.button5.Text = "Изменить";
+            this.button5.Text = "OK";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -882,7 +885,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1361, 706);
+            this.ClientSize = new System.Drawing.Size(1378, 706);
             this.Controls.Add(this.C15);
             this.Controls.Add(this.C14);
             this.Controls.Add(this.C13);
