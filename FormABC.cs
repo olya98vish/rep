@@ -76,71 +76,82 @@ namespace WindowsFormsApplication1
             {
                 if ((Convert.ToInt32(a_stroki.Text) > 0) && (Convert.ToInt32(a_stroki.Text) > 0))
                 {
-                    if (buttonA.Text == "ОК")
+                    if ((Convert.ToInt32(a_stroki.Text) < 16) && (Convert.ToInt32(a_stroki.Text) < 16))
                     {
-                        button4.Enabled = true;
-                        button5.Enabled = true;
-
-                        a_stroki.ReadOnly = true;
-                        a_stolbci.ReadOnly = true;
-                        buttonA.Text = "Изменить";
-
-                        strA = Convert.ToInt32(a_stroki.Text);
-                        stlbA = Convert.ToInt32(a_stolbci.Text);
-
-                        b_stroki.Text = strA.ToString();
-                        b_stroki.ReadOnly = true;
-                        c_stolbci.Text = stlbA.ToString();
-                        c_stolbci.ReadOnly = true;
-
-                        //активация нужных строк из текстбоксов, остальное неактивно
-                        for (int i = 1; i <= strA; i++)
+                        if (buttonA.Text == "ОК")
                         {
-                            this.Controls["A" + i.ToString()].Enabled = true;
-                        }
-                        //работа с активацией матрицы
-                        A.RowCount = strA;
-                        A.ColumnCount = stlbA;
+                            button4.Enabled = true;
+                            button5.Enabled = true;
 
-                        c_stroki.ReadOnly = false;
-                        b_stolbci.ReadOnly = false;
+                            a_stroki.ReadOnly = true;
+                            a_stolbci.ReadOnly = true;
+                            buttonA.Text = "Изменить";
+
+                            strA = Convert.ToInt32(a_stroki.Text);
+                            stlbA = Convert.ToInt32(a_stolbci.Text);
+
+                            masA = new int[strA, stlbA];
+
+                            b_stroki.Text = strA.ToString();
+                            b_stroki.ReadOnly = true;
+                            c_stolbci.Text = stlbA.ToString();
+                            c_stolbci.ReadOnly = true;
+
+                            //активация нужных строк из текстбоксов, остальное неактивно
+                            for (int i = 1; i <= strA; i++)
+                            {
+                                this.Controls["A" + i.ToString()].Enabled = true;
+                            }
+                            //работа с активацией матрицы
+                            A.RowCount = strA;
+                            A.ColumnCount = stlbA;
+
+                            c_stroki.ReadOnly = false;
+                            b_stolbci.ReadOnly = false;
+                        }
+                        else
+                        {
+                            button4.Enabled = false;
+                            button5.Enabled = false;
+
+                            buttonA.Text = "ОК";
+                            buttonB.Text = "ОК";
+                            buttonC.Text = "ОК";
+
+                            a_stroki.ReadOnly = false;
+                            a_stolbci.ReadOnly = false;
+
+                            a_stroki.Clear();
+                            a_stolbci.Clear();
+                            b_stolbci.Clear();
+                            b_stroki.Clear();
+                            c_stolbci.Clear();
+                            c_stroki.Clear();
+
+                            //очистка текстбоксов и сделаем их неактивными
+                            for (int i = 1; i < 16; i++)
+                            {
+                                this.Controls["A" + i.ToString()].Enabled = false;
+                                this.Controls["B" + i.ToString()].Enabled = false;
+                                this.Controls["C" + i.ToString()].Enabled = false;
+                                this.Controls["A" + i.ToString()].Text = "";
+                                this.Controls["B" + i.ToString()].Text = "";
+                                this.Controls["C" + i.ToString()].Text = "";
+                            }
+                            //убиваем матрицы - все, так как матрица А главная.
+                            A.RowCount = 0;
+                            A.ColumnCount = 0;
+                            B.RowCount = 0;
+                            B.ColumnCount = 0;
+                            C.RowCount = 0;
+                            C.ColumnCount = 0;
+                        }
                     }
                     else
                     {
-                        button4.Enabled = false;
-                        button5.Enabled = false;
-
-                        buttonA.Text = "ОК";
-                        buttonB.Text = "ОК";
-                        buttonC.Text = "ОК";
-
-                        a_stroki.ReadOnly = false;
-                        a_stolbci.ReadOnly = false;
-
-                        a_stroki.Clear();
                         a_stolbci.Clear();
-                        b_stolbci.Clear();
-                        b_stroki.Clear();
-                        c_stolbci.Clear();
-                        c_stroki.Clear();
-
-                        //очистка текстбоксов и сделаем их неактивными
-                        for (int i = 1; i < 16; i++)
-                        {
-                            this.Controls["A" + i.ToString()].Enabled = false;
-                            this.Controls["B" + i.ToString()].Enabled = false;
-                            this.Controls["C" + i.ToString()].Enabled = false;
-                            this.Controls["A" + i.ToString()].Text = "";
-                            this.Controls["B" + i.ToString()].Text = "";
-                            this.Controls["C" + i.ToString()].Text = "";
-                        }
-                        //убиваем матрицы - все, так как матрица А главная.
-                        A.RowCount = 0;
-                        A.ColumnCount = 0;
-                        B.RowCount = 0;
-                        B.ColumnCount = 0;
-                        C.RowCount = 0;
-                        C.ColumnCount = 0;
+                        a_stroki.Clear();
+                        MessageBox.Show("Значения числа строк и столбцов должны быть меньше 15!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -179,47 +190,50 @@ namespace WindowsFormsApplication1
             {
                 if ((Convert.ToInt32(b_stroki.Text) > 0) && (Convert.ToInt32(b_stroki.Text) > 0)&&(Convert.ToInt32(b_stroki.Text) == Convert.ToInt32(a_stroki.Text)))
                 {
-                    int strA = Convert.ToInt32(a_stroki.Text);
-
-                    if (buttonB.Text == "ОК")
+                    if ((Convert.ToInt32(b_stroki.Text) < 16) && (Convert.ToInt32(b_stroki.Text) < 16))
                     {
-                        button6.Enabled = true;
-                        button7.Enabled = true;
+                        int strA = Convert.ToInt32(a_stroki.Text);
 
-                        b_stroki.ReadOnly = true;
-                        b_stolbci.ReadOnly = true;
-                        buttonB.Text = "Изменить";
-
-                        strB = Convert.ToInt32(b_stroki.Text);
-                        stlbB = Convert.ToInt32(b_stolbci.Text);
-                        //активация нужных строк из текстбоксов, остальное неактивно
-                        for (int i = 1; i <= strB; i++)
+                        if (buttonB.Text == "ОК")
                         {
-                            this.Controls["B" + i.ToString()].Enabled = true;
+                            button6.Enabled = true;
+                            button7.Enabled = true;
+
+                            b_stroki.ReadOnly = true;
+                            b_stolbci.ReadOnly = true;
+                            buttonB.Text = "Изменить";
+
+                            strB = Convert.ToInt32(b_stroki.Text);
+                            stlbB = Convert.ToInt32(b_stolbci.Text);
+                            //активация нужных строк из текстбоксов, остальное неактивно
+                            for (int i = 1; i <= strB; i++)
+                            {
+                                this.Controls["B" + i.ToString()].Enabled = true;
+                            }
+                            //работа с активацией матрицы
+                            B.RowCount = strB;
+                            B.ColumnCount = stlbB;
                         }
-                        //работа с активацией матрицы
-                        B.RowCount = strB;
-                        B.ColumnCount = stlbB;
-                    }
-                    else
-                    {
-                        button6.Enabled = false;
-                        button7.Enabled = false;
-
-                        buttonB.Text = "ОК";
-                        //b_stroki.ReadOnly = false;
-                        b_stolbci.ReadOnly = false;
-
-                        b_stolbci.Clear();
-                        //очистка текстбоксов и сделаем их неактивными
-                        for (int i = 1; i < 16; i++)
+                        else
                         {
-                            this.Controls["B" + i.ToString()].Enabled = false;
-                            this.Controls["B" + i.ToString()].Text = "";
+                            button6.Enabled = false;
+                            button7.Enabled = false;
+
+                            buttonB.Text = "ОК";
+                            //b_stroki.ReadOnly = false;
+                            b_stolbci.ReadOnly = false;
+
+                            b_stolbci.Clear();
+                            //очистка текстбоксов и сделаем их неактивными
+                            for (int i = 1; i < 16; i++)
+                            {
+                                this.Controls["B" + i.ToString()].Enabled = false;
+                                this.Controls["B" + i.ToString()].Text = "";
+                            }
+                            //убиваем матрицу
+                            B.RowCount = 0;
+                            B.ColumnCount = 0;
                         }
-                        //убиваем матрицу
-                        B.RowCount = 0;
-                        B.ColumnCount = 0;
                     }
                 }
                 else
@@ -246,47 +260,50 @@ namespace WindowsFormsApplication1
             {
                 if ((Convert.ToInt32(c_stroki.Text) > 0) && (Convert.ToInt32(c_stroki.Text) > 0) && (Convert.ToInt32(c_stolbci.Text) == Convert.ToInt32(a_stolbci.Text)))
                 {
-                    int stlbA = Convert.ToInt32(a_stolbci.Text);
-
-                    if (buttonC.Text == "ОК")
+                    if ((Convert.ToInt32(c_stroki.Text) < 16) && (Convert.ToInt32(c_stroki.Text) < 16))
                     {
-                        button10.Enabled = true;
-                        button9.Enabled = true;
+                        int stlbA = Convert.ToInt32(a_stolbci.Text);
 
-                        c_stroki.ReadOnly = true;
-                        c_stolbci.ReadOnly = true;
-                        buttonC.Text = "Изменить";
-
-                        strC = Convert.ToInt32(c_stroki.Text);
-                        stlbC = Convert.ToInt32(c_stolbci.Text);
-                        //активация нужных строк из текстбоксов, остальное неактивно
-                        for (int i = 1; i <= strC; i++)
+                        if (buttonC.Text == "ОК")
                         {
-                            this.Controls["C" + i.ToString()].Enabled = true;
+                            button10.Enabled = true;
+                            button9.Enabled = true;
+
+                            c_stroki.ReadOnly = true;
+                            c_stolbci.ReadOnly = true;
+                            buttonC.Text = "Изменить";
+
+                            strC = Convert.ToInt32(c_stroki.Text);
+                            stlbC = Convert.ToInt32(c_stolbci.Text);
+                            //активация нужных строк из текстбоксов, остальное неактивно
+                            for (int i = 1; i <= strC; i++)
+                            {
+                                this.Controls["C" + i.ToString()].Enabled = true;
+                            }
+                            //работа с активацией матрицы
+                            C.RowCount = strC;
+                            C.ColumnCount = stlbC;
                         }
-                        //работа с активацией матрицы
-                        C.RowCount = strC;
-                        C.ColumnCount = stlbC;
-                    }
-                    else
-                    {
-                        button10.Enabled = false;
-                        button9.Enabled = false;
-
-                        buttonC.Text = "ОК";
-                        c_stroki.ReadOnly = false;
-                        //c_stolbci.ReadOnly = false;
-
-                        c_stroki.Clear();
-                        //очистка текстбоксов и сделаем их неактивными
-                        for (int i = 1; i < 16; i++)
+                        else
                         {
-                            this.Controls["C" + i.ToString()].Enabled = false;
-                            this.Controls["C" + i.ToString()].Text = "";
+                            button10.Enabled = false;
+                            button9.Enabled = false;
+
+                            buttonC.Text = "ОК";
+                            c_stroki.ReadOnly = false;
+                            //c_stolbci.ReadOnly = false;
+
+                            c_stroki.Clear();
+                            //очистка текстбоксов и сделаем их неактивными
+                            for (int i = 1; i < 16; i++)
+                            {
+                                this.Controls["C" + i.ToString()].Enabled = false;
+                                this.Controls["C" + i.ToString()].Text = "";
+                            }
+                            //убиваем матрицу
+                            C.RowCount = 0;
+                            C.ColumnCount = 0;
                         }
-                        //убиваем матрицу
-                        C.RowCount = 0;
-                        C.ColumnCount = 0;
                     }
                 }
                 else
@@ -338,23 +355,28 @@ namespace WindowsFormsApplication1
         {
             if (button4.Text == "OK")
             {
+                //таблица недоступна для пользователя
                 A.ReadOnly = true;
+                A.Enabled = false;
+
                 //текстбоксы недоступны для пользователя
                 for (int i = 1; i < 16; i++)
                 {
                     this.Controls["A" + i.ToString()].Enabled = false;
                 }
 
-                for (int i = 0; i <= A.RowCount; i++)
+                for (int i = 0; i < A.RowCount; i++)
                 {
-                    for (int j = 0; j <= A.ColumnCount; j++)
+                    for (int j = 0; j < A.ColumnCount; j++)
                     {
-                        if (A.Rows[i].Cells[j].Value.ToString() == "")//заполнение непроставленных пользователем строк нулями
+                        //заполнение непроставленных пользователем строк нулями
+                        //if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
                         {
                             A.Rows[i].Cells[j].Value = 0;
                         }
 
-                        masA[i, j] = Convert.ToInt32(A.Rows[i].Cells[j].Value);
+                        masA[i, j] = Convert.ToInt32(A.Rows[i].Cells[j].Value.ToString());
                     }
                 }
 
@@ -364,12 +386,11 @@ namespace WindowsFormsApplication1
                 stlbA = Convert.ToInt32(a_stolbci.Text);
 
                 //проставление в нужные текстбоксы значений из таблицы
-                for (int i = 1; i <= strA; i++)//strA == RowsCount of datagrid A
+                for (int i = 0; i < strA; i++)//strA == RowsCount of datagrid A
                 {
-                    for (int j = 1; j <= stlbA; j++)
+                    for (int j = 0; j < stlbA; j++)
                     {
-                        this.Controls["A" + i.ToString()].Text = masA[i, j].ToString();
-                        this.Controls["A" + i.ToString()].Text = ";";
+                        this.Controls["A" + (i + 1).ToString()].Text += masA[i, j].ToString() + ";";
                     }
                 }
 
@@ -377,7 +398,22 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                int strA = 0;
+                int stlbA = 0;
+                strA = Convert.ToInt32(a_stroki.Text);
+                stlbA = Convert.ToInt32(a_stolbci.Text);
+
                 A.ReadOnly = false;
+                A.Enabled = true;
+
+                for (int i = 0; i < strA; i++)//strA == RowsCount of datagrid A
+                {
+                    for (int j = 0; j < stlbA; j++)
+                    {
+                        this.Controls["A" + (i + 1).ToString()].Text = "";
+                    }
+                }
+
                 button4.Text = "OK";
             }
         }
