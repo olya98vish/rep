@@ -153,6 +153,7 @@
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.A.Size = new System.Drawing.Size(401, 360);
             this.A.TabIndex = 6;
+            this.A.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.A_CellValueChanged);
             this.A.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.A_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn1
@@ -498,9 +499,9 @@
             this.A1.Location = new System.Drawing.Point(407, 42);
             this.A1.Multiline = true;
             this.A1.Name = "A1";
-            this.A1.ReadOnly = true;
             this.A1.Size = new System.Drawing.Size(400, 23);
             this.A1.TabIndex = 232;
+            this.A1.TextChanged += new System.EventHandler(this.A1_TextChanged);
             // 
             // button10
             // 
@@ -518,7 +519,6 @@
             this.A2.Location = new System.Drawing.Point(407, 65);
             this.A2.Multiline = true;
             this.A2.Name = "A2";
-            this.A2.ReadOnly = true;
             this.A2.Size = new System.Drawing.Size(400, 23);
             this.A2.TabIndex = 274;
             // 
@@ -527,7 +527,6 @@
             this.A3.Location = new System.Drawing.Point(407, 88);
             this.A3.Multiline = true;
             this.A3.Name = "A3";
-            this.A3.ReadOnly = true;
             this.A3.Size = new System.Drawing.Size(400, 23);
             this.A3.TabIndex = 275;
             // 
@@ -536,7 +535,6 @@
             this.A6.Location = new System.Drawing.Point(407, 154);
             this.A6.Multiline = true;
             this.A6.Name = "A6";
-            this.A6.ReadOnly = true;
             this.A6.Size = new System.Drawing.Size(400, 23);
             this.A6.TabIndex = 278;
             // 
@@ -545,7 +543,6 @@
             this.A5.Location = new System.Drawing.Point(407, 132);
             this.A5.Multiline = true;
             this.A5.Name = "A5";
-            this.A5.ReadOnly = true;
             this.A5.Size = new System.Drawing.Size(400, 23);
             this.A5.TabIndex = 277;
             // 
@@ -554,7 +551,6 @@
             this.A4.Location = new System.Drawing.Point(407, 110);
             this.A4.Multiline = true;
             this.A4.Name = "A4";
-            this.A4.ReadOnly = true;
             this.A4.Size = new System.Drawing.Size(400, 23);
             this.A4.TabIndex = 276;
             // 
@@ -563,7 +559,6 @@
             this.A12.Location = new System.Drawing.Point(407, 286);
             this.A12.Multiline = true;
             this.A12.Name = "A12";
-            this.A12.ReadOnly = true;
             this.A12.Size = new System.Drawing.Size(400, 23);
             this.A12.TabIndex = 284;
             // 
@@ -572,7 +567,6 @@
             this.A11.Location = new System.Drawing.Point(407, 265);
             this.A11.Multiline = true;
             this.A11.Name = "A11";
-            this.A11.ReadOnly = true;
             this.A11.Size = new System.Drawing.Size(400, 23);
             this.A11.TabIndex = 283;
             // 
@@ -581,7 +575,6 @@
             this.A10.Location = new System.Drawing.Point(407, 242);
             this.A10.Multiline = true;
             this.A10.Name = "A10";
-            this.A10.ReadOnly = true;
             this.A10.Size = new System.Drawing.Size(400, 23);
             this.A10.TabIndex = 282;
             // 
@@ -590,7 +583,6 @@
             this.A9.Location = new System.Drawing.Point(407, 220);
             this.A9.Multiline = true;
             this.A9.Name = "A9";
-            this.A9.ReadOnly = true;
             this.A9.Size = new System.Drawing.Size(400, 23);
             this.A9.TabIndex = 281;
             // 
@@ -599,7 +591,6 @@
             this.A8.Location = new System.Drawing.Point(407, 198);
             this.A8.Multiline = true;
             this.A8.Name = "A8";
-            this.A8.ReadOnly = true;
             this.A8.Size = new System.Drawing.Size(400, 23);
             this.A8.TabIndex = 280;
             // 
@@ -608,7 +599,6 @@
             this.A7.Location = new System.Drawing.Point(407, 176);
             this.A7.Multiline = true;
             this.A7.Name = "A7";
-            this.A7.ReadOnly = true;
             this.A7.Size = new System.Drawing.Size(400, 23);
             this.A7.TabIndex = 279;
             // 
@@ -617,7 +607,6 @@
             this.A15.Location = new System.Drawing.Point(407, 351);
             this.A15.Multiline = true;
             this.A15.Name = "A15";
-            this.A15.ReadOnly = true;
             this.A15.Size = new System.Drawing.Size(400, 23);
             this.A15.TabIndex = 287;
             // 
@@ -626,7 +615,6 @@
             this.A14.Location = new System.Drawing.Point(407, 330);
             this.A14.Multiline = true;
             this.A14.Name = "A14";
-            this.A14.ReadOnly = true;
             this.A14.Size = new System.Drawing.Size(400, 23);
             this.A14.TabIndex = 286;
             // 
@@ -635,7 +623,6 @@
             this.A13.Location = new System.Drawing.Point(407, 307);
             this.A13.Multiline = true;
             this.A13.Name = "A13";
-            this.A13.ReadOnly = true;
             this.A13.Size = new System.Drawing.Size(400, 23);
             this.A13.TabIndex = 285;
             // 
@@ -885,7 +872,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1378, 706);
+            this.ClientSize = new System.Drawing.Size(1361, 706);
             this.Controls.Add(this.C15);
             this.Controls.Add(this.C14);
             this.Controls.Add(this.C13);

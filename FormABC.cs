@@ -96,7 +96,7 @@ namespace WindowsFormsApplication1
                             b_stroki.ReadOnly = true;
                             c_stolbci.Text = stlbA.ToString();
                             c_stolbci.ReadOnly = true;
-                            //активация нужных строк из текстбоксов, остальное неактивно - пока недоработка!!!
+                            //активация нужных строк из текстбоксов, остальное неактивно
                             for (int i = 1; i <= strA; i++)
                             {
                                 //TextBox[] a = new TextBox[strA];
@@ -107,6 +107,8 @@ namespace WindowsFormsApplication1
                             //работа с активацией матрицы
                             A.RowCount = strA;
                             A.ColumnCount = stlbA;
+                            A.ReadOnly = false;
+                            A.Enabled = true;
 
                             c_stroki.ReadOnly = false;
                             b_stolbci.ReadOnly = false;
@@ -119,6 +121,8 @@ namespace WindowsFormsApplication1
                             buttonA.Text = "ОК";
                             buttonB.Text = "ОК";
                             buttonC.Text = "ОК";
+                            button5.Text = "ОК";
+                            button4.Text = "ОК";
 
                             a_stroki.ReadOnly = false;
                             a_stolbci.ReadOnly = false;
@@ -352,6 +356,8 @@ namespace WindowsFormsApplication1
         {
             if (button4.Text == "OK")
             {
+                button5.Enabled = true;
+
                 //таблица недоступна для пользователя
                 A.ReadOnly = true;
                 A.Enabled = false;
@@ -387,7 +393,12 @@ namespace WindowsFormsApplication1
                 {
                     for (int j = 0; j < stlbA; j++)
                     {
-                        this.Controls["A" + (i + 1).ToString()].Text += masA[i, j].ToString() + ";";
+                        if (j != stlbA - 1)
+                        {
+                            this.Controls["A" + (i + 1).ToString()].Text += masA[i, j].ToString() + ";";
+                        }
+                        else
+                            this.Controls["A" + (i + 1).ToString()].Text += masA[i, j].ToString();
                     }
                 }
 
@@ -396,6 +407,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                button5.Enabled = false;
                 int strA = 0;
                 int stlbA = 0;
                 strA = Convert.ToInt32(a_stroki.Text);
@@ -421,6 +433,8 @@ namespace WindowsFormsApplication1
         {
             if (button5.Text == "OK")
             {
+                button4.Enabled = true;
+
                 //таблица недоступна для пользователя
                 A.ReadOnly = true;
                 A.Enabled = false;
@@ -441,7 +455,8 @@ namespace WindowsFormsApplication1
                 {
                     for (int j = 0; j < stlbA; j++)
                     {
-                        masA[i, j] = Convert.ToInt32(this.Controls["A" + (i + 1).ToString()].Text.Split(';'));
+                        string[] ss = this.Controls["A" + (i + 1).ToString()].Text.Split(';');
+                        masA[i, j] = int.Parse(ss[j]);
                     }
                 }
 
@@ -459,6 +474,8 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                button4.Enabled = false;
+
                 int strA = 0;
                 int stlbA = 0;
                 strA = Convert.ToInt32(a_stroki.Text);
@@ -488,6 +505,16 @@ namespace WindowsFormsApplication1
                 button5.Text = "OK";
             }
 
+        }
+
+        private void A_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            button4.Enabled = true;
+        }
+
+        private void A1_TextChanged(object sender, EventArgs e)
+        {
+            button5.Enabled = true;
         }
     }
 }
