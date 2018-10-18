@@ -96,11 +96,13 @@ namespace WindowsFormsApplication1
                             b_stroki.ReadOnly = true;
                             c_stolbci.Text = stlbA.ToString();
                             c_stolbci.ReadOnly = true;
-
-                            //активация нужных строк из текстбоксов, остальное неактивно
+                            //активация нужных строк из текстбоксов, остальное неактивно - пока недоработка!!!
                             for (int i = 1; i <= strA; i++)
                             {
+                                //TextBox[] a = new TextBox[strA];
                                 this.Controls["A" + i.ToString()].Enabled = true;
+                                //a[i].Name = "A" + i.ToString();
+                                //a[i].ReadOnly = false;
                             }
                             //работа с активацией матрицы
                             A.RowCount = strA;
@@ -174,11 +176,6 @@ namespace WindowsFormsApplication1
             Form form1 = new Form1();
             form1.Show();
             this.Hide();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -395,6 +392,7 @@ namespace WindowsFormsApplication1
                 }
 
                 button4.Text = "Изменить";
+                button5.Text = "Изменить";
             }
             else
             {
@@ -415,7 +413,81 @@ namespace WindowsFormsApplication1
                 }
 
                 button4.Text = "OK";
+                button5.Text = "OK";
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (button5.Text == "OK")
+            {
+                //таблица недоступна для пользователя
+                A.ReadOnly = true;
+                A.Enabled = false;
+
+                //текстбоксы недоступны для пользователя
+                for (int i = 1; i < 16; i++)
+                {
+                    this.Controls["A" + i.ToString()].Enabled = false;
+                }
+
+                int strA = 0;
+                int stlbA = 0;
+                strA = Convert.ToInt32(a_stroki.Text);
+                stlbA = Convert.ToInt32(a_stolbci.Text);
+
+                //взятие данных из строк в массив памяти
+                for (int i = 0; i < strA; i++)//strA == RowsCount of datagrid A
+                {
+                    for (int j = 0; j < stlbA; j++)
+                    {
+                        masA[i, j] = Convert.ToInt32(this.Controls["A" + (i + 1).ToString()].Text.Split(';'));
+                    }
+                }
+
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < A.RowCount; i++)
+                {
+                    for (int j = 0; j < A.ColumnCount; j++)
+                    {
+                        A.Rows[i].Cells[j].Value = masA[i, j];
+                    }
+                }
+
+                button4.Text = "Изменить";
+                button5.Text = "Изменить";
+            }
+            else
+            {
+                int strA = 0;
+                int stlbA = 0;
+                strA = Convert.ToInt32(a_stroki.Text);
+                stlbA = Convert.ToInt32(a_stolbci.Text);
+
+                A.ReadOnly = true;
+                A.Enabled = false;
+
+                //сделаем пустой таблицу
+                for (int i = 0; i < A.RowCount; i++)
+                {
+                    for (int j = 0; j < A.ColumnCount; j++)
+                    {
+                        A.Rows[i].Cells[j].Value = 0;
+                    }
+                }
+
+                for (int i = 0; i < strA; i++)//strA == RowsCount of datagrid A
+                {
+                    for (int j = 0; j < stlbA; j++)
+                    {
+                        this.Controls["A" + (i + 1).ToString()].Enabled = true;
+                    }
+                }
+
+                button4.Text = "OK";
+                button5.Text = "OK";
+            }
+
         }
     }
 }
