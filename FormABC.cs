@@ -12,9 +12,9 @@ namespace WindowsFormsApplication1
     public partial class FormABC : Form
     {
         //иницилизация глобальных переменных
-        int[,] masA;//массив данных из datagrid A
-        int[,] masB;//массив данных из datagrid B
-        int[,] masC;//массив данных из datagrid C
+        double[,] masA;//массив данных из datagrid A
+        double[,] masB;//массив данных из datagrid B
+        double[,] masC;//массив данных из datagrid C
 
 
         public FormABC()
@@ -33,22 +33,6 @@ namespace WindowsFormsApplication1
 
         private void FormABC_Load(object sender, EventArgs e)
         {
-            //A.RowCount = 15;
-            //A.ColumnCount = 15;
-
-            //B.RowCount = 15;
-            //B.ColumnCount = 15;
-
-            //C.RowCount = 15;
-            //C.ColumnCount = 15;
-
-            //отрисовка границ на форме
-            //Pen blackPen = new Pen(Color.FromArgb(255, 0, 0, 0), 5);
-            //e.Graphics.DrawRectangle(blackPen, 10, 10, 100, 50);
-
-            //Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
-            //e.Graphics.DrawLine(pen, 20, 10, 300, 100);
-
             for (int i = 1; i < 16; i++)
             {
                 this.Controls["A" + i.ToString()].Enabled = false;
@@ -66,6 +50,205 @@ namespace WindowsFormsApplication1
             button7.Enabled = false;
             button10.Enabled = false;
             button9.Enabled = false;
+        }
+
+        private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
+        {
+            if (datagrid == "A")
+            {
+                for (int i = 0; i < RowCount; i++)
+                {
+                    for (int j = 0; j < ColumnCount; j++)
+                    {
+                        //заполнение непроставленных пользователем строк нулями
+                        //if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
+                        {
+                            A.Rows[i].Cells[j].Value = 0;
+                        }
+                        string ss = A.Rows[i].Cells[j].Value.ToString();
+                        double tmp = Convert.ToDouble(ss);
+                        masA[i, j] = tmp;
+                    }
+                }
+            }
+            if (datagrid == "B")
+            {
+                for (int i = 0; i < RowCount; i++)
+                {
+                    for (int j = 0; j < ColumnCount; j++)
+                    {
+                        //заполнение непроставленных пользователем строк нулями
+                        //if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
+                        {
+                            B.Rows[i].Cells[j].Value = 0;
+                        }
+
+                        masB[i, j] = Convert.ToDouble(B.Rows[i].Cells[j].Value.ToString());
+                    }
+                }
+            }
+            if (datagrid == "C")
+            {
+                for (int i = 0; i < RowCount; i++)
+                {
+                    for (int j = 0; j < ColumnCount; j++)
+                    {
+                        //заполнение непроставленных пользователем строк нулями
+                        //if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
+                        {
+                            C.Rows[i].Cells[j].Value = 0;
+                        }
+
+                        masC[i, j] = Convert.ToDouble(C.Rows[i].Cells[j].Value.ToString());
+                    }
+               }
+            }
+        }
+
+        private void take_data_from_textbox(string datagrid, int str, int stlb)
+        {//взятие данных из строк в массив памяти
+            if (datagrid == "A")
+            {
+                for (int i = 0; i < str; i++)//strA == RowsCount of datagrid A
+                {
+                    for (int j = 0; j < stlb; j++)
+                    {
+                        if (this.Controls["A" + (i + 1).ToString()].Text != "")
+                        {
+                            string[] ss = this.Controls["A" + (i + 1).ToString()].Text.Split(';');
+                            masA[i, j] = double.Parse(ss[j]);
+                        }
+                        else
+                            masA[i, j] = 0;
+                    }
+                }
+            }
+            if (datagrid == "B")
+            {
+                for (int i = 0; i < str; i++)//strA == RowsCount of datagrid A
+                {
+                    for (int j = 0; j < stlb; j++)
+                    {
+                        if (this.Controls["B" + (i + 1).ToString()].Text != "")
+                        {
+                            string[] ss = this.Controls["B" + (i + 1).ToString()].Text.Split(';');
+                            masB[i, j] = double.Parse(ss[j]);
+                        }
+                        else
+                            masB[i, j] = 0;
+                    }
+                }
+            }
+            if (datagrid == "C")
+            {
+                for (int i = 0; i < str; i++)//strA == RowsCount of datagrid A
+                {
+                    for (int j = 0; j < stlb; j++)
+                    {
+                        if (this.Controls["C" + (i + 1).ToString()].Text != "")
+                        {
+                            string[] ss = this.Controls["C" + (i + 1).ToString()].Text.Split(';');
+                            masC[i, j] = double.Parse(ss[j]);
+                        }
+                        else
+                            masC[i, j] = 0;
+                    }
+                }
+            }
+        }
+        private void output_data(string datagrid, int str, int stlb)
+        {//вывод данных из памяти в датагрид и текстбоксы
+
+            if (datagrid == "A")
+            {
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < A.RowCount; i++)
+                {
+                    for (int j = 0; j < A.ColumnCount; j++)
+                    {
+                        A.Rows[i].Cells[j].Value = masA[i, j];
+                    }
+                }
+
+                //проставление в нужные текстбоксы значений из таблицы
+                for (int i = 0; i < str; i++)//strA == RowsCount of datagrid A
+                {
+                    this.Controls["A" + (i + 1).ToString()].Text = "";
+                }
+                for (int i = 0; i < str; i++)//strA == RowsCount of datagrid A
+                {
+                    for (int j = 0; j < stlb; j++)
+                    {
+                        if (j != stlb - 1)
+                        {
+                            this.Controls["A" + (i + 1).ToString()].Text += masA[i, j].ToString() + ";";
+                        }
+                        else
+                            this.Controls["A" + (i + 1).ToString()].Text += masA[i, j].ToString();
+                    }
+                }
+            }
+            if (datagrid == "B")
+            {
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < B.RowCount; i++)
+                {
+                    for (int j = 0; j < B.ColumnCount; j++)
+                    {
+                        B.Rows[i].Cells[j].Value = masB[i, j];
+                    }
+                }
+
+                //проставление в нужные текстбоксы значений из таблицы
+                for (int i = 0; i < str; i++)//strA == RowsCount of datagrid 
+                {
+                    this.Controls["B" + (i + 1).ToString()].Text = "";
+                }     
+                for (int i = 0; i < str; i++)//strA == RowsCount of datagrid
+                {
+                    for (int j = 0; j < stlb; j++)
+                    {
+                        if (j != stlb - 1)
+                        {
+                            this.Controls["B" + (i + 1).ToString()].Text += masB[i, j].ToString() + ";";
+                        }
+                        else
+                            this.Controls["B" + (i + 1).ToString()].Text += masB[i, j].ToString();
+                    }
+                }
+            }
+            if (datagrid == "C")
+            {
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < C.RowCount; i++)
+                {
+                    for (int j = 0; j < C.ColumnCount; j++)
+                    {
+                        C.Rows[i].Cells[j].Value = masC[i, j];
+                    }
+                }
+
+                //проставление в нужные текстбоксы значений из таблицы
+                for (int i = 0; i < str; i++)//strA == RowsCount of datagrid 
+                {
+                    this.Controls["C" + (i + 1).ToString()].Text = "";
+                }
+                for (int i = 0; i < str; i++)//strA == RowsCount of datagrid 
+                {
+                    for (int j = 0; j < stlb; j++)
+                    {
+                        if (j != stlb - 1)
+                        {
+                            this.Controls["C" + (i + 1).ToString()].Text += masC[i, j].ToString() + ";";
+                        }
+                        else
+                            this.Controls["C" + (i + 1).ToString()].Text += masC[i, j].ToString();
+                    }
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -90,7 +273,15 @@ namespace WindowsFormsApplication1
                             strA = Convert.ToInt32(a_stroki.Text);
                             stlbA = Convert.ToInt32(a_stolbci.Text);
 
-                            masA = new int[strA, stlbA];
+                            masA = new double[strA, stlbA];
+
+                            for (int i = 0; i < strA; i++)//матрица в памяти пока что нулевая
+                            {
+                                for (int j = 0; j < stlbA; j++)
+                                {
+                                    masA[i, j] = 0;
+                                }
+                            }
 
                             b_stroki.Text = strA.ToString();
                             b_stroki.ReadOnly = true;
@@ -180,6 +371,7 @@ namespace WindowsFormsApplication1
             Form form1 = new Form1();
             form1.Show();
             this.Hide();
+            //this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -325,7 +517,7 @@ namespace WindowsFormsApplication1
         void tb_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == ',')) && !((e.KeyChar == '.')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == ';')))
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == ';')) && !((e.KeyChar == '(')) && !((e.KeyChar == ')')) && !((e.KeyChar == ','))) //&& !((e.KeyChar == '.'))
             {
                 if (e.KeyChar != (char)Keys.Back)
                 {
@@ -356,7 +548,7 @@ namespace WindowsFormsApplication1
         {
             if (button4.Text == "OK")
             {
-                button5.Enabled = true;
+                //button5.Enabled = true;
 
                 //таблица недоступна для пользователя
                 A.ReadOnly = true;
@@ -368,46 +560,21 @@ namespace WindowsFormsApplication1
                     this.Controls["A" + i.ToString()].Enabled = false;
                 }
 
-                for (int i = 0; i < A.RowCount; i++)
-                {
-                    for (int j = 0; j < A.ColumnCount; j++)
-                    {
-                        //заполнение непроставленных пользователем строк нулями
-                        //if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
-                        if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
-                        {
-                            A.Rows[i].Cells[j].Value = 0;
-                        }
-
-                        masA[i, j] = Convert.ToInt32(A.Rows[i].Cells[j].Value.ToString());
-                    }
-                }
+                take_data_from_matrix("A", A.RowCount, A.ColumnCount);
 
                 int strA = 0;
                 int stlbA = 0;
                 strA = Convert.ToInt32(a_stroki.Text);
                 stlbA = Convert.ToInt32(a_stolbci.Text);
 
-                //проставление в нужные текстбоксы значений из таблицы
-                for (int i = 0; i < strA; i++)//strA == RowsCount of datagrid A
-                {
-                    for (int j = 0; j < stlbA; j++)
-                    {
-                        if (j != stlbA - 1)
-                        {
-                            this.Controls["A" + (i + 1).ToString()].Text += masA[i, j].ToString() + ";";
-                        }
-                        else
-                            this.Controls["A" + (i + 1).ToString()].Text += masA[i, j].ToString();
-                    }
-                }
+                output_data("A", strA, stlbA);
 
                 button4.Text = "Изменить";
                 button5.Text = "Изменить";
             }
             else
             {
-                button5.Enabled = false;
+                //button5.Enabled = false;
                 int strA = 0;
                 int stlbA = 0;
                 strA = Convert.ToInt32(a_stroki.Text);
@@ -450,24 +617,9 @@ namespace WindowsFormsApplication1
                 strA = Convert.ToInt32(a_stroki.Text);
                 stlbA = Convert.ToInt32(a_stolbci.Text);
 
-                //взятие данных из строк в массив памяти
-                for (int i = 0; i < strA; i++)//strA == RowsCount of datagrid A
-                {
-                    for (int j = 0; j < stlbA; j++)
-                    {
-                        string[] ss = this.Controls["A" + (i + 1).ToString()].Text.Split(';');
-                        masA[i, j] = int.Parse(ss[j]);
-                    }
-                }
+                take_data_from_textbox("A", strA, stlbA);//взяли данные из текстбокса
 
-                //заполнение таблицы значениями из строк
-                for (int i = 0; i < A.RowCount; i++)
-                {
-                    for (int j = 0; j < A.ColumnCount; j++)
-                    {
-                        A.Rows[i].Cells[j].Value = masA[i, j];
-                    }
-                }
+                output_data("A", strA, stlbA);//выведем из памяти в датагрид и текстбоксы
 
                 button4.Text = "Изменить";
                 button5.Text = "Изменить";
@@ -507,14 +659,361 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void A_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        //-----//ограничение на ввод в текстбокс
+        // Boolean flag used to determine when a character other than a number is entered.
+        private bool nonNumberEntered = false;
+        // Handle the KeyDown event to determine the type of character entered into the control.
+        private void A1_KeyDown(object sender, KeyEventArgs e)
         {
-            button4.Enabled = true;
+            // Initialize the flag to false.
+            nonNumberEntered = false;
+            // Determine whether the keystroke is a number from the top of the keyboard.
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                // Determine whether the keystroke is a number from the keypad.
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    // Determine whether the keystroke is a backspace.
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        // A non-numerical keystroke was pressed.
+                        // Set the flag to true and evaluate in KeyPress event.
+                        nonNumberEntered = true;
+                    }
+                }
+            }
         }
 
-        private void A1_TextChanged(object sender, EventArgs e)
+        private void A1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            button5.Enabled = true;
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
         }
+
+        private void A2_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A3_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A4_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A5_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A6_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A7_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A8_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A9_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A9_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A10_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A11_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A12_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A13_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A13_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A14_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A14_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void A15_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back && e.KeyCode != Keys.OemSemicolon && e.KeyCode != Keys.Oemcomma)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void A15_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+        //-----//ограничение на ввод в текстбокс
+
     }
 }
