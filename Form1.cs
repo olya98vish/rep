@@ -56,13 +56,10 @@ namespace WindowsFormsApplication1
                 label1.Location = new System.Drawing.Point(273, 26);//x
        
                 label2.Visible = true;
-                label2.Location = new System.Drawing.Point(273, 94);//y
+                label2.Location = new System.Drawing.Point(273, 80);//y
 
                 label3.Visible = true;
                 label3.Location = new System.Drawing.Point(275, -4);//.
-
-                label4.Visible = true;
-                label4.Location = new System.Drawing.Point(275, 64);//.
             }
             if ((checkBox1.Checked == true) && (checkBox2.Checked == false))//+
             {
@@ -71,13 +68,10 @@ namespace WindowsFormsApplication1
                 label1.Location = new System.Drawing.Point(273, 52);//x
 
                 label2.Visible = false;
-                label2.Location = new System.Drawing.Point(273, 71);//y
+                label2.Location = new System.Drawing.Point(273, 57);//y
 
                 label3.Visible = true;
                 label3.Location = new System.Drawing.Point(275, 22);//.
-
-                label4.Visible = false;
-                label4.Location = new System.Drawing.Point(280, 64);//.
             }
             if ((checkBox1.Checked == false) && (checkBox2.Checked == true))
             {
@@ -86,13 +80,10 @@ namespace WindowsFormsApplication1
                 label1.Location = new System.Drawing.Point(273, 26);//x
 
                 label2.Visible = true;
-                label2.Location = new System.Drawing.Point(273, 94);//y
+                label2.Location = new System.Drawing.Point(273, 80);//y
 
                 label3.Visible = true;
                 label3.Location = new System.Drawing.Point(275, -4);//.
-
-                label4.Visible = true;
-                label4.Location = new System.Drawing.Point(275, 64);//.
             }
             if ((checkBox1.Checked == false) && (checkBox2.Checked == false))//+
             {
@@ -101,13 +92,10 @@ namespace WindowsFormsApplication1
                 label1.Location = new System.Drawing.Point(273, 26);//x
 
                 label2.Visible = false;
-                label2.Location = new System.Drawing.Point(273, 94);//y
+                label2.Location = new System.Drawing.Point(273, 80);//y
 
                 label3.Visible = false;
                 label3.Location = new System.Drawing.Point(275, -4);//.
-
-                label4.Visible = false;
-                label4.Location = new System.Drawing.Point(275, 64);//.
             }
         }
 
@@ -120,13 +108,10 @@ namespace WindowsFormsApplication1
                 label1.Location = new System.Drawing.Point(273, 26);//x
 
                 label2.Visible = true;
-                label2.Location = new System.Drawing.Point(273, 94);//y
+                label2.Location = new System.Drawing.Point(273, 80);//y
 
                 label3.Visible = true;
                 label3.Location = new System.Drawing.Point(275, -4);//.
-
-                label4.Visible = true;
-                label4.Location = new System.Drawing.Point(275, 64);//.
             }
             if ((checkBox1.Checked == false) && (checkBox2.Checked == true))
             {
@@ -135,13 +120,10 @@ namespace WindowsFormsApplication1
                 label1.Location = new System.Drawing.Point(273, 26);//x
 
                 label2.Visible = true;
-                label2.Location = new System.Drawing.Point(273, 94);//y
+                label2.Location = new System.Drawing.Point(273, 80);//y
 
                 label3.Visible = true;
                 label3.Location = new System.Drawing.Point(275, -4);//.
-
-                label4.Visible = true;
-                label4.Location = new System.Drawing.Point(275, 64);//.
             }
             if ((checkBox1.Checked == true) && (checkBox2.Checked == false))//+
             {
@@ -150,13 +132,10 @@ namespace WindowsFormsApplication1
                 label1.Location = new System.Drawing.Point(273, 52);//x
 
                 label2.Visible = false;
-                label2.Location = new System.Drawing.Point(273, 71);//y
+                label2.Location = new System.Drawing.Point(273, 57);//y
 
                 label3.Visible = true;
                 label3.Location = new System.Drawing.Point(275, 22);//.
-
-                label4.Visible = false;
-                label4.Location = new System.Drawing.Point(280, 64);//.
             }
             if ((checkBox1.Checked == false) && (checkBox2.Checked == false))//+
             {
@@ -165,16 +144,11 @@ namespace WindowsFormsApplication1
                 label1.Location = new System.Drawing.Point(273, 26);//x
 
                 label2.Visible = false;
-                label2.Location = new System.Drawing.Point(273, 94);//y
+                label2.Location = new System.Drawing.Point(273, 57);//y
 
                 label3.Visible = false;
                 label3.Location = new System.Drawing.Point(275, -4);//.
-
-                label4.Visible = false;
-                label4.Location = new System.Drawing.Point(275, 64);//.
             }
-
         }
-
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAB));
             this.Back = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -90,6 +91,7 @@
             this.A3 = new System.Windows.Forms.TextBox();
             this.A2 = new System.Windows.Forms.TextBox();
             this.A1 = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +104,7 @@
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(25, 27);
             this.Back.TabIndex = 174;
+            this.toolTip1.SetToolTip(this.Back, "Возврат к выбору матриц");
             this.Back.UseVisualStyleBackColor = false;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
@@ -622,6 +625,11 @@
             this.A1.Size = new System.Drawing.Size(400, 23);
             this.A1.TabIndex = 321;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Подсказка";
+            // 
             // FormAB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -759,5 +767,6 @@
         private System.Windows.Forms.TextBox A3;
         private System.Windows.Forms.TextBox A2;
         private System.Windows.Forms.TextBox A1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

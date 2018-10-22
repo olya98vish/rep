@@ -35,7 +35,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,7 +43,7 @@
             this.Head.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Head.CausesValidation = false;
             this.Head.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Head.Location = new System.Drawing.Point(12, 9);
+            this.Head.Location = new System.Drawing.Point(12, 13);
             this.Head.Name = "Head";
             this.Head.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Head.Size = new System.Drawing.Size(240, 55);
@@ -110,23 +109,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(273, 94);
+            this.label2.Location = new System.Drawing.Point(273, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 32);
             this.label2.TabIndex = 221;
             this.label2.Text = "y = Cx";
             this.label2.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(275, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 32);
-            this.label4.TabIndex = 222;
-            this.label4.Text = ".";
-            this.label4.Visible = false;
             // 
             // label3
             // 
@@ -145,7 +133,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 139);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
@@ -153,8 +140,10 @@
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Head);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(468, 178);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(468, 178);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -174,7 +163,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
     }
 }
