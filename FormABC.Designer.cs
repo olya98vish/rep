@@ -115,6 +115,12 @@
             this.C2 = new System.Windows.Forms.TextBox();
             this.C1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label16 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
@@ -506,6 +512,7 @@
             this.A1.Name = "A1";
             this.A1.Size = new System.Drawing.Size(400, 23);
             this.A1.TabIndex = 232;
+            this.toolTip1.SetToolTip(this.A1, "Ввод матрицы построчно");
             this.A1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A1_KeyDown);
             this.A1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A1_KeyPress);
             // 
@@ -528,6 +535,7 @@
             this.A2.Name = "A2";
             this.A2.Size = new System.Drawing.Size(400, 23);
             this.A2.TabIndex = 274;
+            this.toolTip1.SetToolTip(this.A2, "Ввод матрицы построчно");
             this.A2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A2_KeyDown);
             this.A2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A2_KeyPress);
             // 
@@ -538,6 +546,7 @@
             this.A3.Name = "A3";
             this.A3.Size = new System.Drawing.Size(400, 23);
             this.A3.TabIndex = 275;
+            this.toolTip1.SetToolTip(this.A3, "Ввод матрицы построчно");
             this.A3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A3_KeyDown);
             this.A3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A3_KeyPress);
             // 
@@ -548,6 +557,7 @@
             this.A6.Name = "A6";
             this.A6.Size = new System.Drawing.Size(400, 23);
             this.A6.TabIndex = 278;
+            this.toolTip1.SetToolTip(this.A6, "Ввод матрицы построчно");
             this.A6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A6_KeyDown);
             this.A6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A6_KeyPress);
             // 
@@ -558,6 +568,7 @@
             this.A5.Name = "A5";
             this.A5.Size = new System.Drawing.Size(400, 23);
             this.A5.TabIndex = 277;
+            this.toolTip1.SetToolTip(this.A5, "Ввод матрицы построчно");
             this.A5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A5_KeyDown);
             this.A5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A5_KeyPress);
             // 
@@ -568,6 +579,7 @@
             this.A4.Name = "A4";
             this.A4.Size = new System.Drawing.Size(400, 23);
             this.A4.TabIndex = 276;
+            this.toolTip1.SetToolTip(this.A4, "Ввод матрицы построчно");
             this.A4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A4_KeyDown);
             this.A4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A4_KeyPress);
             // 
@@ -578,6 +590,7 @@
             this.A12.Name = "A12";
             this.A12.Size = new System.Drawing.Size(400, 23);
             this.A12.TabIndex = 284;
+            this.toolTip1.SetToolTip(this.A12, "Ввод матрицы построчно");
             this.A12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A12_KeyDown);
             this.A12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A12_KeyPress);
             // 
@@ -588,6 +601,7 @@
             this.A11.Name = "A11";
             this.A11.Size = new System.Drawing.Size(400, 23);
             this.A11.TabIndex = 283;
+            this.toolTip1.SetToolTip(this.A11, "Ввод матрицы построчно");
             this.A11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A11_KeyDown);
             this.A11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A11_KeyPress);
             // 
@@ -598,6 +612,7 @@
             this.A10.Name = "A10";
             this.A10.Size = new System.Drawing.Size(400, 23);
             this.A10.TabIndex = 282;
+            this.toolTip1.SetToolTip(this.A10, "Ввод матрицы построчно");
             this.A10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A10_KeyDown);
             this.A10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A10_KeyPress);
             // 
@@ -608,6 +623,7 @@
             this.A9.Name = "A9";
             this.A9.Size = new System.Drawing.Size(400, 23);
             this.A9.TabIndex = 281;
+            this.toolTip1.SetToolTip(this.A9, "Ввод матрицы построчно");
             this.A9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A9_KeyDown);
             this.A9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A9_KeyPress);
             // 
@@ -618,6 +634,7 @@
             this.A8.Name = "A8";
             this.A8.Size = new System.Drawing.Size(400, 23);
             this.A8.TabIndex = 280;
+            this.toolTip1.SetToolTip(this.A8, "Ввод матрицы построчно");
             this.A8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A8_KeyDown);
             this.A8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A8_KeyPress);
             // 
@@ -628,6 +645,7 @@
             this.A7.Name = "A7";
             this.A7.Size = new System.Drawing.Size(400, 23);
             this.A7.TabIndex = 279;
+            this.toolTip1.SetToolTip(this.A7, "Ввод матрицы построчно");
             this.A7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A7_KeyDown);
             this.A7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A7_KeyPress);
             // 
@@ -638,6 +656,7 @@
             this.A15.Name = "A15";
             this.A15.Size = new System.Drawing.Size(400, 23);
             this.A15.TabIndex = 287;
+            this.toolTip1.SetToolTip(this.A15, "Ввод матрицы построчно");
             this.A15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A15_KeyDown);
             this.A15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A15_KeyPress);
             // 
@@ -648,6 +667,7 @@
             this.A14.Name = "A14";
             this.A14.Size = new System.Drawing.Size(400, 23);
             this.A14.TabIndex = 286;
+            this.toolTip1.SetToolTip(this.A14, "Ввод матрицы построчно");
             this.A14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A14_KeyDown);
             this.A14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A14_KeyPress);
             // 
@@ -658,6 +678,7 @@
             this.A13.Name = "A13";
             this.A13.Size = new System.Drawing.Size(400, 23);
             this.A13.TabIndex = 285;
+            this.toolTip1.SetToolTip(this.A13, "Ввод матрицы построчно");
             this.A13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A13_KeyDown);
             this.A13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A13_KeyPress);
             // 
@@ -668,6 +689,7 @@
             this.B15.Name = "B15";
             this.B15.Size = new System.Drawing.Size(400, 23);
             this.B15.TabIndex = 302;
+            this.toolTip1.SetToolTip(this.B15, "Ввод матрицы построчно");
             this.B15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B15_KeyDown);
             this.B15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B15_KeyPress);
             // 
@@ -678,6 +700,7 @@
             this.B14.Name = "B14";
             this.B14.Size = new System.Drawing.Size(400, 23);
             this.B14.TabIndex = 301;
+            this.toolTip1.SetToolTip(this.B14, "Ввод матрицы построчно");
             this.B14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B14_KeyDown);
             this.B14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B14_KeyPress);
             // 
@@ -688,6 +711,7 @@
             this.B13.Name = "B13";
             this.B13.Size = new System.Drawing.Size(400, 23);
             this.B13.TabIndex = 300;
+            this.toolTip1.SetToolTip(this.B13, "Ввод матрицы построчно");
             this.B13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B13_KeyDown);
             this.B13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B13_KeyPress);
             // 
@@ -698,6 +722,7 @@
             this.B12.Name = "B12";
             this.B12.Size = new System.Drawing.Size(400, 23);
             this.B12.TabIndex = 299;
+            this.toolTip1.SetToolTip(this.B12, "Ввод матрицы построчно");
             this.B12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B12_KeyDown);
             this.B12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B12_KeyPress);
             // 
@@ -708,6 +733,7 @@
             this.B11.Name = "B11";
             this.B11.Size = new System.Drawing.Size(400, 23);
             this.B11.TabIndex = 298;
+            this.toolTip1.SetToolTip(this.B11, "Ввод матрицы построчно");
             this.B11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B11_KeyDown);
             this.B11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B11_KeyPress);
             // 
@@ -718,6 +744,7 @@
             this.B10.Name = "B10";
             this.B10.Size = new System.Drawing.Size(400, 23);
             this.B10.TabIndex = 297;
+            this.toolTip1.SetToolTip(this.B10, "Ввод матрицы построчно");
             this.B10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B10_KeyDown);
             this.B10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B10_KeyPress);
             // 
@@ -728,6 +755,7 @@
             this.B9.Name = "B9";
             this.B9.Size = new System.Drawing.Size(400, 23);
             this.B9.TabIndex = 296;
+            this.toolTip1.SetToolTip(this.B9, "Ввод матрицы построчно");
             this.B9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B9_KeyDown);
             this.B9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B9_KeyPress);
             // 
@@ -738,6 +766,7 @@
             this.B8.Name = "B8";
             this.B8.Size = new System.Drawing.Size(400, 23);
             this.B8.TabIndex = 295;
+            this.toolTip1.SetToolTip(this.B8, "Ввод матрицы построчно");
             this.B8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B8_KeyDown);
             this.B8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B8_KeyPress);
             // 
@@ -748,6 +777,7 @@
             this.B7.Name = "B7";
             this.B7.Size = new System.Drawing.Size(400, 23);
             this.B7.TabIndex = 294;
+            this.toolTip1.SetToolTip(this.B7, "Ввод матрицы построчно");
             this.B7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B7_KeyDown);
             this.B7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B7_KeyPress);
             // 
@@ -758,6 +788,7 @@
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(400, 23);
             this.B6.TabIndex = 293;
+            this.toolTip1.SetToolTip(this.B6, "Ввод матрицы построчно");
             this.B6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B6_KeyDown);
             this.B6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B6_KeyPress);
             // 
@@ -768,6 +799,7 @@
             this.B5.Name = "B5";
             this.B5.Size = new System.Drawing.Size(400, 23);
             this.B5.TabIndex = 292;
+            this.toolTip1.SetToolTip(this.B5, "Ввод матрицы построчно");
             this.B5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B5_KeyDown);
             this.B5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B5_KeyPress);
             // 
@@ -778,6 +810,7 @@
             this.B4.Name = "B4";
             this.B4.Size = new System.Drawing.Size(400, 23);
             this.B4.TabIndex = 291;
+            this.toolTip1.SetToolTip(this.B4, "Ввод матрицы построчно");
             this.B4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B4_KeyDown);
             this.B4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B4_KeyPress);
             // 
@@ -788,6 +821,7 @@
             this.B3.Name = "B3";
             this.B3.Size = new System.Drawing.Size(400, 23);
             this.B3.TabIndex = 290;
+            this.toolTip1.SetToolTip(this.B3, "Ввод матрицы построчно");
             this.B3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B3_KeyDown);
             this.B3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B3_KeyPress);
             // 
@@ -798,6 +832,7 @@
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(400, 23);
             this.B2.TabIndex = 289;
+            this.toolTip1.SetToolTip(this.B2, "Ввод матрицы построчно");
             this.B2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B2_KeyDown);
             this.B2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B2_KeyPress);
             // 
@@ -808,6 +843,7 @@
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(400, 23);
             this.B1.TabIndex = 288;
+            this.toolTip1.SetToolTip(this.B1, "Ввод матрицы построчно");
             this.B1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B1_KeyDown);
             this.B1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B1_KeyPress);
             // 
@@ -818,6 +854,7 @@
             this.C15.Name = "C15";
             this.C15.Size = new System.Drawing.Size(400, 23);
             this.C15.TabIndex = 317;
+            this.toolTip1.SetToolTip(this.C15, "Ввод матрицы построчно");
             this.C15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C15_KeyDown);
             this.C15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C15_KeyPress);
             // 
@@ -828,6 +865,7 @@
             this.C14.Name = "C14";
             this.C14.Size = new System.Drawing.Size(400, 23);
             this.C14.TabIndex = 316;
+            this.toolTip1.SetToolTip(this.C14, "Ввод матрицы построчно");
             this.C14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C14_KeyDown);
             this.C14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C14_KeyPress);
             // 
@@ -838,6 +876,7 @@
             this.C13.Name = "C13";
             this.C13.Size = new System.Drawing.Size(400, 23);
             this.C13.TabIndex = 315;
+            this.toolTip1.SetToolTip(this.C13, "Ввод матрицы построчно");
             this.C13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C13_KeyDown);
             this.C13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C13_KeyPress);
             // 
@@ -848,6 +887,7 @@
             this.C12.Name = "C12";
             this.C12.Size = new System.Drawing.Size(400, 23);
             this.C12.TabIndex = 314;
+            this.toolTip1.SetToolTip(this.C12, "Ввод матрицы построчно");
             this.C12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C12_KeyDown);
             this.C12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C12_KeyPress);
             // 
@@ -858,6 +898,7 @@
             this.C11.Name = "C11";
             this.C11.Size = new System.Drawing.Size(400, 23);
             this.C11.TabIndex = 313;
+            this.toolTip1.SetToolTip(this.C11, "Ввод матрицы построчно");
             this.C11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C11_KeyDown);
             this.C11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C11_KeyPress);
             // 
@@ -868,6 +909,7 @@
             this.C10.Name = "C10";
             this.C10.Size = new System.Drawing.Size(400, 23);
             this.C10.TabIndex = 312;
+            this.toolTip1.SetToolTip(this.C10, "Ввод матрицы построчно");
             this.C10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C10_KeyDown);
             this.C10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C10_KeyPress);
             // 
@@ -878,6 +920,7 @@
             this.C9.Name = "C9";
             this.C9.Size = new System.Drawing.Size(400, 23);
             this.C9.TabIndex = 311;
+            this.toolTip1.SetToolTip(this.C9, "Ввод матрицы построчно");
             this.C9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C9_KeyDown);
             this.C9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C9_KeyPress);
             // 
@@ -888,6 +931,7 @@
             this.C8.Name = "C8";
             this.C8.Size = new System.Drawing.Size(400, 23);
             this.C8.TabIndex = 310;
+            this.toolTip1.SetToolTip(this.C8, "Ввод матрицы построчно");
             this.C8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C8_KeyDown);
             this.C8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C8_KeyPress);
             // 
@@ -898,6 +942,7 @@
             this.C7.Name = "C7";
             this.C7.Size = new System.Drawing.Size(400, 23);
             this.C7.TabIndex = 309;
+            this.toolTip1.SetToolTip(this.C7, "Ввод матрицы построчно");
             this.C7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C7_KeyDown);
             this.C7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C7_KeyPress);
             // 
@@ -908,6 +953,7 @@
             this.C6.Name = "C6";
             this.C6.Size = new System.Drawing.Size(400, 23);
             this.C6.TabIndex = 308;
+            this.toolTip1.SetToolTip(this.C6, "Ввод матрицы построчно");
             this.C6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C6_KeyDown);
             this.C6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C6_KeyPress);
             // 
@@ -918,6 +964,7 @@
             this.C5.Name = "C5";
             this.C5.Size = new System.Drawing.Size(400, 23);
             this.C5.TabIndex = 307;
+            this.toolTip1.SetToolTip(this.C5, "Ввод матрицы построчно");
             this.C5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C5_KeyDown);
             this.C5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C5_KeyPress);
             // 
@@ -928,6 +975,7 @@
             this.C4.Name = "C4";
             this.C4.Size = new System.Drawing.Size(400, 23);
             this.C4.TabIndex = 306;
+            this.toolTip1.SetToolTip(this.C4, "Ввод матрицы построчно");
             this.C4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C4_KeyDown);
             this.C4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C4_KeyPress);
             // 
@@ -938,6 +986,7 @@
             this.C3.Name = "C3";
             this.C3.Size = new System.Drawing.Size(400, 23);
             this.C3.TabIndex = 305;
+            this.toolTip1.SetToolTip(this.C3, "Ввод матрицы построчно");
             this.C3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C3_KeyDown);
             this.C3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C3_KeyPress);
             // 
@@ -948,6 +997,7 @@
             this.C2.Name = "C2";
             this.C2.Size = new System.Drawing.Size(400, 23);
             this.C2.TabIndex = 304;
+            this.toolTip1.SetToolTip(this.C2, "Ввод матрицы построчно");
             this.C2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C2_KeyDown);
             this.C2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C2_KeyPress);
             // 
@@ -958,6 +1008,7 @@
             this.C1.Name = "C1";
             this.C1.Size = new System.Drawing.Size(400, 23);
             this.C1.TabIndex = 303;
+            this.toolTip1.SetToolTip(this.C1, "Ввод матрицы построчно");
             this.C1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C1_KeyDown);
             this.C1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C1_KeyPress);
             // 
@@ -966,6 +1017,70 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Подсказка";
             // 
+            // label16
+            // 
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.Location = new System.Drawing.Point(823, 63);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(515, 3);
+            this.label16.TabIndex = 318;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox1.Location = new System.Drawing.Point(823, 9);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(232, 25);
+            this.checkBox1.TabIndex = 319;
+            this.checkBox1.Text = "Матрица управляемости - U";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox2.Location = new System.Drawing.Point(823, 35);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(243, 25);
+            this.checkBox2.TabIndex = 320;
+            this.checkBox2.Text = "Матрица наблюдаемости  - N";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox3.Location = new System.Drawing.Point(1077, 35);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(146, 25);
+            this.checkBox3.TabIndex = 321;
+            this.checkBox3.Text = "Ранг матрицы N";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox4.Location = new System.Drawing.Point(1078, 9);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(145, 25);
+            this.checkBox4.TabIndex = 322;
+            this.checkBox4.Text = "Ранг матрицы U";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(1243, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(68, 48);
+            this.button1.TabIndex = 323;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // FormABC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -973,6 +1088,12 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1361, 706);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.C15);
             this.Controls.Add(this.C14);
             this.Controls.Add(this.C13);
@@ -1155,6 +1276,12 @@
         private System.Windows.Forms.TextBox C2;
         private System.Windows.Forms.TextBox C1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Button button1;
     }
 }
 

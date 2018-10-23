@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        if (Convert.ToInt32(B.Rows[i].Cells[j].Value) == 0)
                         //if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
                         {
                             B.Rows[i].Cells[j].Value = 0;
@@ -98,7 +98,7 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        if (Convert.ToInt32(C.Rows[i].Cells[j].Value) == 0)
                         //if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
                         {
                             C.Rows[i].Cells[j].Value = 0;
@@ -1480,14 +1480,14 @@ namespace WindowsFormsApplication1
                     this.Controls["C" + i.ToString()].Enabled = false;
                 }
 
-                take_data_from_matrix("С", C.RowCount, C.ColumnCount);
+                take_data_from_matrix("C", C.RowCount, C.ColumnCount);
 
                 int strС = 0;
                 int stlbС = 0;
                 strС = Convert.ToInt32(с_stroki.Text);
                 stlbС = Convert.ToInt32(с_stolbci.Text);
 
-                output_data("С", strС, stlbС);
+                output_data("C", strС, stlbС);
 
                 button9.Text = "Изменить";
                 button10.Text = "Изменить";
@@ -1529,7 +1529,7 @@ namespace WindowsFormsApplication1
                 //текстбоксы недоступны для пользователя
                 for (int i = 1; i < 16; i++)
                 {
-                    this.Controls["С" + i.ToString()].Enabled = false;
+                    this.Controls["C" + i.ToString()].Enabled = false;
                 }
 
                 int strС = 0;
@@ -1537,9 +1537,9 @@ namespace WindowsFormsApplication1
                 strС = Convert.ToInt32(с_stroki.Text);
                 stlbС = Convert.ToInt32(с_stolbci.Text);
 
-                take_data_from_textbox("С", strС, stlbС);//взяли данные из текстбокса
+                take_data_from_textbox("C", strС, stlbС);//взяли данные из текстбокса
 
-                output_data("С", strС, stlbС);//выведем из памяти в датагрид и текстбоксы
+                output_data("C", strС, stlbС);//выведем из памяти в датагрид и текстбоксы
 
                 button9.Text = "Изменить";
                 button10.Text = "Изменить";
@@ -1569,7 +1569,7 @@ namespace WindowsFormsApplication1
                 {
                     for (int j = 0; j < stlbС; j++)
                     {
-                        this.Controls["С" + (i + 1).ToString()].Enabled = true;
+                        this.Controls["C" + (i + 1).ToString()].Enabled = true;
                     }
                 }
 
@@ -1893,5 +1893,47 @@ namespace WindowsFormsApplication1
                 e.Handled = true;
         }
         #endregion
+
+        private void button1_Click_1(object sender, EventArgs e)//ПРОДУМАТЬ ВСЕ ВАРИАНТЫ!!!
+        {
+            if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            {//все отмечено галочкой
+                //вывод обеих матриц и их рангов
+            }
+            else if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
+            {//все кроме ранга управл
+                //
+            }
+            else if ((checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && (checkBox4.Checked))
+            {//все кроме ранга набл
+                //
+            }
+            else if ((checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            {//ошибка
+                MessageBox.Show("Нельзя вывести ранг матрицы, не выведя саму матрицу!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if ((checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
+            {//ошибка
+                MessageBox.Show("Нельзя вывести ранг матрицы, не выведя саму матрицу!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!(checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && (checkBox4.Checked))
+            {
+                //
+            }
+            else if (!(checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            {
+                //
+            }
+            else if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            {
+                //
+            }
+
+            else
+            {
+                MessageBox.Show("Хотя бы одна позиция должна быть выбрана!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
     }
 }
