@@ -61,8 +61,8 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        //if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
-                        if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
+                        if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        //if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
                         {
                             A.Rows[i].Cells[j].Value = 0;
                         }
@@ -79,13 +79,15 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        //if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
-                        if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
+                        if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        //if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
                         {
                             B.Rows[i].Cells[j].Value = 0;
                         }
 
-                        masB[i, j] = Convert.ToDouble(B.Rows[i].Cells[j].Value.ToString());
+                        string ss = B.Rows[i].Cells[j].Value.ToString();
+                        double tmp = Convert.ToDouble(ss);
+                        masB[i, j] = tmp;
                     }
                 }
             }
@@ -96,15 +98,17 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        //if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
-                        if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
+                        if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        //if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
                         {
                             C.Rows[i].Cells[j].Value = 0;
                         }
 
-                        masC[i, j] = Convert.ToDouble(C.Rows[i].Cells[j].Value.ToString());
+                        string ss = C.Rows[i].Cells[j].Value.ToString();
+                        double tmp = Convert.ToDouble(ss);
+                        masC[i, j] = tmp;
                     }
-               }
+                }
             }
         }
 
@@ -1473,7 +1477,7 @@ namespace WindowsFormsApplication1
                 //текстбоксы недоступны для пользователя
                 for (int i = 1; i < 16; i++)
                 {
-                    this.Controls["С" + i.ToString()].Enabled = false;
+                    this.Controls["C" + i.ToString()].Enabled = false;
                 }
 
                 take_data_from_matrix("С", C.RowCount, C.ColumnCount);
