@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1
             button10.Enabled = false;
             button9.Enabled = false;
         }
-
+        #region
         private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
         {
             if (datagrid == "A")
@@ -254,6 +254,7 @@ namespace WindowsFormsApplication1
                 }
             }
         }
+#endregion//тут лежат функции взятия и вывода данных
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -1934,6 +1935,5 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Хотя бы одна позиция должна быть выбрана!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
     }
 }

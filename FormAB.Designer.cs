@@ -92,6 +92,12 @@
             this.A2 = new System.Windows.Forms.TextBox();
             this.A1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
             this.SuspendLayout();
@@ -116,8 +122,9 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 29);
             this.button7.TabIndex = 173;
-            this.button7.Text = "Изменить";
+            this.button7.Text = "OK";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -127,8 +134,9 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 29);
             this.button6.TabIndex = 172;
-            this.button6.Text = "Изменить";
+            this.button6.Text = "OK";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -138,8 +146,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 29);
             this.button5.TabIndex = 166;
-            this.button5.Text = "Изменить";
+            this.button5.Text = "OK";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -149,8 +158,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 29);
             this.button4.TabIndex = 165;
-            this.button4.Text = "Изменить";
+            this.button4.Text = "OK";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label10
             // 
@@ -359,7 +369,6 @@
             this.dataGridViewTextBoxColumn4});
             this.B.Location = new System.Drawing.Point(2, 484);
             this.B.Name = "B";
-            this.B.ReadOnly = true;
             this.B.RowHeadersVisible = false;
             this.B.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.B.Size = new System.Drawing.Size(401, 360);
@@ -368,22 +377,18 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // B15
             // 
@@ -392,6 +397,8 @@
             this.B15.Name = "B15";
             this.B15.Size = new System.Drawing.Size(400, 23);
             this.B15.TabIndex = 320;
+            this.B15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B15_KeyDown);
+            this.B15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B15_KeyPress);
             // 
             // B14
             // 
@@ -400,6 +407,8 @@
             this.B14.Name = "B14";
             this.B14.Size = new System.Drawing.Size(400, 23);
             this.B14.TabIndex = 319;
+            this.B14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B14_KeyDown);
+            this.B14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B14_KeyPress);
             // 
             // B13
             // 
@@ -408,6 +417,8 @@
             this.B13.Name = "B13";
             this.B13.Size = new System.Drawing.Size(400, 23);
             this.B13.TabIndex = 318;
+            this.B13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B13_KeyDown);
+            this.B13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B13_KeyPress);
             // 
             // B12
             // 
@@ -416,6 +427,8 @@
             this.B12.Name = "B12";
             this.B12.Size = new System.Drawing.Size(400, 23);
             this.B12.TabIndex = 317;
+            this.B12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B12_KeyDown);
+            this.B12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B12_KeyPress);
             // 
             // B11
             // 
@@ -424,6 +437,8 @@
             this.B11.Name = "B11";
             this.B11.Size = new System.Drawing.Size(400, 23);
             this.B11.TabIndex = 316;
+            this.B11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B11_KeyDown);
+            this.B11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B11_KeyPress);
             // 
             // B10
             // 
@@ -432,6 +447,8 @@
             this.B10.Name = "B10";
             this.B10.Size = new System.Drawing.Size(400, 23);
             this.B10.TabIndex = 315;
+            this.B10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B10_KeyDown);
+            this.B10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B10_KeyPress);
             // 
             // B9
             // 
@@ -440,6 +457,8 @@
             this.B9.Name = "B9";
             this.B9.Size = new System.Drawing.Size(400, 23);
             this.B9.TabIndex = 314;
+            this.B9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B9_KeyDown);
+            this.B9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B9_KeyPress);
             // 
             // B8
             // 
@@ -448,6 +467,8 @@
             this.B8.Name = "B8";
             this.B8.Size = new System.Drawing.Size(400, 23);
             this.B8.TabIndex = 313;
+            this.B8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B8_KeyDown);
+            this.B8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B8_KeyPress);
             // 
             // B7
             // 
@@ -456,6 +477,8 @@
             this.B7.Name = "B7";
             this.B7.Size = new System.Drawing.Size(400, 23);
             this.B7.TabIndex = 312;
+            this.B7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B7_KeyDown);
+            this.B7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B7_KeyPress);
             // 
             // B6
             // 
@@ -464,6 +487,8 @@
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(400, 23);
             this.B6.TabIndex = 311;
+            this.B6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B6_KeyDown);
+            this.B6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B6_KeyPress);
             // 
             // B5
             // 
@@ -472,6 +497,8 @@
             this.B5.Name = "B5";
             this.B5.Size = new System.Drawing.Size(400, 23);
             this.B5.TabIndex = 310;
+            this.B5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B5_KeyDown);
+            this.B5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B5_KeyPress);
             // 
             // B4
             // 
@@ -480,6 +507,8 @@
             this.B4.Name = "B4";
             this.B4.Size = new System.Drawing.Size(400, 23);
             this.B4.TabIndex = 309;
+            this.B4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B4_KeyDown);
+            this.B4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B4_KeyPress);
             // 
             // B3
             // 
@@ -488,6 +517,8 @@
             this.B3.Name = "B3";
             this.B3.Size = new System.Drawing.Size(400, 23);
             this.B3.TabIndex = 308;
+            this.B3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B3_KeyDown);
+            this.B3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B3_KeyPress);
             // 
             // B2
             // 
@@ -496,6 +527,8 @@
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(400, 23);
             this.B2.TabIndex = 307;
+            this.B2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B2_KeyDown);
+            this.B2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B2_KeyPress);
             // 
             // B1
             // 
@@ -504,6 +537,8 @@
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(400, 23);
             this.B1.TabIndex = 306;
+            this.B1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B1_KeyDown);
+            this.B1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B1_KeyPress);
             // 
             // A15
             // 
@@ -512,6 +547,8 @@
             this.A15.Name = "A15";
             this.A15.Size = new System.Drawing.Size(400, 23);
             this.A15.TabIndex = 335;
+            this.A15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A15_KeyDown);
+            this.A15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A15_KeyPress);
             // 
             // A14
             // 
@@ -520,6 +557,8 @@
             this.A14.Name = "A14";
             this.A14.Size = new System.Drawing.Size(400, 23);
             this.A14.TabIndex = 334;
+            this.A14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A14_KeyDown);
+            this.A14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A14_KeyPress);
             // 
             // A13
             // 
@@ -528,6 +567,8 @@
             this.A13.Name = "A13";
             this.A13.Size = new System.Drawing.Size(400, 23);
             this.A13.TabIndex = 333;
+            this.A13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A13_KeyDown);
+            this.A13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A13_KeyPress);
             // 
             // A12
             // 
@@ -536,6 +577,8 @@
             this.A12.Name = "A12";
             this.A12.Size = new System.Drawing.Size(400, 23);
             this.A12.TabIndex = 332;
+            this.A12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A12_KeyDown);
+            this.A12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A12_KeyPress);
             // 
             // A11
             // 
@@ -544,6 +587,8 @@
             this.A11.Name = "A11";
             this.A11.Size = new System.Drawing.Size(400, 23);
             this.A11.TabIndex = 331;
+            this.A11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A11_KeyDown);
+            this.A11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A11_KeyPress);
             // 
             // A10
             // 
@@ -552,6 +597,8 @@
             this.A10.Name = "A10";
             this.A10.Size = new System.Drawing.Size(400, 23);
             this.A10.TabIndex = 330;
+            this.A10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A10_KeyDown);
+            this.A10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A10_KeyPress);
             // 
             // A9
             // 
@@ -560,6 +607,8 @@
             this.A9.Name = "A9";
             this.A9.Size = new System.Drawing.Size(400, 23);
             this.A9.TabIndex = 329;
+            this.A9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A9_KeyDown);
+            this.A9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A9_KeyPress);
             // 
             // A8
             // 
@@ -568,6 +617,8 @@
             this.A8.Name = "A8";
             this.A8.Size = new System.Drawing.Size(400, 23);
             this.A8.TabIndex = 328;
+            this.A8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A8_KeyDown);
+            this.A8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A8_KeyPress);
             // 
             // A7
             // 
@@ -576,6 +627,8 @@
             this.A7.Name = "A7";
             this.A7.Size = new System.Drawing.Size(400, 23);
             this.A7.TabIndex = 327;
+            this.A7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A7_KeyDown);
+            this.A7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A7_KeyPress);
             // 
             // A6
             // 
@@ -584,6 +637,8 @@
             this.A6.Name = "A6";
             this.A6.Size = new System.Drawing.Size(400, 23);
             this.A6.TabIndex = 326;
+            this.A6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A6_KeyDown);
+            this.A6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A6_KeyPress);
             // 
             // A5
             // 
@@ -592,6 +647,8 @@
             this.A5.Name = "A5";
             this.A5.Size = new System.Drawing.Size(400, 23);
             this.A5.TabIndex = 325;
+            this.A5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A5_KeyDown);
+            this.A5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A5_KeyPress);
             // 
             // A4
             // 
@@ -600,6 +657,8 @@
             this.A4.Name = "A4";
             this.A4.Size = new System.Drawing.Size(400, 23);
             this.A4.TabIndex = 324;
+            this.A4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A4_KeyDown);
+            this.A4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A4_KeyPress);
             // 
             // A3
             // 
@@ -608,6 +667,8 @@
             this.A3.Name = "A3";
             this.A3.Size = new System.Drawing.Size(400, 23);
             this.A3.TabIndex = 323;
+            this.A3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A3_KeyDown);
+            this.A3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A3_KeyPress);
             // 
             // A2
             // 
@@ -616,6 +677,8 @@
             this.A2.Name = "A2";
             this.A2.Size = new System.Drawing.Size(400, 23);
             this.A2.TabIndex = 322;
+            this.A2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A2_KeyDown);
+            this.A2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A2_KeyPress);
             // 
             // A1
             // 
@@ -624,11 +687,76 @@
             this.A1.Name = "A1";
             this.A1.Size = new System.Drawing.Size(400, 23);
             this.A1.TabIndex = 321;
+            this.A1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A1_KeyDown);
+            this.A1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A1_KeyPress);
             // 
             // toolTip1
             // 
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Подсказка";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(1243, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(68, 48);
+            this.button1.TabIndex = 341;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox4.Location = new System.Drawing.Point(1076, 6);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(145, 25);
+            this.checkBox4.TabIndex = 340;
+            this.checkBox4.Text = "Ранг матрицы U";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox3.Location = new System.Drawing.Point(1076, 38);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(146, 25);
+            this.checkBox3.TabIndex = 339;
+            this.checkBox3.Text = "Ранг матрицы N";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox2.Location = new System.Drawing.Point(823, 38);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(243, 25);
+            this.checkBox2.TabIndex = 338;
+            this.checkBox2.Text = "Матрица наблюдаемости  - N";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox1.Location = new System.Drawing.Point(823, 9);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(232, 25);
+            this.checkBox1.TabIndex = 337;
+            this.checkBox1.Text = "Матрица управляемости - U";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.Location = new System.Drawing.Point(823, 63);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(515, 3);
+            this.label16.TabIndex = 336;
             // 
             // FormAB
             // 
@@ -637,6 +765,12 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1344, 718);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.A15);
             this.Controls.Add(this.A14);
             this.Controls.Add(this.A13);
@@ -768,5 +902,11 @@
         private System.Windows.Forms.TextBox A2;
         private System.Windows.Forms.TextBox A1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label16;
     }
 }
