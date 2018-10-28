@@ -14,8 +14,6 @@ namespace WindowsFormsApplication1
         //иницилизация глобальных переменных
         double[,] masA;//массив данных из datagrid A
         double[,] masB;//массив данных из datagrid B
-        double[,] masC;//массив данных из datagrid C
-
 
         public FormAB()
         {
@@ -31,6 +29,8 @@ namespace WindowsFormsApplication1
 
         private void FormAB_Load(object sender, EventArgs e)
         {
+            button1.Enabled = false;
+            button1.Visible = false;
             button4.Enabled = false;
             button5.Enabled = false;
             button6.Enabled = false;
@@ -179,6 +179,18 @@ namespace WindowsFormsApplication1
                         else
                             this.Controls["B" + (i + 1).ToString()].Text += masB[i, j].ToString();
                     }
+                }
+            }
+        }
+
+        void tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == ';')) && !((e.KeyChar == '(')) && !((e.KeyChar == ')')) && !((e.KeyChar == ','))) //&& !((e.KeyChar == '.'))
+            {
+                if (e.KeyChar != (char)Keys.Back)
+                {
+                    e.Handled = true;
                 }
             }
         }
@@ -418,7 +430,6 @@ namespace WindowsFormsApplication1
                 button4.Text = "OK";
                 button5.Text = "OK";
             }
-
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -1296,6 +1307,18 @@ namespace WindowsFormsApplication1
             {
                 e.Handled = true;
             }
+        }
+
+        private void A_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            TextBox tb = (TextBox)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(tb_KeyPress);
+        }
+
+        private void B_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            TextBox tb = (TextBox)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(tb_KeyPress);
         }
     }
 }

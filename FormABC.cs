@@ -20,7 +20,24 @@ namespace WindowsFormsApplication1
         public FormABC()
         {
             InitializeComponent();
-            //SetReadOnlyInTextBoxA();.
+
+            button1.Enabled = false;
+            button1.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
+            label17.Visible = false;
+            label18.Visible = false;
+            label19.Visible = false;
+            label20.Visible = false;
+            label21.Visible = false;
+            label22.Visible = false;
+            a_view.Visible = false;
+            b_view.Visible = false;
+            c_view.Visible = false;
+
+            //SetReadOnlyInTextBoxA();
         }
         //private void SetReadOnlyInTextBoxA(Control.ControlCollection control)
         //{
@@ -51,6 +68,7 @@ namespace WindowsFormsApplication1
             button10.Enabled = false;
             button9.Enabled = false;
         }
+        //функции для взятия данных в память и вывода
         #region
         private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
         {
@@ -615,6 +633,44 @@ namespace WindowsFormsApplication1
                 button4.Text = "OK";
                 button5.Text = "OK";
             }
+
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+                label17.Visible = true;
+                label18.Visible = true;
+                label19.Visible = true;
+                label20.Visible = true;
+                label21.Visible = true;
+                label22.Visible = true;
+                a_view.Visible = true;
+                b_view.Visible = true;
+                c_view.Visible = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+                label17.Visible = false;
+                label18.Visible = false;
+                label19.Visible = false;
+                label20.Visible = false;
+                label21.Visible = false;
+                label22.Visible = false;
+                a_view.Visible = false;
+                b_view.Visible = false;
+                c_view.Visible = false;
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -676,6 +732,44 @@ namespace WindowsFormsApplication1
 
                 button4.Text = "OK";
                 button5.Text = "OK";
+            }
+
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+                label17.Visible = true;
+                label18.Visible = true;
+                label19.Visible = true;
+                label20.Visible = true;
+                label21.Visible = true;
+                label22.Visible = true;
+                a_view.Visible = true;
+                b_view.Visible = true;
+                c_view.Visible = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+                label17.Visible = false;
+                label18.Visible = false;
+                label19.Visible = false;
+                label20.Visible = false;
+                label21.Visible = false;
+                label22.Visible = false;
+                a_view.Visible = false;
+                b_view.Visible = false;
+                c_view.Visible = false;
             }
         }
 
@@ -1084,6 +1178,44 @@ namespace WindowsFormsApplication1
                 button6.Text = "OK";
                 button7.Text = "OK";
             }
+
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+                label17.Visible = true;
+                label18.Visible = true;
+                label19.Visible = true;
+                label20.Visible = true;
+                label21.Visible = true;
+                label22.Visible = true;
+                a_view.Visible = true;
+                b_view.Visible = true;
+                c_view.Visible = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+                label17.Visible = false;
+                label18.Visible = false;
+                label19.Visible = false;
+                label20.Visible = false;
+                label21.Visible = false;
+                label22.Visible = false;
+                a_view.Visible = false;
+                b_view.Visible = false;
+                c_view.Visible = false;
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -1145,6 +1277,43 @@ namespace WindowsFormsApplication1
 
                 button6.Text = "OK";
                 button7.Text = "OK";
+            }
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+                label17.Visible = true;
+                label18.Visible = true;
+                label19.Visible = true;
+                label20.Visible = true;
+                label21.Visible = true;
+                label22.Visible = true;
+                a_view.Visible = true;
+                b_view.Visible = true;
+                c_view.Visible = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+                label17.Visible = false;
+                label18.Visible = false;
+                label19.Visible = false;
+                label20.Visible = false;
+                label21.Visible = false;
+                label22.Visible = false;
+                a_view.Visible = false;
+                b_view.Visible = false;
+                c_view.Visible = false;
             }
         }
         #region
@@ -1515,6 +1684,43 @@ namespace WindowsFormsApplication1
                 button9.Text = "OK";
                 button10.Text = "OK";
             }
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+                label17.Visible = true;
+                label18.Visible = true;
+                label19.Visible = true;
+                label20.Visible = true;
+                label21.Visible = true;
+                label22.Visible = true;
+                a_view.Visible = true;
+                b_view.Visible = true;
+                c_view.Visible = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+                label17.Visible = false;
+                label18.Visible = false;
+                label19.Visible = false;
+                label20.Visible = false;
+                label21.Visible = false;
+                label22.Visible = false;
+                a_view.Visible = false;
+                b_view.Visible = false;
+                c_view.Visible = false;
+            }
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -1576,6 +1782,43 @@ namespace WindowsFormsApplication1
 
                 button9.Text = "OK";
                 button10.Text = "OK";
+            }
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+                label17.Visible = true;
+                label18.Visible = true;
+                label19.Visible = true;
+                label20.Visible = true;
+                label21.Visible = true;
+                label22.Visible = true;
+                a_view.Visible = true;
+                b_view.Visible = true;
+                c_view.Visible = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+                label17.Visible = false;
+                label18.Visible = false;
+                label19.Visible = false;
+                label20.Visible = false;
+                label21.Visible = false;
+                label22.Visible = false;
+                a_view.Visible = false;
+                b_view.Visible = false;
+                c_view.Visible = false;
             }
         }
         #region
@@ -1937,3 +2180,4 @@ namespace WindowsFormsApplication1
         }
     }
 }
+

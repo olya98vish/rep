@@ -41,9 +41,9 @@
             this.buttonC = new System.Windows.Forms.Button();
             this.buttonA = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.c_stolbci = new System.Windows.Forms.TextBox();
+            this.с_stolbci = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.c_stroki = new System.Windows.Forms.TextBox();
+            this.с_stroki = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.a_stolbci = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -110,8 +110,9 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 29);
             this.button7.TabIndex = 103;
-            this.button7.Text = "Изменить";
+            this.button7.Text = "OK";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -121,8 +122,9 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 29);
             this.button6.TabIndex = 102;
-            this.button6.Text = "Изменить";
+            this.button6.Text = "OK";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -132,8 +134,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 29);
             this.button5.TabIndex = 91;
-            this.button5.Text = "Изменить";
+            this.button5.Text = "OK";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -143,8 +146,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 29);
             this.button4.TabIndex = 90;
-            this.button4.Text = "Изменить";
+            this.button4.Text = "OK";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label10
             // 
@@ -223,13 +227,13 @@
             this.label4.TabIndex = 82;
             this.label4.Text = "*";
             // 
-            // c_stolbci
+            // с_stolbci
             // 
-            this.c_stolbci.Location = new System.Drawing.Point(347, 458);
-            this.c_stolbci.Name = "c_stolbci";
-            this.c_stolbci.Size = new System.Drawing.Size(46, 20);
-            this.c_stolbci.TabIndex = 81;
-            this.c_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.с_stolbci.Location = new System.Drawing.Point(347, 458);
+            this.с_stolbci.Name = "с_stolbci";
+            this.с_stolbci.Size = new System.Drawing.Size(46, 20);
+            this.с_stolbci.TabIndex = 81;
+            this.с_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -241,13 +245,13 @@
             this.label5.TabIndex = 80;
             this.label5.Text = "Введите размерность матрицы C:";
             // 
-            // c_stroki
+            // с_stroki
             // 
-            this.c_stroki.Location = new System.Drawing.Point(272, 458);
-            this.c_stroki.Name = "c_stroki";
-            this.c_stroki.Size = new System.Drawing.Size(46, 20);
-            this.c_stroki.TabIndex = 79;
-            this.c_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.с_stroki.Location = new System.Drawing.Point(272, 458);
+            this.с_stroki.Name = "с_stroki";
+            this.с_stroki.Size = new System.Drawing.Size(46, 20);
+            this.с_stroki.TabIndex = 79;
+            this.с_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -331,6 +335,7 @@
             this.C.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.C.Size = new System.Drawing.Size(401, 360);
             this.C.TabIndex = 217;
+            this.C.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.C_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -359,6 +364,8 @@
             this.C15.Name = "C15";
             this.C15.Size = new System.Drawing.Size(400, 23);
             this.C15.TabIndex = 302;
+            this.C15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C15_KeyDown);
+            this.C15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C15_KeyPress);
             // 
             // C14
             // 
@@ -367,6 +374,8 @@
             this.C14.Name = "C14";
             this.C14.Size = new System.Drawing.Size(400, 23);
             this.C14.TabIndex = 301;
+            this.C14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C14_KeyDown);
+            this.C14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C14_KeyPress);
             // 
             // C13
             // 
@@ -375,6 +384,8 @@
             this.C13.Name = "C13";
             this.C13.Size = new System.Drawing.Size(400, 23);
             this.C13.TabIndex = 300;
+            this.C13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C13_KeyDown);
+            this.C13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C13_KeyPress);
             // 
             // C12
             // 
@@ -383,14 +394,18 @@
             this.C12.Name = "C12";
             this.C12.Size = new System.Drawing.Size(400, 23);
             this.C12.TabIndex = 299;
+            this.C12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C12_KeyDown);
+            this.C12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C12_KeyPress);
             // 
             // C11
             // 
             this.C11.Location = new System.Drawing.Point(408, 709);
             this.C11.Multiline = true;
             this.C11.Name = "C11";
-            this.C11.Size = new System.Drawing.Size(400, 23);
+            this.C11.Size = new System.Drawing.Size(400, 36);
             this.C11.TabIndex = 298;
+            this.C11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C11_KeyDown);
+            this.C11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C11_KeyPress);
             // 
             // C10
             // 
@@ -399,6 +414,8 @@
             this.C10.Name = "C10";
             this.C10.Size = new System.Drawing.Size(400, 23);
             this.C10.TabIndex = 297;
+            this.C10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C10_KeyDown);
+            this.C10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C10_KeyPress);
             // 
             // C9
             // 
@@ -407,6 +424,8 @@
             this.C9.Name = "C9";
             this.C9.Size = new System.Drawing.Size(400, 23);
             this.C9.TabIndex = 296;
+            this.C9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C9_KeyDown);
+            this.C9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C9_KeyPress);
             // 
             // C8
             // 
@@ -415,6 +434,8 @@
             this.C8.Name = "C8";
             this.C8.Size = new System.Drawing.Size(400, 23);
             this.C8.TabIndex = 295;
+            this.C8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C8_KeyDown);
+            this.C8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C8_KeyPress);
             // 
             // C7
             // 
@@ -423,6 +444,8 @@
             this.C7.Name = "C7";
             this.C7.Size = new System.Drawing.Size(400, 23);
             this.C7.TabIndex = 294;
+            this.C7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C7_KeyDown);
+            this.C7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C7_KeyPress);
             // 
             // C6
             // 
@@ -431,6 +454,8 @@
             this.C6.Name = "C6";
             this.C6.Size = new System.Drawing.Size(400, 23);
             this.C6.TabIndex = 293;
+            this.C6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C6_KeyDown);
+            this.C6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C6_KeyPress);
             // 
             // C5
             // 
@@ -439,6 +464,8 @@
             this.C5.Name = "C5";
             this.C5.Size = new System.Drawing.Size(400, 23);
             this.C5.TabIndex = 292;
+            this.C5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C5_KeyDown);
+            this.C5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C5_KeyPress);
             // 
             // C4
             // 
@@ -447,6 +474,8 @@
             this.C4.Name = "C4";
             this.C4.Size = new System.Drawing.Size(400, 23);
             this.C4.TabIndex = 291;
+            this.C4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C4_KeyDown);
+            this.C4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C4_KeyPress);
             // 
             // C3
             // 
@@ -455,6 +484,8 @@
             this.C3.Name = "C3";
             this.C3.Size = new System.Drawing.Size(400, 23);
             this.C3.TabIndex = 290;
+            this.C3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C3_KeyDown);
+            this.C3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C3_KeyPress);
             // 
             // C2
             // 
@@ -463,6 +494,8 @@
             this.C2.Name = "C2";
             this.C2.Size = new System.Drawing.Size(400, 23);
             this.C2.TabIndex = 289;
+            this.C2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C2_KeyDown);
+            this.C2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C2_KeyPress);
             // 
             // C1
             // 
@@ -471,6 +504,8 @@
             this.C1.Name = "C1";
             this.C1.Size = new System.Drawing.Size(400, 23);
             this.C1.TabIndex = 288;
+            this.C1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C1_KeyDown);
+            this.C1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C1_KeyPress);
             // 
             // A15
             // 
@@ -479,6 +514,8 @@
             this.A15.Name = "A15";
             this.A15.Size = new System.Drawing.Size(400, 23);
             this.A15.TabIndex = 318;
+            this.A15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A15_KeyDown);
+            this.A15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A15_KeyPress);
             // 
             // A14
             // 
@@ -487,6 +524,8 @@
             this.A14.Name = "A14";
             this.A14.Size = new System.Drawing.Size(400, 23);
             this.A14.TabIndex = 317;
+            this.A14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A14_KeyDown);
+            this.A14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A14_KeyPress);
             // 
             // A13
             // 
@@ -495,6 +534,8 @@
             this.A13.Name = "A13";
             this.A13.Size = new System.Drawing.Size(400, 23);
             this.A13.TabIndex = 316;
+            this.A13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A13_KeyDown);
+            this.A13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A13_KeyPress);
             // 
             // A12
             // 
@@ -503,6 +544,8 @@
             this.A12.Name = "A12";
             this.A12.Size = new System.Drawing.Size(400, 23);
             this.A12.TabIndex = 315;
+            this.A12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A12_KeyDown);
+            this.A12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A12_KeyPress);
             // 
             // A11
             // 
@@ -511,6 +554,8 @@
             this.A11.Name = "A11";
             this.A11.Size = new System.Drawing.Size(400, 23);
             this.A11.TabIndex = 314;
+            this.A11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A11_KeyDown);
+            this.A11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A11_KeyPress);
             // 
             // A10
             // 
@@ -519,6 +564,8 @@
             this.A10.Name = "A10";
             this.A10.Size = new System.Drawing.Size(400, 23);
             this.A10.TabIndex = 313;
+            this.A10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A10_KeyDown);
+            this.A10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A10_KeyPress);
             // 
             // A9
             // 
@@ -527,6 +574,8 @@
             this.A9.Name = "A9";
             this.A9.Size = new System.Drawing.Size(400, 23);
             this.A9.TabIndex = 312;
+            this.A9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A9_KeyDown);
+            this.A9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A9_KeyPress);
             // 
             // A8
             // 
@@ -535,6 +584,8 @@
             this.A8.Name = "A8";
             this.A8.Size = new System.Drawing.Size(400, 23);
             this.A8.TabIndex = 311;
+            this.A8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A8_KeyDown);
+            this.A8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A8_KeyPress);
             // 
             // A7
             // 
@@ -543,6 +594,8 @@
             this.A7.Name = "A7";
             this.A7.Size = new System.Drawing.Size(400, 23);
             this.A7.TabIndex = 310;
+            this.A7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A7_KeyDown);
+            this.A7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A7_KeyPress);
             // 
             // A6
             // 
@@ -551,6 +604,8 @@
             this.A6.Name = "A6";
             this.A6.Size = new System.Drawing.Size(400, 23);
             this.A6.TabIndex = 309;
+            this.A6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A6_KeyDown);
+            this.A6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A6_KeyPress);
             // 
             // A5
             // 
@@ -559,6 +614,8 @@
             this.A5.Name = "A5";
             this.A5.Size = new System.Drawing.Size(400, 23);
             this.A5.TabIndex = 308;
+            this.A5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A5_KeyDown);
+            this.A5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A5_KeyPress);
             // 
             // A4
             // 
@@ -567,6 +624,8 @@
             this.A4.Name = "A4";
             this.A4.Size = new System.Drawing.Size(400, 23);
             this.A4.TabIndex = 307;
+            this.A4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A4_KeyDown);
+            this.A4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A4_KeyPress);
             // 
             // A3
             // 
@@ -575,6 +634,8 @@
             this.A3.Name = "A3";
             this.A3.Size = new System.Drawing.Size(400, 23);
             this.A3.TabIndex = 306;
+            this.A3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A3_KeyDown);
+            this.A3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A3_KeyPress);
             // 
             // A2
             // 
@@ -583,6 +644,8 @@
             this.A2.Name = "A2";
             this.A2.Size = new System.Drawing.Size(400, 23);
             this.A2.TabIndex = 305;
+            this.A2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A2_KeyDown);
+            this.A2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A2_KeyPress);
             // 
             // A1
             // 
@@ -591,6 +654,8 @@
             this.A1.Name = "A1";
             this.A1.Size = new System.Drawing.Size(400, 23);
             this.A1.TabIndex = 304;
+            this.A1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A1_KeyDown);
+            this.A1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A1_KeyPress);
             // 
             // A
             // 
@@ -610,6 +675,7 @@
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.A.Size = new System.Drawing.Size(401, 360);
             this.A.TabIndex = 303;
+            this.A.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.A_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -758,9 +824,9 @@
             this.Controls.Add(this.buttonC);
             this.Controls.Add(this.buttonA);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.c_stolbci);
+            this.Controls.Add(this.с_stolbci);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.c_stroki);
+            this.Controls.Add(this.с_stroki);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.a_stolbci);
             this.Controls.Add(this.label1);
@@ -793,9 +859,9 @@
         private System.Windows.Forms.Button buttonC;
         private System.Windows.Forms.Button buttonA;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox c_stolbci;
+        private System.Windows.Forms.TextBox с_stolbci;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox c_stroki;
+        private System.Windows.Forms.TextBox с_stroki;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox a_stolbci;
         private System.Windows.Forms.Label label1;

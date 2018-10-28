@@ -335,6 +335,7 @@
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.A.Size = new System.Drawing.Size(401, 360);
             this.A.TabIndex = 304;
+            this.A.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.A_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -373,6 +374,7 @@
             this.B.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.B.Size = new System.Drawing.Size(401, 360);
             this.B.TabIndex = 305;
+            this.B.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.B_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn1
             // 
