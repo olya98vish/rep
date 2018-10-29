@@ -330,7 +330,6 @@
             this.dataGridViewTextBoxColumn4});
             this.C.Location = new System.Drawing.Point(1, 485);
             this.C.Name = "C";
-            this.C.ReadOnly = true;
             this.C.RowHeadersVisible = false;
             this.C.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.C.Size = new System.Drawing.Size(401, 360);
@@ -340,22 +339,18 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // C15
             // 

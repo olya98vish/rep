@@ -441,6 +441,8 @@ namespace WindowsFormsApplication1
                         {
                             button6.Enabled = false;
                             button7.Enabled = false;
+                            button6.Text = "ОК";
+                            button7.Text = "ОК";
 
                             buttonB.Text = "ОК";
                             //b_stroki.ReadOnly = false;
@@ -519,6 +521,8 @@ namespace WindowsFormsApplication1
                         {
                             button10.Enabled = false;
                             button9.Enabled = false;
+                            button10.Text = "ОК";
+                            button9.Text = "ОК";
 
                             buttonC.Text = "ОК";
                             с_stroki.ReadOnly = false;

@@ -268,10 +268,8 @@ namespace WindowsFormsApplication1
                             {
                                 this.Controls["A" + i.ToString()].Enabled = false;
                                 this.Controls["B" + i.ToString()].Enabled = false;
-                                this.Controls["C" + i.ToString()].Enabled = false;
                                 this.Controls["A" + i.ToString()].Text = "";
                                 this.Controls["B" + i.ToString()].Text = "";
-                                this.Controls["C" + i.ToString()].Text = "";
                             }
                             //убиваем матрицы - все, так как матрица А главная.
                             A.RowCount = 0;
@@ -347,6 +345,8 @@ namespace WindowsFormsApplication1
                         {
                             button6.Enabled = false;
                             button7.Enabled = false;
+                            button6.Text = "ОК";
+                            button7.Text = "ОК";
 
                             buttonB.Text = "ОК";
                             //b_stroki.ReadOnly = false;

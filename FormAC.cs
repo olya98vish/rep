@@ -228,6 +228,8 @@ namespace WindowsFormsApplication1
                         {
                             button6.Enabled = false;
                             button7.Enabled = false;
+                            button6.Text = "ОК";
+                            button7.Text = "ОК";
 
                             buttonC.Text = "ОК";
                             с_stroki.ReadOnly = false;
@@ -333,10 +335,8 @@ namespace WindowsFormsApplication1
                             for (int i = 1; i < 16; i++)
                             {
                                 this.Controls["A" + i.ToString()].Enabled = false;
-                                this.Controls["B" + i.ToString()].Enabled = false;
                                 this.Controls["C" + i.ToString()].Enabled = false;
                                 this.Controls["A" + i.ToString()].Text = "";
-                                this.Controls["B" + i.ToString()].Text = "";
                                 this.Controls["C" + i.ToString()].Text = "";
                             }
                             //убиваем матрицы - все, так как матрица А главная.
