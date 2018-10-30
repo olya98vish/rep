@@ -20,23 +20,6 @@ namespace WindowsFormsApplication1
         public FormABC()
         {
             InitializeComponent();
-
-            button1.Enabled = false;
-            button1.Visible = false;
-            checkBox1.Visible = false;
-            checkBox2.Visible = false;
-            checkBox3.Visible = false;
-            checkBox4.Visible = false;
-            label17.Visible = false;
-            label18.Visible = false;
-            label19.Visible = false;
-            label20.Visible = false;
-            label21.Visible = false;
-            label22.Visible = false;
-            a_view.Visible = false;
-            b_view.Visible = false;
-            c_view.Visible = false;
-
             //SetReadOnlyInTextBoxA();
         }
         //private void SetReadOnlyInTextBoxA(Control.ControlCollection control)
@@ -67,6 +50,14 @@ namespace WindowsFormsApplication1
             button7.Enabled = false;
             button10.Enabled = false;
             button9.Enabled = false;
+            button1.Enabled = false;
+            button1.Location = new System.Drawing.Point(1243, 9);
+            button1.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
+
         }
         //функции для взятия данных в память и вывода
         #region
@@ -647,15 +638,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = true;
                 checkBox3.Visible = true;
                 checkBox4.Visible = true;
-                label17.Visible = true;
-                label18.Visible = true;
-                label19.Visible = true;
-                label20.Visible = true;
-                label21.Visible = true;
-                label22.Visible = true;
-                a_view.Visible = true;
-                b_view.Visible = true;
-                c_view.Visible = true;
             }
             else
             {
@@ -665,15 +647,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = false;
                 checkBox3.Visible = false;
                 checkBox4.Visible = false;
-                label17.Visible = false;
-                label18.Visible = false;
-                label19.Visible = false;
-                label20.Visible = false;
-                label21.Visible = false;
-                label22.Visible = false;
-                a_view.Visible = false;
-                b_view.Visible = false;
-                c_view.Visible = false;
             }
         }
 
@@ -747,15 +720,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = true;
                 checkBox3.Visible = true;
                 checkBox4.Visible = true;
-                label17.Visible = true;
-                label18.Visible = true;
-                label19.Visible = true;
-                label20.Visible = true;
-                label21.Visible = true;
-                label22.Visible = true;
-                a_view.Visible = true;
-                b_view.Visible = true;
-                c_view.Visible = true;
             }
             else
             {
@@ -765,15 +729,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = false;
                 checkBox3.Visible = false;
                 checkBox4.Visible = false;
-                label17.Visible = false;
-                label18.Visible = false;
-                label19.Visible = false;
-                label20.Visible = false;
-                label21.Visible = false;
-                label22.Visible = false;
-                a_view.Visible = false;
-                b_view.Visible = false;
-                c_view.Visible = false;
             }
         }
 
@@ -1192,15 +1147,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = true;
                 checkBox3.Visible = true;
                 checkBox4.Visible = true;
-                label17.Visible = true;
-                label18.Visible = true;
-                label19.Visible = true;
-                label20.Visible = true;
-                label21.Visible = true;
-                label22.Visible = true;
-                a_view.Visible = true;
-                b_view.Visible = true;
-                c_view.Visible = true;
             }
             else
             {
@@ -1210,15 +1156,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = false;
                 checkBox3.Visible = false;
                 checkBox4.Visible = false;
-                label17.Visible = false;
-                label18.Visible = false;
-                label19.Visible = false;
-                label20.Visible = false;
-                label21.Visible = false;
-                label22.Visible = false;
-                a_view.Visible = false;
-                b_view.Visible = false;
-                c_view.Visible = false;
             }
         }
 
@@ -1291,15 +1228,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = true;
                 checkBox3.Visible = true;
                 checkBox4.Visible = true;
-                label17.Visible = true;
-                label18.Visible = true;
-                label19.Visible = true;
-                label20.Visible = true;
-                label21.Visible = true;
-                label22.Visible = true;
-                a_view.Visible = true;
-                b_view.Visible = true;
-                c_view.Visible = true;
             }
             else
             {
@@ -1309,15 +1237,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = false;
                 checkBox3.Visible = false;
                 checkBox4.Visible = false;
-                label17.Visible = false;
-                label18.Visible = false;
-                label19.Visible = false;
-                label20.Visible = false;
-                label21.Visible = false;
-                label22.Visible = false;
-                a_view.Visible = false;
-                b_view.Visible = false;
-                c_view.Visible = false;
             }
         }
         #region
@@ -1697,15 +1616,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = true;
                 checkBox3.Visible = true;
                 checkBox4.Visible = true;
-                label17.Visible = true;
-                label18.Visible = true;
-                label19.Visible = true;
-                label20.Visible = true;
-                label21.Visible = true;
-                label22.Visible = true;
-                a_view.Visible = true;
-                b_view.Visible = true;
-                c_view.Visible = true;
             }
             else
             {
@@ -1715,15 +1625,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = false;
                 checkBox3.Visible = false;
                 checkBox4.Visible = false;
-                label17.Visible = false;
-                label18.Visible = false;
-                label19.Visible = false;
-                label20.Visible = false;
-                label21.Visible = false;
-                label22.Visible = false;
-                a_view.Visible = false;
-                b_view.Visible = false;
-                c_view.Visible = false;
             }
         }
 
@@ -1796,15 +1697,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = true;
                 checkBox3.Visible = true;
                 checkBox4.Visible = true;
-                label17.Visible = true;
-                label18.Visible = true;
-                label19.Visible = true;
-                label20.Visible = true;
-                label21.Visible = true;
-                label22.Visible = true;
-                a_view.Visible = true;
-                b_view.Visible = true;
-                c_view.Visible = true;
             }
             else
             {
@@ -1814,15 +1706,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 checkBox2.Visible = false;
                 checkBox3.Visible = false;
                 checkBox4.Visible = false;
-                label17.Visible = false;
-                label18.Visible = false;
-                label19.Visible = false;
-                label20.Visible = false;
-                label21.Visible = false;
-                label22.Visible = false;
-                a_view.Visible = false;
-                b_view.Visible = false;
-                c_view.Visible = false;
             }
         }
         #region
@@ -2181,6 +2064,13 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             {
                 MessageBox.Show("Хотя бы одна позиция должна быть выбрана!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            FormABC_view formABC_view = new FormABC_view();
+            formABC_view.Show();
+            this.Hide();
         }
     }
 }

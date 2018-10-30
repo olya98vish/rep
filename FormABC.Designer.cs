@@ -114,6 +114,7 @@
             this.C2 = new System.Windows.Forms.TextBox();
             this.C1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -121,15 +122,6 @@
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.a_view = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.c_view = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.b_view = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
@@ -1018,6 +1010,18 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Подсказка";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(1307, 1312);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(25, 28);
+            this.button2.TabIndex = 324;
+            this.toolTip1.SetToolTip(this.button2, "переход к подробному решению и графикам");
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // label16
             // 
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -1090,96 +1094,6 @@
             this.label13.Size = new System.Drawing.Size(815, 3);
             this.label13.TabIndex = 214;
             // 
-            // a_view
-            // 
-            this.a_view.Location = new System.Drawing.Point(890, 88);
-            this.a_view.Multiline = true;
-            this.a_view.Name = "a_view";
-            this.a_view.Size = new System.Drawing.Size(123, 141);
-            this.a_view.TabIndex = 324;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(834, 102);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(23, 32);
-            this.label17.TabIndex = 326;
-            this.label17.Text = ".";
-            this.label17.Visible = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label18.Location = new System.Drawing.Point(832, 132);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 32);
-            this.label18.TabIndex = 325;
-            this.label18.Text = "x =";
-            this.label18.Visible = false;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(834, 277);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(59, 32);
-            this.label19.TabIndex = 327;
-            this.label19.Text = "y = ";
-            this.label19.Visible = false;
-            // 
-            // c_view
-            // 
-            this.c_view.Location = new System.Drawing.Point(890, 261);
-            this.c_view.Multiline = true;
-            this.c_view.Name = "c_view";
-            this.c_view.Size = new System.Drawing.Size(256, 69);
-            this.c_view.TabIndex = 328;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label20.Location = new System.Drawing.Point(1019, 132);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(59, 32);
-            this.label20.TabIndex = 329;
-            this.label20.Text = "x + ";
-            this.label20.Visible = false;
-            // 
-            // b_view
-            // 
-            this.b_view.Location = new System.Drawing.Point(1078, 88);
-            this.b_view.Multiline = true;
-            this.b_view.Name = "b_view";
-            this.b_view.Size = new System.Drawing.Size(68, 141);
-            this.b_view.TabIndex = 330;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label21.Location = new System.Drawing.Point(1165, 132);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(32, 32);
-            this.label21.TabIndex = 331;
-            this.label21.Text = "U";
-            this.label21.Visible = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label22.Location = new System.Drawing.Point(1152, 274);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(28, 32);
-            this.label22.TabIndex = 332;
-            this.label22.Text = "x";
-            this.label22.Visible = false;
-            // 
             // FormABC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1187,15 +1101,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1361, 706);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.b_view);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.c_view);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.a_view);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
@@ -1390,15 +1296,7 @@
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox a_view;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox c_view;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox b_view;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button button2;
     }
 }
 
