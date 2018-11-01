@@ -12,10 +12,16 @@ namespace WindowsFormsApplication1
     public partial class FormABC : Form
     {
         //иницилизация глобальных переменных
+        public FormABC_view formABC_view;
         double[,] masA;//массив данных из datagrid A
         double[,] masB;//массив данных из datagrid B
         double[,] masC;//массив данных из datagrid C
-
+        int strA = 0;
+        int strB = 0;
+        int strC = 0;
+        int stlbA = 0;
+        int stlbB = 0;
+        int stlbC = 0;
 
         public FormABC()
         {
@@ -267,8 +273,6 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int strA = 0;
-            int stlbA = 0;
             if ((a_stroki.Text != "") && (a_stolbci.Text != ""))
             {
                 if ((Convert.ToInt32(a_stroki.Text) > 0) && (Convert.ToInt32(a_stroki.Text) > 0))
@@ -389,10 +393,7 @@ namespace WindowsFormsApplication1
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-            int strB = 0;
-            int stlbB = 0;
-            
+        {            
             if ((b_stroki.Text != "") && (b_stolbci.Text != ""))
             {
                 if ((Convert.ToInt32(b_stroki.Text) > 0) && (Convert.ToInt32(b_stroki.Text) > 0)&&(Convert.ToInt32(b_stroki.Text) == Convert.ToInt32(a_stroki.Text)))
@@ -469,9 +470,6 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int strC = 0;
-            int stlbC = 0;
-
             if ((с_stroki.Text != "") && (с_stolbci.Text != ""))
             {
                 if ((Convert.ToInt32(с_stroki.Text) > 0) && (Convert.ToInt32(с_stroki.Text) > 0) && (Convert.ToInt32(с_stolbci.Text) == Convert.ToInt32(a_stolbci.Text)))
@@ -2068,9 +2066,10 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            FormABC_view formABC_view = new FormABC_view();
+            FormABC_view formABC_view = new FormABC_view(strA,stlbA, masA, strB, stlbB, masB,strC, stlbB, masC);
             formABC_view.Show();
-            this.Hide();
+            formABC_view.Tag = this;
+            //this.Hide();
         }
     }
 }

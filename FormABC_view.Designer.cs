@@ -180,7 +180,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormABC_view";
-            this.Text = "FormABC_view";
+            this.Text = "Графики и визуализация";
+            this.Load += new System.EventHandler(this.FormABC_view_Load);
             ((System.ComponentModel.ISupportInitialize)(this.C)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).EndInit();
@@ -198,10 +199,10 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button Back;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView C;
         private System.Windows.Forms.DataGridView A;
         private System.Windows.Forms.DataGridView B;
-        private System.Windows.Forms.Button Back;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
