@@ -88,6 +88,12 @@
     <Compile Include="FormAC.Designer.cs">
       <DependentUpon>FormAC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAC_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAC_view.Designer.cs">
+      <DependentUpon>FormAC_view.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox1.resx">
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAC.resx">
       <DependentUpon>FormAC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAC_view.resx">
+      <DependentUpon>FormAC_view.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

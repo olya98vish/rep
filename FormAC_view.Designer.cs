@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class FormAB_view
+    partial class FormAC_view
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAB_view));
-            this.label21 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAC_view));
+            this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.Back = new System.Windows.Forms.Button();
@@ -41,25 +42,25 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.B = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
             this.SuspendLayout();
             // 
-            // label21
+            // label22
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label21.Location = new System.Drawing.Point(962, 55);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(32, 32);
-            this.label21.TabIndex = 340;
-            this.label21.Text = "U";
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.Location = new System.Drawing.Point(478, 510);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(28, 32);
+            this.label22.TabIndex = 341;
+            this.label22.Text = "x";
             // 
             // label20
             // 
@@ -67,9 +68,19 @@
             this.label20.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label20.Location = new System.Drawing.Point(478, 55);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(59, 32);
+            this.label20.Size = new System.Drawing.Size(28, 32);
             this.label20.TabIndex = 338;
-            this.label20.Text = "x + ";
+            this.label20.Text = "x";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(6, 510);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(59, 32);
+            this.label19.TabIndex = 336;
+            this.label19.Text = "y = ";
             // 
             // label17
             // 
@@ -147,44 +158,44 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 5;
             // 
-            // B
+            // C
             // 
-            this.B.AllowUserToAddRows = false;
-            this.B.AllowUserToDeleteRows = false;
-            this.B.AllowUserToResizeRows = false;
-            this.B.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.B.ColumnHeadersVisible = false;
-            this.B.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.B.Location = new System.Drawing.Point(543, 12);
-            this.B.Name = "B";
-            this.B.RowHeadersVisible = false;
-            this.B.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.B.Size = new System.Drawing.Size(401, 360);
-            this.B.TabIndex = 351;
+            this.C.AllowUserToAddRows = false;
+            this.C.AllowUserToDeleteRows = false;
+            this.C.AllowUserToResizeRows = false;
+            this.C.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.C.ColumnHeadersVisible = false;
+            this.C.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.C.Location = new System.Drawing.Point(64, 394);
+            this.C.Name = "C";
+            this.C.RowHeadersVisible = false;
+            this.C.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.C.Size = new System.Drawing.Size(401, 360);
+            this.C.TabIndex = 352;
             // 
-            // dataGridViewTextBoxColumn5
+            // dataGridViewTextBoxColumn9
             // 
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 5;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 5;
             // 
-            // dataGridViewTextBoxColumn6
+            // dataGridViewTextBoxColumn10
             // 
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 5;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 5;
             // 
-            // dataGridViewTextBoxColumn7
+            // dataGridViewTextBoxColumn11
             // 
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 5;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 5;
             // 
-            // dataGridViewTextBoxColumn8
+            // dataGridViewTextBoxColumn12
             // 
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 5;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 5;
             // 
             // label3
             // 
@@ -193,37 +204,40 @@
             this.label3.Location = new System.Drawing.Point(8, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 32);
-            this.label3.TabIndex = 352;
+            this.label3.TabIndex = 353;
             this.label3.Text = ".";
             // 
-            // FormAB_view
+            // FormAC_view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1361, 706);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.B);
+            this.Controls.Add(this.C);
             this.Controls.Add(this.A);
             this.Controls.Add(this.Back);
-            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormAB_view";
-            this.Text = "Matricula - AB - Графики и визуализация";
-            this.Load += new System.EventHandler(this.FormAB_view_Load);
+            this.Name = "FormAC_view";
+            this.Text = "Matricula - AC - Графики и визуализация";
+            this.Load += new System.EventHandler(this.FormAC_view_Load);
             ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label21;
+
+        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button Back;
@@ -233,11 +247,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridView B;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridView C;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.Label label3;
     }
 }

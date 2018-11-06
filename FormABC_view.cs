@@ -73,61 +73,118 @@ namespace WindowsFormsApplication1
 
         private void FormABC_view_Load(object sender, EventArgs e)
         {
-            //работа с активацией матрицы
-            A.RowCount = VstrA;
-            A.ColumnCount = VstlbA;
-            int widthA = (maxA + VstlbA) * 9;
-            int heightA = VstrA * 23;
-            A.Size = new System.Drawing.Size(widthA, heightA);
-            label18.Location = new System.Drawing.Point(6, heightA/2);
-
-            //работа с активацией матрицы
-            B.RowCount = VstrB;
-            B.ColumnCount = VstlbB;
-            int widthB = (maxB + VstlbB) * 9;
-            int heightB = VstrB * 23;
-            B.Size = new System.Drawing.Size(widthB, heightB);
-            label20.Location = new System.Drawing.Point(6 + widthA + 10 + 52, heightB / 2);
-            B.Location = new System.Drawing.Point(6 + widthA + 10 + 52 + 59, 12);
-            label21.Location = new System.Drawing.Point(6 + widthA + 20 + 59 + 52 + widthB, heightB / 2);
-
-            //работа с активацией матрицы
-            C.RowCount = VstrC;
-            C.ColumnCount = VstlbC;
-            int widthC = (maxC + VstlbC) * 9;
-            int heightC = VstrC * 23;
-            C.Size = new System.Drawing.Size(widthC, heightC);
-            C.Location = new System.Drawing.Point(64, 12+heightA + 20);
-            label19.Location = new System.Drawing.Point(6, 12 + heightA + 10 + heightC / 2);
-            label22.Location = new System.Drawing.Point(64 + widthC + 10, 12 + 10 + heightA + heightC / 2);
-
-
-            for (int i = 0; i < VstrA; i++)//матрица в памяти пока что нулевая
+            if (VstlbA > 4)
             {
-                for (int j = 0; j < VstlbA; j++)
+                //работа с активацией матрицы
+                A.RowCount = VstrA;
+                A.ColumnCount = VstlbA;
+                int widthA = (maxA + VstlbA) * 9;
+                int heightA = VstrA * 23;
+                A.Size = new System.Drawing.Size(widthA, heightA);
+                label3.Location = new System.Drawing.Point(8, heightA / 2 - 21);
+                label18.Location = new System.Drawing.Point(6, heightA / 2);
+
+                //работа с активацией матрицы
+                B.RowCount = VstrB;
+                B.ColumnCount = VstlbB;
+                int widthB = (maxB + VstlbB) * 9;
+                int heightB = VstrB * 23;
+                B.Size = new System.Drawing.Size(widthB, heightB);
+                label20.Location = new System.Drawing.Point(6 + widthA + 10 + 58, heightB / 2);
+                B.Location = new System.Drawing.Point(6 + widthA + 10 + 58 + 59, 12);
+                label21.Location = new System.Drawing.Point(6 + widthA + 20 + 59 + 58 + widthB, heightB / 2);
+
+                //работа с активацией матрицы
+                C.RowCount = VstrC;
+                C.ColumnCount = VstlbC;
+                int widthC = (maxC + VstlbC) * 9;
+                int heightC = VstrC * 23;
+                C.Size = new System.Drawing.Size(widthC, heightC);
+                C.Location = new System.Drawing.Point(64, 12 + heightA + 20);
+                label19.Location = new System.Drawing.Point(6, 12 + heightA + 10 + heightC / 2);
+                label22.Location = new System.Drawing.Point(64 + widthC + 10, 12 + 10 + heightA + heightC / 2);
+
+                for (int i = 0; i < VstrA; i++)//матрица в памяти пока что нулевая
                 {
-                    this.A.Rows[i].Cells[j].Value = VmasA[i, j];
+                    for (int j = 0; j < VstlbA; j++)
+                    {
+                        this.A.Rows[i].Cells[j].Value = VmasA[i, j];
+                    }
+                }
+
+                for (int i = 0; i < B.RowCount; i++)
+                {
+                    for (int j = 0; j < B.ColumnCount; j++)
+                    {
+                        this.B.Rows[i].Cells[j].Value = VmasB[i, j];
+                    }
+                }
+
+                for (int i = 0; i < C.RowCount; i++)
+                {
+                    for (int j = 0; j < C.ColumnCount; j++)
+                    {
+                        this.C.Rows[i].Cells[j].Value = VmasC[i, j];
+                    }
                 }
             }
-
-            for (int i = 0; i < B.RowCount; i++)
+            else
             {
-                for (int j = 0; j < B.ColumnCount; j++)
+                //работа с активацией матрицы
+                A.RowCount = VstrA;
+                A.ColumnCount = VstlbA;
+                int widthA = (maxA + VstlbA) * 9;
+                int heightA = VstrA * 23;
+                A.Location = new System.Drawing.Point(97, 12);
+                A.Size = new System.Drawing.Size(widthA, heightA);
+                label3.Location = new System.Drawing.Point(8 + 33, heightA / 2 - 21);
+                label18.Location = new System.Drawing.Point(6 + 33, heightA / 2);
+
+                //работа с активацией матрицы
+                B.RowCount = VstrB;
+                B.ColumnCount = VstlbB;
+                int widthB = (maxB + VstlbB) * 9;
+                int heightB = VstrB * 23;
+                B.Size = new System.Drawing.Size(widthB, heightB);
+                label20.Location = new System.Drawing.Point(33 + 6 + widthA + 10 + 58, heightB / 2);
+                B.Location = new System.Drawing.Point(33 + 6 + widthA + 10 + 58 + 59, 12);
+                label21.Location = new System.Drawing.Point(33 + 6 + widthA + 20 + 59 + 58 + widthB, heightB / 2);
+
+                //работа с активацией матрицы
+                C.RowCount = VstrC;
+                C.ColumnCount = VstlbC;
+                int widthC = (maxC + VstlbC) * 9;
+                int heightC = VstrC * 23;
+                C.Size = new System.Drawing.Size(widthC, heightC);
+                C.Location = new System.Drawing.Point(33 + 64, 12 + heightA + 20);
+                label19.Location = new System.Drawing.Point(33 + 6, 12 + heightA + 10 + heightC / 2);
+                label22.Location = new System.Drawing.Point(33 + 64 + widthC + 10, 12 + 10 + heightA + heightC / 2);
+
+                for (int i = 0; i < VstrA; i++)//матрица в памяти пока что нулевая
                 {
-                    this.B.Rows[i].Cells[j].Value = VmasB[i, j];
+                    for (int j = 0; j < VstlbA; j++)
+                    {
+                        this.A.Rows[i].Cells[j].Value = VmasA[i, j];
+                    }
                 }
-            }
 
-            for (int i = 0; i < C.RowCount; i++)
-            {
-                for (int j = 0; j < C.ColumnCount; j++)
+                for (int i = 0; i < B.RowCount; i++)
                 {
-                    this.C.Rows[i].Cells[j].Value = VmasC[i, j];
+                    for (int j = 0; j < B.ColumnCount; j++)
+                    {
+                        this.B.Rows[i].Cells[j].Value = VmasB[i, j];
+                    }
                 }
+
+                for (int i = 0; i < C.RowCount; i++)
+                {
+                    for (int j = 0; j < C.ColumnCount; j++)
+                    {
+                        this.C.Rows[i].Cells[j].Value = VmasC[i, j];
+                    }
+                }
+
             }
-
-
-
         }
     }
 }

@@ -220,6 +220,8 @@ namespace WindowsFormsApplication1
                         {
                             button4.Enabled = true;
                             button5.Enabled = true;
+                            button6.Enabled = true;
+                            button7.Enabled = true;
 
                             a_stroki.ReadOnly = true;
                             a_stolbci.ReadOnly = true;
@@ -260,11 +262,15 @@ namespace WindowsFormsApplication1
                         {
                             button4.Enabled = false;
                             button5.Enabled = false;
+                            button6.Enabled = false;
+                            button7.Enabled = false;
 
                             buttonA.Text = "ОК";
                             buttonB.Text = "ОК";
                             button5.Text = "ОК";
                             button4.Text = "ОК";
+                            button6.Text = "ОК";
+                            button7.Text = "ОК";
 
                             a_stroki.ReadOnly = false;
                             a_stolbci.ReadOnly = false;
