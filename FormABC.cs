@@ -549,8 +549,7 @@ namespace WindowsFormsApplication1
         void tb_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && 
-                !((e.KeyChar == ';')) && !((e.KeyChar == '(')) && !((e.KeyChar == ')')) && !((e.KeyChar == ','))) //&& !((e.KeyChar == '.'))
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == ','))) //&& !((e.KeyChar == '.')) && !((e.KeyChar == ';')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == '(')) && !((e.KeyChar == ')'))
             {
                 if (e.KeyChar != (char)Keys.Back)
                 {
@@ -2080,11 +2079,35 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            FormABC_view formABC_view = new FormABC_view(strA,stlbA, masA, strB, stlbB, masB,strC, stlbB, masC);
+            int maxA = 0;
+            int maxB = 0;
+            int maxC = 0;
+
+            for (int i = 0; i < strA; i++)
+            {
+                //поиск максимальной длины в матрице А
+                if (this.Controls["A" + (i + 1).ToString()].Text.Length > maxA)
+                    maxA = this.Controls["A" + (i + 1).ToString()].Text.Length;
+            }
+            for (int i = 0; i < strB; i++)
+            {
+                //поиск максимальной длины в матрице В
+                if (this.Controls["B" + (i + 1).ToString()].Text.Length > maxB)
+                    maxB = this.Controls["B" + (i + 1).ToString()].Text.Length;
+            }
+            for (int i = 0; i < strC; i++)
+            {
+                //поиск максимальной длины в матрице С
+                if (this.Controls["C" + (i + 1).ToString()].Text.Length > maxC)
+                    maxC = this.Controls["C" + (i + 1).ToString()].Text.Length;
+            }
+
+            FormABC_view formABC_view = new FormABC_view(strA, stlbA, masA, strB, stlbB, masB, strC, stlbC, masC, maxA, maxB, maxC);
             formABC_view.Show();
             formABC_view.Tag = this;
             //this.Hide();
         }
+
     }
 }
 

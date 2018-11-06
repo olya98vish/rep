@@ -97,7 +97,7 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
             this.SuspendLayout();
@@ -752,13 +752,13 @@
             this.checkBox1.Text = "Матрица управляемости - U";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // label8
             // 
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Location = new System.Drawing.Point(823, 63);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(515, 3);
-            this.label16.TabIndex = 342;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label8.Location = new System.Drawing.Point(823, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(500, 3);
+            this.label8.TabIndex = 348;
             // 
             // FormAC
             // 
@@ -767,12 +767,12 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1344, 718);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.A15);
             this.Controls.Add(this.A14);
             this.Controls.Add(this.A13);
@@ -910,6 +910,6 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label8;
     }
 }

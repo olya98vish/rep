@@ -11,11 +11,16 @@ namespace WindowsFormsApplication1
 {
     public partial class FormABC_view : Form
     {
-        int VstrA, VstrB, VstrC, VstlbA, VstlbB, VstlbC;
-        double[,] VmasA, VmasB, VmasC;
+        int VstrA, VstrB, VstrC, VstlbA, VstlbB, VstlbC, maxA, maxB, maxC;
+
+        double[,] VmasA;
+        double[,] VmasB;
+        double[,] VmasC;
+
         public FormABC formABC;
 
-        public FormABC_view(int strA, int stlbA, double[,] masA, int strB, int stlbB, double[,] masB, int strC, int stlbC, double[,] masC)
+        public FormABC_view(int strA, int stlbA, double[,] masA, int strB, int stlbB, double[,] masB, 
+            int strC, int stlbC, double[,] masC, int maxA, int maxB, int maxC)
         {
             this.VstrA = strA;
             this.VstrB = strB;
@@ -23,50 +28,37 @@ namespace WindowsFormsApplication1
             this.VstlbA = stlbA;
             this.VstlbB = stlbB;
             this.VstlbC = stlbC;
+            this.maxA = maxA;
+            this.maxB = maxB;
+            this.maxC = maxC;
 
-            VmasA = new double[strA, stlbA];
-            for (int i = 0; i < strA; i++)//матрица в памяти пока что нулевая
+            VmasA = new double[VstrA, VstlbA];
+            for (int i = 0; i < VstrA; i++)//матрица в памяти пока что нулевая
             {
-                for (int j = 0; j < stlbA; j++)
+                for (int j = 0; j < VstlbA; j++)
                 {
                     VmasA[i, j] = masA[i, j];
                     //this.A.Rows[i].Cells[j].Value = masA[i, j];
                 }
             }
-            //работа с активацией матрицы
-            A.RowCount = strA;
-            A.ColumnCount = stlbA;
-
-            for (int i = 0; i < strA; i++)//матрица в памяти пока что нулевая
+            VmasB = new double[VstrB, VstlbB];
+            for (int i = 0; i < VstrB; i++)//матрица в памяти пока что нулевая
             {
-                for (int j = 0; j < stlbA; j++)
+                for (int j = 0; j < VstlbB; j++)
                 {
-                    this.A.Rows[i].Cells[j].Value = masA[i, j];
+                    VmasB[i, j] = masB[i, j];
+                    //this.A.Rows[i].Cells[j].Value = masA[i, j];
                 }
             }
-
-            ////работа с активацией матрицы
-            //B.RowCount = strB;
-            //B.ColumnCount = stlbB;
-
-            ////заполнение таблицы значениями из строк
-            //for (int i = 0; i<B.RowCount; i++)
-            //{
-            //    for (int j = 0; j<B.ColumnCount; j++)
-            //    {
-            //        this.B.Rows[i].Cells[j].Value = MasB[i, j];
-            //    }
-            //}
-
-            ////заполнение таблицы значениями из строк
-            //for (int i = 0; i<C.RowCount; i++)
-            //{
-            //    for (int j = 0; j<C.ColumnCount; j++)
-            //    {
-            //        this.C.Rows[i].Cells[j].Value = MasC[i, j];
-            //    }
-            //}
-
+            VmasC = new double[VstrC, VstlbC];
+            for (int i = 0; i < VstrC; i++)//матрица в памяти пока что нулевая
+            {
+                for (int j = 0; j < VstlbC; j++)
+                {
+                    VmasC[i, j] = masC[i, j];
+                    //this.A.Rows[i].Cells[j].Value = masA[i, j];
+                }
+            }
 
             InitializeComponent();
         }
@@ -81,8 +73,52 @@ namespace WindowsFormsApplication1
 
         private void FormABC_view_Load(object sender, EventArgs e)
         {
-            A.RowCount = 0;
-            A.ColumnCount = 0;
+            //работа с активацией матрицы
+            A.RowCount = VstrA;
+            A.ColumnCount = VstlbA;
+            int widthA = (maxA + VstlbA) * 9;
+            int heightA = VstrA * 23;
+            A.Size = new System.Drawing.Size(widthA, heightA);
+            label18.Location = new System.Drawing.Point(6, widthA/2);
+
+            //работа с активацией матрицы
+            B.RowCount = VstrB;
+            B.ColumnCount = VstlbB;
+            int widthB = (maxB + VstlbB) * 9;
+            int heightB = VstrB * 23;
+            B.Size = new System.Drawing.Size(widthB, heightB);
+            //работа с активацией матрицы
+            C.RowCount = VstrC;
+            C.ColumnCount = VstlbC;
+            int widthC = (maxC + VstlbC) * 9;
+            int heightC = VstrC * 23;
+            C.Size = new System.Drawing.Size(widthC, heightC);
+
+            for (int i = 0; i < VstrA; i++)//матрица в памяти пока что нулевая
+            {
+                for (int j = 0; j < VstlbA; j++)
+                {
+                    this.A.Rows[i].Cells[j].Value = VmasA[i, j];
+                }
+            }
+
+            for (int i = 0; i < B.RowCount; i++)
+            {
+                for (int j = 0; j < B.ColumnCount; j++)
+                {
+                    this.B.Rows[i].Cells[j].Value = VmasB[i, j];
+                }
+            }
+
+            for (int i = 0; i < C.RowCount; i++)
+            {
+                for (int j = 0; j < C.ColumnCount; j++)
+                {
+                    this.C.Rows[i].Cells[j].Value = VmasC[i, j];
+                }
+            }
+
+
 
         }
     }

@@ -757,7 +757,7 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label16.Location = new System.Drawing.Point(823, 63);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(515, 3);
+            this.label16.Size = new System.Drawing.Size(500, 3);
             this.label16.TabIndex = 336;
             // 
             // FormAB

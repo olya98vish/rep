@@ -162,9 +162,6 @@
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.A.Size = new System.Drawing.Size(401, 360);
             this.A.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.A, "            Информация о вводе.\\n При введении координат точек необходимо их писа" +
-        "ть в ().\\n Координаты межд собой разделять запятой, а точки ;\\n Пример: (1,2); \"" +
-        ");");
             this.A.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.A_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn1
