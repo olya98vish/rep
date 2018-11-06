@@ -50,6 +50,7 @@ namespace WindowsFormsApplication1
             с_stolbci.ReadOnly = true;
             b_stolbci.ReadOnly = true;
 
+            button2.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
             button6.Enabled = false;
@@ -76,7 +77,7 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        if (Convert.ToDouble(A.Rows[i].Cells[j].Value) == 0)
                         //if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
                         {
                             A.Rows[i].Cells[j].Value = 0;
@@ -94,7 +95,7 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToInt32(B.Rows[i].Cells[j].Value) == 0)
+                        if (Convert.ToDouble(B.Rows[i].Cells[j].Value) == 0)
                         //if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
                         {
                             B.Rows[i].Cells[j].Value = 0;
@@ -113,7 +114,7 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToInt32(C.Rows[i].Cells[j].Value) == 0)
+                        if (Convert.ToDouble(C.Rows[i].Cells[j].Value) == 0)
                         //if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
                         {
                             C.Rows[i].Cells[j].Value = 0;
@@ -548,7 +549,8 @@ namespace WindowsFormsApplication1
         void tb_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == ';')) && !((e.KeyChar == '(')) && !((e.KeyChar == ')')) && !((e.KeyChar == ','))) //&& !((e.KeyChar == '.'))
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && 
+                !((e.KeyChar == ';')) && !((e.KeyChar == '(')) && !((e.KeyChar == ')')) && !((e.KeyChar == ','))) //&& !((e.KeyChar == '.'))
             {
                 if (e.KeyChar != (char)Keys.Back)
                 {
@@ -630,6 +632,7 @@ namespace WindowsFormsApplication1
             if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
 button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
             {
+                button2.Enabled = true;
                 button1.Enabled = true;
                 button1.Visible = true;
                 checkBox1.Visible = true;
@@ -639,6 +642,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             }
             else
             {
+                button2.Enabled = false;
                 button1.Enabled = false;
                 button1.Visible = false;
                 checkBox1.Visible = false;
@@ -712,6 +716,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
 button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
             {
+                button2.Enabled = true;
                 button1.Enabled = true;
                 button1.Visible = true;
                 checkBox1.Visible = true;
@@ -721,6 +726,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             }
             else
             {
+                button2.Enabled = false;
                 button1.Enabled = false;
                 button1.Visible = false;
                 checkBox1.Visible = false;
@@ -1139,6 +1145,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
 button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
             {
+                button2.Enabled = true;
                 button1.Enabled = true;
                 button1.Visible = true;
                 checkBox1.Visible = true;
@@ -1148,6 +1155,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             }
             else
             {
+                button2.Enabled = false;
                 button1.Enabled = false;
                 button1.Visible = false;
                 checkBox1.Visible = false;
@@ -1220,6 +1228,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
 button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
             {
+                button2.Enabled = true;
                 button1.Enabled = true;
                 button1.Visible = true;
                 checkBox1.Visible = true;
@@ -1229,6 +1238,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             }
             else
             {
+                button2.Enabled = false;
                 button1.Enabled = false;
                 button1.Visible = false;
                 checkBox1.Visible = false;
@@ -1608,6 +1618,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
 button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
             {
+                button2.Enabled = true;
                 button1.Enabled = true;
                 button1.Visible = true;
                 checkBox1.Visible = true;
@@ -1617,6 +1628,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             }
             else
             {
+                button2.Enabled = false;
                 button1.Enabled = false;
                 button1.Visible = false;
                 checkBox1.Visible = false;
@@ -1689,6 +1701,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
 button6.Text == "Изменить" && button7.Text == "Изменить" && button9.Text == "Изменить" && button10.Text == "Изменить")
             {
+                button2.Enabled = true;
                 button1.Enabled = true;
                 button1.Visible = true;
                 checkBox1.Visible = true;
@@ -1698,6 +1711,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             }
             else
             {
+                button2.Enabled = false;
                 button1.Enabled = false;
                 button1.Visible = false;
                 checkBox1.Visible = false;

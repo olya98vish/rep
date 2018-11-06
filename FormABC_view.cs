@@ -11,10 +11,32 @@ namespace WindowsFormsApplication1
 {
     public partial class FormABC_view : Form
     {
+        int VstrA, VstrB, VstrC, VstlbA, VstlbB, VstlbC;
+        double[,] VmasA, VmasB, VmasC;
         public FormABC formABC;
 
         public FormABC_view(int strA, int stlbA, double[,] masA, int strB, int stlbB, double[,] masB, int strC, int stlbC, double[,] masC)
         {
+            this.VstrA = strA;
+            this.VstrB = strB;
+            this.VstrC = strC;
+            this.VstlbA = stlbA;
+            this.VstlbB = stlbB;
+            this.VstlbC = stlbC;
+
+            VmasA = new double[strA, stlbA];
+            for (int i = 0; i < strA; i++)//матрица в памяти пока что нулевая
+            {
+                for (int j = 0; j < stlbA; j++)
+                {
+                    VmasA[i, j] = masA[i, j];
+                    //this.A.Rows[i].Cells[j].Value = masA[i, j];
+                }
+            }
+            //работа с активацией матрицы
+            A.RowCount = strA;
+            A.ColumnCount = stlbA;
+
             for (int i = 0; i < strA; i++)//матрица в памяти пока что нулевая
             {
                 for (int j = 0; j < stlbA; j++)
@@ -23,6 +45,9 @@ namespace WindowsFormsApplication1
                 }
             }
 
+            ////работа с активацией матрицы
+            //B.RowCount = strB;
+            //B.ColumnCount = stlbB;
 
             ////заполнение таблицы значениями из строк
             //for (int i = 0; i<B.RowCount; i++)
@@ -56,6 +81,8 @@ namespace WindowsFormsApplication1
 
         private void FormABC_view_Load(object sender, EventArgs e)
         {
+            A.RowCount = 0;
+            A.ColumnCount = 0;
 
         }
     }

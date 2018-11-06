@@ -37,14 +37,14 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.C = new System.Windows.Forms.DataGridView();
-            this.A = new System.Windows.Forms.DataGridView();
-            this.B = new System.Windows.Forms.DataGridView();
             this.Back = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
+            this.A = new System.Windows.Forms.DataGridView();
+            this.B = new System.Windows.Forms.DataGridView();
+            this.C = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
             this.SuspendLayout();
             // 
             // label22
@@ -121,30 +121,6 @@
             this.label13.Size = new System.Drawing.Size(1355, 3);
             this.label13.TabIndex = 342;
             // 
-            // C
-            // 
-            this.C.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.C.Location = new System.Drawing.Point(71, 199);
-            this.C.Name = "C";
-            this.C.Size = new System.Drawing.Size(240, 150);
-            this.C.TabIndex = 343;
-            // 
-            // A
-            // 
-            this.A.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.A.Location = new System.Drawing.Point(71, 12);
-            this.A.Name = "A";
-            this.A.Size = new System.Drawing.Size(140, 150);
-            this.A.TabIndex = 344;
-            // 
-            // B
-            // 
-            this.B.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.B.Location = new System.Drawing.Point(305, 12);
-            this.B.Name = "B";
-            this.B.Size = new System.Drawing.Size(73, 150);
-            this.B.TabIndex = 345;
-            // 
             // Back
             // 
             this.Back.BackColor = System.Drawing.Color.Transparent;
@@ -161,15 +137,39 @@
             // 
             this.toolTip1.ToolTipTitle = "Подсказка";
             // 
+            // A
+            // 
+            this.A.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.A.Location = new System.Drawing.Point(71, 12);
+            this.A.Name = "A";
+            this.A.Size = new System.Drawing.Size(153, 155);
+            this.A.TabIndex = 347;
+            // 
+            // B
+            // 
+            this.B.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.B.Location = new System.Drawing.Point(295, 12);
+            this.B.Name = "B";
+            this.B.Size = new System.Drawing.Size(67, 155);
+            this.B.TabIndex = 348;
+            // 
+            // C
+            // 
+            this.C.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.C.Location = new System.Drawing.Point(71, 191);
+            this.C.Name = "C";
+            this.C.Size = new System.Drawing.Size(247, 155);
+            this.C.TabIndex = 349;
+            // 
             // FormABC_view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1361, 706);
-            this.Controls.Add(this.Back);
+            this.Controls.Add(this.C);
             this.Controls.Add(this.B);
             this.Controls.Add(this.A);
-            this.Controls.Add(this.C);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
@@ -182,9 +182,9 @@
             this.Name = "FormABC_view";
             this.Text = "Графики и визуализация";
             this.Load += new System.EventHandler(this.FormABC_view_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.C)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,8 +201,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.DataGridView C;
         private System.Windows.Forms.DataGridView A;
         private System.Windows.Forms.DataGridView B;
+        private System.Windows.Forms.DataGridView C;
     }
 }

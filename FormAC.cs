@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToInt32(A.Rows[i].Cells[j].Value) == 0)
+                        if (Convert.ToDouble(A.Rows[i].Cells[j].Value) == 0)
                         //if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
                         {
                             A.Rows[i].Cells[j].Value = 0;
@@ -71,7 +71,7 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToInt32(C.Rows[i].Cells[j].Value) == 0)
+                        if (Convert.ToDouble(C.Rows[i].Cells[j].Value) == 0)
                         //if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
                         {
                             C.Rows[i].Cells[j].Value = 0;

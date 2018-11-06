@@ -162,6 +162,9 @@
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.A.Size = new System.Drawing.Size(401, 360);
             this.A.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.A, "            Информация о вводе.\\n При введении координат точек необходимо их писа" +
+        "ть в ().\\n Координаты межд собой разделять запятой, а точки ;\\n Пример: (1,2); \"" +
+        ");");
             this.A.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.A_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn1
@@ -1018,7 +1021,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 28);
             this.button2.TabIndex = 324;
-            this.toolTip1.SetToolTip(this.button2, "переход к подробному решению и графикам");
+            this.toolTip1.SetToolTip(this.button2, "Переход к подробному решению и графикам");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
