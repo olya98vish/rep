@@ -201,9 +201,9 @@ namespace WindowsFormsApplication1
             int stlbA = 0;
             if ((a_stroki.Text != "") && (a_stolbci.Text != ""))
             {
-                if ((Convert.ToInt32(a_stroki.Text) > 0) && (Convert.ToInt32(a_stroki.Text) > 0))
+                if ((Convert.ToInt32(a_stroki.Text) > 0) && (Convert.ToInt32(a_stolbci.Text) > 0))
                 {
-                    if ((Convert.ToInt32(a_stroki.Text) < 16) && (Convert.ToInt32(a_stroki.Text) < 16))
+                    if ((Convert.ToInt32(a_stroki.Text) < 16) && (Convert.ToInt32(a_stolbci.Text) < 16))
                     {
                         if (buttonA.Text == "ОК")
                         {
@@ -310,7 +310,7 @@ namespace WindowsFormsApplication1
             {
                 if ((Convert.ToInt32(b_stroki.Text) > 0) && (Convert.ToInt32(b_stroki.Text) > 0) && (Convert.ToInt32(b_stroki.Text) == Convert.ToInt32(a_stroki.Text)))
                 {
-                    if ((Convert.ToInt32(b_stroki.Text) < 16) && (Convert.ToInt32(b_stroki.Text) < 16))
+                    if ((Convert.ToInt32(b_stolbci.Text) < 16))
                     {
                         if (buttonB.Text == "ОК")
                         {
@@ -363,6 +363,12 @@ namespace WindowsFormsApplication1
                             B.RowCount = 0;
                             B.ColumnCount = 0;
                         }
+                    }
+                    else
+                    {
+                        b_stolbci.Clear();
+                        //b_stroki.Clear();
+                        MessageBox.Show("Значения числа строк и столбцов должны быть меньше 15!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -1319,6 +1325,98 @@ namespace WindowsFormsApplication1
         {
             TextBox tb = (TextBox)e.Control;
             tb.KeyPress += new KeyPressEventHandler(tb_KeyPress);
+        }
+
+        private void a_stolbci_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void a_stolbci_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void a_stroki_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void a_stroki_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void b_stolbci_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void b_stolbci_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void b_stroki_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+        }
+
+        private void b_stroki_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

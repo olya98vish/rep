@@ -134,6 +134,8 @@
             this.a_stroki.Size = new System.Drawing.Size(46, 20);
             this.a_stroki.TabIndex = 3;
             this.a_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.a_stroki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.a_stroki_KeyDown);
+            this.a_stroki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.a_stroki_KeyPress);
             // 
             // label1
             // 
@@ -187,6 +189,8 @@
             this.a_stolbci.Size = new System.Drawing.Size(46, 20);
             this.a_stolbci.TabIndex = 7;
             this.a_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.a_stolbci.KeyDown += new System.Windows.Forms.KeyEventHandler(this.a_stolbci_KeyDown);
+            this.a_stolbci.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.a_stolbci_KeyPress);
             // 
             // label2
             // 
@@ -227,6 +231,8 @@
             this.b_stolbci.Size = new System.Drawing.Size(46, 20);
             this.b_stolbci.TabIndex = 13;
             this.b_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.b_stolbci.KeyDown += new System.Windows.Forms.KeyEventHandler(this.b_stolbci_KeyDown);
+            this.b_stolbci.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.b_stolbci_KeyPress);
             // 
             // label5
             // 
@@ -245,6 +251,8 @@
             this.b_stroki.Size = new System.Drawing.Size(46, 20);
             this.b_stroki.TabIndex = 11;
             this.b_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.b_stroki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.b_stroki_KeyDown);
+            this.b_stroki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.b_stroki_KeyPress);
             // 
             // buttonB
             // 
@@ -319,6 +327,8 @@
             this.с_stolbci.Size = new System.Drawing.Size(46, 20);
             this.с_stolbci.TabIndex = 21;
             this.с_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.с_stolbci.KeyDown += new System.Windows.Forms.KeyEventHandler(this.с_stolbci_KeyDown);
+            this.с_stolbci.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.с_stolbci_KeyPress);
             // 
             // с_stroki
             // 
@@ -327,6 +337,8 @@
             this.с_stroki.Size = new System.Drawing.Size(46, 20);
             this.с_stroki.TabIndex = 20;
             this.с_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.с_stroki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.с_stroki_KeyDown);
+            this.с_stroki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.с_stroki_KeyPress);
             // 
             // label9
             // 

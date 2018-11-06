@@ -234,6 +234,8 @@
             this.с_stolbci.Size = new System.Drawing.Size(46, 20);
             this.с_stolbci.TabIndex = 81;
             this.с_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.с_stolbci.KeyDown += new System.Windows.Forms.KeyEventHandler(this.с_stolbci_KeyDown);
+            this.с_stolbci.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.с_stolbci_KeyPress);
             // 
             // label5
             // 
@@ -252,6 +254,8 @@
             this.с_stroki.Size = new System.Drawing.Size(46, 20);
             this.с_stroki.TabIndex = 79;
             this.с_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.с_stroki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.с_stroki_KeyDown);
+            this.с_stroki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.с_stroki_KeyPress);
             // 
             // label2
             // 
@@ -270,6 +274,8 @@
             this.a_stolbci.Size = new System.Drawing.Size(46, 20);
             this.a_stolbci.TabIndex = 77;
             this.a_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.a_stolbci.KeyDown += new System.Windows.Forms.KeyEventHandler(this.a_stolbci_KeyDown);
+            this.a_stolbci.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.a_stolbci_KeyPress);
             // 
             // label1
             // 
@@ -288,6 +294,8 @@
             this.a_stroki.Size = new System.Drawing.Size(46, 20);
             this.a_stroki.TabIndex = 74;
             this.a_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.a_stroki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.a_stroki_KeyDown);
+            this.a_stroki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.a_stroki_KeyPress);
             // 
             // Back
             // 
@@ -766,7 +774,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1344, 718);
+            this.ClientSize = new System.Drawing.Size(1361, 718);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox4);

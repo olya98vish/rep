@@ -36,7 +36,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.Back = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.A = new System.Windows.Forms.DataGridView();
@@ -63,7 +62,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label22.Location = new System.Drawing.Point(324, 249);
+            this.label22.Location = new System.Drawing.Point(478, 510);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(28, 32);
             this.label22.TabIndex = 341;
@@ -73,7 +72,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label21.Location = new System.Drawing.Point(970, 161);
+            this.label21.Location = new System.Drawing.Point(962, 55);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(32, 32);
             this.label21.TabIndex = 340;
@@ -83,7 +82,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label20.Location = new System.Drawing.Point(488, 161);
+            this.label20.Location = new System.Drawing.Point(478, 55);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(59, 32);
             this.label20.TabIndex = 338;
@@ -120,14 +119,6 @@
             this.label18.TabIndex = 334;
             this.label18.Text = "x =";
             // 
-            // label13
-            // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label13.Location = new System.Drawing.Point(3, 388);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(1355, 3);
-            this.label13.TabIndex = 342;
-            // 
             // Back
             // 
             this.Back.BackColor = System.Drawing.Color.Transparent;
@@ -156,7 +147,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.A.Location = new System.Drawing.Point(71, 12);
+            this.A.Location = new System.Drawing.Point(64, 12);
             this.A.Name = "A";
             this.A.RowHeadersVisible = false;
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -195,7 +186,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.B.Location = new System.Drawing.Point(553, 12);
+            this.B.Location = new System.Drawing.Point(543, 12);
             this.B.Name = "B";
             this.B.RowHeadersVisible = false;
             this.B.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -234,7 +225,7 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
-            this.C.Location = new System.Drawing.Point(71, 426);
+            this.C.Location = new System.Drawing.Point(64, 394);
             this.C.Name = "C";
             this.C.RowHeadersVisible = false;
             this.C.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -270,7 +261,6 @@
             this.Controls.Add(this.B);
             this.Controls.Add(this.A);
             this.Controls.Add(this.Back);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -298,7 +288,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView A;

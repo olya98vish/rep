@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1
             int widthA = (maxA + VstlbA) * 9;
             int heightA = VstrA * 23;
             A.Size = new System.Drawing.Size(widthA, heightA);
-            label18.Location = new System.Drawing.Point(6, widthA/2);
+            label18.Location = new System.Drawing.Point(6, heightA/2);
 
             //работа с активацией матрицы
             B.RowCount = VstrB;
@@ -87,12 +87,20 @@ namespace WindowsFormsApplication1
             int widthB = (maxB + VstlbB) * 9;
             int heightB = VstrB * 23;
             B.Size = new System.Drawing.Size(widthB, heightB);
+            label20.Location = new System.Drawing.Point(6 + widthA + 10 + 52, heightB / 2);
+            B.Location = new System.Drawing.Point(6 + widthA + 10 + 52 + 59, 12);
+            label21.Location = new System.Drawing.Point(6 + widthA + 20 + 59 + 52 + widthB, heightB / 2);
+
             //работа с активацией матрицы
             C.RowCount = VstrC;
             C.ColumnCount = VstlbC;
             int widthC = (maxC + VstlbC) * 9;
             int heightC = VstrC * 23;
             C.Size = new System.Drawing.Size(widthC, heightC);
+            C.Location = new System.Drawing.Point(64, 12+heightA + 20);
+            label19.Location = new System.Drawing.Point(6, 12 + heightA + 10 + heightC / 2);
+            label22.Location = new System.Drawing.Point(64 + widthC + 10, 12 + 10 + heightA + heightC / 2);
+
 
             for (int i = 0; i < VstrA; i++)//матрица в памяти пока что нулевая
             {
