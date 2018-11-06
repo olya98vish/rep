@@ -76,6 +76,12 @@
     <Compile Include="FormABC_view.Designer.cs">
       <DependentUpon>FormABC_view.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAB_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAB_view.Designer.cs">
+      <DependentUpon>FormAB_view.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormABC_view.resx">
       <DependentUpon>FormABC_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAB_view.resx">
+      <DependentUpon>FormAB_view.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAC.resx">
       <DependentUpon>FormAC.cs</DependentUpon>

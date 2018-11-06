@@ -12,8 +12,14 @@ namespace WindowsFormsApplication1
     public partial class FormAB : Form
     {
         //иницилизация глобальных переменных
+        public FormAB_view formAB_view;
         double[,] masA;//массив данных из datagrid A
         double[,] masB;//массив данных из datagrid B
+        int strA = 0;
+        int strB = 0;
+        int stlbA = 0;
+        int stlbB = 0;
+
 
         public FormAB()
         {
@@ -42,6 +48,14 @@ namespace WindowsFormsApplication1
             }
             b_stroki.ReadOnly = true;
             b_stolbci.ReadOnly = true;
+
+            button2.Enabled = false;
+            button1.Location = new System.Drawing.Point(1243, 9);
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
+
         }
 
         private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
@@ -185,8 +199,7 @@ namespace WindowsFormsApplication1
 
         void tb_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == ';')) && !((e.KeyChar == '(')) && !((e.KeyChar == ')')) && !((e.KeyChar == ','))) //&& !((e.KeyChar == '.'))
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '-')) && !((e.KeyChar == ','))) //&& !((e.KeyChar == '.')) && !((e.KeyChar == ';')) && !((e.KeyChar == '*')) && !((e.KeyChar == '^')) && !((e.KeyChar == '(')) && !((e.KeyChar == ')'))
             {
                 if (e.KeyChar != (char)Keys.Back)
                 {
@@ -197,8 +210,6 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int strA = 0;
-            int stlbA = 0;
             if ((a_stroki.Text != "") && (a_stolbci.Text != ""))
             {
                 if ((Convert.ToInt32(a_stroki.Text) > 0) && (Convert.ToInt32(a_stolbci.Text) > 0))
@@ -303,9 +314,6 @@ namespace WindowsFormsApplication1
 
         private void buttonB_Click(object sender, EventArgs e)
         {
-            int strB = 0;
-            int stlbB = 0;
-
             if ((b_stroki.Text != "") && (b_stolbci.Text != ""))
             {
                 if ((Convert.ToInt32(b_stroki.Text) > 0) && (Convert.ToInt32(b_stroki.Text) > 0) && (Convert.ToInt32(b_stroki.Text) == Convert.ToInt32(a_stroki.Text)))
@@ -436,6 +444,27 @@ namespace WindowsFormsApplication1
                 button4.Text = "OK";
                 button5.Text = "OK";
             }
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить")
+            {
+                button2.Enabled = true;
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -497,6 +526,28 @@ namespace WindowsFormsApplication1
 
                 button4.Text = "OK";
                 button5.Text = "OK";
+            }
+
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить")
+            {
+                button2.Enabled = true;
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
             }
         }
 
@@ -576,6 +627,27 @@ namespace WindowsFormsApplication1
                 button6.Text = "OK";
                 button7.Text = "OK";
             }
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить")
+            {
+                button2.Enabled = true;
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -637,6 +709,27 @@ namespace WindowsFormsApplication1
 
                 button6.Text = "OK";
                 button7.Text = "OK";
+            }
+            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && button4.Text == "Изменить" && button5.Text == "Изменить" &&
+button6.Text == "Изменить" && button7.Text == "Изменить")
+            {
+                button2.Enabled = true;
+                button1.Enabled = true;
+                button1.Visible = true;
+                checkBox1.Visible = true;
+                checkBox2.Visible = true;
+                checkBox3.Visible = true;
+                checkBox4.Visible = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+                button1.Enabled = false;
+                button1.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
             }
         }
 
@@ -1417,6 +1510,30 @@ namespace WindowsFormsApplication1
             {
                 e.Handled = true;
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            int maxA = 0;
+            int maxB = 0;
+
+            for (int i = 0; i < strA; i++)
+            {
+                //поиск максимальной длины в матрице А
+                if (this.Controls["A" + (i + 1).ToString()].Text.Length > maxA)
+                    maxA = this.Controls["A" + (i + 1).ToString()].Text.Length;
+            }
+            for (int i = 0; i < strB; i++)
+            {
+                //поиск максимальной длины в матрице В
+                if (this.Controls["B" + (i + 1).ToString()].Text.Length > maxB)
+                    maxB = this.Controls["B" + (i + 1).ToString()].Text.Length;
+            }
+
+            FormAB_view formAB_view = new FormAB_view(strA, stlbA, masA, strB, stlbB, masB, maxA, maxB);
+            formAB_view.Show();
+            formAB_view.Tag = this;
+            //this.Hide();
         }
     }
 }

@@ -63,3 +63,4 @@ C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csproj.
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.exe
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.pdb
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
+C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAB_view.resources
