@@ -774,7 +774,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1361, 718);
+            this.ClientSize = new System.Drawing.Size(1344, 718);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox4);
@@ -839,7 +839,7 @@
             this.MinimumSize = new System.Drawing.Size(1360, 757);
             this.Name = "FormAC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Matricula";
+            this.Text = "Matricula - AC";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormAC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.C)).EndInit();

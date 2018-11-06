@@ -1205,7 +1205,7 @@
             this.MinimumSize = new System.Drawing.Size(1377, 745);
             this.Name = "FormABC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Matricula";
+            this.Text = "Matricula - ABC";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormABC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();

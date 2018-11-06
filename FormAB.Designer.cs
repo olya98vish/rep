@@ -853,7 +853,7 @@
             this.MinimumSize = new System.Drawing.Size(1360, 757);
             this.Name = "FormAB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Matricula";
+            this.Text = "Matricula - AB";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormAB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();

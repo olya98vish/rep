@@ -270,7 +270,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormABC_view";
-            this.Text = "Графики и визуализация";
+            this.Text = "Matricula - ABC - Графики и визуализация";
             this.Load += new System.EventHandler(this.FormABC_view_Load);
             ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).EndInit();

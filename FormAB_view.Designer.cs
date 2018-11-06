@@ -200,7 +200,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAB_view";
-            this.Text = "Графики и визуализация";
+            this.Text = "Matricula - AB - Графики и визуализация";
             this.Load += new System.EventHandler(this.FormAB_view_Load);
             ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).EndInit();
