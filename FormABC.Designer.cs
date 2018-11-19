@@ -132,7 +132,7 @@
             this.a_stroki.Location = new System.Drawing.Point(285, 16);
             this.a_stroki.Name = "a_stroki";
             this.a_stroki.Size = new System.Drawing.Size(46, 20);
-            this.a_stroki.TabIndex = 3;
+            this.a_stroki.TabIndex = 1;
             this.a_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.a_stroki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.a_stroki_KeyDown);
             this.a_stroki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.a_stroki_KeyPress);
@@ -163,7 +163,7 @@
             this.A.RowHeadersVisible = false;
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.A.Size = new System.Drawing.Size(401, 360);
-            this.A.TabIndex = 6;
+            this.A.TabIndex = 19;
             this.A.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.A_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn1
@@ -187,7 +187,7 @@
             this.a_stolbci.Location = new System.Drawing.Point(360, 16);
             this.a_stolbci.Name = "a_stolbci";
             this.a_stolbci.Size = new System.Drawing.Size(46, 20);
-            this.a_stolbci.TabIndex = 7;
+            this.a_stolbci.TabIndex = 2;
             this.a_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.a_stolbci.KeyDown += new System.Windows.Forms.KeyEventHandler(this.a_stolbci_KeyDown);
             this.a_stolbci.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.a_stolbci_KeyPress);
@@ -209,7 +209,7 @@
             this.buttonA.Location = new System.Drawing.Point(421, 9);
             this.buttonA.Name = "buttonA";
             this.buttonA.Size = new System.Drawing.Size(97, 29);
-            this.buttonA.TabIndex = 15;
+            this.buttonA.TabIndex = 3;
             this.buttonA.Text = "ОК";
             this.buttonA.UseVisualStyleBackColor = false;
             this.buttonA.Click += new System.EventHandler(this.button2_Click);
@@ -229,7 +229,7 @@
             this.b_stolbci.Location = new System.Drawing.Point(359, 461);
             this.b_stolbci.Name = "b_stolbci";
             this.b_stolbci.Size = new System.Drawing.Size(46, 20);
-            this.b_stolbci.TabIndex = 13;
+            this.b_stolbci.TabIndex = 22;
             this.b_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.b_stolbci.KeyDown += new System.Windows.Forms.KeyEventHandler(this.b_stolbci_KeyDown);
             this.b_stolbci.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.b_stolbci_KeyPress);
@@ -249,7 +249,7 @@
             this.b_stroki.Location = new System.Drawing.Point(287, 460);
             this.b_stroki.Name = "b_stroki";
             this.b_stroki.Size = new System.Drawing.Size(46, 20);
-            this.b_stroki.TabIndex = 11;
+            this.b_stroki.TabIndex = 21;
             this.b_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.b_stroki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.b_stroki_KeyDown);
             this.b_stroki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.b_stroki_KeyPress);
@@ -261,7 +261,7 @@
             this.buttonB.Location = new System.Drawing.Point(420, 454);
             this.buttonB.Name = "buttonB";
             this.buttonB.Size = new System.Drawing.Size(97, 29);
-            this.buttonB.TabIndex = 16;
+            this.buttonB.TabIndex = 23;
             this.buttonB.Text = "ОК";
             this.buttonB.UseVisualStyleBackColor = false;
             this.buttonB.Click += new System.EventHandler(this.button3_Click);
@@ -305,7 +305,7 @@
             this.buttonC.Location = new System.Drawing.Point(420, 908);
             this.buttonC.Name = "buttonC";
             this.buttonC.Size = new System.Drawing.Size(97, 29);
-            this.buttonC.TabIndex = 23;
+            this.buttonC.TabIndex = 43;
             this.buttonC.Text = "ОК";
             this.buttonC.UseVisualStyleBackColor = false;
             this.buttonC.Click += new System.EventHandler(this.button1_Click);
@@ -325,7 +325,7 @@
             this.с_stolbci.Location = new System.Drawing.Point(359, 913);
             this.с_stolbci.Name = "с_stolbci";
             this.с_stolbci.Size = new System.Drawing.Size(46, 20);
-            this.с_stolbci.TabIndex = 21;
+            this.с_stolbci.TabIndex = 42;
             this.с_stolbci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.с_stolbci.KeyDown += new System.Windows.Forms.KeyEventHandler(this.с_stolbci_KeyDown);
             this.с_stolbci.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.с_stolbci_KeyPress);
@@ -335,7 +335,7 @@
             this.с_stroki.Location = new System.Drawing.Point(287, 913);
             this.с_stroki.Name = "с_stroki";
             this.с_stroki.Size = new System.Drawing.Size(46, 20);
-            this.с_stroki.TabIndex = 20;
+            this.с_stroki.TabIndex = 41;
             this.с_stroki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.с_stroki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.с_stroki_KeyDown);
             this.с_stroki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.с_stroki_KeyPress);
@@ -373,7 +373,7 @@
             this.B.RowHeadersVisible = false;
             this.B.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.B.Size = new System.Drawing.Size(401, 360);
-            this.B.TabIndex = 26;
+            this.B.TabIndex = 38;
             this.B.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.B_EditingControlShowing);
             // 
             // label11
@@ -408,7 +408,7 @@
             this.C.RowHeadersVisible = false;
             this.C.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.C.Size = new System.Drawing.Size(401, 360);
-            this.C.TabIndex = 29;
+            this.C.TabIndex = 59;
             this.C.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.C_EditingControlShowing);
             // 
             // button4
@@ -418,7 +418,7 @@
             this.button4.Location = new System.Drawing.Point(135, 409);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 29);
-            this.button4.TabIndex = 30;
+            this.button4.TabIndex = 19;
             this.button4.Text = "OK";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -430,7 +430,7 @@
             this.button5.Location = new System.Drawing.Point(557, 409);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 29);
-            this.button5.TabIndex = 31;
+            this.button5.TabIndex = 20;
             this.button5.Text = "OK";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -442,7 +442,7 @@
             this.button6.Location = new System.Drawing.Point(135, 853);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 29);
-            this.button6.TabIndex = 42;
+            this.button6.TabIndex = 39;
             this.button6.Text = "OK";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -454,7 +454,7 @@
             this.button7.Location = new System.Drawing.Point(557, 853);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 29);
-            this.button7.TabIndex = 43;
+            this.button7.TabIndex = 40;
             this.button7.Text = "OK";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -477,7 +477,7 @@
             this.button9.Location = new System.Drawing.Point(135, 1310);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(107, 29);
-            this.button9.TabIndex = 50;
+            this.button9.TabIndex = 60;
             this.button9.Text = "OK";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -489,7 +489,7 @@
             this.Back.Location = new System.Drawing.Point(1, 3);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(25, 28);
-            this.Back.TabIndex = 51;
+            this.Back.TabIndex = 64;
             this.toolTip1.SetToolTip(this.Back, "Возврат к выбору матриц\r\n");
             this.Back.UseVisualStyleBackColor = false;
             this.Back.Click += new System.EventHandler(this.Back_Click);
@@ -516,7 +516,7 @@
             this.A1.Multiline = true;
             this.A1.Name = "A1";
             this.A1.Size = new System.Drawing.Size(400, 23);
-            this.A1.TabIndex = 232;
+            this.A1.TabIndex = 4;
             this.toolTip1.SetToolTip(this.A1, "Ввод матрицы построчно");
             this.A1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A1_KeyDown);
             this.A1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A1_KeyPress);
@@ -528,7 +528,7 @@
             this.button10.Location = new System.Drawing.Point(557, 1310);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(107, 29);
-            this.button10.TabIndex = 273;
+            this.button10.TabIndex = 61;
             this.button10.Text = "OK";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -539,7 +539,7 @@
             this.A2.Multiline = true;
             this.A2.Name = "A2";
             this.A2.Size = new System.Drawing.Size(400, 23);
-            this.A2.TabIndex = 274;
+            this.A2.TabIndex = 5;
             this.toolTip1.SetToolTip(this.A2, "Ввод матрицы построчно");
             this.A2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A2_KeyDown);
             this.A2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A2_KeyPress);
@@ -550,7 +550,7 @@
             this.A3.Multiline = true;
             this.A3.Name = "A3";
             this.A3.Size = new System.Drawing.Size(400, 23);
-            this.A3.TabIndex = 275;
+            this.A3.TabIndex = 6;
             this.toolTip1.SetToolTip(this.A3, "Ввод матрицы построчно");
             this.A3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A3_KeyDown);
             this.A3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A3_KeyPress);
@@ -561,7 +561,7 @@
             this.A6.Multiline = true;
             this.A6.Name = "A6";
             this.A6.Size = new System.Drawing.Size(400, 23);
-            this.A6.TabIndex = 278;
+            this.A6.TabIndex = 9;
             this.toolTip1.SetToolTip(this.A6, "Ввод матрицы построчно");
             this.A6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A6_KeyDown);
             this.A6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A6_KeyPress);
@@ -572,7 +572,7 @@
             this.A5.Multiline = true;
             this.A5.Name = "A5";
             this.A5.Size = new System.Drawing.Size(400, 23);
-            this.A5.TabIndex = 277;
+            this.A5.TabIndex = 8;
             this.toolTip1.SetToolTip(this.A5, "Ввод матрицы построчно");
             this.A5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A5_KeyDown);
             this.A5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A5_KeyPress);
@@ -583,7 +583,7 @@
             this.A4.Multiline = true;
             this.A4.Name = "A4";
             this.A4.Size = new System.Drawing.Size(400, 23);
-            this.A4.TabIndex = 276;
+            this.A4.TabIndex = 7;
             this.toolTip1.SetToolTip(this.A4, "Ввод матрицы построчно");
             this.A4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A4_KeyDown);
             this.A4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A4_KeyPress);
@@ -594,7 +594,7 @@
             this.A12.Multiline = true;
             this.A12.Name = "A12";
             this.A12.Size = new System.Drawing.Size(400, 23);
-            this.A12.TabIndex = 284;
+            this.A12.TabIndex = 15;
             this.toolTip1.SetToolTip(this.A12, "Ввод матрицы построчно");
             this.A12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A12_KeyDown);
             this.A12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A12_KeyPress);
@@ -605,7 +605,7 @@
             this.A11.Multiline = true;
             this.A11.Name = "A11";
             this.A11.Size = new System.Drawing.Size(400, 23);
-            this.A11.TabIndex = 283;
+            this.A11.TabIndex = 14;
             this.toolTip1.SetToolTip(this.A11, "Ввод матрицы построчно");
             this.A11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A11_KeyDown);
             this.A11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A11_KeyPress);
@@ -616,7 +616,7 @@
             this.A10.Multiline = true;
             this.A10.Name = "A10";
             this.A10.Size = new System.Drawing.Size(400, 23);
-            this.A10.TabIndex = 282;
+            this.A10.TabIndex = 13;
             this.toolTip1.SetToolTip(this.A10, "Ввод матрицы построчно");
             this.A10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A10_KeyDown);
             this.A10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A10_KeyPress);
@@ -627,7 +627,7 @@
             this.A9.Multiline = true;
             this.A9.Name = "A9";
             this.A9.Size = new System.Drawing.Size(400, 23);
-            this.A9.TabIndex = 281;
+            this.A9.TabIndex = 12;
             this.toolTip1.SetToolTip(this.A9, "Ввод матрицы построчно");
             this.A9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A9_KeyDown);
             this.A9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A9_KeyPress);
@@ -638,7 +638,7 @@
             this.A8.Multiline = true;
             this.A8.Name = "A8";
             this.A8.Size = new System.Drawing.Size(400, 23);
-            this.A8.TabIndex = 280;
+            this.A8.TabIndex = 11;
             this.toolTip1.SetToolTip(this.A8, "Ввод матрицы построчно");
             this.A8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A8_KeyDown);
             this.A8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A8_KeyPress);
@@ -649,7 +649,7 @@
             this.A7.Multiline = true;
             this.A7.Name = "A7";
             this.A7.Size = new System.Drawing.Size(400, 23);
-            this.A7.TabIndex = 279;
+            this.A7.TabIndex = 10;
             this.toolTip1.SetToolTip(this.A7, "Ввод матрицы построчно");
             this.A7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A7_KeyDown);
             this.A7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A7_KeyPress);
@@ -660,7 +660,7 @@
             this.A15.Multiline = true;
             this.A15.Name = "A15";
             this.A15.Size = new System.Drawing.Size(400, 23);
-            this.A15.TabIndex = 287;
+            this.A15.TabIndex = 18;
             this.toolTip1.SetToolTip(this.A15, "Ввод матрицы построчно");
             this.A15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A15_KeyDown);
             this.A15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A15_KeyPress);
@@ -671,7 +671,7 @@
             this.A14.Multiline = true;
             this.A14.Name = "A14";
             this.A14.Size = new System.Drawing.Size(400, 23);
-            this.A14.TabIndex = 286;
+            this.A14.TabIndex = 17;
             this.toolTip1.SetToolTip(this.A14, "Ввод матрицы построчно");
             this.A14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A14_KeyDown);
             this.A14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A14_KeyPress);
@@ -682,7 +682,7 @@
             this.A13.Multiline = true;
             this.A13.Name = "A13";
             this.A13.Size = new System.Drawing.Size(400, 23);
-            this.A13.TabIndex = 285;
+            this.A13.TabIndex = 16;
             this.toolTip1.SetToolTip(this.A13, "Ввод матрицы построчно");
             this.A13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A13_KeyDown);
             this.A13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.A13_KeyPress);
@@ -693,7 +693,7 @@
             this.B15.Multiline = true;
             this.B15.Name = "B15";
             this.B15.Size = new System.Drawing.Size(400, 23);
-            this.B15.TabIndex = 302;
+            this.B15.TabIndex = 37;
             this.toolTip1.SetToolTip(this.B15, "Ввод матрицы построчно");
             this.B15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B15_KeyDown);
             this.B15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B15_KeyPress);
@@ -704,7 +704,7 @@
             this.B14.Multiline = true;
             this.B14.Name = "B14";
             this.B14.Size = new System.Drawing.Size(400, 23);
-            this.B14.TabIndex = 301;
+            this.B14.TabIndex = 36;
             this.toolTip1.SetToolTip(this.B14, "Ввод матрицы построчно");
             this.B14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B14_KeyDown);
             this.B14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B14_KeyPress);
@@ -715,7 +715,7 @@
             this.B13.Multiline = true;
             this.B13.Name = "B13";
             this.B13.Size = new System.Drawing.Size(400, 23);
-            this.B13.TabIndex = 300;
+            this.B13.TabIndex = 35;
             this.toolTip1.SetToolTip(this.B13, "Ввод матрицы построчно");
             this.B13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B13_KeyDown);
             this.B13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B13_KeyPress);
@@ -726,7 +726,7 @@
             this.B12.Multiline = true;
             this.B12.Name = "B12";
             this.B12.Size = new System.Drawing.Size(400, 23);
-            this.B12.TabIndex = 299;
+            this.B12.TabIndex = 34;
             this.toolTip1.SetToolTip(this.B12, "Ввод матрицы построчно");
             this.B12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B12_KeyDown);
             this.B12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B12_KeyPress);
@@ -737,7 +737,7 @@
             this.B11.Multiline = true;
             this.B11.Name = "B11";
             this.B11.Size = new System.Drawing.Size(400, 23);
-            this.B11.TabIndex = 298;
+            this.B11.TabIndex = 33;
             this.toolTip1.SetToolTip(this.B11, "Ввод матрицы построчно");
             this.B11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B11_KeyDown);
             this.B11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B11_KeyPress);
@@ -748,7 +748,7 @@
             this.B10.Multiline = true;
             this.B10.Name = "B10";
             this.B10.Size = new System.Drawing.Size(400, 23);
-            this.B10.TabIndex = 297;
+            this.B10.TabIndex = 33;
             this.toolTip1.SetToolTip(this.B10, "Ввод матрицы построчно");
             this.B10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B10_KeyDown);
             this.B10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B10_KeyPress);
@@ -759,7 +759,7 @@
             this.B9.Multiline = true;
             this.B9.Name = "B9";
             this.B9.Size = new System.Drawing.Size(400, 23);
-            this.B9.TabIndex = 296;
+            this.B9.TabIndex = 32;
             this.toolTip1.SetToolTip(this.B9, "Ввод матрицы построчно");
             this.B9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B9_KeyDown);
             this.B9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B9_KeyPress);
@@ -770,7 +770,7 @@
             this.B8.Multiline = true;
             this.B8.Name = "B8";
             this.B8.Size = new System.Drawing.Size(400, 23);
-            this.B8.TabIndex = 295;
+            this.B8.TabIndex = 31;
             this.toolTip1.SetToolTip(this.B8, "Ввод матрицы построчно");
             this.B8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B8_KeyDown);
             this.B8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B8_KeyPress);
@@ -781,7 +781,7 @@
             this.B7.Multiline = true;
             this.B7.Name = "B7";
             this.B7.Size = new System.Drawing.Size(400, 23);
-            this.B7.TabIndex = 294;
+            this.B7.TabIndex = 30;
             this.toolTip1.SetToolTip(this.B7, "Ввод матрицы построчно");
             this.B7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B7_KeyDown);
             this.B7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B7_KeyPress);
@@ -792,7 +792,7 @@
             this.B6.Multiline = true;
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(400, 23);
-            this.B6.TabIndex = 293;
+            this.B6.TabIndex = 29;
             this.toolTip1.SetToolTip(this.B6, "Ввод матрицы построчно");
             this.B6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B6_KeyDown);
             this.B6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B6_KeyPress);
@@ -803,7 +803,7 @@
             this.B5.Multiline = true;
             this.B5.Name = "B5";
             this.B5.Size = new System.Drawing.Size(400, 23);
-            this.B5.TabIndex = 292;
+            this.B5.TabIndex = 28;
             this.toolTip1.SetToolTip(this.B5, "Ввод матрицы построчно");
             this.B5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B5_KeyDown);
             this.B5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B5_KeyPress);
@@ -814,7 +814,7 @@
             this.B4.Multiline = true;
             this.B4.Name = "B4";
             this.B4.Size = new System.Drawing.Size(400, 23);
-            this.B4.TabIndex = 291;
+            this.B4.TabIndex = 27;
             this.toolTip1.SetToolTip(this.B4, "Ввод матрицы построчно");
             this.B4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B4_KeyDown);
             this.B4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B4_KeyPress);
@@ -825,7 +825,7 @@
             this.B3.Multiline = true;
             this.B3.Name = "B3";
             this.B3.Size = new System.Drawing.Size(400, 23);
-            this.B3.TabIndex = 290;
+            this.B3.TabIndex = 26;
             this.toolTip1.SetToolTip(this.B3, "Ввод матрицы построчно");
             this.B3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B3_KeyDown);
             this.B3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B3_KeyPress);
@@ -836,7 +836,7 @@
             this.B2.Multiline = true;
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(400, 23);
-            this.B2.TabIndex = 289;
+            this.B2.TabIndex = 25;
             this.toolTip1.SetToolTip(this.B2, "Ввод матрицы построчно");
             this.B2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B2_KeyDown);
             this.B2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B2_KeyPress);
@@ -847,7 +847,7 @@
             this.B1.Multiline = true;
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(400, 23);
-            this.B1.TabIndex = 288;
+            this.B1.TabIndex = 24;
             this.toolTip1.SetToolTip(this.B1, "Ввод матрицы построчно");
             this.B1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.B1_KeyDown);
             this.B1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.B1_KeyPress);
@@ -858,7 +858,7 @@
             this.C15.Multiline = true;
             this.C15.Name = "C15";
             this.C15.Size = new System.Drawing.Size(400, 23);
-            this.C15.TabIndex = 317;
+            this.C15.TabIndex = 58;
             this.toolTip1.SetToolTip(this.C15, "Ввод матрицы построчно");
             this.C15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C15_KeyDown);
             this.C15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C15_KeyPress);
@@ -869,7 +869,7 @@
             this.C14.Multiline = true;
             this.C14.Name = "C14";
             this.C14.Size = new System.Drawing.Size(400, 23);
-            this.C14.TabIndex = 316;
+            this.C14.TabIndex = 57;
             this.toolTip1.SetToolTip(this.C14, "Ввод матрицы построчно");
             this.C14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C14_KeyDown);
             this.C14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C14_KeyPress);
@@ -880,7 +880,7 @@
             this.C13.Multiline = true;
             this.C13.Name = "C13";
             this.C13.Size = new System.Drawing.Size(400, 23);
-            this.C13.TabIndex = 315;
+            this.C13.TabIndex = 56;
             this.toolTip1.SetToolTip(this.C13, "Ввод матрицы построчно");
             this.C13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C13_KeyDown);
             this.C13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C13_KeyPress);
@@ -891,7 +891,7 @@
             this.C12.Multiline = true;
             this.C12.Name = "C12";
             this.C12.Size = new System.Drawing.Size(400, 23);
-            this.C12.TabIndex = 314;
+            this.C12.TabIndex = 55;
             this.toolTip1.SetToolTip(this.C12, "Ввод матрицы построчно");
             this.C12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C12_KeyDown);
             this.C12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C12_KeyPress);
@@ -902,7 +902,7 @@
             this.C11.Multiline = true;
             this.C11.Name = "C11";
             this.C11.Size = new System.Drawing.Size(400, 23);
-            this.C11.TabIndex = 313;
+            this.C11.TabIndex = 54;
             this.toolTip1.SetToolTip(this.C11, "Ввод матрицы построчно");
             this.C11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C11_KeyDown);
             this.C11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C11_KeyPress);
@@ -913,7 +913,7 @@
             this.C10.Multiline = true;
             this.C10.Name = "C10";
             this.C10.Size = new System.Drawing.Size(400, 23);
-            this.C10.TabIndex = 312;
+            this.C10.TabIndex = 53;
             this.toolTip1.SetToolTip(this.C10, "Ввод матрицы построчно");
             this.C10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C10_KeyDown);
             this.C10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C10_KeyPress);
@@ -924,7 +924,7 @@
             this.C9.Multiline = true;
             this.C9.Name = "C9";
             this.C9.Size = new System.Drawing.Size(400, 23);
-            this.C9.TabIndex = 311;
+            this.C9.TabIndex = 52;
             this.toolTip1.SetToolTip(this.C9, "Ввод матрицы построчно");
             this.C9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C9_KeyDown);
             this.C9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C9_KeyPress);
@@ -935,7 +935,7 @@
             this.C8.Multiline = true;
             this.C8.Name = "C8";
             this.C8.Size = new System.Drawing.Size(400, 23);
-            this.C8.TabIndex = 310;
+            this.C8.TabIndex = 51;
             this.toolTip1.SetToolTip(this.C8, "Ввод матрицы построчно");
             this.C8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C8_KeyDown);
             this.C8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C8_KeyPress);
@@ -946,7 +946,7 @@
             this.C7.Multiline = true;
             this.C7.Name = "C7";
             this.C7.Size = new System.Drawing.Size(400, 23);
-            this.C7.TabIndex = 309;
+            this.C7.TabIndex = 50;
             this.toolTip1.SetToolTip(this.C7, "Ввод матрицы построчно");
             this.C7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C7_KeyDown);
             this.C7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C7_KeyPress);
@@ -957,7 +957,7 @@
             this.C6.Multiline = true;
             this.C6.Name = "C6";
             this.C6.Size = new System.Drawing.Size(400, 23);
-            this.C6.TabIndex = 308;
+            this.C6.TabIndex = 49;
             this.toolTip1.SetToolTip(this.C6, "Ввод матрицы построчно");
             this.C6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C6_KeyDown);
             this.C6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C6_KeyPress);
@@ -968,7 +968,7 @@
             this.C5.Multiline = true;
             this.C5.Name = "C5";
             this.C5.Size = new System.Drawing.Size(400, 23);
-            this.C5.TabIndex = 307;
+            this.C5.TabIndex = 48;
             this.toolTip1.SetToolTip(this.C5, "Ввод матрицы построчно");
             this.C5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C5_KeyDown);
             this.C5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C5_KeyPress);
@@ -979,7 +979,7 @@
             this.C4.Multiline = true;
             this.C4.Name = "C4";
             this.C4.Size = new System.Drawing.Size(400, 23);
-            this.C4.TabIndex = 306;
+            this.C4.TabIndex = 47;
             this.toolTip1.SetToolTip(this.C4, "Ввод матрицы построчно");
             this.C4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C4_KeyDown);
             this.C4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C4_KeyPress);
@@ -990,7 +990,7 @@
             this.C3.Multiline = true;
             this.C3.Name = "C3";
             this.C3.Size = new System.Drawing.Size(400, 23);
-            this.C3.TabIndex = 305;
+            this.C3.TabIndex = 46;
             this.toolTip1.SetToolTip(this.C3, "Ввод матрицы построчно");
             this.C3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C3_KeyDown);
             this.C3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C3_KeyPress);
@@ -1001,7 +1001,7 @@
             this.C2.Multiline = true;
             this.C2.Name = "C2";
             this.C2.Size = new System.Drawing.Size(400, 23);
-            this.C2.TabIndex = 304;
+            this.C2.TabIndex = 45;
             this.toolTip1.SetToolTip(this.C2, "Ввод матрицы построчно");
             this.C2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C2_KeyDown);
             this.C2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C2_KeyPress);
@@ -1012,7 +1012,7 @@
             this.C1.Multiline = true;
             this.C1.Name = "C1";
             this.C1.Size = new System.Drawing.Size(400, 23);
-            this.C1.TabIndex = 303;
+            this.C1.TabIndex = 44;
             this.toolTip1.SetToolTip(this.C1, "Ввод матрицы построчно");
             this.C1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.C1_KeyDown);
             this.C1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C1_KeyPress);
@@ -1029,7 +1029,7 @@
             this.button2.Location = new System.Drawing.Point(1307, 1312);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 28);
-            this.button2.TabIndex = 324;
+            this.button2.TabIndex = 62;
             this.toolTip1.SetToolTip(this.button2, "Переход к подробному решению и графикам");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
@@ -1093,7 +1093,7 @@
             this.button1.Location = new System.Drawing.Point(1243, 9);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 48);
-            this.button1.TabIndex = 323;
+            this.button1.TabIndex = 63;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -1112,7 +1112,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1361, 706);
+            this.ClientSize = new System.Drawing.Size(1348, 689);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox4);
@@ -1200,9 +1200,8 @@
             this.Controls.Add(this.A);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.a_stroki);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximumSize = new System.Drawing.Size(1377, 745);
-            this.MinimumSize = new System.Drawing.Size(1377, 745);
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "FormABC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matricula - ABC";

@@ -65,3 +65,23 @@ C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsAppli
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAB_view.resources
 C:\Users\Евгения\Source\Repos\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAC_view.resources
+C:\Users\megad\KursProject\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.AboutBox1.resources
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormABC_view.resources
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAB_view.resources
+C:\Users\megad\KursProject\obj\x86\Debug\WindowsFormsApplication1.FormAC_view.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\megad\KursProject — Кадинское говно\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\megad\KursProject — Кадинское говно\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.AboutBox1.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.FormABC.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.FormAB.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.FormABC_view.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.FormAB_view.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.FormAC.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.FormAC_view.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\megad\KursProject — Кадинское говно\obj\x86\Debug\Matricula.csproj.GenerateResource.Cache

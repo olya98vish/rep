@@ -92,13 +92,13 @@
             this.A2 = new System.Windows.Forms.TextBox();
             this.A1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
             this.SuspendLayout();
@@ -706,6 +706,18 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Подсказка";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(1295, 850);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(25, 28);
+            this.button2.TabIndex = 342;
+            this.toolTip1.SetToolTip(this.button2, "Переход к подробному решению и графикам");
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -769,25 +781,13 @@
             this.label16.Size = new System.Drawing.Size(500, 3);
             this.label16.TabIndex = 336;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1295, 850);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 28);
-            this.button2.TabIndex = 342;
-            this.toolTip1.SetToolTip(this.button2, "Переход к подробному решению и графикам");
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // FormAB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1344, 718);
+            this.ClientSize = new System.Drawing.Size(1354, 718);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox4);
@@ -848,9 +848,8 @@
             this.Controls.Add(this.a_stolbci);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.a_stroki);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximumSize = new System.Drawing.Size(1360, 757);
-            this.MinimumSize = new System.Drawing.Size(1360, 757);
+            this.MinimumSize = new System.Drawing.Size(1360, 726);
             this.Name = "FormAB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matricula - AB";

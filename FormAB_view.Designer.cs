@@ -209,8 +209,6 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormAB_view";
             this.Text = "Matricula - AB - Графики и визуализация";
             this.Load += new System.EventHandler(this.FormAB_view_Load);

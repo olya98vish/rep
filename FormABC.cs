@@ -22,6 +22,7 @@ namespace WindowsFormsApplication1
         int stlbA = 0;
         int stlbB = 0;
         int stlbC = 0;
+        filling cl = new filling();
 
         public FormABC()
         {
@@ -2075,25 +2076,54 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             }
             else if ((checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
             {//ошибка
+                //вывод матрицы упр и ранга упр по запросу
+                MessageBox.Show("Нельзя вывести ранг матрицы, не выведя саму матрицу!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!(checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            { //ошибка
+                //вывод матрицы набл и ранга набл по запросу
                 MessageBox.Show("Нельзя вывести ранг матрицы, не выведя саму матрицу!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if ((checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
             {//ошибка
+                //вывод матрицы упр
                 MessageBox.Show("Нельзя вывести ранг матрицы, не выведя саму матрицу!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!(checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && (checkBox4.Checked))
-            {
-                //
+            {//ошибка
+                //вывод матрицы набл
+                MessageBox.Show("Нельзя вывести ранг матрицы, не выведя саму матрицу!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (!(checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            else if ((checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && !(checkBox4.Checked))
             {
-                //
+                //вывод набл и упр
             }
-            else if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            else if ((checkBox1.Checked) && !(checkBox2.Checked) && !(checkBox3.Checked) && (checkBox4.Checked))
             {
-                //
+                //вывод матр упр и ранг упр
             }
-
+            else if (!(checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
+            {
+                //вывод матр набл и ранг набл
+            }
+            else if (!(checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            {
+                MessageBox.Show("Нельзя вывести ранг матрицы, не выведя саму матрицу!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if ((checkBox1.Checked) && !(checkBox2.Checked) && !(checkBox3.Checked) && !(checkBox4.Checked))
+            {
+                //вывод матр упр
+                double[,] U = new double[strA, strA * stlbB];
+                U = cl.MatrU(masA, masB, strA, stlbB);
+            }
+            else if (!(checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && !(checkBox4.Checked))
+            {
+                //вывод матр набл
+            }
+            else if (!(checkBox1.Checked) && !(checkBox2.Checked) && ((checkBox3.Checked) || (checkBox4.Checked)))
+            {
+                MessageBox.Show("Нельзя вывести ранг матрицы, не выведя саму матрицу!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 MessageBox.Show("Хотя бы одна позиция должна быть выбрана!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
