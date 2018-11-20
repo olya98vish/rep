@@ -2302,6 +2302,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 e.Handled = true;
             }
         }
+
     }
 }
 
