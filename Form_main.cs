@@ -181,6 +181,5 @@ namespace WindowsFormsApplication1
             checkBox3.Visible = false;
             checkBox4.Visible = false;
         }
-
     }
 }
