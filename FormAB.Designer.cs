@@ -787,7 +787,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1354, 718);
+            this.ClientSize = new System.Drawing.Size(1348, 706);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox4);
@@ -848,8 +848,8 @@
             this.Controls.Add(this.a_stolbci);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.a_stroki);
-            this.MaximumSize = new System.Drawing.Size(1360, 757);
-            this.MinimumSize = new System.Drawing.Size(1360, 726);
+            this.MaximumSize = new System.Drawing.Size(1377, 745);
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "FormAB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matricula - AB";

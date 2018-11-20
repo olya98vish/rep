@@ -8,7 +8,7 @@ namespace WindowsFormsApplication1
 {
     static class Program
     {
-        public static Form1 form1; //Создаем экземпляр класса Form1
+        public static Form_main form1; //Создаем экземпляр класса Form1
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(form1 = new Form1());
+            Application.Run(form1 = new Form_main());
         }
     }
 }

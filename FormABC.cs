@@ -380,7 +380,7 @@ namespace WindowsFormsApplication1
                     {
                         a_stolbci.Clear();
                         a_stroki.Clear();
-                        MessageBox.Show("Значения числа строк и столбцов должны быть меньше 15!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Значения числа строк и столбцов должны быть <= 15!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
