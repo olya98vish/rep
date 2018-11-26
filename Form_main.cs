@@ -242,7 +242,7 @@ namespace WindowsFormsApplication1
             {
                 if ((Convert.ToInt32(a_stroki.Text) > 0) && (Convert.ToInt32(a_stolbci.Text) > 0))
                 {
-                    if ((Convert.ToInt32(a_stroki.Text) < 16) && (Convert.ToInt32(a_stolbci.Text) < 16))
+                    if ((Convert.ToInt32(a_stroki.Text) < 11) && (Convert.ToInt32(a_stolbci.Text) < 11))
                     {
                         if (buttonA.Text == "ОК")
                         {
@@ -321,7 +321,7 @@ namespace WindowsFormsApplication1
                             с_stroki.Clear();
 
                             //очистка текстбоксов и сделаем их неактивными
-                            for (int i = 1; i < 16; i++)
+                            for (int i = 1; i < 11; i++)
                             {
                                 tabPage2.Controls["A" + i.ToString()].Enabled = false;
                                 tabPage2.Controls["B" + i.ToString()].Enabled = false;
@@ -343,7 +343,7 @@ namespace WindowsFormsApplication1
                     {
                         a_stolbci.Clear();
                         a_stroki.Clear();
-                        MessageBox.Show("Значения числа строк и столбцов должны быть меньше 15!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Значения числа строк и столбцов должны быть <=10!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -550,7 +550,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             {
                 if ((Convert.ToInt32(b_stroki.Text) > 0) && (Convert.ToInt32(b_stroki.Text) > 0) && (Convert.ToInt32(b_stroki.Text) == Convert.ToInt32(a_stroki.Text)))
                 {
-                    if ((Convert.ToInt32(b_stolbci.Text) < 16))
+                    if ((Convert.ToInt32(b_stolbci.Text) < 11))
                     {
                         if (buttonB.Text == "ОК")
                         {
@@ -594,7 +594,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
 
                             b_stolbci.Clear();
                             //очистка текстбоксов и сделаем их неактивными
-                            for (int i = 1; i < 16; i++)
+                            for (int i = 1; i < 11; i++)
                             {
                                 tabPage2.Controls["B" + i.ToString()].Enabled = false;
                                 tabPage2.Controls["B" + i.ToString()].Text = "";
@@ -608,7 +608,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                     {
                         b_stolbci.Clear();
                         //b_stroki.Clear();
-                        MessageBox.Show("Значения числа строк и столбцов должны быть меньше 15!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Значения числа строк и столбцов должны быть <=10!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -786,7 +786,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
             {
                 if ((Convert.ToInt32(с_stroki.Text) > 0) && (Convert.ToInt32(с_stroki.Text) > 0) && (Convert.ToInt32(с_stolbci.Text) == Convert.ToInt32(a_stolbci.Text)))
                 {
-                    if ((Convert.ToInt32(с_stroki.Text) < 16))
+                    if ((Convert.ToInt32(с_stroki.Text) < 11))
                     {
                         if (buttonC.Text == "ОК")
                         {
@@ -831,7 +831,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
 
                             с_stroki.Clear();
                             //очистка текстбоксов и сделаем их неактивными
-                            for (int i = 1; i < 16; i++)
+                            for (int i = 1; i < 11; i++)
                             {
                                 tabPage2.Controls["C" + i.ToString()].Enabled = false;
                                 tabPage2.Controls["C" + i.ToString()].Text = "";
@@ -845,7 +845,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                     {
                         //c_stolbci.Clear();
                         с_stroki.Clear();
-                        MessageBox.Show("Значения числа строк и столбцов должны быть меньше 15!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Значения числа строк и столбцов должны быть <=10!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -945,7 +945,7 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 C.Enabled = false;
 
                 //текстбоксы недоступны для пользователя
-                for (int i = 1; i < 16; i++)
+                for (int i = 1; i < 11; i++)
                 {
                     tabPage2.Controls["C" + i.ToString()].Enabled = false;
                 }
@@ -1913,5 +1913,6 @@ button6.Text == "Изменить" && button7.Text == "Изменить" && butt
                 e.Handled = true;
             }
         }
+
     }
 }
