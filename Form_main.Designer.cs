@@ -36,6 +36,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.checkC = new System.Windows.Forms.CheckBox();
+            this.checkB = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -86,11 +91,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -127,7 +127,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1674, 931);
+            this.tabPage1.Size = new System.Drawing.Size(1452, 931);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Файл";
             // 
@@ -180,8 +180,8 @@
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.label23);
-            this.tabPage2.Controls.Add(this.checkBox6);
-            this.tabPage2.Controls.Add(this.checkBox5);
+            this.tabPage2.Controls.Add(this.checkC);
+            this.tabPage2.Controls.Add(this.checkB);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.checkBox4);
@@ -226,6 +226,58 @@
             this.tabPage2.Size = new System.Drawing.Size(1452, 931);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Система";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(569, 10);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(23, 32);
+            this.label16.TabIndex = 401;
+            this.label16.Text = ".";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.Location = new System.Drawing.Point(567, 94);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(87, 32);
+            this.label22.TabIndex = 400;
+            this.label22.Text = "y = Cx";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label23.Location = new System.Drawing.Point(567, 40);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(150, 32);
+            this.label23.TabIndex = 399;
+            this.label23.Text = "x = Ax + Bu";
+            // 
+            // checkC
+            // 
+            this.checkC.AutoSize = true;
+            this.checkC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkC.Location = new System.Drawing.Point(7, 716);
+            this.checkC.Name = "checkC";
+            this.checkC.Size = new System.Drawing.Size(15, 14);
+            this.checkC.TabIndex = 398;
+            this.checkC.UseVisualStyleBackColor = true;
+            this.checkC.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            // 
+            // checkB
+            // 
+            this.checkB.AutoSize = true;
+            this.checkB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkB.Location = new System.Drawing.Point(7, 385);
+            this.checkB.Name = "checkB";
+            this.checkB.Size = new System.Drawing.Size(15, 14);
+            this.checkB.TabIndex = 397;
+            this.checkB.UseVisualStyleBackColor = true;
+            this.checkB.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // label17
             // 
@@ -663,7 +715,7 @@
             this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1674, 831);
+            this.tabPage3.Size = new System.Drawing.Size(1452, 931);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Вычисления";
             // 
@@ -673,7 +725,7 @@
             this.tabPage4.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1674, 831);
+            this.tabPage4.Size = new System.Drawing.Size(1452, 931);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Графики";
             // 
@@ -683,7 +735,7 @@
             this.tabPage5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1674, 831);
+            this.tabPage5.Size = new System.Drawing.Size(1452, 931);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "пока не знаю для чего";
             // 
@@ -712,61 +764,6 @@
             // 
             this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip2.ToolTipTitle = "Подсказка";
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox5.Location = new System.Drawing.Point(7, 385);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 397;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox6.Location = new System.Drawing.Point(7, 716);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 398;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(569, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(23, 32);
-            this.label16.TabIndex = 401;
-            this.label16.Text = ".";
-            this.label16.Visible = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(567, 94);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(87, 32);
-            this.label22.TabIndex = 400;
-            this.label22.Text = "y = Cx";
-            this.label22.Visible = false;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label23.Location = new System.Drawing.Point(567, 40);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(150, 32);
-            this.label23.TabIndex = 399;
-            this.label23.Text = "x = Ax + Bu";
-            this.label23.Visible = false;
             // 
             // Form_main
             // 
@@ -850,8 +847,8 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkB;
+        private System.Windows.Forms.CheckBox checkC;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;

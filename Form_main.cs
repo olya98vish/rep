@@ -147,7 +147,7 @@ namespace WindowsFormsApplication1
 
                             a_stroki.ReadOnly = true;
                             a_stolbci.ReadOnly = true;
-                            buttonA.Text = "Изменить А / Очистка всего";
+                            buttonA.Text = "Изменить А / Очистить всё";
 
                             strA = Convert.ToInt32(a_stroki.Text);
                             stlbA = Convert.ToInt32(a_stolbci.Text);
@@ -254,6 +254,8 @@ namespace WindowsFormsApplication1
             checkBox2.Enabled = false;
             checkBox3.Enabled = false;
             checkBox4.Enabled = false;
+            checkB.Checked = true;
+            checkC.Checked = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -799,7 +801,7 @@ namespace WindowsFormsApplication1
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
-            if ((checkBox5.Checked == true) && (checkBox6.Checked == true))//+
+            if ((checkB.Checked == true) && (checkC.Checked == true))//+
             {
                 label23.Text = "x = Ax + Bu";
                 label23.Visible = true;
@@ -810,8 +812,21 @@ namespace WindowsFormsApplication1
 
                 label16.Visible = true;
                 label16.Location = new System.Drawing.Point(569, 10);//.
+
+                b_stolbci.Enabled = true;
+                b_stroki.Enabled = true;
+                buttonB.Enabled = true;
+                B.ReadOnly = false;
+                B.Enabled = true;
+                button6.Enabled = true;
+                с_stolbci.Enabled = true;
+                с_stroki.Enabled = true;
+                buttonC.Enabled = true;
+                C.ReadOnly = false;
+                C.Enabled = true;
+                button9.Enabled = true;
             }
-            if ((checkBox5.Checked == true) && (checkBox6.Checked == false))//+
+            if ((checkB.Checked == true) && (checkC.Checked == false))//+
             {
                 label23.Text = "x = Ax + Bu";
                 label23.Visible = true;
@@ -822,8 +837,21 @@ namespace WindowsFormsApplication1
 
                 label16.Visible = true;
                 label16.Location = new System.Drawing.Point(569, 10);//.
+
+                b_stolbci.Enabled = true;
+                b_stroki.Enabled = true;
+                buttonB.Enabled = true;
+                B.ReadOnly = false;
+                B.Enabled = true;
+                button6.Enabled = true;
+                с_stolbci.Enabled = false;
+                с_stroki.Enabled = false;
+                buttonC.Enabled = false;
+                C.ReadOnly = true;
+                C.Enabled = false;
+                button9.Enabled = false;
             }
-            if ((checkBox5.Checked == false) && (checkBox6.Checked == true))//+
+            if ((checkB.Checked == false) && (checkC.Checked == true))//+
             {
                 label23.Text = "x = Ax";
                 label23.Visible = true;
@@ -834,8 +862,21 @@ namespace WindowsFormsApplication1
 
                 label16.Visible = true;
                 label16.Location = new System.Drawing.Point(569, 10);//.
+
+                b_stolbci.Enabled = false;
+                b_stroki.Enabled = false;
+                buttonB.Enabled = false;
+                B.ReadOnly = true;
+                B.Enabled = false;
+                button6.Enabled = false;
+                с_stolbci.Enabled = true;
+                с_stroki.Enabled = true;
+                buttonC.Enabled = true;
+                C.ReadOnly = false;
+                C.Enabled = true;
+                button9.Enabled = true;
             }
-            if ((checkBox5.Checked == false) && (checkBox6.Checked == false))//+
+            if ((checkB.Checked == false) && (checkC.Checked == false))//+
             {
                 //label23.Text = "x = Ax + Bu";
                 //label23.Visible = false;
@@ -848,13 +889,13 @@ namespace WindowsFormsApplication1
                 //label16.Location = new System.Drawing.Point(569, 10);//.
 
                 MessageBox.Show("Следует выбрать либо одну из матриц В или С, либо отметить обе!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                checkBox5.Checked = true;
+                checkB.Checked = true;
             }
         }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
-            if ((checkBox5.Checked == true) && (checkBox6.Checked == true))//+
+            if ((checkB.Checked == true) && (checkC.Checked == true))//+
             {
                 label23.Text = "x = Ax + Bu";
                 label23.Visible = true;
@@ -865,8 +906,21 @@ namespace WindowsFormsApplication1
 
                 label16.Visible = true;
                 label16.Location = new System.Drawing.Point(569, 10);//.
+
+                b_stolbci.Enabled = true;
+                b_stroki.Enabled = true;
+                buttonB.Enabled = true;
+                B.ReadOnly = false;
+                B.Enabled = true;
+                button6.Enabled = true;
+                с_stolbci.Enabled = true;
+                с_stroki.Enabled = true;
+                buttonC.Enabled = true;
+                C.ReadOnly = false;
+                C.Enabled = true;
+                button9.Enabled = true;
             }
-            if ((checkBox5.Checked == false) && (checkBox6.Checked == true))//+
+            if ((checkB.Checked == false) && (checkC.Checked == true))//+
             {
                 label23.Text = "x = Ax";
                 label23.Visible = true;
@@ -877,8 +931,21 @@ namespace WindowsFormsApplication1
 
                 label16.Visible = true;
                 label16.Location = new System.Drawing.Point(569, 10);//.
+
+                b_stolbci.Enabled = false;
+                b_stroki.Enabled = false;
+                buttonB.Enabled = false;
+                B.ReadOnly = true;
+                B.Enabled = false;
+                button6.Enabled = false;
+                с_stolbci.Enabled = true;
+                с_stroki.Enabled = true;
+                buttonC.Enabled = true;
+                C.ReadOnly = false;
+                C.Enabled = true;
+                button9.Enabled = true;
             }
-            if ((checkBox5.Checked == true) && (checkBox6.Checked == false))//+
+            if ((checkB.Checked == true) && (checkC.Checked == false))//+
             {
                 label23.Text = "x = Ax + Bu";
                 label23.Visible = true;
@@ -889,8 +956,21 @@ namespace WindowsFormsApplication1
 
                 label16.Visible = true;
                 label16.Location = new System.Drawing.Point(569, 10);//.
+
+                b_stolbci.Enabled = true;
+                b_stroki.Enabled = true;
+                buttonB.Enabled = true;
+                B.ReadOnly = false;
+                B.Enabled = true;
+                button6.Enabled = true;
+                с_stolbci.Enabled = false;
+                с_stroki.Enabled = false;
+                buttonC.Enabled = false;
+                C.ReadOnly = true;
+                C.Enabled = false;
+                button9.Enabled = false;
             }
-            if ((checkBox5.Checked == false) && (checkBox6.Checked == false))//+
+            if ((checkB.Checked == false) && (checkC.Checked == false))//+
             {
                 //label23.Text = "x = Ax + Bu";
                 //label23.Visible = false;
@@ -903,7 +983,7 @@ namespace WindowsFormsApplication1
                 //label16.Location = new System.Drawing.Point(569, 10);//.
 
                 MessageBox.Show("Следует выбрать либо одну из матриц В или С, либо отметить обе!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                checkBox6.Checked = true;
+                checkC.Checked = true;
             }
         }
     }
