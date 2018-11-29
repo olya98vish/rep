@@ -91,6 +91,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -177,6 +178,7 @@
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.label23);
@@ -253,9 +255,9 @@
             this.label23.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label23.Location = new System.Drawing.Point(567, 40);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(150, 32);
+            this.label23.Size = new System.Drawing.Size(96, 32);
             this.label23.TabIndex = 399;
-            this.label23.Text = "x = Ax + Bu";
+            this.label23.Text = "x = Ax ";
             // 
             // checkC
             // 
@@ -765,6 +767,16 @@
             this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip2.ToolTipTitle = "Подсказка";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.Location = new System.Drawing.Point(648, 40);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(69, 32);
+            this.label18.TabIndex = 402;
+            this.label18.Text = "+ Bu";
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -852,5 +864,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label18;
     }
 }

@@ -142,11 +142,18 @@ namespace WindowsFormsApplication1
                         if (buttonA.Text == "ОК")
                         {
                             button4.Enabled = true;
-                            button6.Enabled = true;
-                            button9.Enabled = true;
+                            if (checkB.Checked == true && b_stolbci.Text != "" && b_stroki.Text != "")
+                                button6.Enabled = true;
+                            else
+                                button6.Enabled = false;
 
-                            a_stroki.ReadOnly = true;
-                            a_stolbci.ReadOnly = true;
+                            if (checkC.Checked == true && с_stolbci.Text != "" && с_stroki.Text != "")
+                                button9.Enabled = true;
+                            else
+                                button9.Enabled = false;
+
+                            a_stroki.Enabled = false;
+                            a_stolbci.Enabled = false;
                             buttonA.Text = "Изменить А / Очистить всё";
 
                             strA = Convert.ToInt32(a_stroki.Text);
@@ -163,23 +170,45 @@ namespace WindowsFormsApplication1
                             }
 
                             b_stroki.Text = strA.ToString();
-                            b_stroki.ReadOnly = true;
+                            b_stroki.Enabled = false;
                             с_stolbci.Text = stlbA.ToString();
-                            с_stolbci.ReadOnly = true;
+                            с_stolbci.Enabled = false;
                             //работа с активацией матрицы
                             A.RowCount = strA;
                             A.ColumnCount = stlbA;
                             A.ReadOnly = false;
                             A.Enabled = true;
 
-                            с_stroki.ReadOnly = false;
-                            b_stolbci.ReadOnly = false;
+                            //button1.Enabled = true;
+                            //checkBox1.Enabled = true;
+                            //checkBox2.Enabled = true;
+                            //checkBox3.Enabled = true;
+                            //checkBox4.Enabled = true;
                         }
                         else
                         {
                             button4.Enabled = false;
-                            button6.Enabled = false;
-                            button9.Enabled = false;
+                            if (checkB.Checked == true && b_stolbci.Text != "" && b_stroki.Text != "")
+                                button6.Enabled = true;
+                            else
+                                button6.Enabled = false;
+
+                            if (checkC.Checked == true && с_stolbci.Text != "" && с_stroki.Text != "")
+                                button9.Enabled = true;
+                            else
+                                button9.Enabled = false;
+
+                            a_stroki.Enabled = true;
+                            a_stolbci.Enabled = true;
+                            b_stroki.Enabled = true;
+                            с_stolbci.Enabled = true;
+
+
+                            button1.Enabled = false;
+                            checkBox1.Enabled = false;
+                            checkBox2.Enabled = false;
+                            checkBox3.Enabled = false;
+                            checkBox4.Enabled = false;
 
                             buttonA.Text = "ОК";
                             buttonB.Text = "ОК";
@@ -188,9 +217,6 @@ namespace WindowsFormsApplication1
                             button6.Text = "ОК";
                             button9.Text = "ОК";
 
-                            a_stroki.ReadOnly = false;
-                            a_stolbci.ReadOnly = false;
-
                             a_stroki.Clear();
                             a_stolbci.Clear();
                             b_stolbci.Clear();
@@ -198,16 +224,6 @@ namespace WindowsFormsApplication1
                             с_stolbci.Clear();
                             с_stroki.Clear();
 
-                            //очистка текстбоксов и сделаем их неактивными
-                            for (int i = 1; i < 11; i++)
-                            {
-                                tabPage2.Controls["A" + i.ToString()].Enabled = false;
-                                tabPage2.Controls["B" + i.ToString()].Enabled = false;
-                                tabPage2.Controls["C" + i.ToString()].Enabled = false;
-                                tabPage2.Controls["A" + i.ToString()].Text = "";
-                                tabPage2.Controls["B" + i.ToString()].Text = "";
-                                tabPage2.Controls["C" + i.ToString()].Text = "";
-                            }
                             //убиваем матрицы - все, так как матрица А главная.
                             A.RowCount = 0;
                             A.ColumnCount = 0;
@@ -237,14 +253,32 @@ namespace WindowsFormsApplication1
                 a_stroki.Clear();
                 MessageBox.Show("Введите число строк и столбцов!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить"
+    || checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false
+        || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                checkBox1.Enabled = true;
+                checkBox2.Enabled = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
+            }
         }
 
         private void Form_main_Load(object sender, EventArgs e)
         {
-            b_stroki.ReadOnly = true;
-            с_stroki.ReadOnly = true;
-            с_stolbci.ReadOnly = true;
-            b_stolbci.ReadOnly = true;
+            b_stroki.Enabled = false;
+            с_stroki.Enabled = false;
+            с_stolbci.Enabled = false;
+            b_stolbci.Enabled = false;
 
             button4.Enabled = false;
             button6.Enabled = false;
@@ -287,34 +321,26 @@ namespace WindowsFormsApplication1
                 A.ReadOnly = false;
                 A.Enabled = true;
 
-                for (int i = 0; i < strA; i++)//strA == RowsCount of datagrid A
-                {
-                    for (int j = 0; j < stlbA; j++)
-                    {
-                        tabPage2.Controls["A" + (i + 1).ToString()].Text = "";
-                    }
-                }
-
                 button4.Text = "OK";
             }
 
-            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить")
+            if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить"
+                || checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false
+                    || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
             {
                 button1.Enabled = true;
-                button1.Visible = true;
-                checkBox1.Visible = true;
-                checkBox2.Visible = true;
-                checkBox3.Visible = true;
-                checkBox4.Visible = true;
+                checkBox1.Enabled = true;
+                checkBox2.Enabled = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
             }
             else
             {
                 button1.Enabled = false;
-                button1.Visible = false;
-                checkBox1.Visible = false;
-                checkBox2.Visible = false;
-                checkBox3.Visible = false;
-                checkBox4.Visible = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
             }
         }
 
@@ -330,8 +356,8 @@ namespace WindowsFormsApplication1
                         {
                             button6.Enabled = true;
 
-                            b_stroki.ReadOnly = true;
-                            b_stolbci.ReadOnly = true;
+                            b_stroki.Enabled = false;
+                            b_stolbci.Enabled = false;
                             buttonB.Text = "Изменить В";
 
                             strB = Convert.ToInt32(b_stroki.Text);
@@ -356,7 +382,7 @@ namespace WindowsFormsApplication1
 
                             buttonB.Text = "ОК";
                             //b_stroki.ReadOnly = false;
-                            b_stolbci.ReadOnly = false;
+                            b_stolbci.Enabled = true;
 
                             b_stolbci.Clear();
                             //убиваем матрицу
@@ -384,7 +410,24 @@ namespace WindowsFormsApplication1
                 //b_stroki.Clear();
                 MessageBox.Show("Введите число строк и столбцов!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить"
+    || checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false
+        || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                checkBox1.Enabled = true;
+                checkBox2.Enabled = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -419,23 +462,23 @@ namespace WindowsFormsApplication1
                 button6.Text = "OK";
             }
 
-            if (buttonA.Text == "Изменить" && buttonB.Text == "Изменить" && buttonC.Text == "Изменить" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить")
+            if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить"
+                || checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false
+                    || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
             {
                 button1.Enabled = true;
-                button1.Visible = true;
-                checkBox1.Visible = true;
-                checkBox2.Visible = true;
-                checkBox3.Visible = true;
-                checkBox4.Visible = true;
+                checkBox1.Enabled = true;
+                checkBox2.Enabled = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
             }
             else
             {
                 button1.Enabled = false;
-                button1.Visible = false;
-                checkBox1.Visible = false;
-                checkBox2.Visible = false;
-                checkBox3.Visible = false;
-                checkBox4.Visible = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
             }
         }
 
@@ -451,8 +494,8 @@ namespace WindowsFormsApplication1
                         {
                             button9.Enabled = true;
 
-                            с_stroki.ReadOnly = true;
-                            с_stolbci.ReadOnly = true;
+                            с_stroki.Enabled = false;
+                            с_stolbci.Enabled = false;
                             buttonC.Text = "Изменить С";
 
                             strC = Convert.ToInt32(с_stroki.Text);
@@ -476,7 +519,7 @@ namespace WindowsFormsApplication1
                             button9.Text = "ОК";
 
                             buttonC.Text = "ОК";
-                            с_stroki.ReadOnly = false;
+                            с_stroki.Enabled = true;
                             //c_stolbci.ReadOnly = false;
 
                             с_stroki.Clear();
@@ -504,6 +547,24 @@ namespace WindowsFormsApplication1
                 //c_stolbci.Clear();
                 с_stroki.Clear();
                 MessageBox.Show("Введите число строк и столбцов!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить"
+    || checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false
+        || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                checkBox1.Enabled = true;
+                checkBox2.Enabled = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
             }
         }
 
@@ -538,7 +599,10 @@ namespace WindowsFormsApplication1
 
                 button9.Text = "OK";
             }
-            if (buttonA.Text == "Изменить A / Очистить все" && buttonB.Text == "Изменить B" && buttonC.Text == "Изменить C" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить")
+
+            if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить"
+                || checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false
+                    || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
             {
                 button1.Enabled = true;
                 checkBox1.Enabled = true;
@@ -801,80 +865,84 @@ namespace WindowsFormsApplication1
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить"
+                 || checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false
+           || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                checkBox1.Enabled = true;
+                checkBox2.Enabled = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
+            }
+
             if ((checkB.Checked == true) && (checkC.Checked == true))//+
             {
-                label23.Text = "x = Ax + Bu";
                 label23.Visible = true;
-                label23.Location = new System.Drawing.Point(567, 40);//x
-
                 label22.Visible = true;
-                label22.Location = new System.Drawing.Point(567, 94);//y
-
                 label16.Visible = true;
-                label16.Location = new System.Drawing.Point(569, 10);//.
+                label18.Visible = true;
 
                 b_stolbci.Enabled = true;
                 b_stroki.Enabled = true;
                 buttonB.Enabled = true;
                 B.ReadOnly = false;
                 B.Enabled = true;
-                button6.Enabled = true;
+                //button6.Enabled = true;
                 с_stolbci.Enabled = true;
                 с_stroki.Enabled = true;
                 buttonC.Enabled = true;
                 C.ReadOnly = false;
                 C.Enabled = true;
-                button9.Enabled = true;
+                //button9.Enabled = true;
             }
             if ((checkB.Checked == true) && (checkC.Checked == false))//+
             {
-                label23.Text = "x = Ax + Bu";
                 label23.Visible = true;
-                label23.Location = new System.Drawing.Point(567, 40);//x
-
                 label22.Visible = false;
-                label22.Location = new System.Drawing.Point(567, 94);//y
-
                 label16.Visible = true;
-                label16.Location = new System.Drawing.Point(569, 10);//.
+                label18.Visible = true;
 
                 b_stolbci.Enabled = true;
                 b_stroki.Enabled = true;
                 buttonB.Enabled = true;
                 B.ReadOnly = false;
                 B.Enabled = true;
-                button6.Enabled = true;
+                //button6.Enabled = true;
                 с_stolbci.Enabled = false;
                 с_stroki.Enabled = false;
                 buttonC.Enabled = false;
                 C.ReadOnly = true;
                 C.Enabled = false;
-                button9.Enabled = false;
+                //button9.Enabled = false;
             }
             if ((checkB.Checked == false) && (checkC.Checked == true))//+
             {
-                label23.Text = "x = Ax";
                 label23.Visible = true;
-                label23.Location = new System.Drawing.Point(567, 40);//x
-
                 label22.Visible = true;
-                label22.Location = new System.Drawing.Point(567, 94);//y
-
                 label16.Visible = true;
-                label16.Location = new System.Drawing.Point(569, 10);//.
+                label18.Visible = false;
 
                 b_stolbci.Enabled = false;
                 b_stroki.Enabled = false;
                 buttonB.Enabled = false;
                 B.ReadOnly = true;
                 B.Enabled = false;
-                button6.Enabled = false;
+                //button6.Enabled = false;
                 с_stolbci.Enabled = true;
                 с_stroki.Enabled = true;
                 buttonC.Enabled = true;
                 C.ReadOnly = false;
                 C.Enabled = true;
-                button9.Enabled = true;
+                //button9.Enabled = true;
             }
             if ((checkB.Checked == false) && (checkC.Checked == false))//+
             {
@@ -895,80 +963,83 @@ namespace WindowsFormsApplication1
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить"
+                || checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false
+                    || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
+            {
+                button1.Enabled = true;
+                checkBox1.Enabled = true;
+                checkBox2.Enabled = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
+            }
             if ((checkB.Checked == true) && (checkC.Checked == true))//+
             {
-                label23.Text = "x = Ax + Bu";
                 label23.Visible = true;
-                label23.Location = new System.Drawing.Point(567, 40);//x
-
                 label22.Visible = true;
-                label22.Location = new System.Drawing.Point(567, 94);//y
-
                 label16.Visible = true;
-                label16.Location = new System.Drawing.Point(569, 10);//.
+                label18.Visible = true;
 
                 b_stolbci.Enabled = true;
                 b_stroki.Enabled = true;
                 buttonB.Enabled = true;
                 B.ReadOnly = false;
                 B.Enabled = true;
-                button6.Enabled = true;
+                //button6.Enabled = true;
                 с_stolbci.Enabled = true;
                 с_stroki.Enabled = true;
                 buttonC.Enabled = true;
                 C.ReadOnly = false;
                 C.Enabled = true;
-                button9.Enabled = true;
+                //button9.Enabled = true;
             }
             if ((checkB.Checked == false) && (checkC.Checked == true))//+
             {
-                label23.Text = "x = Ax";
                 label23.Visible = true;
-                label23.Location = new System.Drawing.Point(567, 40);//x
-
                 label22.Visible = true;
-                label22.Location = new System.Drawing.Point(567, 94);//y
-
                 label16.Visible = true;
-                label16.Location = new System.Drawing.Point(569, 10);//.
+                label18.Visible = false;
 
                 b_stolbci.Enabled = false;
                 b_stroki.Enabled = false;
                 buttonB.Enabled = false;
                 B.ReadOnly = true;
                 B.Enabled = false;
-                button6.Enabled = false;
+                //button6.Enabled = false;
                 с_stolbci.Enabled = true;
                 с_stroki.Enabled = true;
                 buttonC.Enabled = true;
                 C.ReadOnly = false;
                 C.Enabled = true;
-                button9.Enabled = true;
+                //button9.Enabled = true;
             }
             if ((checkB.Checked == true) && (checkC.Checked == false))//+
             {
-                label23.Text = "x = Ax + Bu";
                 label23.Visible = true;
-                label23.Location = new System.Drawing.Point(567, 40);//x
-
                 label22.Visible = false;
-                label22.Location = new System.Drawing.Point(567, 94);//y
-
                 label16.Visible = true;
-                label16.Location = new System.Drawing.Point(569, 10);//.
+                label18.Visible = true;
 
                 b_stolbci.Enabled = true;
                 b_stroki.Enabled = true;
                 buttonB.Enabled = true;
                 B.ReadOnly = false;
                 B.Enabled = true;
-                button6.Enabled = true;
+                //button6.Enabled = true;
                 с_stolbci.Enabled = false;
                 с_stroki.Enabled = false;
                 buttonC.Enabled = false;
                 C.ReadOnly = true;
                 C.Enabled = false;
-                button9.Enabled = false;
+                //button9.Enabled = false;
             }
             if ((checkB.Checked == false) && (checkC.Checked == false))//+
             {
