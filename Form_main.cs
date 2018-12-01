@@ -106,6 +106,7 @@ namespace WindowsFormsApplication1
             int widthB_view = maxLengthB * 22 * stlbB;
             int heightB_view = strB * 22;
             B_view.Size = new System.Drawing.Size(widthB_view, heightB_view);
+
             //foreach (DataGridViewColumn B_view in B_view.Columns)
             //{
             //    for (int j = 0; j < B_view.DataGridView.ColumnCount; j++)
