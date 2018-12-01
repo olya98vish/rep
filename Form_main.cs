@@ -29,6 +29,138 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+        //функция для взятия данных из трех матриц в строковые массивы, поиск там максимума и построение визулизации системы
+        private void system_view()
+        {
+            //создаем массив строк и ищем в нем макс элемент
+            string[] A_elements = new string[strA * stlbA];
+            string[] B_elements = new string[strB * stlbB];
+            string[] C_elements = new string[strC * stlbC];
+            //заполним массив из матрицы А данными
+            for(int i = 0; i < strA; i++)
+            {
+                for (int j = 0; j < stlbA; j++)
+                {
+                    A_elements[i*stlbA + j] = Convert.ToString(masA[i, j]);
+                }
+            }
+            //заполним массив из матрицы В данными
+            for (int i = 0; i < strB; i++)
+            {
+                for (int j = 0; j < stlbB; j++)
+                {
+                    B_elements[i * stlbB + j] = Convert.ToString(masB[i, j]);
+                }
+            }
+            //заполним массив из матрицы С данными
+            for (int i = 0; i < strC; i++)
+            {
+                for (int j = 0; j < stlbC; j++)
+                {
+                    C_elements[i * stlbC + j] = Convert.ToString(masC[i, j]);
+                }
+            }
+
+            //поиск самых длинных элементов и запомним эти числа, чтобы создать матрицу соответствующего размера
+            int maxLengthA = 0;
+            int maxLengthB = 0;
+            int maxLengthC = 0;
+
+            for (int i = 0; i < strA * stlbA; i++)
+            {
+                if(maxLengthA < A_elements[i].Length)
+                    maxLengthA = A_elements[i].Length;
+            }
+            for (int i = 0; i < strB * stlbB; i++)
+            {
+                if (maxLengthB < B_elements[i].Length)
+                    maxLengthB = B_elements[i].Length;
+            }
+            for (int i = 0; i < strC * stlbC; i++)
+            {
+                if (maxLengthC < C_elements[i].Length)
+                    maxLengthC = C_elements[i].Length;
+            }
+
+            //создание матрицы по максимальному размеру
+            //работа с активацией матрицы
+            A_view.Visible = true;
+            A_view.RowCount = strA;
+            A_view.ColumnCount = stlbA;
+            int widthA_view = maxLengthA * 22 * stlbA;
+            int heightA_view = strA * 22;
+            //A_view.Location = new System.Drawing.Point(97, 12);
+            A_view.Visible = true;
+            A_view.Size = new System.Drawing.Size(widthA_view, heightA_view);
+            label19.Visible = true;
+            label20.Visible = true;
+            //label19.Location = new System.Drawing.Point(450, heightA_view / 2 - 21);
+            //label20.Location = new System.Drawing.Point(448, heightA_view / 2);
+
+            //работа с активацией матрицы
+            B_view.Visible = true;
+            B_view.RowCount = strB;
+            B_view.ColumnCount = stlbB;
+            //foreach (DataGridViewColumn column in B_view.Columns)
+            //    column.Width = maxLengthB;
+            int widthB_view = maxLengthB * 22 * stlbB;
+            int heightB_view = strB * 22;
+            B_view.Size = new System.Drawing.Size(widthB_view, heightB_view);
+            //foreach (DataGridViewColumn B_view in B_view.Columns)
+            //{
+            //    for (int j = 0; j < B_view.DataGridView.ColumnCount; j++)
+            //    {
+            //        B_view.DataGridView.Columns[j].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //        B_view.DataGridView.Columns[j].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //        B_view.DataGridView.Columns[j].FillWeight = 1;
+            //    }
+            //}
+            label24.Visible = true;
+            //label24.Location = new System.Drawing.Point(448 + widthA_view + 10 + 58, heightB_view / 2);
+            //B_view.Location = new System.Drawing.Point(448 + widthA_view + 10 + 58 + 59, 12);
+            //label25.Location = new System.Drawing.Point(448 + widthA_view + 20 + 59 + 58 + widthB_view, heightB_view / 2);
+            label25.Visible = true;
+
+
+            //работа с активацией матрицы
+            C_view.Visible = true;
+            C_view.RowCount = strC;
+            C_view.ColumnCount = stlbC;
+            int widthC_view = maxLengthC * 22 * stlbC;
+            int heightC_view = strC * 22;
+            C_view.Size = new System.Drawing.Size(widthC_view, heightC_view);
+            //C_view.Location = new System.Drawing.Point(448,403);
+            //label26.Location = new System.Drawing.Point(448, 12 + heightA_view + 10 + heightC_view / 2);
+            //label27.Location = new System.Drawing.Point(448+58 + widthC_view + 10, 12 + 10 + heightA_view + heightC_view / 2);
+            label26.Visible = true;
+            label27.Visible = true;
+
+            //заполним матрицы значениями
+            for (int i = 0; i < strA; i++)
+            {
+                for (int j = 0; j < stlbA; j++)
+                {
+                    this.A_view.Rows[i].Cells[j].Value = masA[i, j];
+                }
+            }
+
+            for (int i = 0; i < B.RowCount; i++)
+            {
+                for (int j = 0; j < B.ColumnCount; j++)
+                {
+                    this.B_view.Rows[i].Cells[j].Value = masB[i, j];
+                }
+            }
+
+            for (int i = 0; i < C.RowCount; i++)
+            {
+                for (int j = 0; j < C.ColumnCount; j++)
+                {
+                    this.C_view.Rows[i].Cells[j].Value = masC[i, j];
+                }
+            }
+        }
+
         //функции для взятия данных в память и вывода
         #region
         private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
@@ -609,6 +741,7 @@ namespace WindowsFormsApplication1
                 checkBox2.Enabled = true;
                 checkBox3.Enabled = true;
                 checkBox4.Enabled = true;
+                system_view();
             }
             else
             {
@@ -867,7 +1000,7 @@ namespace WindowsFormsApplication1
         {
             if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить"
                  || checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false
-           || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
+                    || checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить")
             {
                 button1.Enabled = true;
                 checkBox1.Enabled = true;

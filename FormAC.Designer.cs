@@ -298,18 +298,6 @@
             this.a_stroki.KeyDown += new System.Windows.Forms.KeyEventHandler(this.a_stroki_KeyDown);
             this.a_stroki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.a_stroki_KeyPress);
             // 
-            // Back
-            // 
-            this.Back.BackColor = System.Drawing.Color.Transparent;
-            this.Back.Image = ((System.Drawing.Image)(resources.GetObject("Back.Image")));
-            this.Back.Location = new System.Drawing.Point(1, 9);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(25, 27);
-            this.Back.TabIndex = 104;
-            this.toolTip1.SetToolTip(this.Back, "Возврат к выбору матриц");
-            this.Back.UseVisualStyleBackColor = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
-            // 
             // label13
             // 
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;

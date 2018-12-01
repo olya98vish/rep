@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAC_view));
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.Back = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.A = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,18 +101,6 @@
             this.label18.TabIndex = 334;
             this.label18.Text = "x =";
             // 
-            // Back
-            // 
-            this.Back.BackColor = System.Drawing.Color.Transparent;
-            this.Back.Image = ((System.Drawing.Image)(resources.GetObject("Back.Image")));
-            this.Back.Location = new System.Drawing.Point(3, 3);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(25, 28);
-            this.Back.TabIndex = 346;
-            this.toolTip1.SetToolTip(this.Back, "Возврат к вводу данных в матрицы");
-            this.Back.UseVisualStyleBackColor = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
-            // 
             // toolTip1
             // 
             this.toolTip1.ToolTipTitle = "Подсказка";
@@ -135,7 +121,7 @@
             this.A.Name = "A";
             this.A.RowHeadersVisible = false;
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.A.Size = new System.Drawing.Size(401, 360);
+            this.A.Size = new System.Drawing.Size(250, 250);
             this.A.TabIndex = 350;
             // 
             // dataGridViewTextBoxColumn1
@@ -215,7 +201,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.C);
             this.Controls.Add(this.A);
-            this.Controls.Add(this.Back);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
@@ -238,7 +223,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button Back;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView A;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

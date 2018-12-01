@@ -26,13 +26,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private void Back_Click(object sender, EventArgs e)
-        {
-            Form form1 = new Form1();
-            form1.Show();
-            this.Hide();
-        }
-
         private void FormAC_Load(object sender, EventArgs e)
         {
             button1.Enabled = false;

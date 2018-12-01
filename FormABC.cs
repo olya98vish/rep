@@ -400,10 +400,10 @@ namespace WindowsFormsApplication1
 
         private void Back_Click(object sender, EventArgs e)
         {
-            Form form1 = new Form1();
-            form1.Show();
-            this.Hide();
-            //this.Close();
+            //Form form1 = new Form1();
+            //form1.Show();
+            //this.Hide();
+            ////this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)

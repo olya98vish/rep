@@ -36,6 +36,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.C_view = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.B_view = new System.Windows.Forms.DataGridView();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.A_view = new System.Windows.Forms.DataGridView();
+            this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -76,10 +92,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.a_stolbci = new System.Windows.Forms.TextBox();
             this.A = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.a_stroki = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -90,11 +102,12 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.C_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_view)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
@@ -178,6 +191,17 @@
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tabPage2.Controls.Add(this.label29);
+            this.tabPage2.Controls.Add(this.label28);
+            this.tabPage2.Controls.Add(this.label27);
+            this.tabPage2.Controls.Add(this.label26);
+            this.tabPage2.Controls.Add(this.C_view);
+            this.tabPage2.Controls.Add(this.B_view);
+            this.tabPage2.Controls.Add(this.label25);
+            this.tabPage2.Controls.Add(this.label24);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.A_view);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label22);
@@ -229,11 +253,174 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Система";
             // 
+            // label29
+            // 
+            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label29.Location = new System.Drawing.Point(704, 1);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(3, 119);
+            this.label29.TabIndex = 413;
+            // 
+            // label28
+            // 
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label28.Location = new System.Drawing.Point(420, 120);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(1015, 3);
+            this.label28.TabIndex = 412;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label27.Location = new System.Drawing.Point(762, 557);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(28, 32);
+            this.label27.TabIndex = 411;
+            this.label27.Text = "x";
+            this.label27.Visible = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label26.Location = new System.Drawing.Point(441, 514);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(59, 32);
+            this.label26.TabIndex = 410;
+            this.label26.Text = "y = ";
+            this.label26.Visible = false;
+            // 
+            // C_view
+            // 
+            this.C_view.AllowUserToAddRows = false;
+            this.C_view.AllowUserToDeleteRows = false;
+            this.C_view.AllowUserToResizeRows = false;
+            this.C_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.C_view.ColumnHeadersVisible = false;
+            this.C_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20});
+            this.C_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.C_view.Location = new System.Drawing.Point(506, 403);
+            this.C_view.Name = "C_view";
+            this.C_view.RowHeadersVisible = false;
+            this.C_view.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.C_view.Size = new System.Drawing.Size(250, 250);
+            this.C_view.TabIndex = 409;
+            this.C_view.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // B_view
+            // 
+            this.B_view.AllowUserToAddRows = false;
+            this.B_view.AllowUserToDeleteRows = false;
+            this.B_view.AllowUserToResizeRows = false;
+            this.B_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.B_view.ColumnHeadersVisible = false;
+            this.B_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.B_view.Location = new System.Drawing.Point(813, 132);
+            this.B_view.Name = "B_view";
+            this.B_view.RowHeadersVisible = false;
+            this.B_view.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.B_view.Size = new System.Drawing.Size(250, 250);
+            this.B_view.TabIndex = 408;
+            this.B_view.Visible = false;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label25.Location = new System.Drawing.Point(1069, 241);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(30, 32);
+            this.label25.TabIndex = 407;
+            this.label25.Text = "u";
+            this.label25.Visible = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.Location = new System.Drawing.Point(762, 241);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 32);
+            this.label24.TabIndex = 406;
+            this.label24.Text = "x + ";
+            this.label24.Visible = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(450, 220);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(23, 32);
+            this.label19.TabIndex = 405;
+            this.label19.Text = ".";
+            this.label19.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label20.Location = new System.Drawing.Point(448, 241);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 32);
+            this.label20.TabIndex = 404;
+            this.label20.Text = "x =";
+            this.label20.Visible = false;
+            // 
+            // A_view
+            // 
+            this.A_view.AllowUserToAddRows = false;
+            this.A_view.AllowUserToDeleteRows = false;
+            this.A_view.AllowUserToResizeRows = false;
+            this.A_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.A_view.ColumnHeadersVisible = false;
+            this.A_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.A_view.Location = new System.Drawing.Point(506, 132);
+            this.A_view.Name = "A_view";
+            this.A_view.RowHeadersVisible = false;
+            this.A_view.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.A_view.Size = new System.Drawing.Size(250, 250);
+            this.A_view.TabIndex = 403;
+            this.A_view.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.Location = new System.Drawing.Point(629, 31);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(69, 32);
+            this.label18.TabIndex = 402;
+            this.label18.Text = "+ Bu";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(569, 10);
+            this.label16.Location = new System.Drawing.Point(547, 1);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(23, 32);
             this.label16.TabIndex = 401;
@@ -243,7 +430,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(567, 94);
+            this.label22.Location = new System.Drawing.Point(545, 79);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(87, 32);
             this.label22.TabIndex = 400;
@@ -253,7 +440,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label23.Location = new System.Drawing.Point(567, 40);
+            this.label23.Location = new System.Drawing.Point(545, 31);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(96, 32);
             this.label23.TabIndex = 399;
@@ -285,7 +472,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(435, 60);
+            this.label17.Location = new System.Drawing.Point(426, 44);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(112, 32);
             this.label17.TabIndex = 393;
@@ -295,9 +482,9 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1338, 13);
+            this.button1.Location = new System.Drawing.Point(1360, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 60);
+            this.button1.Size = new System.Drawing.Size(69, 105);
             this.button1.TabIndex = 384;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
@@ -306,10 +493,10 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox4.Location = new System.Drawing.Point(820, 44);
+            this.checkBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox4.Location = new System.Drawing.Point(727, 68);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(145, 25);
+            this.checkBox4.Size = new System.Drawing.Size(170, 29);
             this.checkBox4.TabIndex = 392;
             this.checkBox4.Text = "Ранг матрицы U";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -317,10 +504,10 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.Location = new System.Drawing.Point(1089, 44);
+            this.checkBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox3.Location = new System.Drawing.Point(1040, 68);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(146, 25);
+            this.checkBox3.Size = new System.Drawing.Size(171, 29);
             this.checkBox3.TabIndex = 391;
             this.checkBox3.Text = "Ранг матрицы N";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -328,10 +515,10 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.Location = new System.Drawing.Point(1089, 13);
+            this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox2.Location = new System.Drawing.Point(1040, 24);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(243, 25);
+            this.checkBox2.Size = new System.Drawing.Size(290, 29);
             this.checkBox2.TabIndex = 390;
             this.checkBox2.Text = "Матрица наблюдаемости  - N";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -339,10 +526,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(820, 13);
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox1.Location = new System.Drawing.Point(727, 21);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(232, 25);
+            this.checkBox1.Size = new System.Drawing.Size(278, 29);
             this.checkBox1.TabIndex = 389;
             this.checkBox1.Text = "Матрица управляемости - U";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -474,7 +661,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(230, 363);
+            this.label10.Location = new System.Drawing.Point(239, 363);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 17);
             this.label10.TabIndex = 353;
@@ -484,7 +671,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(166, 365);
+            this.label9.Location = new System.Drawing.Point(168, 363);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 341;
@@ -604,7 +791,7 @@
             // b_stolbci
             // 
             this.b_stolbci.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.b_stolbci.Location = new System.Drawing.Point(242, 383);
+            this.b_stolbci.Location = new System.Drawing.Point(242, 381);
             this.b_stolbci.Name = "b_stolbci";
             this.b_stolbci.Size = new System.Drawing.Size(46, 22);
             this.b_stolbci.TabIndex = 18;
@@ -625,7 +812,7 @@
             // b_stroki
             // 
             this.b_stroki.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.b_stroki.Location = new System.Drawing.Point(167, 383);
+            this.b_stroki.Location = new System.Drawing.Point(170, 381);
             this.b_stroki.Name = "b_stroki";
             this.b_stroki.Size = new System.Drawing.Size(46, 22);
             this.b_stroki.TabIndex = 17;
@@ -660,35 +847,15 @@
             this.A.AllowUserToDeleteRows = false;
             this.A.AllowUserToResizeRows = false;
             this.A.ColumnHeadersVisible = false;
-            this.A.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn5});
             this.A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.A.Location = new System.Drawing.Point(6, 79);
             this.A.Name = "A";
             this.A.RowHeadersVisible = false;
+            this.A.RowHeadersWidth = 23;
             this.A.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.A.Size = new System.Drawing.Size(401, 241);
             this.A.TabIndex = 4;
             this.A.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.A_EditingControlShowing);
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // label1
             // 
@@ -762,21 +929,6 @@
             // 
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // toolTip2
-            // 
-            this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip2.ToolTipTitle = "Подсказка";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label18.Location = new System.Drawing.Point(648, 40);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(69, 32);
-            this.label18.TabIndex = 402;
-            this.label18.Text = "+ Bu";
-            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -793,6 +945,9 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.C_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_view)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.C)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();
@@ -822,12 +977,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView C;
@@ -865,5 +1015,20 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DataGridView A_view;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DataGridView B_view;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DataGridView C_view;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
     }
 }
