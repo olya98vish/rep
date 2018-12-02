@@ -274,7 +274,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label27.Location = new System.Drawing.Point(762, 557);
+            this.label27.Location = new System.Drawing.Point(762, 514);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(28, 32);
             this.label27.TabIndex = 411;
@@ -296,8 +296,9 @@
             // 
             this.C_view.AllowUserToAddRows = false;
             this.C_view.AllowUserToDeleteRows = false;
+            this.C_view.AllowUserToResizeColumns = false;
             this.C_view.AllowUserToResizeRows = false;
-            this.C_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.C_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.C_view.ColumnHeadersVisible = false;
             this.C_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn17,
@@ -307,42 +308,55 @@
             this.C_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.C_view.Location = new System.Drawing.Point(506, 403);
             this.C_view.Name = "C_view";
+            this.C_view.ReadOnly = true;
             this.C_view.RowHeadersVisible = false;
             this.C_view.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.C_view.Size = new System.Drawing.Size(250, 250);
             this.C_view.TabIndex = 409;
+            this.toolTip1.SetToolTip(this.C_view, "Матрица С");
             this.C_view.Visible = false;
             // 
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 5;
             // 
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 5;
             // 
             // dataGridViewTextBoxColumn19
             // 
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 5;
             // 
             // dataGridViewTextBoxColumn20
             // 
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.Width = 5;
             // 
             // B_view
             // 
             this.B_view.AllowUserToAddRows = false;
             this.B_view.AllowUserToDeleteRows = false;
+            this.B_view.AllowUserToResizeColumns = false;
             this.B_view.AllowUserToResizeRows = false;
             this.B_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.B_view.ColumnHeadersVisible = false;
             this.B_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.B_view.Location = new System.Drawing.Point(813, 132);
             this.B_view.Name = "B_view";
+            this.B_view.ReadOnly = true;
             this.B_view.RowHeadersVisible = false;
             this.B_view.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.B_view.Size = new System.Drawing.Size(250, 250);
             this.B_view.TabIndex = 408;
+            this.toolTip1.SetToolTip(this.B_view, "Матрица В");
             this.B_view.Visible = false;
             // 
             // label25
@@ -394,16 +408,19 @@
             // 
             this.A_view.AllowUserToAddRows = false;
             this.A_view.AllowUserToDeleteRows = false;
+            this.A_view.AllowUserToResizeColumns = false;
             this.A_view.AllowUserToResizeRows = false;
-            this.A_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.A_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.A_view.ColumnHeadersVisible = false;
             this.A_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.A_view.Location = new System.Drawing.Point(506, 132);
             this.A_view.Name = "A_view";
+            this.A_view.ReadOnly = true;
             this.A_view.RowHeadersVisible = false;
             this.A_view.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.A_view.Size = new System.Drawing.Size(250, 250);
             this.A_view.TabIndex = 403;
+            this.toolTip1.SetToolTip(this.A_view, "Матрица А");
             this.A_view.Visible = false;
             // 
             // label18
