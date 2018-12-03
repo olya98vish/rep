@@ -29,8 +29,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        //функция для взятия данных из трех матриц в строковые массивы, поиск там максимума и построение визулизации системы
-        private void system_view()
+        private void system_view()//визуализация системы в красивом виде
         {
             ////создаем массив строк и ищем в нем макс элемент
             //string[] A_elements = new string[strA * stlbA];
@@ -81,79 +80,247 @@ namespace WindowsFormsApplication1
             //        maxLengthC = C_elements[i].Length;
             //}
 
-            //работа с матрицей
-            A_view.Visible = true;
-            A_view.RowCount = strA;
-            A_view.ColumnCount = stlbA;
-            //заполним матрицу значениями
-            for (int i = 0; i < strA; i++)
+            if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить") // есть АВС
             {
-                for (int j = 0; j < stlbA; j++)
+                //работа с визуализацией матрицы А
+                A_view.Visible = true;
+                A_view.RowCount = strA;
+                A_view.ColumnCount = stlbA;
+                for (int i = 0; i < strA; i++)
                 {
-                    this.A_view.Rows[i].Cells[j].Value = masA[i, j];
+                    for (int j = 0; j < stlbA; j++)
+                    {
+                        this.A_view.Rows[i].Cells[j].Value = masA[i, j];
+                    }
                 }
-            }
-            int widthA = 0;
-            foreach (DataGridViewColumn column in A_view.Columns)
-                widthA += column.Width;
-            int widthA_view = widthA;
-            int heightA_view = strA * 22;
-            //A_view.Location = new System.Drawing.Point(97, 12);
-            A_view.Size = new System.Drawing.Size(widthA_view, heightA_view);
-            label19.Visible = true;
-            label20.Visible = true;
-            //label19.Location = new System.Drawing.Point(450, heightA_view / 2 - 21);
-            //label20.Location = new System.Drawing.Point(448, heightA_view / 2);
+                int widthA = 0;
+                foreach (DataGridViewColumn column in A_view.Columns)
+                    widthA += column.Width;
+                int widthA_view = widthA;
+                int heightA_view = strA * 22;
+                A_view.Location = new System.Drawing.Point(506, A.Location.Y + 53);
+                A_view.Size = new System.Drawing.Size(widthA_view, heightA_view);
+                label19.Visible = true;
+                label20.Visible = true;
+                label19.Location = new System.Drawing.Point(450, A.Location.Y + 53 + heightA_view / 2 - 36);
+                label20.Location = new System.Drawing.Point(448, A.Location.Y + 53 + heightA_view / 2 - 15);
 
-            //работа с активацией матрицы
-            B_view.Visible = true;
-            B_view.RowCount = strB;
-            B_view.ColumnCount = stlbB;
-            for (int i = 0; i < B.RowCount; i++)
-            {
-                for (int j = 0; j < B.ColumnCount; j++)
+                //работа с визуализацией матрицы В
+                B_view.Visible = true;
+                B_view.RowCount = strB;
+                B_view.ColumnCount = stlbB;
+                for (int i = 0; i < B.RowCount; i++)
                 {
-                    this.B_view.Rows[i].Cells[j].Value = masB[i, j];
+                    for (int j = 0; j < B.ColumnCount; j++)
+                    {
+                        this.B_view.Rows[i].Cells[j].Value = masB[i, j];
+                    }
                 }
-            }
-            int widthB = 0;
-            foreach (DataGridViewColumn column in B_view.Columns)
-                widthB += column.Width;
-            int widthB_view = widthB;
-            int heightB_view = strB * 22;
-            B_view.Size = new System.Drawing.Size(widthB_view, heightB_view);
-            label24.Visible = true;
-            //label24.Location = new System.Drawing.Point(448 + widthA_view + 10 + 58, heightB_view / 2);
-            //B_view.Location = new System.Drawing.Point(448 + widthA_view + 10 + 58 + 59, 12);
-            //label25.Location = new System.Drawing.Point(448 + widthA_view + 20 + 59 + 58 + widthB_view, heightB_view / 2);
-            label25.Visible = true;
+                int widthB = 0;
+                foreach (DataGridViewColumn column in B_view.Columns)
+                    widthB += column.Width;
+                int widthB_view = widthB;
+                int heightB_view = strB * 22;
+                B_view.Location = new System.Drawing.Point(506 + widthA_view + 20 + 35, A.Location.Y + 53);
+                B_view.Size = new System.Drawing.Size(widthB_view, heightB_view);
+                label24.Location = new System.Drawing.Point(448 + widthA_view + 64, A.Location.Y + 53 + heightA_view / 2 - 15);
+                label25.Location = new System.Drawing.Point(448 + widthA_view + 64 + widthB_view + 50, A.Location.Y + 53 + heightA_view / 2 - 15);
+                label24.Visible = true;
+                label25.Visible = true;
 
-            //работа с активацией матрицы
-            C_view.Visible = true;
-            C_view.RowCount = strC;
-            C_view.ColumnCount = stlbC;
-            for (int i = 0; i < C.RowCount; i++)
-            {
-                for (int j = 0; j < C.ColumnCount; j++)
+                //работа с визуализацией матрицы С
+                C_view.Visible = true;
+                C_view.RowCount = strC;
+                C_view.ColumnCount = stlbC;
+                for (int i = 0; i < C.RowCount; i++)
                 {
-                    this.C_view.Rows[i].Cells[j].Value = masC[i, j];
+                    for (int j = 0; j < C.ColumnCount; j++)
+                    {
+                        this.C_view.Rows[i].Cells[j].Value = masC[i, j];
+                    }
                 }
+                int widthC = 0;
+                foreach (DataGridViewColumn column in C_view.Columns)
+                    widthC += column.Width;
+                int widthC_view = widthC;
+                int heightC_view = strC * 22;
+                C_view.Location = new System.Drawing.Point(506, A.Location.Y + 53 + heightA_view + 21);
+                C_view.Size = new System.Drawing.Size(widthC_view, heightC_view);
+                label26.Location = new System.Drawing.Point(448, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
+                label27.Location = new System.Drawing.Point(448 + widthC_view + 64, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
+                label26.Visible = true;
+                label27.Visible = true;
             }
-            int widthC = 0;
-            foreach (DataGridViewColumn column in C_view.Columns)
-                widthC += column.Width;
-            int widthC_view = widthC;
-            int heightC_view = strC * 22;
-            C_view.Size = new System.Drawing.Size(widthC_view, heightC_view);
-            //C_view.Location = new System.Drawing.Point(448,403);
-            //label26.Location = new System.Drawing.Point(448, 12 + heightA_view + 10 + heightC_view / 2);
-            //label27.Location = new System.Drawing.Point(448+58 + widthC_view + 10, 12 + 10 + heightA_view + heightC_view / 2);
-            label26.Visible = true;
-            label27.Visible = true;
+            if(checkB.Checked == true && checkC.Checked == false && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Enabled == false && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Enabled == false) //есть АВ
+            {
+                //работа с визуализацией матрицы А
+                A_view.Visible = true;
+                A_view.RowCount = strA;
+                A_view.ColumnCount = stlbA;
+                for (int i = 0; i < strA; i++)
+                {
+                    for (int j = 0; j < stlbA; j++)
+                    {
+                        this.A_view.Rows[i].Cells[j].Value = masA[i, j];
+                    }
+                }
+                int widthA = 0;
+                foreach (DataGridViewColumn column in A_view.Columns)
+                    widthA += column.Width;
+                int widthA_view = widthA;
+                int heightA_view = strA * 22;
+                A_view.Location = new System.Drawing.Point(506, A.Location.Y + 53);
+                A_view.Size = new System.Drawing.Size(widthA_view, heightA_view);
+                label19.Visible = true;
+                label20.Visible = true;
+                label19.Location = new System.Drawing.Point(450, A.Location.Y + 53 + heightA_view / 2 - 36);
+                label20.Location = new System.Drawing.Point(448, A.Location.Y + 53 + heightA_view / 2 - 15);
+
+                //работа с визуализацией матрицы В
+                B_view.Visible = true;
+                B_view.RowCount = strB;
+                B_view.ColumnCount = stlbB;
+                for (int i = 0; i < B.RowCount; i++)
+                {
+                    for (int j = 0; j < B.ColumnCount; j++)
+                    {
+                        this.B_view.Rows[i].Cells[j].Value = masB[i, j];
+                    }
+                }
+                int widthB = 0;
+                foreach (DataGridViewColumn column in B_view.Columns)
+                    widthB += column.Width;
+                int widthB_view = widthB;
+                int heightB_view = strB * 22;
+                B_view.Location = new System.Drawing.Point(506 + widthA_view + 20 + 35, A.Location.Y + 53);
+                B_view.Size = new System.Drawing.Size(widthB_view, heightB_view);
+                label24.Location = new System.Drawing.Point(448 + widthA_view + 64, A.Location.Y + 53 + heightA_view / 2 - 15);
+                label25.Location = new System.Drawing.Point(448 + widthA_view + 64 + widthB_view + 6, A.Location.Y + 53 + heightA_view / 2 - 15);
+                label24.Visible = true;
+                label25.Visible = true;
+
+                //    //работа с визуализацией матрицы С
+                //    C_view.Visible = true;
+                //    C_view.RowCount = strC;
+                //    C_view.ColumnCount = stlbC;
+                //    for (int i = 0; i < C.RowCount; i++)
+                //    {
+                //        for (int j = 0; j < C.ColumnCount; j++)
+                //        {
+                //            this.C_view.Rows[i].Cells[j].Value = masC[i, j];
+                //        }
+                //    }
+                //    int widthC = 0;
+                //    foreach (DataGridViewColumn column in C_view.Columns)
+                //        widthC += column.Width;
+                //    int widthC_view = widthC;
+                //    int heightC_view = strC * 22;
+                //    C_view.Location = new System.Drawing.Point(506, A.Location.Y + 53 + heightA_view + 21);
+                //    C_view.Size = new System.Drawing.Size(widthC_view, heightC_view);
+                //    label26.Location = new System.Drawing.Point(448, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
+                //    label27.Location = new System.Drawing.Point(448 + widthC_view + 64, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
+                //    label26.Visible = true;
+                //    label27.Visible = true;
+            }
+            else if (checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить") //есть АС
+            { // есть АС
+                //работа с визуализацией матрицы А
+                A_view.Visible = true;
+                A_view.RowCount = strA;
+                A_view.ColumnCount = stlbA;
+                for (int i = 0; i < strA; i++)
+                {
+                    for (int j = 0; j < stlbA; j++)
+                    {
+                        this.A_view.Rows[i].Cells[j].Value = masA[i, j];
+                    }
+                }
+                int widthA = 0;
+                foreach (DataGridViewColumn column in A_view.Columns)
+                    widthA += column.Width;
+                int widthA_view = widthA;
+                int heightA_view = strA * 22;
+                A_view.Location = new System.Drawing.Point(506, A.Location.Y + 53);
+                A_view.Size = new System.Drawing.Size(widthA_view, heightA_view);
+                label19.Visible = true;
+                label20.Visible = true;
+                label19.Location = new System.Drawing.Point(450, A.Location.Y + 53 + heightA_view / 2 - 36);
+                label20.Location = new System.Drawing.Point(448, A.Location.Y + 53 + heightA_view / 2 - 15);
+
+                ////работа с визуализацией матрицы В
+                //B_view.Visible = true;
+                //B_view.RowCount = strB;
+                //B_view.ColumnCount = stlbB;
+                //for (int i = 0; i < B.RowCount; i++)
+                //{
+                //    for (int j = 0; j < B.ColumnCount; j++)
+                //    {
+                //        this.B_view.Rows[i].Cells[j].Value = masB[i, j];
+                //    }
+                //}
+                //int widthB = 0;
+                //foreach (DataGridViewColumn column in B_view.Columns)
+                //    widthB += column.Width;
+                //int widthB_view = widthB;
+                //int heightB_view = strB * 22;
+                //B_view.Location = new System.Drawing.Point(506 + widthA_view + 20 + 35, A.Location.Y + 53);
+                //B_view.Size = new System.Drawing.Size(widthB_view, heightB_view);
+                //label24.Location = new System.Drawing.Point(448 + widthA_view + 64, A.Location.Y + 53 + heightA_view / 2 - 15);
+                //label25.Location = new System.Drawing.Point(448 + widthA_view + 64 + widthB_view + 6, A.Location.Y + 53 + heightA_view / 2 - 15);
+                //label24.Visible = true;
+                //label25.Visible = true;
+
+                //работа с визуализацией матрицы С
+                C_view.Visible = true;
+                C_view.RowCount = strC;
+                C_view.ColumnCount = stlbC;
+                for (int i = 0; i < C.RowCount; i++)
+                {
+                    for (int j = 0; j < C.ColumnCount; j++)
+                    {
+                        this.C_view.Rows[i].Cells[j].Value = masC[i, j];
+                    }
+                }
+                int widthC = 0;
+                foreach (DataGridViewColumn column in C_view.Columns)
+                    widthC += column.Width;
+                int widthC_view = widthC;
+                int heightC_view = strC * 22;
+                C_view.Location = new System.Drawing.Point(506, A.Location.Y + 53 + heightA_view + 21);
+                C_view.Size = new System.Drawing.Size(widthC_view, heightC_view);
+                label26.Location = new System.Drawing.Point(448, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
+                label27.Location = new System.Drawing.Point(448 + widthC_view + 64, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
+                label26.Visible = true;
+                label27.Visible = true;
+            }
+        }
+
+        private void system_unview()//сокрытие визуализации
+        {
+            //работа с девизуализацией матрицы А
+            A_view.Visible = false;
+            A_view.RowCount = 0;
+            A_view.ColumnCount = 0;
+            label19.Visible = false;
+            label20.Visible = false;
+
+            //работа с девизуализацией матрицы В
+            B_view.Visible = false;
+            B_view.RowCount = 0;
+            B_view.ColumnCount = 0;
+            label24.Visible = false;
+            label25.Visible = false;
+
+            //работа с девизуализацией матрицы С
+            C_view.Visible = false;
+            C_view.RowCount = 0;
+            C_view.ColumnCount = 0;
+            label26.Visible = false;
+            label27.Visible = false;
         }
 
         //функции для взятия данных в память и вывода
-        #region
+            #region
         private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
         {
             if (datagrid == "A")
@@ -291,7 +458,8 @@ namespace WindowsFormsApplication1
                                     masA[i, j] = 0;
                                 }
                             }
-
+                            b_stolbci.Enabled = true;
+                            с_stroki.Enabled = true;
                             b_stroki.Text = strA.ToString();
                             b_stroki.Enabled = false;
                             с_stolbci.Text = stlbA.ToString();
@@ -348,6 +516,11 @@ namespace WindowsFormsApplication1
                             с_stroki.Clear();
                             A.ReadOnly = true;
                             A.Enabled = false;
+
+                            if (A_view.Visible == true)
+                            {
+                                system_unview();
+                            }
 
                             //убиваем матрицы - все, так как матрица А главная.
                             A.RowCount = 0;
@@ -435,6 +608,7 @@ namespace WindowsFormsApplication1
                 output_data("A", strA, stlbA);
 
                 button4.Text = "Изменить";
+
             }
             else
             {
@@ -458,6 +632,7 @@ namespace WindowsFormsApplication1
                 checkBox2.Enabled = true;
                 checkBox3.Enabled = true;
                 checkBox4.Enabled = true;
+                system_view();
             }
             else
             {
@@ -466,6 +641,7 @@ namespace WindowsFormsApplication1
                 checkBox2.Enabled = false;
                 checkBox3.Enabled = false;
                 checkBox4.Enabled = false;
+                system_unview();
             }
         }
 
@@ -519,6 +695,10 @@ namespace WindowsFormsApplication1
                             //убиваем матрицу
                             B.RowCount = 0;
                             B.ColumnCount = 0;
+                            if(A_view.Visible == true)
+                            {
+                                system_unview();
+                            }
                         }
                     }
                     else
@@ -602,6 +782,7 @@ namespace WindowsFormsApplication1
                 checkBox2.Enabled = true;
                 checkBox3.Enabled = true;
                 checkBox4.Enabled = true;
+                system_view();
             }
             else
             {
@@ -610,6 +791,7 @@ namespace WindowsFormsApplication1
                 checkBox2.Enabled = false;
                 checkBox3.Enabled = false;
                 checkBox4.Enabled = false;
+                system_unview();
             }
         }
 
@@ -663,6 +845,11 @@ namespace WindowsFormsApplication1
                             //убиваем матрицу
                             C.RowCount = 0;
                             C.ColumnCount = 0;
+
+                            if (A_view.Visible == true)
+                            {
+                                system_unview();
+                            }
                         }
                     }
                     else
@@ -755,6 +942,7 @@ namespace WindowsFormsApplication1
                 checkBox2.Enabled = false;
                 checkBox3.Enabled = false;
                 checkBox4.Enabled = false;
+                system_unview();
             }
         }
 
