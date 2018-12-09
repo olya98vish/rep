@@ -1383,5 +1383,6 @@ namespace WindowsFormsApplication1
                 checkC.Checked = true;
             }
         }
+
     }
 }

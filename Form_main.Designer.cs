@@ -32,9 +32,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -134,9 +131,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tabPage1.Controls.Add(this.label21);
-            this.tabPage1.Controls.Add(this.button12);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
@@ -153,39 +147,6 @@
             this.label21.Size = new System.Drawing.Size(461, 25);
             this.label21.TabIndex = 8;
             this.label21.Text = "Здесь сделать справку и руководство пользователя";
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button12.Location = new System.Drawing.Point(19, 136);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(161, 42);
-            this.button12.TabIndex = 7;
-            this.button12.Text = "Сохранить график";
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(19, 76);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 42);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Сохранить систему";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(19, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 42);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Открыть систему";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // tabPage2
             // 
@@ -274,7 +235,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label27.Location = new System.Drawing.Point(762, 514);
+            this.label27.Location = new System.Drawing.Point(762, 557);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(28, 32);
             this.label27.TabIndex = 411;
@@ -364,7 +325,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label25.Location = new System.Drawing.Point(1069, 241);
+            this.label25.Location = new System.Drawing.Point(1069, 284);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(30, 32);
             this.label25.TabIndex = 407;
@@ -1022,9 +983,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox a_stroki;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.CheckBox checkB;
         private System.Windows.Forms.CheckBox checkC;
