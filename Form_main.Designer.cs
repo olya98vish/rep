@@ -29,10 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.окрытьСистемуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьСистемуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьГрафикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.matrN = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matrU = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -101,7 +116,10 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matrN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_view)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_view)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_view)).BeginInit();
@@ -124,18 +142,19 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1460, 965);
+            this.tabControl1.Size = new System.Drawing.Size(1358, 745);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tabPage1.Controls.Add(this.label21);
+            this.tabPage1.Controls.Add(this.menuStrip1);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1452, 931);
+            this.tabPage1.Size = new System.Drawing.Size(1350, 711);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Файл";
             // 
@@ -148,10 +167,57 @@
             this.label21.TabIndex = 8;
             this.label21.Text = "Здесь сделать справку и руководство пользователя";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1344, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.окрытьСистемуToolStripMenuItem,
+            this.сохранитьСистемуToolStripMenuItem,
+            this.сохранитьГрафикToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // окрытьСистемуToolStripMenuItem
+            // 
+            this.окрытьСистемуToolStripMenuItem.Name = "окрытьСистемуToolStripMenuItem";
+            this.окрытьСистемуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.окрытьСистемуToolStripMenuItem.Text = "Окрыть систему";
+            this.окрытьСистемуToolStripMenuItem.Click += new System.EventHandler(this.окрытьСистемуToolStripMenuItem_Click);
+            // 
+            // сохранитьСистемуToolStripMenuItem
+            // 
+            this.сохранитьСистемуToolStripMenuItem.Name = "сохранитьСистемуToolStripMenuItem";
+            this.сохранитьСистемуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьСистемуToolStripMenuItem.Text = "Сохранить систему";
+            this.сохранитьСистемуToolStripMenuItem.Click += new System.EventHandler(this.сохранитьСистемуToolStripMenuItem_Click);
+            // 
+            // сохранитьГрафикToolStripMenuItem
+            // 
+            this.сохранитьГрафикToolStripMenuItem.Name = "сохранитьГрафикToolStripMenuItem";
+            this.сохранитьГрафикToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьГрафикToolStripMenuItem.Text = "Сохранить график";
+            // 
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tabPage2.Controls.Add(this.matrN);
+            this.tabPage2.Controls.Add(this.matrU);
+            this.tabPage2.Controls.Add(this.label33);
+            this.tabPage2.Controls.Add(this.label32);
+            this.tabPage2.Controls.Add(this.label31);
+            this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Controls.Add(this.label29);
             this.tabPage2.Controls.Add(this.label28);
             this.tabPage2.Controls.Add(this.label27);
@@ -210,9 +276,132 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1452, 931);
+            this.tabPage2.Size = new System.Drawing.Size(1350, 711);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Система";
+            // 
+            // matrN
+            // 
+            this.matrN.AllowUserToAddRows = false;
+            this.matrN.AllowUserToDeleteRows = false;
+            this.matrN.AllowUserToResizeColumns = false;
+            this.matrN.AllowUserToResizeRows = false;
+            this.matrN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.matrN.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.matrN.ColumnHeadersVisible = false;
+            this.matrN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.matrN.DefaultCellStyle = dataGridViewCellStyle1;
+            this.matrN.Location = new System.Drawing.Point(519, 848);
+            this.matrN.Name = "matrN";
+            this.matrN.ReadOnly = true;
+            this.matrN.RowHeadersVisible = false;
+            this.matrN.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.matrN.Size = new System.Drawing.Size(240, 150);
+            this.matrN.TabIndex = 419;
+            this.matrN.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column1.FillWeight = 21F;
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 5;
+            // 
+            // matrU
+            // 
+            this.matrU.AllowUserToAddRows = false;
+            this.matrU.AllowUserToDeleteRows = false;
+            this.matrU.AllowUserToResizeColumns = false;
+            this.matrU.AllowUserToResizeRows = false;
+            this.matrU.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.matrU.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.matrU.ColumnHeadersVisible = false;
+            this.matrU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.matrU.DefaultCellStyle = dataGridViewCellStyle2;
+            this.matrU.Location = new System.Drawing.Point(519, 692);
+            this.matrU.Name = "matrU";
+            this.matrU.ReadOnly = true;
+            this.matrU.RowHeadersVisible = false;
+            this.matrU.RowHeadersWidth = 23;
+            this.matrU.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.matrU.Size = new System.Drawing.Size(240, 150);
+            this.matrU.TabIndex = 418;
+            this.matrU.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn5.FillWeight = 21F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Column1";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 5;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label33.Location = new System.Drawing.Point(808, 898);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(76, 32);
+            this.label33.TabIndex = 417;
+            this.label33.Text = "rgN=";
+            this.label33.Visible = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label32.Location = new System.Drawing.Point(808, 768);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(74, 32);
+            this.label32.TabIndex = 416;
+            this.label32.Text = "rgU=";
+            this.label32.Visible = false;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label31.Location = new System.Drawing.Point(464, 898);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(51, 32);
+            this.label31.TabIndex = 415;
+            this.label31.Text = "N=";
+            this.label31.Visible = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label30.Location = new System.Drawing.Point(464, 762);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(49, 32);
+            this.label30.TabIndex = 414;
+            this.label30.Text = "U=";
+            this.label30.Visible = false;
             // 
             // label29
             // 
@@ -235,7 +424,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label27.Location = new System.Drawing.Point(762, 514);
+            this.label27.Location = new System.Drawing.Point(762, 667);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(28, 32);
             this.label27.TabIndex = 411;
@@ -325,7 +514,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label25.Location = new System.Drawing.Point(1069, 241);
+            this.label25.Location = new System.Drawing.Point(1081, 394);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(30, 32);
             this.label25.TabIndex = 407;
@@ -862,7 +1051,7 @@
             this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1452, 931);
+            this.tabPage3.Size = new System.Drawing.Size(1350, 711);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Вычисления";
             // 
@@ -872,7 +1061,7 @@
             this.tabPage4.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1452, 931);
+            this.tabPage4.Size = new System.Drawing.Size(1350, 711);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Графики";
             // 
@@ -882,7 +1071,7 @@
             this.tabPage5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1452, 931);
+            this.tabPage5.Size = new System.Drawing.Size(1350, 711);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "пока не знаю для чего";
             // 
@@ -912,8 +1101,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1464, 961);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.tabControl1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matricula";
@@ -921,8 +1111,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matrN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_view)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_view)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_view)).EndInit();
@@ -1005,5 +1199,18 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem окрытьСистемуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьСистемуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьГрафикToolStripMenuItem;
+        private System.Windows.Forms.DataGridView matrN;
+        private System.Windows.Forms.DataGridView matrU;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }

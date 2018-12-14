@@ -76,7 +76,6 @@ namespace WindowsFormsApplication1
             else
                 return a;
         }
-
         static double[,] Multiplication(double[,] a, double[,] b)
         {
             if (a.GetLength(1) != b.GetLength(0)) throw new Exception("Матрицы нельзя перемножить");
@@ -95,7 +94,7 @@ namespace WindowsFormsApplication1
         }
         public double[,] MatrU(double[,] A, double[,] b, int n, int colB)
         {
-            double[,] U = new double[n,n*colB];
+            double[,] U = new double[n, n * colB];
             double[,] vr = new double[n, colB];
             double[,] vr1 = new double[n, n];
             for (int i = 0; i < n; i++)
@@ -104,17 +103,44 @@ namespace WindowsFormsApplication1
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < colB; j++)
                     U[i, j] = b[i, j];
-            for (int i = 0; i < n; i++)
-                for (int j = colB; j < (n - 1) * colB; j++)
+            for (int j = 1; j < n; j++)
+            {
+                vr = filling.Multiplication(vr1, b);
+                for (int k = 0; k < colB; k++)
                 {
-                    vr1 = filling.Multiplication(vr1, A);
-                    vr = filling.Multiplication(vr1, b);
-                    U[i, j] = vr[i, j-colB];
+                    for (int i = 0; i < n; i++)
+                    {
+                        U[i, j * colB + k] = vr[i, k];
+                    }
                 }
+                vr1 = filling.Multiplication(vr1, A);
+            }
             return U;
-
-
-
+        }
+        public double[,] MatrN(double[,] A, double[,] c, int n, int colC)
+        {
+            double[,] N = new double[n * colC, n];
+            double[,] vr = new double[colC, n];
+            double[,] vr1 = new double[n, n];
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    vr1[i, j] = A[i, j];
+            for (int i = 0; i < colC; i++)
+                for (int j = 0; j < n; j++)
+                    N[i, j] = c[i, j];
+            for (int j = 1; j < n; j++)
+            {
+                vr = filling.Multiplication(c, vr1);
+                for (int k = 0; k < colC; k++)
+                {
+                    for (int i = 0; i < n; i++)
+                    {
+                        N[j * colC + k, i] = vr[k, i];
+                    }
+                }
+                vr1 = filling.Multiplication(vr1, A);
+            }
+            return N;
         }
 
 

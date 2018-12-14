@@ -98,3 +98,13 @@ C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.exe
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.pdb
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
+C:\Users\megad\Kursproject--Duble2\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\megad\Kursproject--Duble2\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\Matricula.csprojAssemblyReference.cache
+C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.AboutBox1.resources
+C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.Form_main.resources
+C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.GenerateResource.cache
+C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.CoreCompileInputs.cache
+C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.pdb
