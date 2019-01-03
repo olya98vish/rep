@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
@@ -41,9 +44,7 @@
             this.сохранитьГрафикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.matrN = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matrU = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -107,6 +108,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.a_stroki = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.sist1 = new System.Windows.Forms.Label();
+            this.vecC = new System.Windows.Forms.DataGridView();
+            this.lebc = new System.Windows.Forms.Label();
+            this.vecA = new System.Windows.Forms.DataGridView();
+            this.leba = new System.Windows.Forms.Label();
+            this.lebb = new System.Windows.Forms.Label();
+            this.vecB = new System.Windows.Forms.DataGridView();
+            this.sist = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -126,6 +135,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vecC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vecA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vecB)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -192,7 +205,7 @@
             // 
             this.окрытьСистемуToolStripMenuItem.Name = "окрытьСистемуToolStripMenuItem";
             this.окрытьСистемуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.окрытьСистемуToolStripMenuItem.Text = "Окрыть систему";
+            this.окрытьСистемуToolStripMenuItem.Text = "Открыть систему";
             this.окрытьСистемуToolStripMenuItem.Click += new System.EventHandler(this.окрытьСистемуToolStripMenuItem_Click);
             // 
             // сохранитьСистемуToolStripMenuItem
@@ -289,15 +302,13 @@
             this.matrN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.matrN.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.matrN.ColumnHeadersVisible = false;
-            this.matrN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.matrN.DefaultCellStyle = dataGridViewCellStyle1;
             this.matrN.Location = new System.Drawing.Point(519, 848);
             this.matrN.Name = "matrN";
@@ -308,17 +319,9 @@
             this.matrN.TabIndex = 419;
             this.matrN.Visible = false;
             // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column1.FillWeight = 21F;
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 5;
-            // 
             // matrU
             // 
+            this.matrU.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.matrU.AllowUserToAddRows = false;
             this.matrU.AllowUserToDeleteRows = false;
             this.matrU.AllowUserToResizeColumns = false;
@@ -326,15 +329,13 @@
             this.matrU.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.matrU.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.matrU.ColumnHeadersVisible = false;
-            this.matrU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.matrU.DefaultCellStyle = dataGridViewCellStyle2;
             this.matrU.Location = new System.Drawing.Point(519, 692);
             this.matrU.Name = "matrU";
@@ -345,15 +346,6 @@
             this.matrU.Size = new System.Drawing.Size(240, 150);
             this.matrU.TabIndex = 418;
             this.matrU.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn5.FillWeight = 21F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Column1";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 5;
             // 
             // label33
             // 
@@ -424,7 +416,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label27.Location = new System.Drawing.Point(762, 667);
+            this.label27.Location = new System.Drawing.Point(762, 1740);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(28, 32);
             this.label27.TabIndex = 411;
@@ -514,7 +506,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label25.Location = new System.Drawing.Point(1081, 394);
+            this.label25.Location = new System.Drawing.Point(1081, 1467);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(30, 32);
             this.label25.TabIndex = 407;
@@ -661,22 +653,22 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox4.Location = new System.Drawing.Point(727, 68);
+            this.checkBox4.Location = new System.Drawing.Point(1040, 79);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(170, 29);
+            this.checkBox4.Size = new System.Drawing.Size(171, 29);
             this.checkBox4.TabIndex = 392;
-            this.checkBox4.Text = "Ранг матрицы U";
+            this.checkBox4.Text = "Ранг матрицы N";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.Location = new System.Drawing.Point(1040, 68);
+            this.checkBox3.Location = new System.Drawing.Point(727, 79);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(171, 29);
+            this.checkBox3.Size = new System.Drawing.Size(170, 29);
             this.checkBox3.TabIndex = 391;
-            this.checkBox3.Text = "Ранг матрицы N";
+            this.checkBox3.Text = "Ранг матрицы U";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox2
@@ -1048,12 +1040,156 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tabPage3.Controls.Add(this.sist1);
+            this.tabPage3.Controls.Add(this.vecC);
+            this.tabPage3.Controls.Add(this.lebc);
+            this.tabPage3.Controls.Add(this.vecA);
+            this.tabPage3.Controls.Add(this.leba);
+            this.tabPage3.Controls.Add(this.lebb);
+            this.tabPage3.Controls.Add(this.vecB);
+            this.tabPage3.Controls.Add(this.sist);
             this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1350, 711);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Вычисления";
+            // 
+            // sist1
+            // 
+            this.sist1.AutoSize = true;
+            this.sist1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sist1.Location = new System.Drawing.Point(134, 18);
+            this.sist1.Name = "sist1";
+            this.sist1.Size = new System.Drawing.Size(67, 32);
+            this.sist1.TabIndex = 7;
+            this.sist1.Text = "sist1";
+            this.sist1.Visible = false;
+            // 
+            // vecC
+            // 
+            this.vecC.AllowUserToAddRows = false;
+            this.vecC.AllowUserToDeleteRows = false;
+            this.vecC.AllowUserToResizeColumns = false;
+            this.vecC.AllowUserToResizeRows = false;
+            this.vecC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.vecC.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.vecC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vecC.ColumnHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.vecC.DefaultCellStyle = dataGridViewCellStyle3;
+            this.vecC.Location = new System.Drawing.Point(537, 44);
+            this.vecC.Name = "vecC";
+            this.vecC.ReadOnly = true;
+            this.vecC.RowHeadersVisible = false;
+            this.vecC.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.vecC.Size = new System.Drawing.Size(188, 150);
+            this.vecC.TabIndex = 6;
+            this.vecC.Visible = false;
+            // 
+            // lebc
+            // 
+            this.lebc.AutoSize = true;
+            this.lebc.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lebc.Location = new System.Drawing.Point(484, 106);
+            this.lebc.Name = "lebc";
+            this.lebc.Size = new System.Drawing.Size(47, 32);
+            this.lebc.TabIndex = 5;
+            this.lebc.Text = "C=";
+            this.lebc.Visible = false;
+            // 
+            // vecA
+            // 
+            this.vecA.AllowUserToAddRows = false;
+            this.vecA.AllowUserToDeleteRows = false;
+            this.vecA.AllowUserToResizeColumns = false;
+            this.vecA.AllowUserToResizeRows = false;
+            this.vecA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.vecA.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.vecA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vecA.ColumnHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.vecA.DefaultCellStyle = dataGridViewCellStyle4;
+            this.vecA.Location = new System.Drawing.Point(82, 44);
+            this.vecA.Name = "vecA";
+            this.vecA.ReadOnly = true;
+            this.vecA.RowHeadersVisible = false;
+            this.vecA.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.vecA.Size = new System.Drawing.Size(140, 150);
+            this.vecA.TabIndex = 4;
+            this.vecA.Visible = false;
+            // 
+            // leba
+            // 
+            this.leba.AutoSize = true;
+            this.leba.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.leba.Location = new System.Drawing.Point(27, 106);
+            this.leba.Name = "leba";
+            this.leba.Size = new System.Drawing.Size(49, 32);
+            this.leba.TabIndex = 3;
+            this.leba.Text = "A=";
+            this.leba.Visible = false;
+            // 
+            // lebb
+            // 
+            this.lebb.AutoSize = true;
+            this.lebb.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lebb.Location = new System.Drawing.Point(241, 106);
+            this.lebb.Name = "lebb";
+            this.lebb.Size = new System.Drawing.Size(47, 32);
+            this.lebb.TabIndex = 2;
+            this.lebb.Text = "B=";
+            this.lebb.Visible = false;
+            // 
+            // vecB
+            // 
+            this.vecB.AllowUserToAddRows = false;
+            this.vecB.AllowUserToDeleteRows = false;
+            this.vecB.AllowUserToResizeColumns = false;
+            this.vecB.AllowUserToResizeRows = false;
+            this.vecB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.vecB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.vecB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vecB.ColumnHeadersVisible = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.vecB.DefaultCellStyle = dataGridViewCellStyle5;
+            this.vecB.Location = new System.Drawing.Point(294, 44);
+            this.vecB.Name = "vecB";
+            this.vecB.ReadOnly = true;
+            this.vecB.RowHeadersVisible = false;
+            this.vecB.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.vecB.Size = new System.Drawing.Size(173, 150);
+            this.vecB.TabIndex = 1;
+            this.vecB.Visible = false;
+            // 
+            // sist
+            // 
+            this.sist.AutoSize = true;
+            this.sist.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sist.Location = new System.Drawing.Point(21, 18);
+            this.sist.Name = "sist";
+            this.sist.Size = new System.Drawing.Size(53, 32);
+            this.sist.TabIndex = 0;
+            this.sist.Text = "sist";
+            this.sist.Visible = false;
             // 
             // tabPage4
             // 
@@ -1123,6 +1259,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.C)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vecC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vecA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vecB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1210,7 +1351,13 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label sist;
+        private System.Windows.Forms.Label lebb;
+        private System.Windows.Forms.DataGridView vecB;
+        private System.Windows.Forms.DataGridView vecC;
+        private System.Windows.Forms.Label lebc;
+        private System.Windows.Forms.DataGridView vecA;
+        private System.Windows.Forms.Label leba;
+        private System.Windows.Forms.Label sist1;
     }
 }

@@ -76,7 +76,7 @@ namespace WindowsFormsApplication1
             else
                 return a;
         }
-        static double[,] Multiplication(double[,] a, double[,] b)
+        public static double[,] Multiplication(double[,] a, double[,] b)
         {
             if (a.GetLength(1) != b.GetLength(0)) throw new Exception("Матрицы нельзя перемножить");
             double[,] r = new double[a.GetLength(0), b.GetLength(1)];

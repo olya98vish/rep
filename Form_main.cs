@@ -9,6 +9,8 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace WindowsFormsApplication1
 {
@@ -973,179 +975,241 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void computing_UN(double[,] U, double[,] N, double[,] A, double[,] b, double[,] c)
         {
+            //система для U
+            if (masB != null)
+            {
+                sist.AutoSize = true;
+                sist.Text = "U=(B, ";
+                for (int i = 1; i < U.GetLength(0); i++)
+                {
+                    if (i == 1)
+                        sist.Text += "AB, ";
+                    if ((i != 1) && (i != U.GetLength(0) - 1))
+                        sist.Text += "A^" + i + "B, ";
+                    if (i == U.GetLength(0) - 1)
+                        sist.Text += "A^" + i + "B)";
+                }
+                sist.Location = new Point(5, 5);
+                sist.Visible = true;
+            }
+            //система для N
+            if(masC!=null)
+            {
+                sist1.AutoSize = true;
+                sist1.Text = "N= (C, ";
+                for (int i = 1; i < N.GetLength(1); i++)
+                {
+                    if (i == 1)
+                        sist1.Text += "CA, ";
+                    if ((i != 1) && (i != N.GetLength(1) - 1))
+                        sist1.Text += "CA^"+i+", ";
+                    if (i == N.GetLength(1) - 1)
+                        sist1.Text += "CA^" + i + ")T";
+                }
+                if (masB == null)
+                    sist1.Location = new Point(5, 5);
+                else sist1.Location = new Point(sist.Location.X + sist.Size.Width + 10, sist.Location.Y);
+                sist1.Visible = true;
+            }
+            //выводим А
+            vecA.RowCount = A.GetLength(0);
+            vecA.ColumnCount = A.GetLength(1);
+            vecA.Font = new Font("Segoe UI", 8);
+            vecA.Location = new Point(sist.Location.X+leba.Size.Width+5, sist.Location.Y + sist.Height + 5);
+            leba.Location = new Point(sist.Location.X, vecA.Size.Height / 2 - leba.Size.Height / 2);
+            for (int i = 0; i < A.GetLength(0); i++)
+                for (int j = 0; j < A.GetLength(1); j++)
+                    vecA.Rows[i].Cells[j].Value = A[i, j];
+            int widtha = 0; int heighta = 0;
+            foreach (DataGridViewRow row in vecA.Rows)
+                heighta += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+            foreach (DataGridViewColumn column in vecA.Columns)
+                widtha += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+            vecA.Size = new System.Drawing.Size(widtha, heighta);
+            vecA.Visible = true;
+            leba.Visible = true;
+            //выводим В
+            if (masB != null)
+            {
+                vecB.RowCount = b.GetLength(0);
+                vecB.ColumnCount = b.GetLength(1);
+                vecB.Font = new Font("Segoe UI", 8);
+                lebb.Location = new Point(vecA.Location.X+vecA.Size.Width+10,leba.Location.Y);
+                vecB.Location = new Point(lebb.Location.X+lebb.Size.Width,vecA.Location.Y );             
+                for (int i = 0; i < b.GetLength(0); i++)
+                    for (int j = 0; j < b.GetLength(1); j++)
+                        vecB.Rows[i].Cells[j].Value = b[i, j];
+                int width = 0; int height = 0;
+                foreach (DataGridViewRow row in vecB.Rows)
+                    height += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                foreach (DataGridViewColumn column in vecB.Columns)
+                    width += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                vecB.Size = new System.Drawing.Size(width, height);
+                vecB.Visible = true;
+                lebb.Visible = true;
+            }
+            //выводим С
+            if(masC!=null)
+            {
+                vecC.RowCount = c.GetLength(0);
+                vecC.ColumnCount = c.GetLength(1);
+                vecC.Font = new Font("Segoe UI", 8);
+                if (masB != null)
+                {
+                    lebc.Location = new Point(vecB.Location.X + vecB.Size.Width + 10, lebb.Location.Y);
+                    vecC.Location = new Point(lebc.Location.X + lebc.Size.Width, vecC.Size.Height/2-lebc.Size.Height/2);
+                }
+                else
+                {
+                    lebc.Location = new Point(vecA.Location.X + vecA.Size.Width + 10, leba.Location.Y);
+                    vecC.Location = new Point(lebc.Location.X + lebc.Size.Width, vecC.Size.Height / 2 - lebc.Size.Height / 2);
+                }
+                for (int i = 0; i < c.GetLength(0); i++)
+                    for (int j = 0; j < c.GetLength(1); j++)
+                        vecC.Rows[i].Cells[j].Value = c[i, j];
+                int widthc = 0; int heightc = 0;
+                foreach (DataGridViewRow row in vecC.Rows)
+                    heightc += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                foreach (DataGridViewColumn column in vecC.Columns)
+                    widthc += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                vecC.Size = new System.Drawing.Size(widthc, heightc);
+                vecC.Visible = true;
+                lebc.Visible = true;
+            }
+
+            if (U != null && masB != null)
+            {
+                double[,] vrA, res;
+                vrA = A;
+                for (int n = 1; n < U.GetLength(0); n++)
+                {
+                    Label lb = new Label();
+                    lb.Font = new Font("Segoe UI", 18, FontStyle.Bold);
+                    DataGridView dg = new DataGridView();
+                    dg.Font = new Font("Segoe UI", 8);
+                    dg.Name = "dgu" + n.ToString();
+                    lb.Name = "lbu" + n.ToString();
+
+                    tabPage3.Controls.Add(dg);
+                    tabPage3.Controls.Add(lb);
+
+                    if (n != 1)
+                        tabPage3.Controls["lbu" + n.ToString()].Text = "A^" + n + "B=";
+                    else
+                        tabPage3.Controls["lbu" + n.ToString()].Text = "AB=";
+                    tabPage3.Controls["lbu" + n.ToString()].AutoSize = true;
+
+                    (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).ColumnHeadersVisible = false;
+                    (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).RowHeadersVisible = false;
+                    (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).ScrollBars = ScrollBars.None;
+
+                    (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).RowCount = b.GetLength(0);
+                    (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).ColumnCount = b.GetLength(1);
+                    res = filling.Multiplication(vrA, b);
+                    for (int k = 0; k < res.GetLength(0); k++)
+                        for (int m = 0; m < res.GetLength(1); m++)
+                            (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).Rows[k].Cells[m].Value = res[k, m];
+                        vrA = filling.Multiplication(vrA, A);
+
+                    int width = 0; int height = 0;
+                    foreach (DataGridViewRow row in (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).Rows)
+                        height += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true)+2;
+                    foreach (DataGridViewColumn column in (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).Columns)
+                        width += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    tabPage3.Controls["dgu" + n].Size = new System.Drawing.Size(width, height);
+
+                    if (n == 1)
+                        tabPage3.Controls["dgu" + n.ToString()].Location = new Point(tabPage3.Controls["lbu" + n.ToString()].Location.X + tabPage3.Controls["lbu" + n.ToString()].Size.Width + 5, vecA.Location.Y + vecA.Size.Height + 5);
+                    else
+                        tabPage3.Controls["dgu" + n.ToString()].Location = new Point(tabPage3.Controls["lbu" + n.ToString()].Location.X + tabPage3.Controls["lbu" + n.ToString()].Size.Width + 5, tabPage3.Controls["dgu" + (n - 1).ToString()].Location.Y + tabPage3.Controls["dgu" + (n - 1).ToString()].Size.Height + 5);
+                    tabPage3.Controls["lbu" + n.ToString()].Location = new Point(leba.Location.X, tabPage3.Controls["dgu" + n.ToString()].Location.Y + tabPage3.Controls["dgu" + n.ToString()].Size.Height / 2 - tabPage3.Controls["lbu" + n.ToString()].Size.Height / 2);
+                }
+            }
+
+            if(N!=null&& masC!=null)
+            {
+                double[,] vrA, res;
+                vrA = A;
+                for (int n = 1; n < N.GetLength(1); n++)
+                {
+                    Label lb = new Label();
+                    lb.Font = new Font("Segoe UI", 18, FontStyle.Bold);
+                    DataGridView dg = new DataGridView();
+                    dg.Font = new Font("Segoe UI", 8);
+                    dg.Name = "dgn" + n.ToString();
+                    lb.Name = "lbn" + n.ToString();
+
+                    tabPage3.Controls.Add(dg);
+                    tabPage3.Controls.Add(lb);
+
+                    if (n != 1)
+                        tabPage3.Controls["lbn" + n.ToString()].Text = "CA^" + n + "=";
+                    else
+                        tabPage3.Controls["lbn" + n.ToString()].Text = "CA=";
+                    tabPage3.Controls["lbn" + n.ToString()].AutoSize = true;
+
+                    (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).ColumnHeadersVisible = false;
+                    (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).RowHeadersVisible = false;
+                    (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).ScrollBars = ScrollBars.None;
+
+                    (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).RowCount = c.GetLength(0);
+                    (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).ColumnCount = c.GetLength(1);
+                    res = filling.Multiplication(c, vrA);
+                    for (int k = 0; k < res.GetLength(0); k++)
+                        for (int m = 0; m < res.GetLength(1); m++)
+                            (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).Rows[k].Cells[m].Value = res[k, m];
+                    vrA = filling.Multiplication(vrA, A);
+
+                    (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                    int width = 0; int height = 0;
+                    foreach (DataGridViewRow row in (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).Rows)
+                        height += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                    foreach (DataGridViewColumn column in (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).Columns)
+                        width += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    tabPage3.Controls["dgn" + n].Size = new System.Drawing.Size(width, height);
+
+                    if (U != null&&masB!=null)
+                    {
+                        int k = U.GetLength(0) - 1;//номер последнего контрла в U
+                        if(n==1)
+                            tabPage3.Controls["dgn" + n.ToString()].Location = new Point(tabPage3.Controls["lbn" + n.ToString()].Location.X + tabPage3.Controls["lbn" + n.ToString()].Size.Width + 5, tabPage3.Controls["dgu"+k.ToString()].Location.Y+tabPage3.Controls["dgu"+k.ToString()].Size.Height+5);
+                        else
+                            tabPage3.Controls["dgn" + n.ToString()].Location = new Point(tabPage3.Controls["lbn" + n.ToString()].Location.X + tabPage3.Controls["lbn" + n.ToString()].Size.Width + 5, tabPage3.Controls["dgn" + (n-1).ToString()].Location.Y + tabPage3.Controls["dgn" + (n-1).ToString()].Size.Height + 5);
+                        tabPage3.Controls["lbn" + n.ToString()].Location = new Point(leba.Location.X, tabPage3.Controls["dgn" + n.ToString()].Location.Y + tabPage3.Controls["dgn" + n.ToString()].Size.Height / 2 - tabPage3.Controls["lbn" + n.ToString()].Size.Height / 2);
+                    } 
+                    else
+                    {
+                        if (n == 1)
+                            tabPage3.Controls["dgn" + n.ToString()].Location = new Point(tabPage3.Controls["lbn" + n.ToString()].Location.X + tabPage3.Controls["lbn" + n.ToString()].Size.Width + 5, vecA.Location.Y + vecA.Size.Height + 5);
+                        else
+                            tabPage3.Controls["dgn" + n.ToString()].Location = new Point(tabPage3.Controls["lbn" + n.ToString()].Location.X + tabPage3.Controls["lbn" + n.ToString()].Size.Width + 5, tabPage3.Controls["dgn" + (n - 1).ToString()].Location.Y + tabPage3.Controls["dgn" + (n - 1).ToString()].Size.Height + 5);
+                        tabPage3.Controls["lbn" + n.ToString()].Location = new Point(leba.Location.X, tabPage3.Controls["dgn" + n.ToString()].Location.Y + tabPage3.Controls["dgn" + n.ToString()].Size.Height / 2 - tabPage3.Controls["lbn" + n.ToString()].Size.Height / 2);
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e) //ввести условие на пустоту массивов!
+        { 
             N = new double[stlbA * strC, stlbA];
             U = new double[strA, strA * stlbB];
             int rankU = 0, rankN = 0;
             if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
-            {//все отмечено галочкой
-                //вывод обеих матриц и их рангов
-                U = cl.MatrU(masA, masB, strA, stlbB);
-                N = cl.MatrN(masA, masC, stlbA, strC);
-                rankU = cl.Rank(U);
-                rankN = cl.Rank(N);
-                
-                matrU.RowCount = strA;   
-                matrU.ColumnCount = strA * stlbB;
-                
-                for (int i = 0; i < strA; i++)
-                {
-                    for (int j = 0; j < strA * stlbB; j++)
-                    {
-                        this.matrU.Rows[i].Cells[j].Value = U[i, j];
-                    }
-                }
-                int widthU = 0; int heightU = 0;
-                foreach (DataGridViewRow row in matrU.Rows)
-                    heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrU.Columns)
-                    widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                if (C_view.Visible == true)
-                    matrU.Location = new System.Drawing.Point(390, C_view.Location.Y + C_view.Size.Height+25);
-                else matrU.Location = new System.Drawing.Point(390, A_view.Location.Y + A_view.Size.Height + 25);
-                matrU.Size = new System.Drawing.Size(widthU, heightU);
-                matrU.Visible = true;
-                label30.Location = new System.Drawing.Point(matrU.Location.X-label30.Size.Width-10, matrU.Location.Y+(matrU.Size.Height/2-label30.Size.Height/2));
-                label30.Visible = true;
-                label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y+(matrU.Size.Height / 2 - label32.Size.Height / 2));
-                label32.Visible = true;
-                label32.Text = "rgU=" + rankU;
-
-                matrN.RowCount = stlbA * strC;
-                matrN.ColumnCount = stlbA;
-                for (int i = 0; i < stlbA * strC; i++)
-                {
-                    for (int j = 0; j < stlbA; j++)
-                    {
-                        this.matrN.Rows[i].Cells[j].Value = N[i, j];
-                    }
-                }
-                int widthN = 0; int heightN = 0;
-                foreach (DataGridViewRow row in matrN.Rows)
-                    heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrN.Columns)
-                    widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                matrN.Location = new System.Drawing.Point(390, matrU.Location.Y + matrU.Size.Height + 25);
-                matrN.Size = new System.Drawing.Size(widthN, heightN);
-                matrN.Visible = true;
-                label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
-                label31.Visible = true;
-                label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
-                label33.Text = "rgN=" + rankN;
-                label33.Visible = true;
-            }
-            else if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
-            {//все кроме ранга набл
-                U = cl.MatrU(masA, masB, strA, stlbB);
-                N = cl.MatrN(masA, masC, stlbA, strC);
-                rankU = cl.Rank(U);
-                matrU.RowCount = strA;
-                matrU.ColumnCount = strA * stlbB;
-
-                for (int i = 0; i < strA; i++)
-                {
-                    for (int j = 0; j < strA * stlbB; j++)
-                    {
-                        this.matrU.Rows[i].Cells[j].Value = U[i, j];
-                    }
-                }
-                int widthU = 0; int heightU = 0;
-                foreach (DataGridViewRow row in matrU.Rows)
-                    heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrU.Columns)
-                    widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                if (C_view.Visible == true)
-                    matrU.Location = new System.Drawing.Point(390, C_view.Location.Y + C_view.Size.Height + 25);
-                else matrU.Location = new System.Drawing.Point(390, A_view.Location.Y + A_view.Size.Height + 25);
-                matrU.Size = new System.Drawing.Size(widthU, heightU);
-                matrU.Visible = true;
-                label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
-                label30.Visible = true;
-                label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
-                label32.Visible = true;
-                label32.Text = "rgU=" + rankU;
-
-                matrN.RowCount = stlbA * strC;
-                matrN.ColumnCount = stlbA;
-                for (int i = 0; i < stlbA * strC; i++)
-                {
-                    for (int j = 0; j < stlbA; j++)
-                    {
-                        this.matrN.Rows[i].Cells[j].Value = N[i, j];
-                    }
-                }
-                int widthN = 0; int heightN = 0;
-                foreach (DataGridViewRow row in matrN.Rows)
-                    heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrN.Columns)
-                    widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                matrN.Location = new System.Drawing.Point(390, matrU.Location.Y + matrU.Size.Height + 25);
-                matrN.Size = new System.Drawing.Size(widthN, heightN);
-                matrN.Visible = true;
-                label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
-                label31.Visible = true;
-            }
-            else if ((checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && (checkBox4.Checked))
-            {//все кроме ранга упр
-                U = cl.MatrU(masA, masB, strA, stlbB);
-                N = cl.MatrN(masA, masC, stlbA, strC);
-                rankN = cl.Rank(N);
-                matrU.RowCount = strA;
-                matrU.ColumnCount = strA * stlbB;
-
-                for (int i = 0; i < strA; i++)
-                {
-                    for (int j = 0; j < strA * stlbB; j++)
-                    {
-                        this.matrU.Rows[i].Cells[j].Value = U[i, j];
-                    }
-                }
-                int widthU = 0; int heightU = 0;
-                foreach (DataGridViewRow row in matrU.Rows)
-                    heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrU.Columns)
-                    widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                if (C_view.Visible == true)
-                    matrU.Location = new System.Drawing.Point(390, C_view.Location.Y + C_view.Size.Height + 25);
-                else matrU.Location = new System.Drawing.Point(390, A_view.Location.Y + A_view.Size.Height + 25);
-                matrU.Size = new System.Drawing.Size(widthU, heightU);
-                matrU.Visible = true;
-                label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
-                label30.Visible = true;
-
-                matrN.RowCount = stlbA * strC;
-                matrN.ColumnCount = stlbA;
-                for (int i = 0; i < stlbA * strC; i++)
-                {
-                    for (int j = 0; j < stlbA; j++)
-                    {
-                        this.matrN.Rows[i].Cells[j].Value = N[i, j];
-                    }
-                }
-                int widthN = 0; int heightN = 0;
-                foreach (DataGridViewRow row in matrN.Rows)
-                    heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrN.Columns)
-                    widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                matrN.Location = new System.Drawing.Point(390, matrU.Location.Y + matrU.Size.Height + 25);
-                matrN.Size = new System.Drawing.Size(widthN, heightN);
-                matrN.Visible = true;
-                label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
-                label31.Visible = true;
-                label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
-                label33.Text = "rgN=" + rankN;
-                label33.Visible = true;
-            }
-            else if ((checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
             {
-                DialogResult res = MessageBox.Show("Нельзя вывести ранг матрицы наблюдения, не выведя саму матрицу! Продолжить?", "Ошибка!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                if (res == DialogResult.Yes)
+                //вывод обеих матриц и их рангов
+                if (masB != null && masC != null)
                 {
                     U = cl.MatrU(masA, masB, strA, stlbB);
+                    N = cl.MatrN(masA, masC, stlbA, strC);
                     rankU = cl.Rank(U);
+                    rankN = cl.Rank(N);
+
                     matrU.RowCount = strA;
                     matrU.ColumnCount = strA * stlbB;
+                    matrU.Font = new Font("Segoe UI", 8);
 
                     for (int i = 0; i < strA; i++)
                     {
@@ -1160,27 +1224,19 @@ namespace WindowsFormsApplication1
                     foreach (DataGridViewColumn column in matrU.Columns)
                         widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
                     if (C_view.Visible == true)
-                        matrU.Location = new System.Drawing.Point(390, C_view.Location.Y + C_view.Size.Height + 25);
-                    else matrU.Location = new System.Drawing.Point(390, A_view.Location.Y + A_view.Size.Height + 25);
+                        matrU.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                    else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                     matrU.Size = new System.Drawing.Size(widthU, heightU);
                     matrU.Visible = true;
-                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 5, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
                     label30.Visible = true;
                     label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
                     label32.Visible = true;
                     label32.Text = "rgU=" + rankU;
-                }
-            }
-            else if (!(checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
-            {
-                DialogResult res = MessageBox.Show("Нельзя вывести ранг матрицы управления, не выведя саму матрицу! Продолжить?", "Ошибка!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                if (res == DialogResult.Yes)
-                {
-                    N = cl.MatrN(masA, masC, stlbA, strC);
-                    rankN = cl.Rank(N);
 
                     matrN.RowCount = stlbA * strC;
                     matrN.ColumnCount = stlbA;
+                    matrN.Font = new Font("Segoe UI", 8);
                     for (int i = 0; i < stlbA * strC; i++)
                     {
                         for (int j = 0; j < stlbA; j++)
@@ -1193,7 +1249,7 @@ namespace WindowsFormsApplication1
                         heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
                     foreach (DataGridViewColumn column in matrN.Columns)
                         widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                    matrN.Location = new System.Drawing.Point(390, matrU.Location.Y + matrU.Size.Height + 25);
+                    matrN.Location = new System.Drawing.Point(A_view.Location.X, matrU.Location.Y + matrU.Size.Height + 25);
                     matrN.Size = new System.Drawing.Size(widthN, heightN);
                     matrN.Visible = true;
                     label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
@@ -1201,94 +1257,29 @@ namespace WindowsFormsApplication1
                     label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
                     label33.Text = "rgN=" + rankN;
                     label33.Visible = true;
+
+                    computing_UN(U, N, masA, masB, masC);
                 }
-            }
-            else if ((checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && !(checkBox4.Checked))
-            {
-                U = cl.MatrU(masA, masB, strA, stlbB);
-                N = cl.MatrN(masA, masC, stlbA, strC);
-
-                matrU.RowCount = strA;
-                matrU.ColumnCount = strA * stlbB;
-
-                for (int i = 0; i < strA; i++)
+                else
                 {
-                    for (int j = 0; j < strA * stlbB; j++)
+                    if (masB == null && masC == null) MessageBox.Show("Вы не ввели матрицы C и B", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
                     {
-                        this.matrU.Rows[i].Cells[j].Value = U[i, j];
+                        if (masB == null) MessageBox.Show("Вы не ввели матрицу B", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (masC == null) MessageBox.Show("Вы не ввели матрицу C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                int widthU = 0; int heightU = 0;
-                foreach (DataGridViewRow row in matrU.Rows)
-                    heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrU.Columns)
-                    widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                if (C_view.Visible == true)
-                    matrU.Location = new System.Drawing.Point(390, C_view.Location.Y + C_view.Size.Height + 25);
-                else matrU.Location = new System.Drawing.Point(390, A_view.Location.Y + A_view.Size.Height + 25);
-                matrU.Size = new System.Drawing.Size(widthU, heightU);
-                matrU.Visible = true;
-                label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
-                label30.Visible = true;
-
-                matrN.RowCount = stlbA * strC;
-                matrN.ColumnCount = stlbA;
-                for (int i = 0; i < stlbA * strC; i++)
-                {
-                    for (int j = 0; j < stlbA; j++)
-                    {
-                        this.matrN.Rows[i].Cells[j].Value = N[i, j];
-                    }
-                }
-                int widthN = 0; int heightN = 0;
-                foreach (DataGridViewRow row in matrN.Rows)
-                    heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrN.Columns)
-                    widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                matrN.Location = new System.Drawing.Point(390, matrU.Location.Y + matrU.Size.Height + 25);
-                matrN.Size = new System.Drawing.Size(widthN, heightN);
-                matrN.Visible = true;
-                label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
-                label31.Visible = true;
             }
-            else if ((checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
-            {
-                U = cl.MatrU(masA, masB, strA, stlbB);
-                rankU = cl.Rank(U);
-                matrU.RowCount = strA;
-                matrU.ColumnCount = strA * stlbB;
-
-                for (int i = 0; i < strA; i++)
-                {
-                    for (int j = 0; j < strA * stlbB; j++)
-                    {
-                        this.matrU.Rows[i].Cells[j].Value = U[i, j];
-                    }
-                }
-                int widthU = 0; int heightU = 0;
-                foreach (DataGridViewRow row in matrU.Rows)
-                    heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrU.Columns)
-                    widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                if (C_view.Visible == true)
-                    matrU.Location = new System.Drawing.Point(390, C_view.Location.Y + C_view.Size.Height + 25);
-                else matrU.Location = new System.Drawing.Point(390, A_view.Location.Y + A_view.Size.Height + 25);
-                matrU.Size = new System.Drawing.Size(widthU, heightU);
-                matrU.Visible = true;
-                label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
-                label30.Visible = true;
-                label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
-                label32.Visible = true;
-                label32.Text = "rgU=" + rankU;
-            }
-            else if ((checkBox1.Checked) && !(checkBox2.Checked) && !(checkBox3.Checked) && (checkBox4.Checked))
-            {
-                DialogResult res = MessageBox.Show("Нельзя вывести ранг матрицы наблюдения, не выведя саму матрицу! Продолжить?", "Ошибка!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                if (res == DialogResult.Yes)
-                {
+            else if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
+            {//все кроме ранга набл
+                if(masB!=null&&masC!=null)
+                { 
                     U = cl.MatrU(masA, masB, strA, stlbB);
+                    N = cl.MatrN(masA, masC, stlbA, strC);
+                    rankU = cl.Rank(U);
                     matrU.RowCount = strA;
                     matrU.ColumnCount = strA * stlbB;
+                    matrU.Font = new Font("Segoe UI", 8);
 
                     for (int i = 0; i < strA; i++)
                     {
@@ -1303,22 +1294,20 @@ namespace WindowsFormsApplication1
                     foreach (DataGridViewColumn column in matrU.Columns)
                         widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
                     if (C_view.Visible == true)
-                        matrU.Location = new System.Drawing.Point(390, C_view.Location.Y + C_view.Size.Height + 25);
-                    else matrU.Location = new System.Drawing.Point(390, A_view.Location.Y + A_view.Size.Height + 25);
+                        matrU.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                    else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                     matrU.Size = new System.Drawing.Size(widthU, heightU);
                     matrU.Visible = true;
                     label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
                     label30.Visible = true;
-                }
-            }
-            else if (!(checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
-            {
-                DialogResult res = MessageBox.Show("Нельзя вывести ранг матрицы управления, не выведя саму матрицу! Продолжить?", "Ошибка!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                if (res == DialogResult.Yes)
-                {
-                    N = cl.MatrN(masA, masC, stlbA, strC);
+                    label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
+                    label32.Visible = true;
+                    label32.Text = "rgU=" + rankU;
+
                     matrN.RowCount = stlbA * strC;
                     matrN.ColumnCount = stlbA;
+                    matrN.Font = new Font("Segoe UI", 8);
+
                     for (int i = 0; i < stlbA * strC; i++)
                     {
                         for (int j = 0; j < stlbA; j++)
@@ -1331,39 +1320,379 @@ namespace WindowsFormsApplication1
                         heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
                     foreach (DataGridViewColumn column in matrN.Columns)
                         widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                    matrN.Location = new System.Drawing.Point(390, matrU.Location.Y + matrU.Size.Height + 25);
+                    matrN.Location = new System.Drawing.Point(A_view.Location.X, matrU.Location.Y + matrU.Size.Height + 25);
                     matrN.Size = new System.Drawing.Size(widthN, heightN);
                     matrN.Visible = true;
                     label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
                     label31.Visible = true;
+
+                    computing_UN(U, N, masA, masB, masC);
                 }
+                else
+                {
+                    if(masB!=null&&masC!=null) MessageBox.Show("Вы не ввели матрицу B и C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        if (masB == null) MessageBox.Show("Вы не ввели матрицу B", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (masC == null) MessageBox.Show("Вы не ввели матрицу C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else if ((checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && (checkBox4.Checked))
+            {//все кроме ранга упр
+                if (masB != null && masC != null)
+                {
+                    U = cl.MatrU(masA, masB, strA, stlbB);
+                    N = cl.MatrN(masA, masC, stlbA, strC);
+                    rankN = cl.Rank(N);
+                    matrU.RowCount = strA;
+                    matrU.ColumnCount = strA * stlbB;
+                    matrU.Font = new Font("Segoe UI", 8);
+
+                    for (int i = 0; i < strA; i++)
+                    {
+                        for (int j = 0; j < strA * stlbB; j++)
+                        {
+                            this.matrU.Rows[i].Cells[j].Value = U[i, j];
+                        }
+                    }
+                    int widthU = 0; int heightU = 0;
+                    foreach (DataGridViewRow row in matrU.Rows)
+                        heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                    foreach (DataGridViewColumn column in matrU.Columns)
+                        widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    if (C_view.Visible == true)
+                        matrU.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                    else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                    matrU.Size = new System.Drawing.Size(widthU, heightU);
+                    matrU.Visible = true;
+                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Visible = true;
+
+                    matrN.RowCount = stlbA * strC;
+                    matrN.ColumnCount = stlbA;
+                    matrN.Font = new Font("Segoe UI", 8);
+                    for (int i = 0; i < stlbA * strC; i++)
+                    {
+                        for (int j = 0; j < stlbA; j++)
+                        {
+                            this.matrN.Rows[i].Cells[j].Value = N[i, j];
+                        }
+                    }
+                    int widthN = 0; int heightN = 0;
+                    foreach (DataGridViewRow row in matrN.Rows)
+                        heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                    foreach (DataGridViewColumn column in matrN.Columns)
+                        widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    matrN.Location = new System.Drawing.Point(A_view.Location.X, matrU.Location.Y + matrU.Size.Height + 25);
+                    matrN.Size = new System.Drawing.Size(widthN, heightN);
+                    matrN.Visible = true;
+                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Visible = true;
+                    label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
+                    label33.Text = "rgN=" + rankN;
+                    label33.Visible = true;
+
+                    computing_UN(U, N, masA, masB, masC);
+                }
+                else
+                {
+                    if (masB == null && masC == null) MessageBox.Show("Вы не ввели матрицу B и C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        if (masB == null) MessageBox.Show("Вы не ввели матрицу B", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (masC == null) MessageBox.Show("Вы не ввели матрицу C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else if ((checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            {
+                if (masB != null)
+                {
+                    DialogResult res = MessageBox.Show("Нельзя вывести ранг матрицы наблюдения, не выведя саму матрицу! Продолжить?", "Ошибка!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    if (res == DialogResult.Yes)
+                    {
+                        U = cl.MatrU(masA, masB, strA, stlbB);
+                        rankU = cl.Rank(U);
+                        matrU.RowCount = strA;
+                        matrU.ColumnCount = strA * stlbB;
+                        matrU.Font = new Font("Segoe UI", 8);
+
+                        for (int i = 0; i < strA; i++)
+                        {
+                            for (int j = 0; j < strA * stlbB; j++)
+                            {
+                                this.matrU.Rows[i].Cells[j].Value = U[i, j];
+                            }
+                        }
+                        int widthU = 0; int heightU = 0;
+                        foreach (DataGridViewRow row in matrU.Rows)
+                            heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                        foreach (DataGridViewColumn column in matrU.Columns)
+                            widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                        if (C_view.Visible == true)
+                            matrU.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                        else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                        matrU.Size = new System.Drawing.Size(widthU, heightU);
+                        matrU.Visible = true;
+                        label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                        label30.Visible = true;
+                        label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
+                        label32.Visible = true;
+                        label32.Text = "rgU=" + rankU;
+
+                        computing_UN(U, N, masA, masB, masC);
+                    }
+                }
+                else if (masB == null) MessageBox.Show("Вы не ввели матрицу B", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!(checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
+            {
+                if (masC != null)
+                {
+                    DialogResult res = MessageBox.Show("Нельзя вывести ранг матрицы управления, не выведя саму матрицу! Продолжить?", "Ошибка!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    if (res == DialogResult.Yes)
+                    {
+                        N = cl.MatrN(masA, masC, stlbA, strC);
+                        rankN = cl.Rank(N);
+
+                        matrN.RowCount = stlbA * strC;
+                        matrN.ColumnCount = stlbA;
+                        matrN.Font = new Font("Segoe UI", 8);
+                        for (int i = 0; i < stlbA * strC; i++)
+                        {
+                            for (int j = 0; j < stlbA; j++)
+                            {
+                                this.matrN.Rows[i].Cells[j].Value = N[i, j];
+                            }
+                        }
+                        int widthN = 0; int heightN = 0;
+                        foreach (DataGridViewRow row in matrN.Rows)
+                            heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                        foreach (DataGridViewColumn column in matrN.Columns)
+                            widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                        if (C_view.Visible == true)
+                            matrN.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                        else matrN.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                        matrN.Size = new System.Drawing.Size(widthN, heightN);
+                        matrN.Visible = true;
+                        label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                        label31.Visible = true;
+                        label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
+                        label33.Text = "rgN=" + rankN;
+                        label33.Visible = true;
+
+                        computing_UN(U, N, masA, masB, masC);
+                    }
+                }
+                else if (masC == null) MessageBox.Show("Вы не ввели матрицу C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if ((checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && !(checkBox4.Checked))
+            {
+                if (masB != null && masC != null)
+                {
+                    U = cl.MatrU(masA, masB, strA, stlbB);
+                    N = cl.MatrN(masA, masC, stlbA, strC);
+
+                    matrU.RowCount = strA;
+                    matrU.ColumnCount = strA * stlbB;
+                    matrU.Font = new Font("Segoe UI", 8);
+                    for (int i = 0; i < strA; i++)
+                    {
+                        for (int j = 0; j < strA * stlbB; j++)
+                        {
+                            this.matrU.Rows[i].Cells[j].Value = U[i, j];
+                        }
+                    }
+                    int widthU = 0; int heightU = 0;
+                    foreach (DataGridViewRow row in matrU.Rows)
+                        heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                    foreach (DataGridViewColumn column in matrU.Columns)
+                        widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    if (C_view.Visible == true)
+                        matrU.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                    else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                    matrU.Size = new System.Drawing.Size(widthU, heightU);
+                    matrU.Visible = true;
+                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Visible = true;
+
+                    matrN.RowCount = stlbA * strC;
+                    matrN.ColumnCount = stlbA;
+                    matrN.Font = new Font("Segoe UI", 8);
+                    for (int i = 0; i < stlbA * strC; i++)
+                    {
+                        for (int j = 0; j < stlbA; j++)
+                        {
+                            this.matrN.Rows[i].Cells[j].Value = N[i, j];
+                        }
+                    }
+                    int widthN = 0; int heightN = 0;
+                    foreach (DataGridViewRow row in matrN.Rows)
+                        heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                    foreach (DataGridViewColumn column in matrN.Columns)
+                        widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    matrN.Location = new System.Drawing.Point(A_view.Location.X, matrU.Location.Y + matrU.Size.Height + 25);
+                    matrN.Size = new System.Drawing.Size(widthN, heightN);
+                    matrN.Visible = true;
+                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Visible = true;
+
+                    computing_UN(U, N, masA, masB, masC);
+                }
+                else
+                {
+                    if (masB == null && masC == null) MessageBox.Show("Вы не ввели матрицу B и С", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        if (masB == null) MessageBox.Show("Вы не ввели матрицу B", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (masC == null) MessageBox.Show("Вы не ввели матрицу C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else if ((checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
+            {
+                if (masB != null)
+                {
+                    U = cl.MatrU(masA, masB, strA, stlbB);
+                    rankU = cl.Rank(U);
+                    matrU.RowCount = strA;
+                    matrU.ColumnCount = strA * stlbB;
+                    matrU.Font = new Font("Segoe UI", 8);
+                    for (int i = 0; i < strA; i++)
+                    {
+                        for (int j = 0; j < strA * stlbB; j++)
+                        {
+                            this.matrU.Rows[i].Cells[j].Value = U[i, j];
+                        }
+                    }
+                    int widthU = 0; int heightU = 0;
+                    foreach (DataGridViewRow row in matrU.Rows)
+                        heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                    foreach (DataGridViewColumn column in matrU.Columns)
+                        widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    if (C_view.Visible == true)
+                        matrU.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                    else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                    matrU.Size = new System.Drawing.Size(widthU, heightU);
+                    matrU.Visible = true;
+                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Visible = true;
+                    label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
+                    label32.Visible = true;
+                    label32.Text = "rgU=" + rankU;
+
+                    computing_UN(U, N, masA, masB, masC);
+                }
+                else if (masB == null) MessageBox.Show("Вы не ввели матрицу B", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if ((checkBox1.Checked) && !(checkBox2.Checked) && !(checkBox3.Checked) && (checkBox4.Checked))
+            {
+                if (masB != null)
+                {
+                    DialogResult res = MessageBox.Show("Нельзя вывести ранг матрицы наблюдения, не выведя саму матрицу! Продолжить?", "Ошибка!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    if (res == DialogResult.Yes)
+                    {
+                        U = cl.MatrU(masA, masB, strA, stlbB);
+                        matrU.RowCount = strA;
+                        matrU.ColumnCount = strA * stlbB;
+                        matrU.Font = new Font("Segoe UI", 8);
+                        for (int i = 0; i < strA; i++)
+                        {
+                            for (int j = 0; j < strA * stlbB; j++)
+                            {
+                                this.matrU.Rows[i].Cells[j].Value = U[i, j];
+                            }
+                        }
+                        int widthU = 0; int heightU = 0;
+                        foreach (DataGridViewRow row in matrU.Rows)
+                            heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                        foreach (DataGridViewColumn column in matrU.Columns)
+                            widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                        if (C_view.Visible == true)
+                            matrU.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                        else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                        matrU.Size = new System.Drawing.Size(widthU, heightU);
+                        matrU.Visible = true;
+                        label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                        label30.Visible = true;
+
+                        computing_UN(U, N, masA, masB, masC);
+                    }
+                }
+                else if (masB == null) MessageBox.Show("Вы не ввели матрицу B", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!(checkBox1.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
+            {
+                if (masC != null)
+                {
+                    DialogResult res = MessageBox.Show("Нельзя вывести ранг матрицы управления, не выведя саму матрицу! Продолжить?", "Ошибка!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    if (res == DialogResult.Yes)
+                    {
+                        N = cl.MatrN(masA, masC, stlbA, strC);
+                        matrN.RowCount = stlbA * strC;
+                        matrN.ColumnCount = stlbA;
+                        matrN.Font = new Font("Segoe UI", 8);
+                        for (int i = 0; i < stlbA * strC; i++)
+                        {
+                            for (int j = 0; j < stlbA; j++)
+                            {
+                                this.matrN.Rows[i].Cells[j].Value = N[i, j];
+                            }
+                        }
+                        int widthN = 0; int heightN = 0;
+                        foreach (DataGridViewRow row in matrN.Rows)
+                            heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                        foreach (DataGridViewColumn column in matrN.Columns)
+                            widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                        if (C_view.Visible == true)
+                            matrN.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                        else matrN.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                        matrN.Size = new System.Drawing.Size(widthN, heightN);
+                        matrN.Visible = true;
+                        label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                        label31.Visible = true;
+
+                        computing_UN(U, N, masA, masB, masC);
+                    }
+                }
+                else if (masC == null) MessageBox.Show("Вы не ввели матрицу C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!(checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && (checkBox4.Checked))
             {
-                N = cl.MatrN(masA, masC, stlbA, strC);
-                rankN = cl.Rank(N);
-                matrN.RowCount = stlbA * strC;
-                matrN.ColumnCount = stlbA;
-                for (int i = 0; i < stlbA * strC; i++)
+                if (masC != null)
                 {
-                    for (int j = 0; j < stlbA; j++)
+                    N = cl.MatrN(masA, masC, stlbA, strC);
+                    rankN = cl.Rank(N);
+                    matrN.RowCount = stlbA * strC;
+                    matrN.ColumnCount = stlbA;
+                    matrN.Font = new Font("Segoe UI", 8);
+                    for (int i = 0; i < stlbA * strC; i++)
                     {
-                        this.matrN.Rows[i].Cells[j].Value = N[i, j];
+                        for (int j = 0; j < stlbA; j++)
+                        {
+                            this.matrN.Rows[i].Cells[j].Value = N[i, j];
+                        }
                     }
+                    int widthN = 0; int heightN = 0;
+                    foreach (DataGridViewRow row in matrN.Rows)
+                        heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                    foreach (DataGridViewColumn column in matrN.Columns)
+                        widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    if (C_view.Visible == true)
+                        matrN.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                    else matrN.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                    matrN.Size = new System.Drawing.Size(widthN, heightN);
+                    matrN.Visible = true;
+                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Visible = true;
+                    label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
+                    label33.Text = "rgN=" + rankN;
+                    label33.Visible = true;
+
+                    computing_UN(U, N, masA, masB, masC);
                 }
-                int widthN = 0; int heightN = 0;
-                foreach (DataGridViewRow row in matrN.Rows)
-                    heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrN.Columns)
-                    widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                matrN.Location = new System.Drawing.Point(390, matrU.Location.Y + matrU.Size.Height + 25);
-                matrN.Size = new System.Drawing.Size(widthN, heightN);
-                matrN.Visible = true;
-                label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
-                label31.Visible = true;
-                label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
-                label33.Text = "rgN=" + rankN;
-                label33.Visible = true;
+                else if (masC == null) MessageBox.Show("Вы не ввели матрицу C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!(checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked))
             {
@@ -1371,52 +1700,67 @@ namespace WindowsFormsApplication1
             }
             else if ((checkBox1.Checked) && !(checkBox2.Checked) && !(checkBox3.Checked) && !(checkBox4.Checked))
             {
-                U = cl.MatrU(masA, masB, strA, stlbB);
-                matrU.RowCount = strA;
-                matrU.ColumnCount = strA * stlbB;
-
-                for (int i = 0; i < strA; i++)
+                if (masB != null)
                 {
-                    for (int j = 0; j < strA * stlbB; j++)
+                    U = cl.MatrU(masA, masB, strA, stlbB);
+                    matrU.RowCount = strA;
+                    matrU.ColumnCount = strA * stlbB;
+                    matrU.Font = new Font("Segoe UI", 8);
+                    for (int i = 0; i < strA; i++)
                     {
-                        this.matrU.Rows[i].Cells[j].Value = U[i, j];
+                        for (int j = 0; j < strA * stlbB; j++)
+                        {
+                            this.matrU.Rows[i].Cells[j].Value = U[i, j];
+                        }
                     }
+                    int widthU = 0; int heightU = 0;
+                    foreach (DataGridViewRow row in matrU.Rows)
+                        heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                    foreach (DataGridViewColumn column in matrU.Columns)
+                        widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    if (C_view.Visible == true)
+                        matrU.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                    else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                    matrU.Size = new System.Drawing.Size(widthU, heightU);
+                    matrU.Visible = true;
+                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Visible = true;
+
+                    computing_UN(U, N, masA, masB, masC);
                 }
-                int widthU = 0; int heightU = 0;
-                foreach (DataGridViewRow row in matrU.Rows)
-                    heightU += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrU.Columns)
-                    widthU += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                if (C_view.Visible == true)
-                    matrU.Location = new System.Drawing.Point(390, C_view.Location.Y + C_view.Size.Height + 25);
-                else matrU.Location = new System.Drawing.Point(390, A_view.Location.Y + A_view.Size.Height + 25);
-                matrU.Size = new System.Drawing.Size(widthU, heightU);
-                matrU.Visible = true;
-                label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
-                label30.Visible = true;
+                else if (masB == null) MessageBox.Show("Вы не ввели матрицу B", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!(checkBox1.Checked) && (checkBox2.Checked) && !(checkBox3.Checked) && !(checkBox4.Checked))
             {
-                N = cl.MatrN(masA, masC, stlbA, strC);
-                matrN.RowCount = stlbA * strC;
-                matrN.ColumnCount = stlbA;
-                for (int i = 0; i < stlbA * strC; i++)
+                if (masC != null)
                 {
-                    for (int j = 0; j < stlbA; j++)
+                    N = cl.MatrN(masA, masC, stlbA, strC);
+                    matrN.RowCount = stlbA * strC;
+                    matrN.ColumnCount = stlbA;
+                    matrN.Font = new Font("Segoe UI", 8);
+                    for (int i = 0; i < stlbA * strC; i++)
                     {
-                        this.matrN.Rows[i].Cells[j].Value = N[i, j];
+                        for (int j = 0; j < stlbA; j++)
+                        {
+                            this.matrN.Rows[i].Cells[j].Value = N[i, j];
+                        }
                     }
+                    int widthN = 0; int heightN = 0;
+                    foreach (DataGridViewRow row in matrN.Rows)
+                        heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
+                    foreach (DataGridViewColumn column in matrN.Columns)
+                        widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
+                    if (C_view.Visible == true)
+                        matrN.Location = new System.Drawing.Point(A_view.Location.X, C_view.Location.Y + C_view.Size.Height + 25);
+                    else matrN.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
+                    matrN.Size = new System.Drawing.Size(widthN, heightN);
+                    matrN.Visible = true;
+                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Visible = true;
+
+                    computing_UN(U, N, masA, masB, masC);
                 }
-                int widthN = 0; int heightN = 0;
-                foreach (DataGridViewRow row in matrN.Rows)
-                    heightN += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
-                foreach (DataGridViewColumn column in matrN.Columns)
-                    widthN += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                matrN.Location = new System.Drawing.Point(390, matrU.Location.Y + matrU.Size.Height + 25);
-                matrN.Size = new System.Drawing.Size(widthN, heightN);
-                matrN.Visible = true;
-                label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
-                label31.Visible = true;
+                else if (masC == null) MessageBox.Show("Вы не ввели матрицу C", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!(checkBox1.Checked) && !(checkBox2.Checked) && (checkBox3.Checked) && !(checkBox4.Checked))
             {
@@ -1865,7 +2209,10 @@ namespace WindowsFormsApplication1
                     buttonB.Text = "Изменить В";
                     buttonC.Text = "Изменить С";
                     button4.Text = "Изменить";
+                    button4.Enabled = true;
                     button6.Text = "Изменить";
+                    //button9.Text = "Изменить";
+                    button6.Enabled = true;
                     b_stolbci.Text = masB.GetLength(1).ToString();
                     b_stroki.Text = masB.GetLength(0).ToString();
                     strB = masB.GetLength(0);
@@ -1874,7 +2221,6 @@ namespace WindowsFormsApplication1
                     с_stolbci.Text = masC.GetLength(1).ToString();
                     strC = masC.GetLength(0);
                     stlbC = masC.GetLength(1);
-
                 }
                 if (dataString.Length == 4) //AB or AC
                 {
@@ -1991,6 +2337,7 @@ namespace WindowsFormsApplication1
                         stlbA = masA.GetLength(1);
                         buttonA.Text = "Изменить А / Очистить всё";
                         button4.Text = "Изменить";
+                        button4.Enabled = true;
                         //button9.Enabled = true;
                     }
                     else
