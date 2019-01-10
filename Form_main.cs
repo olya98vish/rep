@@ -9,8 +9,9 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics;
 using MathNet.Numerics.LinearAlgebra.Double;
+using System.Globalization;
 
 namespace WindowsFormsApplication1
 {
@@ -36,59 +37,11 @@ namespace WindowsFormsApplication1
             int y = Screen.PrimaryScreen.WorkingArea.Height;
             this.Width = x;
             this.Height = y;
+            tabControl1.Dock = DockStyle.Fill;
         }
 
         private void system_view()//визуализация системы в красивом виде
         {
-            ////создаем массив строк и ищем в нем макс элемент
-            //string[] A_elements = new string[strA * stlbA];
-            //string[] B_elements = new string[strB * stlbB];
-            //string[] C_elements = new string[strC * stlbC];
-            ////заполним массив из матрицы А данными
-            //for(int i = 0; i < strA; i++)
-            //{
-            //    for (int j = 0; j < stlbA; j++)
-            //    {
-            //        A_elements[i*stlbA + j] = Convert.ToString(masA[i, j]);
-            //    }
-            //}
-            ////заполним массив из матрицы В данными
-            //for (int i = 0; i < strB; i++)
-            //{
-            //    for (int j = 0; j < stlbB; j++)
-            //    {
-            //        B_elements[i * stlbB + j] = Convert.ToString(masB[i, j]);
-            //    }
-            //}
-            ////заполним массив из матрицы С данными
-            //for (int i = 0; i < strC; i++)
-            //{
-            //    for (int j = 0; j < stlbC; j++)
-            //    {
-            //        C_elements[i * stlbC + j] = Convert.ToString(masC[i, j]);
-            //    }
-            //}
-            ////поиск самых длинных элементов и запомним эти числа, чтобы создать матрицу соответствующего размера
-            //int maxLengthA = 0;
-            //int maxLengthB = 0;
-            //int maxLengthC = 0;
-
-            //for (int i = 0; i < strA * stlbA; i++)
-            //{
-            //    if(maxLengthA < A_elements[i].Length)
-            //        maxLengthA = A_elements[i].Length;
-            //}
-            //for (int i = 0; i < strB * stlbB; i++)
-            //{
-            //    if (maxLengthB < B_elements[i].Length)
-            //        maxLengthB = B_elements[i].Length;
-            //}
-            //for (int i = 0; i < strC * stlbC; i++)
-            //{
-            //    if (maxLengthC < C_elements[i].Length)
-            //        maxLengthC = C_elements[i].Length;
-            //}
-
             if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить") // есть АВС
             {
                 //работа с визуализацией матрицы А
@@ -104,15 +57,15 @@ namespace WindowsFormsApplication1
                 }
                 int widthA = 0;
                 foreach (DataGridViewColumn column in A_view.Columns)
-                    widthA += column.Width;
-                int widthA_view = widthA;
+                    widthA += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
                 int heightA_view = strA * 22;
-                A_view.Location = new System.Drawing.Point(506, A.Location.Y + 53);
-                A_view.Size = new System.Drawing.Size(widthA_view, heightA_view);
+                A_view.Size = new System.Drawing.Size(widthA, heightA_view);
                 label19.Visible = true;
                 label20.Visible = true;
-                label19.Location = new System.Drawing.Point(450, A.Location.Y + 53 + heightA_view / 2 - 36);
-                label20.Location = new System.Drawing.Point(448, A.Location.Y + 53 + heightA_view / 2 - 15);
+                A_view.Location = new System.Drawing.Point(label20.Location.X+label20.Size.Width+10, label28.Location.Y +15);
+                label20.Location = new System.Drawing.Point(label15.Location.X + 20, A_view.Location.Y+(A_view.Size.Height/2-label20.Size.Height/2));
+                label19.Location = new System.Drawing.Point(label20.Location.X+2, label20.Location.Y-label19.Size.Height/2);
+                
 
                 //работа с визуализацией матрицы В
                 B_view.Visible = true;
@@ -125,15 +78,15 @@ namespace WindowsFormsApplication1
                         this.B_view.Rows[i].Cells[j].Value = masB[i, j];
                     }
                 }
-                int widthB = 0;
+                int widthB = 0;               
                 foreach (DataGridViewColumn column in B_view.Columns)
-                    widthB += column.Width;
-                int widthB_view = widthB;
+                    widthB += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
                 int heightB_view = strB * 22;
-                B_view.Location = new System.Drawing.Point(506 + widthA_view + 20 + 35, A.Location.Y + 53);
-                B_view.Size = new System.Drawing.Size(widthB_view, heightB_view);
-                label24.Location = new System.Drawing.Point(448 + widthA_view + 64, A.Location.Y + 53 + heightA_view / 2 - 15);
-                label25.Location = new System.Drawing.Point(448 + widthA_view + 64 + widthB_view + 50, A.Location.Y + 53 + heightA_view / 2 - 15);
+                
+                B_view.Size = new System.Drawing.Size(widthB, heightB_view);
+                label24.Location = new System.Drawing.Point(A_view.Location.X+A_view.Size.Width+10, label20.Location.Y);
+                B_view.Location = new System.Drawing.Point(label24.Location.X+label24.Size.Width+10,A_view.Location.Y);
+                label25.Location = new System.Drawing.Point(B_view.Location.X+B_view.Size.Width+10,label20.Location.Y);
                 label24.Visible = true;
                 label25.Visible = true;
 
@@ -150,13 +103,12 @@ namespace WindowsFormsApplication1
                 }
                 int widthC = 0;
                 foreach (DataGridViewColumn column in C_view.Columns)
-                    widthC += column.Width;
-                int widthC_view = widthC;
+                    widthC += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
                 int heightC_view = strC * 22;
-                C_view.Location = new System.Drawing.Point(506, A.Location.Y + 53 + heightA_view + 21);
-                C_view.Size = new System.Drawing.Size(widthC_view, heightC_view);
-                label26.Location = new System.Drawing.Point(448, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
-                label27.Location = new System.Drawing.Point(448 + widthC_view + 64, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
+                C_view.Size = new System.Drawing.Size(widthC, heightC_view);
+                C_view.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 10);
+                label26.Location = new System.Drawing.Point(label20.Location.X,C_view.Location.Y+(C_view.Size.Height/2-label26.Size.Height/2));
+                label27.Location = new System.Drawing.Point(C_view.Location.X+C_view.Size.Width+10,label26.Location.Y);
                 label26.Visible = true;
                 label27.Visible = true;
             }
@@ -175,15 +127,14 @@ namespace WindowsFormsApplication1
                 }
                 int widthA = 0;
                 foreach (DataGridViewColumn column in A_view.Columns)
-                    widthA += column.Width;
-                int widthA_view = widthA;
+                    widthA += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
                 int heightA_view = strA * 22;
-                A_view.Location = new System.Drawing.Point(506, A.Location.Y + 53);
-                A_view.Size = new System.Drawing.Size(widthA_view, heightA_view);
+                A_view.Size = new System.Drawing.Size(widthA, heightA_view);
                 label19.Visible = true;
                 label20.Visible = true;
-                label19.Location = new System.Drawing.Point(450, A.Location.Y + 53 + heightA_view / 2 - 36);
-                label20.Location = new System.Drawing.Point(448, A.Location.Y + 53 + heightA_view / 2 - 15);
+                A_view.Location = new System.Drawing.Point(label20.Location.X + label20.Size.Width + 10, label28.Location.Y + 15);
+                label20.Location = new System.Drawing.Point(label15.Location.X + 20, A_view.Location.Y + (A_view.Size.Height / 2 - label20.Size.Height / 2));
+                label19.Location = new System.Drawing.Point(label20.Location.X + 2, label20.Location.Y - label19.Size.Height / 2);  
 
                 //работа с визуализацией матрицы В
                 B_view.Visible = true;
@@ -198,38 +149,14 @@ namespace WindowsFormsApplication1
                 }
                 int widthB = 0;
                 foreach (DataGridViewColumn column in B_view.Columns)
-                    widthB += column.Width;
-                int widthB_view = widthB;
+                    widthB += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
                 int heightB_view = strB * 22;
-                B_view.Location = new System.Drawing.Point(506 + widthA_view + 20 + 35, A.Location.Y + 53);
-                B_view.Size = new System.Drawing.Size(widthB_view, heightB_view);
-                label24.Location = new System.Drawing.Point(448 + widthA_view + 64, A.Location.Y + 53 + heightA_view / 2 - 15);
-                label25.Location = new System.Drawing.Point(448 + widthA_view + 64 + widthB_view + 6, A.Location.Y + 53 + heightA_view / 2 - 15);
+                B_view.Size = new System.Drawing.Size(widthB, heightB_view);
+                label24.Location = new System.Drawing.Point(A_view.Location.X + A_view.Size.Width + 10, label20.Location.Y);
+                B_view.Location = new System.Drawing.Point(label24.Location.X + label24.Size.Width + 10, A_view.Location.Y);
+                label25.Location = new System.Drawing.Point(B_view.Location.X + B_view.Size.Width + 10, label20.Location.Y);
                 label24.Visible = true;
                 label25.Visible = true;
-
-                //    //работа с визуализацией матрицы С
-                //    C_view.Visible = true;
-                //    C_view.RowCount = strC;
-                //    C_view.ColumnCount = stlbC;
-                //    for (int i = 0; i < C.RowCount; i++)
-                //    {
-                //        for (int j = 0; j < C.ColumnCount; j++)
-                //        {
-                //            this.C_view.Rows[i].Cells[j].Value = masC[i, j];
-                //        }
-                //    }
-                //    int widthC = 0;
-                //    foreach (DataGridViewColumn column in C_view.Columns)
-                //        widthC += column.Width;
-                //    int widthC_view = widthC;
-                //    int heightC_view = strC * 22;
-                //    C_view.Location = new System.Drawing.Point(506, A.Location.Y + 53 + heightA_view + 21);
-                //    C_view.Size = new System.Drawing.Size(widthC_view, heightC_view);
-                //    label26.Location = new System.Drawing.Point(448, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
-                //    label27.Location = new System.Drawing.Point(448 + widthC_view + 64, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
-                //    label26.Visible = true;
-                //    label27.Visible = true;
             }
             else if (checkB.Checked == false && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Enabled == false && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Enabled == false && button9.Text == "Изменить") //есть АС
             { // есть АС
@@ -246,39 +173,18 @@ namespace WindowsFormsApplication1
                 }
                 int widthA = 0;
                 foreach (DataGridViewColumn column in A_view.Columns)
-                    widthA += column.Width;
-                int widthA_view = widthA;
+                    widthA += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
                 int heightA_view = strA * 22;
-                A_view.Location = new System.Drawing.Point(506, A.Location.Y + 53);
-                A_view.Size = new System.Drawing.Size(widthA_view, heightA_view);
+                A_view.Size = new System.Drawing.Size(widthA, heightA_view);
                 label19.Visible = true;
                 label20.Visible = true;
-                label19.Location = new System.Drawing.Point(450, A.Location.Y + 53 + heightA_view / 2 - 36);
-                label20.Location = new System.Drawing.Point(448, A.Location.Y + 53 + heightA_view / 2 - 15);
-
-                ////работа с визуализацией матрицы В
-                //B_view.Visible = true;
-                //B_view.RowCount = strB;
-                //B_view.ColumnCount = stlbB;
-                //for (int i = 0; i < B.RowCount; i++)
-                //{
-                //    for (int j = 0; j < B.ColumnCount; j++)
-                //    {
-                //        this.B_view.Rows[i].Cells[j].Value = masB[i, j];
-                //    }
-                //}
-                //int widthB = 0;
-                //foreach (DataGridViewColumn column in B_view.Columns)
-                //    widthB += column.Width;
-                //int widthB_view = widthB;
-                //int heightB_view = strB * 22;
-                //B_view.Location = new System.Drawing.Point(506 + widthA_view + 20 + 35, A.Location.Y + 53);
-                //B_view.Size = new System.Drawing.Size(widthB_view, heightB_view);
-                //label24.Location = new System.Drawing.Point(448 + widthA_view + 64, A.Location.Y + 53 + heightA_view / 2 - 15);
-                //label25.Location = new System.Drawing.Point(448 + widthA_view + 64 + widthB_view + 6, A.Location.Y + 53 + heightA_view / 2 - 15);
-                //label24.Visible = true;
-                //label25.Visible = true;
-
+                A_view.Location = new System.Drawing.Point(label20.Location.X + label20.Size.Width + 10, label28.Location.Y + 15);
+                label20.Location = new System.Drawing.Point(label15.Location.X + 20, A_view.Location.Y + (A_view.Size.Height / 2 - label20.Size.Height / 2));
+                label19.Location = new System.Drawing.Point(label20.Location.X + 2, label20.Location.Y - label19.Size.Height / 2);
+                label24.Text = "x";
+                label24.Visible = true;
+                label24.Location = new System.Drawing.Point(A_view.Location.X + A_view.Size.Width + 10, label20.Location.Y);
+                
                 //работа с визуализацией матрицы С
                 C_view.Visible = true;
                 C_view.RowCount = strC;
@@ -292,18 +198,128 @@ namespace WindowsFormsApplication1
                 }
                 int widthC = 0;
                 foreach (DataGridViewColumn column in C_view.Columns)
-                    widthC += column.Width;
-                int widthC_view = widthC;
+                    widthC += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
                 int heightC_view = strC * 22;
-                C_view.Location = new System.Drawing.Point(506, A.Location.Y + 53 + heightA_view + 21);
-                C_view.Size = new System.Drawing.Size(widthC_view, heightC_view);
-                label26.Location = new System.Drawing.Point(448, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
-                label27.Location = new System.Drawing.Point(448 + widthC_view + 64, A.Location.Y + 53 + 5 + heightA_view + heightC_view / 2);
+                C_view.Size = new System.Drawing.Size(widthC, heightC_view);
                 label26.Visible = true;
                 label27.Visible = true;
+                C_view.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 10);
+                label26.Location = new System.Drawing.Point(label20.Location.X, C_view.Location.Y + (C_view.Size.Height / 2 - label26.Size.Height / 2));
+                label27.Location = new System.Drawing.Point(C_view.Location.X + C_view.Size.Width + 10, label26.Location.Y);
             }
         }
 
+        private void cleaning()
+        {
+            button4.Enabled = false;
+            if (checkB.Checked == true && b_stolbci.Text != "" && b_stroki.Text != "")
+                button6.Enabled = true;
+            else
+                button6.Enabled = false;
+
+            if (checkC.Checked == true && с_stolbci.Text != "" && с_stroki.Text != "")
+                button9.Enabled = true;
+            else
+                button9.Enabled = false;
+
+            a_stroki.Enabled = true;
+            a_stolbci.Enabled = true;
+            b_stroki.Enabled = true;
+            с_stolbci.Enabled = true;
+
+
+            button1.Enabled = false;
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox1.Enabled = false;
+            checkBox2.Enabled = false;
+            checkBox3.Enabled = false;
+            checkBox4.Enabled = false;
+
+            buttonA.Text = "ОК";
+            buttonB.Text = "ОК";
+            buttonC.Text = "ОК";
+            button4.Text = "ОК";
+            button6.Text = "ОК";
+            button9.Text = "ОК";
+
+            a_stroki.Clear();
+            a_stolbci.Clear();
+            b_stolbci.Clear();
+            b_stroki.Clear();
+            с_stolbci.Clear();
+            с_stroki.Clear();
+            A.ReadOnly = true;
+            A.Enabled = false;
+            system_unview();
+            U = null;
+            matrU.Visible = false;
+            label30.Visible = false;
+            label32.Visible = false;
+            matrU.RowCount = 0;
+            matrU.ColumnCount = 0;
+            N = null;
+            matrN.Visible = false;
+            label31.Visible = false;
+            label33.Visible = false;
+            matrN.RowCount = 0;
+            matrN.ColumnCount = 0;
+            //убиваем матрицы - все, так как матрица А главная.
+            A.RowCount = 0;
+            A.ColumnCount = 0;
+            B.RowCount = 0;
+            B.ColumnCount = 0;
+            C.RowCount = 0;
+            C.ColumnCount = 0;
+
+            sist.Visible = false;
+            sist1.Visible = false;
+            leba.Visible = false;
+            lebb.Visible = false;
+            lebc.Visible = false;
+            vecA.Visible = false;
+            vecA.RowCount = 0;
+            vecA.ColumnCount = 0;
+            vecB.Visible = false;
+            vecB.RowCount = 0;
+            vecB.ColumnCount = 0;
+            vecC.Visible = false;
+            vecC.RowCount = 0;
+            vecC.ColumnCount = 0;
+            int k = 1;
+            int k1 = 1;
+            int g = 1;
+            int g1 = 1;
+            foreach (System.Windows.Forms.Control cn in tabPage3.Controls)
+            {
+                if(cn.Name=="lbu"+k.ToString())
+                {
+                    cn.Visible = false;
+                    Controls.Remove(cn);
+                    k++;
+                }
+                if(cn.Name == "dgu" + k1.ToString())
+                {
+                    cn.Visible = false;
+                    Controls.Remove(cn);
+                    k1++;
+                }
+                if(cn.Name == "lbn" + g.ToString())
+                {
+                    cn.Visible = false;
+                    Controls.Remove(cn);
+                    g++;
+                }
+                if(cn.Name == "dgn" + g1.ToString())
+                {
+                    cn.Visible = false;
+                    Controls.Remove(cn);
+                    g1++;
+                }
+            }
+        }
         private void system_unview()//сокрытие визуализации
         {
             //работа с девизуализацией матрицы А
@@ -977,6 +993,7 @@ namespace WindowsFormsApplication1
 
         private void computing_UN(double[,] U, double[,] N, double[,] A, double[,] b, double[,] c)
         {
+            var As = Matrix.Build.DenseOfArray(A);
             //система для U
             if (masB != null)
             {
@@ -1016,7 +1033,7 @@ namespace WindowsFormsApplication1
             //выводим А
             vecA.RowCount = A.GetLength(0);
             vecA.ColumnCount = A.GetLength(1);
-            vecA.Font = new Font("Segoe UI", 8);
+            vecA.Font = new Font("Segoe UI", 12);
             vecA.Location = new Point(sist.Location.X+leba.Size.Width+5, sist.Location.Y + sist.Height + 5);
             leba.Location = new Point(sist.Location.X, vecA.Size.Height / 2 - leba.Size.Height / 2);
             for (int i = 0; i < A.GetLength(0); i++)
@@ -1035,7 +1052,7 @@ namespace WindowsFormsApplication1
             {
                 vecB.RowCount = b.GetLength(0);
                 vecB.ColumnCount = b.GetLength(1);
-                vecB.Font = new Font("Segoe UI", 8);
+                vecB.Font = new Font("Segoe UI", 12);
                 lebb.Location = new Point(vecA.Location.X+vecA.Size.Width+10,leba.Location.Y);
                 vecB.Location = new Point(lebb.Location.X+lebb.Size.Width,vecA.Location.Y );             
                 for (int i = 0; i < b.GetLength(0); i++)
@@ -1055,7 +1072,7 @@ namespace WindowsFormsApplication1
             {
                 vecC.RowCount = c.GetLength(0);
                 vecC.ColumnCount = c.GetLength(1);
-                vecC.Font = new Font("Segoe UI", 8);
+                vecC.Font = new Font("Segoe UI", 12);
                 if (masB != null)
                 {
                     lebc.Location = new Point(vecB.Location.X + vecB.Size.Width + 10, lebb.Location.Y);
@@ -1079,16 +1096,17 @@ namespace WindowsFormsApplication1
                 lebc.Visible = true;
             }
 
-            if (U != null && masB != null)
+            if(U != null && masB != null && checkBox1.Checked==true)
             {
-                double[,] vrA, res;
-                vrA = A;
+                var res = DenseMatrix.Build.Dense(b.GetLength(0), b.GetLength(1));
+                var vrA = Matrix.Build.DenseOfArray(A);
+                var Bs = Matrix.Build.DenseOfArray(b);
                 for (int n = 1; n < U.GetLength(0); n++)
                 {
                     Label lb = new Label();
                     lb.Font = new Font("Segoe UI", 18, FontStyle.Bold);
                     DataGridView dg = new DataGridView();
-                    dg.Font = new Font("Segoe UI", 8);
+                    dg.Font = new Font("Segoe UI", 12);
                     dg.Name = "dgu" + n.ToString();
                     lb.Name = "lbu" + n.ToString();
 
@@ -1107,18 +1125,18 @@ namespace WindowsFormsApplication1
 
                     (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).RowCount = b.GetLength(0);
                     (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).ColumnCount = b.GetLength(1);
-                    res = filling.Multiplication(vrA, b);
-                    for (int k = 0; k < res.GetLength(0); k++)
-                        for (int m = 0; m < res.GetLength(1); m++)
+                    res = vrA.Multiply(Bs);
+                    for (int k = 0; k < b.GetLength(0); k++)
+                        for (int m = 0; m < b.GetLength(1); m++)
                             (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).Rows[k].Cells[m].Value = res[k, m];
-                        vrA = filling.Multiplication(vrA, A);
+                        vrA = vrA.Multiply(As);
 
                     int width = 0; int height = 0;
                     foreach (DataGridViewRow row in (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).Rows)
-                        height += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true)+2;
+                        height += row.GetPreferredHeight(row.Index, DataGridViewAutoSizeRowMode.AllCells, true);
                     foreach (DataGridViewColumn column in (tabPage3.Controls["dgu" + n.ToString()] as DataGridView).Columns)
                         width += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                    tabPage3.Controls["dgu" + n].Size = new System.Drawing.Size(width, height);
+                    tabPage3.Controls["dgu" + n].Size = new System.Drawing.Size(width, height-7);
 
                     if (n == 1)
                         tabPage3.Controls["dgu" + n.ToString()].Location = new Point(tabPage3.Controls["lbu" + n.ToString()].Location.X + tabPage3.Controls["lbu" + n.ToString()].Size.Width + 5, vecA.Location.Y + vecA.Size.Height + 5);
@@ -1128,16 +1146,17 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            if(N!=null&& masC!=null)
+            if(N!=null&& masC!=null&&checkBox2.Checked==true)
             {
-                double[,] vrA, res;
-                vrA = A;
+                var Cs = Matrix.Build.DenseOfArray(c);
+                var res = DenseMatrix.Build.Dense(c.GetLength(0), c.GetLength(1));
+                var vrA = Matrix.Build.DenseOfArray(A);
                 for (int n = 1; n < N.GetLength(1); n++)
                 {
                     Label lb = new Label();
                     lb.Font = new Font("Segoe UI", 18, FontStyle.Bold);
                     DataGridView dg = new DataGridView();
-                    dg.Font = new Font("Segoe UI", 8);
+                    dg.Font = new Font("Segoe UI", 12);
                     dg.Name = "dgn" + n.ToString();
                     lb.Name = "lbn" + n.ToString();
 
@@ -1156,11 +1175,11 @@ namespace WindowsFormsApplication1
 
                     (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).RowCount = c.GetLength(0);
                     (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).ColumnCount = c.GetLength(1);
-                    res = filling.Multiplication(c, vrA);
-                    for (int k = 0; k < res.GetLength(0); k++)
-                        for (int m = 0; m < res.GetLength(1); m++)
+                    res = Cs.Multiply(vrA);
+                    for (int k = 0; k <c.GetLength(0); k++)
+                        for (int m = 0; m < c.GetLength(1); m++)
                             (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).Rows[k].Cells[m].Value = res[k, m];
-                    vrA = filling.Multiplication(vrA, A);
+                    vrA = vrA.Multiply(As);
 
                     (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     (tabPage3.Controls["dgn" + n.ToString()] as DataGridView).DefaultCellStyle.WrapMode = DataGridViewTriState.True;
@@ -1192,7 +1211,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) //ввести условие на пустоту массивов!
+        private void button1_Click(object sender, EventArgs e) //чекеры
         { 
             N = new double[stlbA * strC, stlbA];
             U = new double[strA, strA * stlbB];
@@ -1204,12 +1223,14 @@ namespace WindowsFormsApplication1
                 {
                     U = cl.MatrU(masA, masB, strA, stlbB);
                     N = cl.MatrN(masA, masC, stlbA, strC);
-                    rankU = cl.Rank(U);
-                    rankN = cl.Rank(N);
+                    var Us = Matrix.Build.DenseOfArray(U);
+                    var Ns=Matrix.Build.DenseOfArray(N);
+                    rankU = Us.Rank();
+                    rankN =Ns.Rank();
 
                     matrU.RowCount = strA;
                     matrU.ColumnCount = strA * stlbB;
-                    matrU.Font = new Font("Segoe UI", 8);
+                    matrU.Font = new Font("Segoe UI", 12);
 
                     for (int i = 0; i < strA; i++)
                     {
@@ -1236,7 +1257,7 @@ namespace WindowsFormsApplication1
 
                     matrN.RowCount = stlbA * strC;
                     matrN.ColumnCount = stlbA;
-                    matrN.Font = new Font("Segoe UI", 8);
+                    matrN.Font = new Font("Segoe UI", 12);
                     for (int i = 0; i < stlbA * strC; i++)
                     {
                         for (int j = 0; j < stlbA; j++)
@@ -1276,10 +1297,11 @@ namespace WindowsFormsApplication1
                 { 
                     U = cl.MatrU(masA, masB, strA, stlbB);
                     N = cl.MatrN(masA, masC, stlbA, strC);
-                    rankU = cl.Rank(U);
+                    var Us = Matrix.Build.DenseOfArray(U);
+                    rankU = Us.Rank();
                     matrU.RowCount = strA;
                     matrU.ColumnCount = strA * stlbB;
-                    matrU.Font = new Font("Segoe UI", 8);
+                    matrU.Font = new Font("Segoe UI", 12);
 
                     for (int i = 0; i < strA; i++)
                     {
@@ -1306,7 +1328,7 @@ namespace WindowsFormsApplication1
 
                     matrN.RowCount = stlbA * strC;
                     matrN.ColumnCount = stlbA;
-                    matrN.Font = new Font("Segoe UI", 8);
+                    matrN.Font = new Font("Segoe UI", 12);
 
                     for (int i = 0; i < stlbA * strC; i++)
                     {
@@ -1344,10 +1366,11 @@ namespace WindowsFormsApplication1
                 {
                     U = cl.MatrU(masA, masB, strA, stlbB);
                     N = cl.MatrN(masA, masC, stlbA, strC);
-                    rankN = cl.Rank(N);
+                    var Ns = Matrix.Build.DenseOfArray(N);
+                    rankN = Ns.Rank();
                     matrU.RowCount = strA;
                     matrU.ColumnCount = strA * stlbB;
-                    matrU.Font = new Font("Segoe UI", 8);
+                    matrU.Font = new Font("Segoe UI", 12);
 
                     for (int i = 0; i < strA; i++)
                     {
@@ -1371,7 +1394,7 @@ namespace WindowsFormsApplication1
 
                     matrN.RowCount = stlbA * strC;
                     matrN.ColumnCount = stlbA;
-                    matrN.Font = new Font("Segoe UI", 8);
+                    matrN.Font = new Font("Segoe UI", 12);
                     for (int i = 0; i < stlbA * strC; i++)
                     {
                         for (int j = 0; j < stlbA; j++)
@@ -1413,10 +1436,11 @@ namespace WindowsFormsApplication1
                     if (res == DialogResult.Yes)
                     {
                         U = cl.MatrU(masA, masB, strA, stlbB);
-                        rankU = cl.Rank(U);
+                        var Us = Matrix.Build.DenseOfArray(U);
+                        rankU = Us.Rank();
                         matrU.RowCount = strA;
                         matrU.ColumnCount = strA * stlbB;
-                        matrU.Font = new Font("Segoe UI", 8);
+                        matrU.Font = new Font("Segoe UI", 12);
 
                         for (int i = 0; i < strA; i++)
                         {
@@ -1454,11 +1478,12 @@ namespace WindowsFormsApplication1
                     if (res == DialogResult.Yes)
                     {
                         N = cl.MatrN(masA, masC, stlbA, strC);
-                        rankN = cl.Rank(N);
+                        var Ns = Matrix.Build.DenseOfArray(N);
+                        rankN = Ns.Rank();
 
                         matrN.RowCount = stlbA * strC;
                         matrN.ColumnCount = stlbA;
-                        matrN.Font = new Font("Segoe UI", 8);
+                        matrN.Font = new Font("Segoe UI", 12);
                         for (int i = 0; i < stlbA * strC; i++)
                         {
                             for (int j = 0; j < stlbA; j++)
@@ -1496,7 +1521,7 @@ namespace WindowsFormsApplication1
 
                     matrU.RowCount = strA;
                     matrU.ColumnCount = strA * stlbB;
-                    matrU.Font = new Font("Segoe UI", 8);
+                    matrU.Font = new Font("Segoe UI", 12);
                     for (int i = 0; i < strA; i++)
                     {
                         for (int j = 0; j < strA * stlbB; j++)
@@ -1519,7 +1544,7 @@ namespace WindowsFormsApplication1
 
                     matrN.RowCount = stlbA * strC;
                     matrN.ColumnCount = stlbA;
-                    matrN.Font = new Font("Segoe UI", 8);
+                    matrN.Font = new Font("Segoe UI", 12);
                     for (int i = 0; i < stlbA * strC; i++)
                     {
                         for (int j = 0; j < stlbA; j++)
@@ -1555,10 +1580,11 @@ namespace WindowsFormsApplication1
                 if (masB != null)
                 {
                     U = cl.MatrU(masA, masB, strA, stlbB);
-                    rankU = cl.Rank(U);
+                    var Us = Matrix.Build.DenseOfArray(U);
+                    rankU = Us.Rank();
                     matrU.RowCount = strA;
                     matrU.ColumnCount = strA * stlbB;
-                    matrU.Font = new Font("Segoe UI", 8);
+                    matrU.Font = new Font("Segoe UI", 12);
                     for (int i = 0; i < strA; i++)
                     {
                         for (int j = 0; j < strA * stlbB; j++)
@@ -1596,7 +1622,7 @@ namespace WindowsFormsApplication1
                         U = cl.MatrU(masA, masB, strA, stlbB);
                         matrU.RowCount = strA;
                         matrU.ColumnCount = strA * stlbB;
-                        matrU.Font = new Font("Segoe UI", 8);
+                        matrU.Font = new Font("Segoe UI", 12);
                         for (int i = 0; i < strA; i++)
                         {
                             for (int j = 0; j < strA * stlbB; j++)
@@ -1632,7 +1658,7 @@ namespace WindowsFormsApplication1
                         N = cl.MatrN(masA, masC, stlbA, strC);
                         matrN.RowCount = stlbA * strC;
                         matrN.ColumnCount = stlbA;
-                        matrN.Font = new Font("Segoe UI", 8);
+                        matrN.Font = new Font("Segoe UI", 12);
                         for (int i = 0; i < stlbA * strC; i++)
                         {
                             for (int j = 0; j < stlbA; j++)
@@ -1663,10 +1689,11 @@ namespace WindowsFormsApplication1
                 if (masC != null)
                 {
                     N = cl.MatrN(masA, masC, stlbA, strC);
-                    rankN = cl.Rank(N);
+                    var Ns = Matrix.Build.DenseOfArray(N);
+                    rankN = Ns.Rank();
                     matrN.RowCount = stlbA * strC;
                     matrN.ColumnCount = stlbA;
-                    matrN.Font = new Font("Segoe UI", 8);
+                    matrN.Font = new Font("Segoe UI", 12);
                     for (int i = 0; i < stlbA * strC; i++)
                     {
                         for (int j = 0; j < stlbA; j++)
@@ -1705,7 +1732,7 @@ namespace WindowsFormsApplication1
                     U = cl.MatrU(masA, masB, strA, stlbB);
                     matrU.RowCount = strA;
                     matrU.ColumnCount = strA * stlbB;
-                    matrU.Font = new Font("Segoe UI", 8);
+                    matrU.Font = new Font("Segoe UI", 12);
                     for (int i = 0; i < strA; i++)
                     {
                         for (int j = 0; j < strA * stlbB; j++)
@@ -1737,7 +1764,7 @@ namespace WindowsFormsApplication1
                     N = cl.MatrN(masA, masC, stlbA, strC);
                     matrN.RowCount = stlbA * strC;
                     matrN.ColumnCount = stlbA;
-                    matrN.Font = new Font("Segoe UI", 8);
+                    matrN.Font = new Font("Segoe UI", 12);
                     for (int i = 0; i < stlbA * strC; i++)
                     {
                         for (int j = 0; j < stlbA; j++)
@@ -2142,6 +2169,7 @@ namespace WindowsFormsApplication1
 
         private void окрытьСистемуToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            cleaning();
             OpenFileDialog file = new OpenFileDialog();
             file.Filter = "Text files | *.txt; | All Files (*.*) | *.*";
             string filename;
@@ -2211,7 +2239,7 @@ namespace WindowsFormsApplication1
                     button4.Text = "Изменить";
                     button4.Enabled = true;
                     button6.Text = "Изменить";
-                    //button9.Text = "Изменить";
+                    button9.Text = "Изменить";
                     button6.Enabled = true;
                     b_stolbci.Text = masB.GetLength(1).ToString();
                     b_stroki.Text = masB.GetLength(0).ToString();
@@ -2221,6 +2249,13 @@ namespace WindowsFormsApplication1
                     с_stolbci.Text = masC.GetLength(1).ToString();
                     strC = masC.GetLength(0);
                     stlbC = masC.GetLength(1);
+                    button1.Enabled = true;
+                    checkBox1.Enabled = true;
+                    checkBox2.Enabled = true;
+                    checkBox3.Enabled = true;
+                    checkBox4.Enabled = true;
+                    system_view();
+
                 }
                 if (dataString.Length == 4) //AB or AC
                 {
@@ -2275,7 +2310,13 @@ namespace WindowsFormsApplication1
                             stlbB = masB.GetLength(1);
                             buttonB.Text = "Изменить В";
                             button6.Enabled = true;
-                            //button6.Text = "Изменить";
+                            button6.Text = "Изменить";
+                            button1.Enabled = true;
+                            checkBox1.Enabled = true;
+                            checkBox2.Enabled = true;
+                            checkBox3.Enabled = true;
+                            checkBox4.Enabled = true;
+                            system_view();
                             button9.Enabled = false;
                             buttonC.Enabled = false;
                         }
@@ -2305,9 +2346,17 @@ namespace WindowsFormsApplication1
                             stlbC = masC.GetLength(1);
                             buttonC.Text = "Изменить С";
                             button9.Enabled = true;
+                            button9.Text = "Изменить";
+                            button1.Enabled = true;
+                            checkBox1.Enabled = true;
+                            checkBox2.Enabled = true;
+                            checkBox3.Enabled = true;
+                            checkBox4.Enabled = true;
+                            system_view();
                             buttonB.Enabled = false;
                             button6.Enabled = false;
                         }
+                        system_view();
                     }
                     else
                         MessageBox.Show("Вы пытаетесь открыть неверный файл", "Неверный файл", MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -2338,13 +2387,13 @@ namespace WindowsFormsApplication1
                         buttonA.Text = "Изменить А / Очистить всё";
                         button4.Text = "Изменить";
                         button4.Enabled = true;
-                        //button9.Enabled = true;
+                        system_view();
                     }
                     else
                         MessageBox.Show("Вы пытаетесь открыть неверный файл", "Неверный файл", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
                 if (dataString.Length == 0)
-                    MessageBox.Show("Файл пустой. Невозможно его открыть. Выбрать другой файл?", "Файл пуст", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    MessageBox.Show("Файл пуст. Невозможно его открыть. Выбрать другой файл?", "Файл пуст", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             }
         }
 

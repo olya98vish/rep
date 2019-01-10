@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MathNet.Numerics;
+using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace WindowsFormsApplication1
 {
     class filling
     {
-        public int Rank(double[,] matrix) //считаем ранг
+        /*public int Rank(double[,] matrix) //считаем ранг
         {
             int rang = 0;
             int q = 1;
@@ -75,37 +77,20 @@ namespace WindowsFormsApplication1
                 return b;
             else
                 return a;
-        }
-        public static double[,] Multiplication(double[,] a, double[,] b)
-        {
-            if (a.GetLength(1) != b.GetLength(0)) throw new Exception("Матрицы нельзя перемножить");
-            double[,] r = new double[a.GetLength(0), b.GetLength(1)];
-            for (int i = 0; i < a.GetLength(0); i++)
-            {
-                for (int j = 0; j < b.GetLength(1); j++)
-                {
-                    for (int k = 0; k < b.GetLength(0); k++)
-                    {
-                        r[i, j] += a[i, k] * b[k, j];
-                    }
-                }
-            }
-            return r;
-        }
+        }*/
         public double[,] MatrU(double[,] A, double[,] b, int n, int colB)
         {
+            var As = Matrix.Build.DenseOfArray(A);
+            var Bs = Matrix.Build.DenseOfArray(b);     
             double[,] U = new double[n, n * colB];
-            double[,] vr = new double[n, colB];
-            double[,] vr1 = new double[n, n];
-            for (int i = 0; i < n; i++)
-                for (int j = 0; j < n; j++)
-                    vr1[i, j] = A[i, j];
+            var vr = DenseMatrix.Build.Dense(n, colB);
+            var vr1 = Matrix.Build.DenseOfArray(A);
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < colB; j++)
                     U[i, j] = b[i, j];
             for (int j = 1; j < n; j++)
             {
-                vr = filling.Multiplication(vr1, b);
+                vr = vr1.Multiply(Bs);
                 for (int k = 0; k < colB; k++)
                 {
                     for (int i = 0; i < n; i++)
@@ -113,24 +98,23 @@ namespace WindowsFormsApplication1
                         U[i, j * colB + k] = vr[i, k];
                     }
                 }
-                vr1 = filling.Multiplication(vr1, A);
+                vr1 = vr1.Multiply(As);
             }
             return U;
         }
         public double[,] MatrN(double[,] A, double[,] c, int n, int colC)
         {
+            var As = Matrix.Build.DenseOfArray(A);
+            var Cs = Matrix.Build.DenseOfArray(c);
             double[,] N = new double[n * colC, n];
-            double[,] vr = new double[colC, n];
-            double[,] vr1 = new double[n, n];
-            for (int i = 0; i < n; i++)
-                for (int j = 0; j < n; j++)
-                    vr1[i, j] = A[i, j];
+            var vr = DenseMatrix.Build.Dense(colC, n);
+            var vr1 = Matrix.Build.DenseOfArray(A);
             for (int i = 0; i < colC; i++)
                 for (int j = 0; j < n; j++)
                     N[i, j] = c[i, j];
             for (int j = 1; j < n; j++)
             {
-                vr = filling.Multiplication(c, vr1);
+                vr = Cs.Multiply(vr1);
                 for (int k = 0; k < colC; k++)
                 {
                     for (int i = 0; i < n; i++)
@@ -138,12 +122,9 @@ namespace WindowsFormsApplication1
                         N[j * colC + k, i] = vr[k, i];
                     }
                 }
-                vr1 = filling.Multiplication(vr1, A);
+                vr1 = vr1.Multiply(As);
             }
             return N;
         }
-
-
-
     }
 }
