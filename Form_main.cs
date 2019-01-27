@@ -40,6 +40,106 @@ namespace WindowsFormsApplication1
             tabControl1.Dock = DockStyle.Fill;
         }
 
+        #region
+        private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
+        {
+            if (datagrid == "A")
+            {
+                for (int i = 0; i < RowCount; i++)
+                {
+                    for (int j = 0; j < ColumnCount; j++)
+                    {
+                        //заполнение непроставленных пользователем строк нулями
+                        if (Convert.ToDouble(A.Rows[i].Cells[j].Value) == 0)
+                        //if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
+                        {
+                            A.Rows[i].Cells[j].Value = 0;
+                        }
+                        string ss = A.Rows[i].Cells[j].Value.ToString();
+                        double tmp = Convert.ToDouble(ss);
+                        masA[i, j] = tmp;
+                    }
+                }
+            }
+            if (datagrid == "B")
+            {
+                for (int i = 0; i < RowCount; i++)
+                {
+                    for (int j = 0; j < ColumnCount; j++)
+                    {
+                        //заполнение непроставленных пользователем строк нулями
+                        if (Convert.ToDouble(B.Rows[i].Cells[j].Value) == 0)
+                        //if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
+                        {
+                            B.Rows[i].Cells[j].Value = 0;
+                        }
+
+                        string ss = B.Rows[i].Cells[j].Value.ToString();
+                        double tmp = Convert.ToDouble(ss);
+                        masB[i, j] = tmp;
+                    }
+                }
+            }
+            if (datagrid == "C")
+            {
+                for (int i = 0; i < RowCount; i++)
+                {
+                    for (int j = 0; j < ColumnCount; j++)
+                    {
+                        //заполнение непроставленных пользователем строк нулями
+                        if (Convert.ToDouble(C.Rows[i].Cells[j].Value) == 0)
+                        //if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
+                        {
+                            C.Rows[i].Cells[j].Value = 0;
+                        }
+
+                        string ss = C.Rows[i].Cells[j].Value.ToString();
+                        double tmp = Convert.ToDouble(ss);
+                        masC[i, j] = tmp;
+                    }
+                }
+            }
+        }
+
+        private void output_data(string datagrid, int str, int stlb)
+        {//вывод данных из памяти в датагрид и текстбоксы
+
+            if (datagrid == "A")
+            {
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < A.RowCount; i++)
+                {
+                    for (int j = 0; j < A.ColumnCount; j++)
+                    {
+                        A.Rows[i].Cells[j].Value = masA[i, j];
+                    }
+                }
+            }
+            if (datagrid == "B")
+            {
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < B.RowCount; i++)
+                {
+                    for (int j = 0; j < B.ColumnCount; j++)
+                    {
+                        B.Rows[i].Cells[j].Value = masB[i, j];
+                    }
+                }
+            }
+            if (datagrid == "C")
+            {
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < C.RowCount; i++)
+                {
+                    for (int j = 0; j < C.ColumnCount; j++)
+                    {
+                        C.Rows[i].Cells[j].Value = masC[i, j];
+                    }
+                }
+            }
+        }
+        //тут лежат функции взятия и вывода данных
+
         private void system_view()//визуализация системы в красивом виде
         {
             if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить") // есть АВС
@@ -345,105 +445,6 @@ namespace WindowsFormsApplication1
         }
 
         //функции для взятия данных в память и вывода
-            #region
-        private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
-        {
-            if (datagrid == "A")
-            {
-                for (int i = 0; i < RowCount; i++)
-                {
-                    for (int j = 0; j < ColumnCount; j++)
-                    {
-                        //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToDouble(A.Rows[i].Cells[j].Value) == 0)
-                        //if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
-                        {
-                            A.Rows[i].Cells[j].Value = 0;
-                        }
-                        string ss = A.Rows[i].Cells[j].Value.ToString();
-                        double tmp = Convert.ToDouble(ss);
-                        masA[i, j] = tmp;
-                    }
-                }
-            }
-            if (datagrid == "B")
-            {
-                for (int i = 0; i < RowCount; i++)
-                {
-                    for (int j = 0; j < ColumnCount; j++)
-                    {
-                        //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToDouble(B.Rows[i].Cells[j].Value) == 0)
-                        //if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
-                        {
-                            B.Rows[i].Cells[j].Value = 0;
-                        }
-
-                        string ss = B.Rows[i].Cells[j].Value.ToString();
-                        double tmp = Convert.ToDouble(ss);
-                        masB[i, j] = tmp;
-                    }
-                }
-            }
-            if (datagrid == "C")
-            {
-                for (int i = 0; i < RowCount; i++)
-                {
-                    for (int j = 0; j < ColumnCount; j++)
-                    {
-                        //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToDouble(C.Rows[i].Cells[j].Value) == 0)
-                        //if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
-                        {
-                            C.Rows[i].Cells[j].Value = 0;
-                        }
-
-                        string ss = C.Rows[i].Cells[j].Value.ToString();
-                        double tmp = Convert.ToDouble(ss);
-                        masC[i, j] = tmp;
-                    }
-                }
-            }
-        }
-
-        private void output_data(string datagrid, int str, int stlb)
-        {//вывод данных из памяти в датагрид и текстбоксы
-
-            if (datagrid == "A")
-            {
-                //заполнение таблицы значениями из строк
-                for (int i = 0; i < A.RowCount; i++)
-                {
-                    for (int j = 0; j < A.ColumnCount; j++)
-                    {
-                        A.Rows[i].Cells[j].Value = masA[i, j];
-                    }
-                }
-            }
-            if (datagrid == "B")
-            {
-                //заполнение таблицы значениями из строк
-                for (int i = 0; i < B.RowCount; i++)
-                {
-                    for (int j = 0; j < B.ColumnCount; j++)
-                    {
-                        B.Rows[i].Cells[j].Value = masB[i, j];
-                    }
-                }
-            }
-            if (datagrid == "C")
-            {
-                //заполнение таблицы значениями из строк
-                for (int i = 0; i < C.RowCount; i++)
-                {
-                    for (int j = 0; j < C.ColumnCount; j++)
-                    {
-                        C.Rows[i].Cells[j].Value = masC[i, j];
-                    }
-                }
-            }
-        }
-        #endregion//тут лежат функции взятия и вывода данных
 
         private void buttonA_Click(object sender, EventArgs e)
         {
@@ -615,6 +616,7 @@ namespace WindowsFormsApplication1
                 checkBox4.Enabled = false;
             }
         }
+        #endregion
 
         private void Form_main_Load(object sender, EventArgs e)
         {
