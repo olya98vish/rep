@@ -273,6 +273,9 @@ namespace WindowsFormsApplication1
             B.ColumnCount = 0;
             C.RowCount = 0;
             C.ColumnCount = 0;
+            masA = null;
+            masB = null;
+            masC = null;
 
             sist.Visible = false;
             sist1.Visible = false;
@@ -320,6 +323,7 @@ namespace WindowsFormsApplication1
                 }
             }
         }
+
         private void system_unview()//сокрытие визуализации
         {
             //работа с девизуализацией матрицы А
@@ -2316,7 +2320,6 @@ namespace WindowsFormsApplication1
                             checkBox2.Enabled = true;
                             checkBox3.Enabled = true;
                             checkBox4.Enabled = true;
-                            system_view();
                             button9.Enabled = false;
                             buttonC.Enabled = false;
                         }
@@ -2352,7 +2355,6 @@ namespace WindowsFormsApplication1
                             checkBox2.Enabled = true;
                             checkBox3.Enabled = true;
                             checkBox4.Enabled = true;
-                            system_view();
                             buttonB.Enabled = false;
                             button6.Enabled = false;
                         }
