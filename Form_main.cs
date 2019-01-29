@@ -40,6 +40,106 @@ namespace WindowsFormsApplication1
             tabControl1.Dock = DockStyle.Fill;
         }
 
+        #region
+        private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
+        {
+            if (datagrid == "A")
+            {
+                for (int i = 0; i < RowCount; i++)
+                {
+                    for (int j = 0; j < ColumnCount; j++)
+                    {
+                        //заполнение непроставленных пользователем строк нулями
+                        if (Convert.ToDouble(A.Rows[i].Cells[j].Value) == 0)
+                        //if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
+                        {
+                            A.Rows[i].Cells[j].Value = 0;
+                        }
+                        string ss = A.Rows[i].Cells[j].Value.ToString();
+                        double tmp = Convert.ToDouble(ss);
+                        masA[i, j] = tmp;
+                    }
+                }
+            }
+            if (datagrid == "B")
+            {
+                for (int i = 0; i < RowCount; i++)
+                {
+                    for (int j = 0; j < ColumnCount; j++)
+                    {
+                        //заполнение непроставленных пользователем строк нулями
+                        if (Convert.ToDouble(B.Rows[i].Cells[j].Value) == 0)
+                        //if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
+                        {
+                            B.Rows[i].Cells[j].Value = 0;
+                        }
+
+                        string ss = B.Rows[i].Cells[j].Value.ToString();
+                        double tmp = Convert.ToDouble(ss);
+                        masB[i, j] = tmp;
+                    }
+                }
+            }
+            if (datagrid == "C")
+            {
+                for (int i = 0; i < RowCount; i++)
+                {
+                    for (int j = 0; j < ColumnCount; j++)
+                    {
+                        //заполнение непроставленных пользователем строк нулями
+                        if (Convert.ToDouble(C.Rows[i].Cells[j].Value) == 0)
+                        //if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
+                        {
+                            C.Rows[i].Cells[j].Value = 0;
+                        }
+
+                        string ss = C.Rows[i].Cells[j].Value.ToString();
+                        double tmp = Convert.ToDouble(ss);
+                        masC[i, j] = tmp;
+                    }
+                }
+            }
+        }
+
+        private void output_data(string datagrid, int str, int stlb)
+        {//вывод данных из памяти в датагрид и текстбоксы
+
+            if (datagrid == "A")
+            {
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < A.RowCount; i++)
+                {
+                    for (int j = 0; j < A.ColumnCount; j++)
+                    {
+                        A.Rows[i].Cells[j].Value = masA[i, j];
+                    }
+                }
+            }
+            if (datagrid == "B")
+            {
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < B.RowCount; i++)
+                {
+                    for (int j = 0; j < B.ColumnCount; j++)
+                    {
+                        B.Rows[i].Cells[j].Value = masB[i, j];
+                    }
+                }
+            }
+            if (datagrid == "C")
+            {
+                //заполнение таблицы значениями из строк
+                for (int i = 0; i < C.RowCount; i++)
+                {
+                    for (int j = 0; j < C.ColumnCount; j++)
+                    {
+                        C.Rows[i].Cells[j].Value = masC[i, j];
+                    }
+                }
+            }
+        }
+        //тут лежат функции взятия и вывода данных
+
         private void system_view()//визуализация системы в красивом виде
         {
             if (checkB.Checked == true && checkC.Checked == true && a_stolbci.Text != "" && a_stroki.Text != "" && b_stolbci.Text != "" && b_stroki.Text != "" && с_stolbci.Text != "" && с_stroki.Text != "" && buttonA.Text == "Изменить А / Очистить всё" && buttonB.Text == "Изменить В" && buttonC.Text == "Изменить С" && button4.Text == "Изменить" && button6.Text == "Изменить" && button9.Text == "Изменить") // есть АВС
@@ -58,13 +158,13 @@ namespace WindowsFormsApplication1
                 int widthA = 0;
                 foreach (DataGridViewColumn column in A_view.Columns)
                     widthA += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                int heightA_view = strA * 22;
+                int heightA_view = strA * 23;
                 A_view.Size = new System.Drawing.Size(widthA, heightA_view);
                 label19.Visible = true;
                 label20.Visible = true;
-                A_view.Location = new System.Drawing.Point(label20.Location.X+label20.Size.Width+10, label28.Location.Y +15);
+                A_view.Location = new System.Drawing.Point(label20.Location.X + label20.Size.Width+10, label28.Location.Y + 15);
                 label20.Location = new System.Drawing.Point(label15.Location.X + 20, A_view.Location.Y+(A_view.Size.Height/2-label20.Size.Height/2));
-                label19.Location = new System.Drawing.Point(label20.Location.X+2, label20.Location.Y-label19.Size.Height/2);
+                label19.Location = new System.Drawing.Point(label20.Location.X + 2, label20.Location.Y-label19.Size.Height/2-2);
                 
 
                 //работа с визуализацией матрицы В
@@ -81,7 +181,7 @@ namespace WindowsFormsApplication1
                 int widthB = 0;               
                 foreach (DataGridViewColumn column in B_view.Columns)
                     widthB += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                int heightB_view = strB * 22;
+                int heightB_view = strB * 23;
                 
                 B_view.Size = new System.Drawing.Size(widthB, heightB_view);
                 label24.Location = new System.Drawing.Point(A_view.Location.X+A_view.Size.Width+10, label20.Location.Y);
@@ -104,7 +204,7 @@ namespace WindowsFormsApplication1
                 int widthC = 0;
                 foreach (DataGridViewColumn column in C_view.Columns)
                     widthC += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                int heightC_view = strC * 22;
+                int heightC_view = strC * 23;
                 C_view.Size = new System.Drawing.Size(widthC, heightC_view);
                 C_view.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 10);
                 label26.Location = new System.Drawing.Point(label20.Location.X,C_view.Location.Y+(C_view.Size.Height/2-label26.Size.Height/2));
@@ -128,13 +228,13 @@ namespace WindowsFormsApplication1
                 int widthA = 0;
                 foreach (DataGridViewColumn column in A_view.Columns)
                     widthA += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                int heightA_view = strA * 22;
+                int heightA_view = strA * 23;
                 A_view.Size = new System.Drawing.Size(widthA, heightA_view);
                 label19.Visible = true;
                 label20.Visible = true;
                 A_view.Location = new System.Drawing.Point(label20.Location.X + label20.Size.Width + 10, label28.Location.Y + 15);
                 label20.Location = new System.Drawing.Point(label15.Location.X + 20, A_view.Location.Y + (A_view.Size.Height / 2 - label20.Size.Height / 2));
-                label19.Location = new System.Drawing.Point(label20.Location.X + 2, label20.Location.Y - label19.Size.Height / 2);  
+                label19.Location = new System.Drawing.Point(label20.Location.X + 2, label20.Location.Y - label19.Size.Height / 2-2);  
 
                 //работа с визуализацией матрицы В
                 B_view.Visible = true;
@@ -150,7 +250,7 @@ namespace WindowsFormsApplication1
                 int widthB = 0;
                 foreach (DataGridViewColumn column in B_view.Columns)
                     widthB += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                int heightB_view = strB * 22;
+                int heightB_view = strB * 23;
                 B_view.Size = new System.Drawing.Size(widthB, heightB_view);
                 label24.Location = new System.Drawing.Point(A_view.Location.X + A_view.Size.Width + 10, label20.Location.Y);
                 B_view.Location = new System.Drawing.Point(label24.Location.X + label24.Size.Width + 10, A_view.Location.Y);
@@ -174,13 +274,13 @@ namespace WindowsFormsApplication1
                 int widthA = 0;
                 foreach (DataGridViewColumn column in A_view.Columns)
                     widthA += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                int heightA_view = strA * 22;
+                int heightA_view = strA * 23;
                 A_view.Size = new System.Drawing.Size(widthA, heightA_view);
                 label19.Visible = true;
                 label20.Visible = true;
                 A_view.Location = new System.Drawing.Point(label20.Location.X + label20.Size.Width + 10, label28.Location.Y + 15);
                 label20.Location = new System.Drawing.Point(label15.Location.X + 20, A_view.Location.Y + (A_view.Size.Height / 2 - label20.Size.Height / 2));
-                label19.Location = new System.Drawing.Point(label20.Location.X + 2, label20.Location.Y - label19.Size.Height / 2);
+                label19.Location = new System.Drawing.Point(label20.Location.X + 2, label20.Location.Y - label19.Size.Height / 2-2);
                 label24.Text = "x";
                 label24.Visible = true;
                 label24.Location = new System.Drawing.Point(A_view.Location.X + A_view.Size.Width + 10, label20.Location.Y);
@@ -199,7 +299,7 @@ namespace WindowsFormsApplication1
                 int widthC = 0;
                 foreach (DataGridViewColumn column in C_view.Columns)
                     widthC += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true);
-                int heightC_view = strC * 22;
+                int heightC_view = strC * 23;
                 C_view.Size = new System.Drawing.Size(widthC, heightC_view);
                 label26.Visible = true;
                 label27.Visible = true;
@@ -349,105 +449,6 @@ namespace WindowsFormsApplication1
         }
 
         //функции для взятия данных в память и вывода
-            #region
-        private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
-        {
-            if (datagrid == "A")
-            {
-                for (int i = 0; i < RowCount; i++)
-                {
-                    for (int j = 0; j < ColumnCount; j++)
-                    {
-                        //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToDouble(A.Rows[i].Cells[j].Value) == 0)
-                        //if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
-                        {
-                            A.Rows[i].Cells[j].Value = 0;
-                        }
-                        string ss = A.Rows[i].Cells[j].Value.ToString();
-                        double tmp = Convert.ToDouble(ss);
-                        masA[i, j] = tmp;
-                    }
-                }
-            }
-            if (datagrid == "B")
-            {
-                for (int i = 0; i < RowCount; i++)
-                {
-                    for (int j = 0; j < ColumnCount; j++)
-                    {
-                        //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToDouble(B.Rows[i].Cells[j].Value) == 0)
-                        //if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
-                        {
-                            B.Rows[i].Cells[j].Value = 0;
-                        }
-
-                        string ss = B.Rows[i].Cells[j].Value.ToString();
-                        double tmp = Convert.ToDouble(ss);
-                        masB[i, j] = tmp;
-                    }
-                }
-            }
-            if (datagrid == "C")
-            {
-                for (int i = 0; i < RowCount; i++)
-                {
-                    for (int j = 0; j < ColumnCount; j++)
-                    {
-                        //заполнение непроставленных пользователем строк нулями
-                        if (Convert.ToDouble(C.Rows[i].Cells[j].Value) == 0)
-                        //if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
-                        {
-                            C.Rows[i].Cells[j].Value = 0;
-                        }
-
-                        string ss = C.Rows[i].Cells[j].Value.ToString();
-                        double tmp = Convert.ToDouble(ss);
-                        masC[i, j] = tmp;
-                    }
-                }
-            }
-        }
-
-        private void output_data(string datagrid, int str, int stlb)
-        {//вывод данных из памяти в датагрид и текстбоксы
-
-            if (datagrid == "A")
-            {
-                //заполнение таблицы значениями из строк
-                for (int i = 0; i < A.RowCount; i++)
-                {
-                    for (int j = 0; j < A.ColumnCount; j++)
-                    {
-                        A.Rows[i].Cells[j].Value = masA[i, j];
-                    }
-                }
-            }
-            if (datagrid == "B")
-            {
-                //заполнение таблицы значениями из строк
-                for (int i = 0; i < B.RowCount; i++)
-                {
-                    for (int j = 0; j < B.ColumnCount; j++)
-                    {
-                        B.Rows[i].Cells[j].Value = masB[i, j];
-                    }
-                }
-            }
-            if (datagrid == "C")
-            {
-                //заполнение таблицы значениями из строк
-                for (int i = 0; i < C.RowCount; i++)
-                {
-                    for (int j = 0; j < C.ColumnCount; j++)
-                    {
-                        C.Rows[i].Cells[j].Value = masC[i, j];
-                    }
-                }
-            }
-        }
-        #endregion//тут лежат функции взятия и вывода данных
 
         private void buttonA_Click(object sender, EventArgs e)
         {
@@ -619,6 +620,7 @@ namespace WindowsFormsApplication1
                 checkBox4.Enabled = false;
             }
         }
+        #endregion
 
         private void Form_main_Load(object sender, EventArgs e)
         {
@@ -1253,7 +1255,7 @@ namespace WindowsFormsApplication1
                     else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                     matrU.Size = new System.Drawing.Size(widthU, heightU);
                     matrU.Visible = true;
-                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 5, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Location = new System.Drawing.Point(label15.Location.X + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
                     label30.Visible = true;
                     label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
                     label32.Visible = true;
@@ -1277,7 +1279,7 @@ namespace WindowsFormsApplication1
                     matrN.Location = new System.Drawing.Point(A_view.Location.X, matrU.Location.Y + matrU.Size.Height + 25);
                     matrN.Size = new System.Drawing.Size(widthN, heightN);
                     matrN.Visible = true;
-                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Location = new System.Drawing.Point(label15.Location.X + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
                     label31.Visible = true;
                     label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
                     label33.Text = "rgN=" + rankN;
@@ -1324,7 +1326,7 @@ namespace WindowsFormsApplication1
                     else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                     matrU.Size = new System.Drawing.Size(widthU, heightU);
                     matrU.Visible = true;
-                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Location = new System.Drawing.Point(label15.Location.X + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
                     label30.Visible = true;
                     label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
                     label32.Visible = true;
@@ -1349,7 +1351,7 @@ namespace WindowsFormsApplication1
                     matrN.Location = new System.Drawing.Point(A_view.Location.X, matrU.Location.Y + matrU.Size.Height + 25);
                     matrN.Size = new System.Drawing.Size(widthN, heightN);
                     matrN.Visible = true;
-                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Location = new System.Drawing.Point(label15.Location.X + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
                     label31.Visible = true;
 
                     computing_UN(U, N, masA, masB, masC);
@@ -1393,7 +1395,7 @@ namespace WindowsFormsApplication1
                     else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                     matrU.Size = new System.Drawing.Size(widthU, heightU);
                     matrU.Visible = true;
-                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Location = new System.Drawing.Point(label15.Location.X + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
                     label30.Visible = true;
 
                     matrN.RowCount = stlbA * strC;
@@ -1414,7 +1416,7 @@ namespace WindowsFormsApplication1
                     matrN.Location = new System.Drawing.Point(A_view.Location.X, matrU.Location.Y + matrU.Size.Height + 25);
                     matrN.Size = new System.Drawing.Size(widthN, heightN);
                     matrN.Visible = true;
-                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Location = new System.Drawing.Point(label15.Location.X + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
                     label31.Visible = true;
                     label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
                     label33.Text = "rgN=" + rankN;
@@ -1463,7 +1465,7 @@ namespace WindowsFormsApplication1
                         else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                         matrU.Size = new System.Drawing.Size(widthU, heightU);
                         matrU.Visible = true;
-                        label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                        label30.Location = new System.Drawing.Point(label15.Location.X + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
                         label30.Visible = true;
                         label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
                         label32.Visible = true;
@@ -1505,7 +1507,7 @@ namespace WindowsFormsApplication1
                         else matrN.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                         matrN.Size = new System.Drawing.Size(widthN, heightN);
                         matrN.Visible = true;
-                        label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                        label31.Location = new System.Drawing.Point(label15.Location.X + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
                         label31.Visible = true;
                         label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
                         label33.Text = "rgN=" + rankN;
@@ -1564,7 +1566,7 @@ namespace WindowsFormsApplication1
                     matrN.Location = new System.Drawing.Point(A_view.Location.X, matrU.Location.Y + matrU.Size.Height + 25);
                     matrN.Size = new System.Drawing.Size(widthN, heightN);
                     matrN.Visible = true;
-                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Location = new System.Drawing.Point(label15.Location.X + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
                     label31.Visible = true;
 
                     computing_UN(U, N, masA, masB, masC);
@@ -1606,7 +1608,7 @@ namespace WindowsFormsApplication1
                     else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                     matrU.Size = new System.Drawing.Size(widthU, heightU);
                     matrU.Visible = true;
-                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Location = new System.Drawing.Point(label15.Location.X + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
                     label30.Visible = true;
                     label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
                     label32.Visible = true;
@@ -1644,7 +1646,7 @@ namespace WindowsFormsApplication1
                         else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                         matrU.Size = new System.Drawing.Size(widthU, heightU);
                         matrU.Visible = true;
-                        label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                        label30.Location = new System.Drawing.Point(label15.Location.X + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
                         label30.Visible = true;
 
                         computing_UN(U, N, masA, masB, masC);
@@ -1680,7 +1682,7 @@ namespace WindowsFormsApplication1
                         else matrN.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                         matrN.Size = new System.Drawing.Size(widthN, heightN);
                         matrN.Visible = true;
-                        label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                        label31.Location = new System.Drawing.Point(label15.Location.X + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
                         label31.Visible = true;
 
                         computing_UN(U, N, masA, masB, masC);
@@ -1715,7 +1717,7 @@ namespace WindowsFormsApplication1
                     else matrN.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                     matrN.Size = new System.Drawing.Size(widthN, heightN);
                     matrN.Visible = true;
-                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Location = new System.Drawing.Point(label15.Location.X + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
                     label31.Visible = true;
                     label33.Location = new System.Drawing.Point(matrN.Location.X + matrN.Size.Width + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label32.Size.Height / 2));
                     label33.Text = "rgN=" + rankN;
@@ -1754,7 +1756,7 @@ namespace WindowsFormsApplication1
                     else matrU.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                     matrU.Size = new System.Drawing.Size(widthU, heightU);
                     matrU.Visible = true;
-                    label30.Location = new System.Drawing.Point(matrU.Location.X - label30.Size.Width - 10, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
+                    label30.Location = new System.Drawing.Point(label15.Location.X + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
                     label30.Visible = true;
 
                     computing_UN(U, N, masA, masB, masC);
@@ -1786,7 +1788,7 @@ namespace WindowsFormsApplication1
                     else matrN.Location = new System.Drawing.Point(A_view.Location.X, A_view.Location.Y + A_view.Size.Height + 25);
                     matrN.Size = new System.Drawing.Size(widthN, heightN);
                     matrN.Visible = true;
-                    label31.Location = new System.Drawing.Point(matrN.Location.X - label31.Size.Width - 10, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
+                    label31.Location = new System.Drawing.Point(label15.Location.X + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
                     label31.Visible = true;
 
                     computing_UN(U, N, masA, masB, masC);
@@ -2397,6 +2399,11 @@ namespace WindowsFormsApplication1
                 if (dataString.Length == 0)
                     MessageBox.Show("Файл пуст. Невозможно его открыть. Выбрать другой файл?", "Файл пуст", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void сохранитьСистемуToolStripMenuItem_Click(object sender, EventArgs e)
