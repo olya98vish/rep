@@ -57,7 +57,6 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
-    <Compile Include="filling.cs" />
     <Compile Include="Form_main.cs">
       <SubType>Form</SubType>
     </Compile>

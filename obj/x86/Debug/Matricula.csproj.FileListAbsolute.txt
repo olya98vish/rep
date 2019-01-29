@@ -95,7 +95,6 @@ C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\WindowsFo
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.pdb
 C:\Users\megad\Kursproject--Duble2\bin\Debug\WindowsFormsApplication1.exe
 C:\Users\megad\Kursproject--Duble2\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.AboutBox1.resources
 C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.Form_main.resources
 C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.GenerateResource.cache
@@ -111,3 +110,4 @@ C:\Users\Евгения\Source\Repos\Kursproject--Duble2\bin\Debug\MathNet.Numer
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csprojAssemblyReference.cache
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.CoreCompileInputs.cache
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.CopyComplete
+C:\Users\megad\Kursproject--Duble2\obj\x86\Debug\WindowsFormsApplication1.AboutBox1.resources

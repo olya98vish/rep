@@ -5,23 +5,26 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
     partial class AboutBox1 : Form
     {
+        Form_main form = new Form_main();
         public AboutBox1()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            logoPictureBox.BackgroundImage = Image.FromStream(new WebClient().OpenRead("C:\\Users\\megad\\Kursproject--Duble2\\картинки\\source (2).gif"));
+            ImageAnimator.Animate(logoPictureBox.BackgroundImage, OnFrameChanged);
+            this.Text = String.Format("О программе {0}", AssemblyTitle);
+            this.labelProductName.Text = "Matricula";
+            this.labelVersion.Text = String.Format("Версия {0}", AssemblyVersion);
+            timer1.Start();
+            timer1.Interval = 5000;
         }
 
-        #region Assembly Attribute Accessors
+        #region Методы доступа к атрибутам сборки
 
         public string AssemblyTitle
         {
@@ -101,5 +104,20 @@ namespace WindowsFormsApplication1
         }
         #endregion
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Hide();
+            form.Show();
+        }
+        private void OnFrameChanged(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke((Action)(() => OnFrameChanged(sender, e)));
+                return;
+            }
+            ImageAnimator.UpdateFrames();
+            Invalidate(false);
+        }
     }
 }
