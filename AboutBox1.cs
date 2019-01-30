@@ -21,42 +21,43 @@ namespace WindowsFormsApplication1
             this.Text = String.Format("О программе {0}", AssemblyTitle);
             this.labelProductName.Text = "Matricula";
             this.labelVersion.Text = String.Format("Версия {0}", AssemblyVersion);
-            int k= rnd.Next(1, 14);
+            int k = rnd.Next(1, 14);
+            string directory=Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Kursproject--Duble2\\картинки\";
             if (k <= 11)
             {
                 if (k == 1)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\1.gif";
+                    path = directory + @"\1.gif";//"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\1.gif";
                 if (k == 2)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\2.gif";
+                    path = directory + @"\2.gif";//"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\2.gif";
                 if (k == 3)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\3.gif";
+                    path = directory + @"\3.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\3.gif";
                 if (k == 4)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\4.gif";
+                    path = directory + @"\4.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\4.gif";
                 if (k == 5)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\5.gif";
+                    path = directory + @"\5.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\5.gif";
                 if (k == 6)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\6.gif";
+                    path = directory + @"\6.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\6.gif";
                 if (k == 7)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\7.gif";
+                    path = directory + @"\7.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\7.gif";
                 if (k == 8)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\8.gif";
+                    path = directory + @"\8.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\8.gif";
                 if (k == 9)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\9.gif";
+                    path = directory + @"\9.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\9.gif";
                 if (k == 10)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\10.gif";
+                    path = directory + @"\10.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\10.gif";
                 logoPictureBox.BackgroundImage = Image.FromStream(new WebClient().OpenRead(path));
                 ImageAnimator.Animate(logoPictureBox.BackgroundImage, OnFrameChanged);
             }
             else
             {
                 if (k == 11)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\11.jpg";
+                    path = directory + @"\11.jpg"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\11.jpg";
                 if (k == 12)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\12.jpg";
+                    path = directory + @"\12.jpg"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\12.jpg";
                 if (k == 13)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\13.jpg";
+                    path = directory + @"\13.jpg"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\13.jpg";
                 if (k == 14)
-                    path = "C:\\Users\\megad\\Kursproject--Duble2\\картинки\\14.jpg";
+                    path = directory + @"\14.jpg"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\14.jpg";
                 logoPictureBox.BackgroundImage = Image.FromStream(new WebClient().OpenRead(path));
             }
             timer1.Start();
