@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
             this.labelProductName.Text = "Matricula";
             this.labelVersion.Text = String.Format("Версия {0}", AssemblyVersion);
             int k = rnd.Next(1, 14);
-            string directory=Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Kursproject--Duble2\\картинки\";
+            string directory= @"C:\Users\Евгения\Source\Repos\Kursproject--Duble2\картинки";
             if (k <= 11)
             {
                 if (k == 1)

@@ -165,7 +165,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Turquoise;
+            this.tabPage1.BackColor = System.Drawing.Color.PowderBlue;
             this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.menuStrip1);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -229,7 +229,7 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
-            this.tabPage2.BackColor = System.Drawing.Color.Turquoise;
+            this.tabPage2.BackColor = System.Drawing.Color.PowderBlue;
             this.tabPage2.Controls.Add(this.matrN);
             this.tabPage2.Controls.Add(this.matrU);
             this.tabPage2.Controls.Add(this.label33);
@@ -415,7 +415,7 @@
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label28.Location = new System.Drawing.Point(417, 117);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(869, 3);
+            this.label28.Size = new System.Drawing.Size(852, 3);
             this.label28.TabIndex = 412;
             // 
             // label27
@@ -423,7 +423,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label27.Location = new System.Drawing.Point(762, 2976);
+            this.label27.Location = new System.Drawing.Point(762, 3131);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(28, 32);
             this.label27.TabIndex = 411;
@@ -534,7 +534,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label25.Location = new System.Drawing.Point(1081, 2703);
+            this.label25.Location = new System.Drawing.Point(1081, 2858);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(30, 32);
             this.label25.TabIndex = 407;
@@ -684,7 +684,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(1238, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 105);
+            this.button1.Size = new System.Drawing.Size(31, 105);
             this.button1.TabIndex = 384;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
@@ -1088,7 +1088,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Turquoise;
+            this.tabPage3.BackColor = System.Drawing.Color.PowderBlue;
             this.tabPage3.Controls.Add(this.sist1);
             this.tabPage3.Controls.Add(this.vecC);
             this.tabPage3.Controls.Add(this.lebc);
@@ -1242,7 +1242,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.Turquoise;
+            this.tabPage4.BackColor = System.Drawing.Color.PowderBlue;
             this.tabPage4.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
@@ -1252,7 +1252,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.BackColor = System.Drawing.Color.Turquoise;
+            this.tabPage5.BackColor = System.Drawing.Color.PowderBlue;
             this.tabPage5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Name = "tabPage5";
