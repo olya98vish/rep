@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox1));
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelProductName = new System.Windows.Forms.Label();
-            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.tableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // labelVersion
@@ -43,7 +43,7 @@
             this.labelVersion.AutoEllipsis = true;
             this.labelVersion.AutoSize = true;
             this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelVersion.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVersion.Location = new System.Drawing.Point(6, 286);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 25);
@@ -58,7 +58,7 @@
             this.labelProductName.AutoEllipsis = true;
             this.labelProductName.AutoSize = true;
             this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelProductName.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProductName.Location = new System.Drawing.Point(6, 254);
             this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelProductName.MaximumSize = new System.Drawing.Size(0, 25);
@@ -68,27 +68,9 @@
             this.labelProductName.Text = "Название продукта";
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // logoPictureBox
-            // 
-            this.logoPictureBox.BackColor = System.Drawing.Color.Aquamarine;
-            this.logoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.BackgroundImage")));
-            this.logoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.ErrorImage")));
-            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
-            this.logoPictureBox.ImageLocation = "";
-            this.logoPictureBox.InitialImage = null;
-            this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
-            this.logoPictureBox.Name = "logoPictureBox";
-            this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
-            this.logoPictureBox.Size = new System.Drawing.Size(619, 248);
-            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logoPictureBox.TabIndex = 12;
-            this.logoPictureBox.TabStop = false;
-            // 
             // tableLayoutPanel
             // 
-            this.tableLayoutPanel.BackColor = System.Drawing.Color.PowderBlue;
+            this.tableLayoutPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tableLayoutPanel.ColumnCount = 1;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.96F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.04F));
@@ -110,6 +92,24 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(625, 316);
             this.tableLayoutPanel.TabIndex = 0;
             // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.BackColor = System.Drawing.Color.Aquamarine;
+            this.logoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.BackgroundImage")));
+            this.logoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logoPictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.ErrorImage")));
+            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
+            this.logoPictureBox.ImageLocation = "";
+            this.logoPictureBox.InitialImage = null;
+            this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
+            this.logoPictureBox.Size = new System.Drawing.Size(619, 248);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPictureBox.TabIndex = 12;
+            this.logoPictureBox.TabStop = false;
+            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -118,12 +118,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(643, 327);
             this.Controls.Add(this.tableLayoutPanel);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutBox1";
@@ -131,10 +130,11 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AboutBox1";
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            this.Text = "Matricula";
+            this.Load += new System.EventHandler(this.AboutBox1_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

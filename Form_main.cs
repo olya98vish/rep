@@ -40,7 +40,8 @@ namespace WindowsFormsApplication1
             tabControl1.Dock = DockStyle.Fill;
         }
 
-        #region
+        #region Функции для работы с матрицами, визуализацией
+
         private void take_data_from_matrix(string datagrid, int RowCount, int ColumnCount)
         {
             if (datagrid == "A")
@@ -2038,6 +2039,8 @@ namespace WindowsFormsApplication1
                     button9.Enabled = true;
                     a_stroki.Text = masA.GetLength(0).ToString();
                     a_stolbci.Text = masA.GetLength(1).ToString();
+                    a_stroki.Enabled = false;
+                    a_stolbci.Enabled = false;
                     strA = masA.GetLength(0);
                     stlbA = masA.GetLength(1);
                     buttonA.Text = "Изменить А / Очистить всё";
@@ -2050,10 +2053,14 @@ namespace WindowsFormsApplication1
                     button6.Enabled = true;
                     b_stolbci.Text = masB.GetLength(1).ToString();
                     b_stroki.Text = masB.GetLength(0).ToString();
+                    b_stroki.Enabled = false;
+                    b_stolbci.Enabled = false;
                     strB = masB.GetLength(0);
                     stlbB = masB.GetLength(1);
                     с_stroki.Text = masC.GetLength(0).ToString();
                     с_stolbci.Text = masC.GetLength(1).ToString();
+                    с_stroki.Enabled = false;
+                    с_stolbci.Enabled = false;
                     strC = masC.GetLength(0);
                     stlbC = masC.GetLength(1);
                     button1.Enabled = true;
@@ -2085,6 +2092,8 @@ namespace WindowsFormsApplication1
                             }
                         a_stroki.Text = masA.GetLength(0).ToString();
                         a_stolbci.Text = masA.GetLength(1).ToString();
+                        a_stroki.Enabled = false;
+                        a_stolbci.Enabled = false;
                         strA = masA.GetLength(0);
                         stlbA = masA.GetLength(1);
                         buttonA.Text = "Изменить А / Очистить всё";
@@ -2113,6 +2122,8 @@ namespace WindowsFormsApplication1
                                 }
                             b_stolbci.Text = masB.GetLength(1).ToString();
                             b_stroki.Text = masB.GetLength(0).ToString();
+                            b_stroki.Enabled = false;
+                            b_stolbci.Enabled = false;
                             strB = masB.GetLength(0);
                             stlbB = masB.GetLength(1);
                             buttonB.Text = "Изменить В";
@@ -2148,6 +2159,8 @@ namespace WindowsFormsApplication1
                                 }
                             с_stroki.Text = masC.GetLength(0).ToString();
                             с_stolbci.Text = masC.GetLength(1).ToString();
+                            с_stroki.Enabled = false;
+                            с_stolbci.Enabled = false;
                             strC = masC.GetLength(0);
                             stlbC = masC.GetLength(1);
                             buttonC.Text = "Изменить С";
@@ -2187,6 +2200,8 @@ namespace WindowsFormsApplication1
                             }
                         a_stroki.Text = masA.GetLength(0).ToString();
                         a_stolbci.Text = masA.GetLength(1).ToString();
+                        a_stroki.Enabled = false;
+                        a_stolbci.Enabled = false;
                         strA = masA.GetLength(0);
                         stlbA = masA.GetLength(1);
                         buttonA.Text = "Изменить А / Очистить всё";
@@ -2200,6 +2215,27 @@ namespace WindowsFormsApplication1
                 if (dataString.Length == 0)
                     MessageBox.Show("Файл пуст. Невозможно его открыть. Выбрать другой файл?", "Файл пуст", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             }
+        }
+
+        private void Form_main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                checkBox1.Checked = false;
+            else checkBox1.Checked = true;
+            if (checkBox2.Checked)
+                checkBox2.Checked = false;
+            else checkBox2.Checked = true;
+            if (checkBox3.Checked)
+                checkBox3.Checked = false;
+            else checkBox3.Checked = true;
+            if (checkBox4.Checked)
+                checkBox4.Checked = false;
+            else checkBox4.Checked = true;
         }
 
         private void сохранитьСистемуToolStripMenuItem_Click(object sender, EventArgs e)

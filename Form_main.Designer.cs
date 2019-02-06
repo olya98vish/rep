@@ -78,7 +78,6 @@
             this.checkC = new System.Windows.Forms.CheckBox();
             this.checkB = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -130,6 +129,8 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -160,12 +161,12 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1362, 741);
+            this.tabControl1.Size = new System.Drawing.Size(1493, 741);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.PowderBlue;
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.menuStrip1);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -229,7 +230,9 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
-            this.tabPage2.BackColor = System.Drawing.Color.PowderBlue;
+            this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.matrN);
             this.tabPage2.Controls.Add(this.matrU);
             this.tabPage2.Controls.Add(this.label33);
@@ -254,7 +257,6 @@
             this.tabPage2.Controls.Add(this.checkC);
             this.tabPage2.Controls.Add(this.checkB);
             this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.checkBox4);
             this.tabPage2.Controls.Add(this.checkBox3);
             this.tabPage2.Controls.Add(this.checkBox2);
@@ -294,7 +296,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1354, 707);
+            this.tabPage2.Size = new System.Drawing.Size(1485, 707);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Система";
             // 
@@ -415,7 +417,7 @@
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label28.Location = new System.Drawing.Point(417, 117);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(852, 3);
+            this.label28.Size = new System.Drawing.Size(1045, 3);
             this.label28.TabIndex = 412;
             // 
             // label27
@@ -423,7 +425,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label27.Location = new System.Drawing.Point(762, 3131);
+            this.label27.Location = new System.Drawing.Point(762, 3443);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(28, 32);
             this.label27.TabIndex = 411;
@@ -534,7 +536,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label25.Location = new System.Drawing.Point(1081, 2858);
+            this.label25.Location = new System.Drawing.Point(1081, 3170);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(30, 32);
             this.label25.TabIndex = 407;
@@ -675,20 +677,6 @@
             this.label17.Size = new System.Drawing.Size(112, 32);
             this.label17.TabIndex = 393;
             this.label17.Text = "Система:";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1238, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 105);
-            this.button1.TabIndex = 384;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox4
             // 
@@ -1088,7 +1076,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.PowderBlue;
+            this.tabPage3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tabPage3.Controls.Add(this.sist1);
             this.tabPage3.Controls.Add(this.vecC);
             this.tabPage3.Controls.Add(this.lebc);
@@ -1108,7 +1096,7 @@
             // 
             this.sist1.AutoSize = true;
             this.sist1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sist1.Location = new System.Drawing.Point(134, 18);
+            this.sist1.Location = new System.Drawing.Point(100, 9);
             this.sist1.Name = "sist1";
             this.sist1.Size = new System.Drawing.Size(67, 32);
             this.sist1.TabIndex = 7;
@@ -1233,7 +1221,7 @@
             // 
             this.sist.AutoSize = true;
             this.sist.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sist.Location = new System.Drawing.Point(8, 18);
+            this.sist.Location = new System.Drawing.Point(8, 9);
             this.sist.Name = "sist";
             this.sist.Size = new System.Drawing.Size(53, 32);
             this.sist.TabIndex = 0;
@@ -1242,7 +1230,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.PowderBlue;
+            this.tabPage4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tabPage4.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
@@ -1252,7 +1240,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.BackColor = System.Drawing.Color.PowderBlue;
+            this.tabPage5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tabPage5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Name = "tabPage5";
@@ -1281,18 +1269,42 @@
             // 
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(1359, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 71);
+            this.button1.TabIndex = 384;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(1243, 26);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 71);
+            this.button2.TabIndex = 420;
+            this.button2.Text = "Выделить все";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1493, 741);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matricula";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_main_FormClosing);
             this.Load += new System.EventHandler(this.Form_main_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1333,7 +1345,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -1409,5 +1420,7 @@
         private System.Windows.Forms.DataGridView vecA;
         private System.Windows.Forms.Label leba;
         private System.Windows.Forms.Label sist1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

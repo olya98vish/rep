@@ -18,9 +18,11 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
 
-            this.Text = String.Format("О программе {0}", AssemblyTitle);
-            this.labelProductName.Text = "Matricula";
-            this.labelVersion.Text = String.Format("Версия {0}", AssemblyVersion);
+            this.Text = "Matricula";
+            this.labelProductName.Text = String.Format("{0}", AssemblyTitle);
+            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            var location = System.Reflection.Assembly.GetExecutingAssembly().Location;//путь в проект - откуда запустились
+            //var path = Path.GetDirectoryName(location);
             int k = rnd.Next(1, 14);
             string directory= @"C:\Users\Евгения\Source\Repos\Kursproject--Duble2\картинки";
             if (k <= 11)
@@ -158,6 +160,11 @@ namespace WindowsFormsApplication1
             }
             ImageAnimator.UpdateFrames();
             Invalidate(false);
+        }
+
+        private void AboutBox1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
