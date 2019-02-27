@@ -124,3 +124,5 @@ C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csprojAssemblyReference.cache
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.CoreCompileInputs.cache
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.CopyComplete
+C:\Users\Евгения\Source\Repos\rep\obj\x86\Debug\Matricula.exe
+C:\Users\Евгения\Source\Repos\rep\obj\x86\Debug\Matricula.pdb
