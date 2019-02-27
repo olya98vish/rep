@@ -116,9 +116,11 @@ C:\Users\Евгения\Source\Repos\Kursproject--Duble23\obj\x86\Debug\Matricul
 C:\Users\Евгения\Source\Repos\Kursproject--Duble23\obj\x86\Debug\Matricula.csproj.CopyComplete
 C:\Users\Евгения\Source\Repos\Kursproject--Duble23\obj\x86\Debug\WindowsFormsApplication1.exe
 C:\Users\Евгения\Source\Repos\Kursproject--Duble23\obj\x86\Debug\WindowsFormsApplication1.pdb
-C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csprojResolveAssemblyReference.cache
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\bin\Debug\Matricula.exe
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\bin\Debug\Matricula.pdb
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.Properties.Resources.resources
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.exe
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.pdb
+C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csprojAssemblyReference.cache
+C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.CoreCompileInputs.cache
+C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.CopyComplete
