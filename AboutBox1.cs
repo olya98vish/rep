@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
             var location = System.Reflection.Assembly.GetExecutingAssembly().Location;//путь в проект - откуда запустились
             //var path = Path.GetDirectoryName(location);
             int k = rnd.Next(1, 14);
-            string directory= @"C:\Users\Евгения\Source\Repos\Kursproject--Duble2\картинки";
+            string directory= @"C:\Users\Евгения\Source\Repos\rep\картинки";
             if (k <= 11)
             {
                 if (k == 1)

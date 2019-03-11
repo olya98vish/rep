@@ -52,7 +52,6 @@ namespace WindowsFormsApplication1
                     {
                         //заполнение непроставленных пользователем строк нулями
                         if (Convert.ToDouble(A.Rows[i].Cells[j].Value) == 0)
-                        //if (string.IsNullOrEmpty(A.Rows[i].Cells[j].Value as string))
                         {
                             A.Rows[i].Cells[j].Value = 0;
                         }
@@ -70,11 +69,9 @@ namespace WindowsFormsApplication1
                     {
                         //заполнение непроставленных пользователем строк нулями
                         if (Convert.ToDouble(B.Rows[i].Cells[j].Value) == 0)
-                        //if (string.IsNullOrEmpty(B.Rows[i].Cells[j].Value as string))
                         {
                             B.Rows[i].Cells[j].Value = 0;
                         }
-
                         string ss = B.Rows[i].Cells[j].Value.ToString();
                         double tmp = Convert.ToDouble(ss);
                         masB[i, j] = tmp;
@@ -89,11 +86,9 @@ namespace WindowsFormsApplication1
                     {
                         //заполнение непроставленных пользователем строк нулями
                         if (Convert.ToDouble(C.Rows[i].Cells[j].Value) == 0)
-                        //if (string.IsNullOrEmpty(C.Rows[i].Cells[j].Value as string))
                         {
                             C.Rows[i].Cells[j].Value = 0;
                         }
-
                         string ss = C.Rows[i].Cells[j].Value.ToString();
                         double tmp = Convert.ToDouble(ss);
                         masC[i, j] = tmp;
@@ -354,19 +349,28 @@ namespace WindowsFormsApplication1
             с_stroki.Clear();
             A.ReadOnly = true;
             A.Enabled = false;
-            system_unview();
-            U = null;
-            matrU.Visible = false;
-            label30.Visible = false;
-            label32.Visible = false;
-            matrU.RowCount = 0;
-            matrU.ColumnCount = 0;
-            N = null;
-            matrN.Visible = false;
-            label31.Visible = false;
-            label33.Visible = false;
-            matrN.RowCount = 0;
-            matrN.ColumnCount = 0;
+            if (A_view.Visible == true)
+            {
+                system_unview();
+            }
+            if (matrU.Visible == true)
+            {
+                U = null;
+                matrU.Visible = false;
+                label30.Visible = false;
+                label32.Visible = false;
+                matrU.RowCount = 0;
+                matrU.ColumnCount = 0;
+            }
+            if (matrN.Visible == true)
+            {
+                N = null;
+                matrN.Visible = false;
+                label31.Visible = false;
+                label33.Visible = false;
+                matrN.RowCount = 0;
+                matrN.ColumnCount = 0;
+            }
             //убиваем матрицы - все, так как матрица А главная.
             A.RowCount = 0;
             A.ColumnCount = 0;
@@ -757,6 +761,13 @@ namespace WindowsFormsApplication1
             label30.Location = new System.Drawing.Point(label15.Location.X + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label30.Size.Height / 2));
             label30.Visible = true;
         }
+        private void unview_U_for_page2()
+        {
+            matrU.RowCount = 0;
+            matrU.ColumnCount = 0;
+            matrU.Visible = false;
+            label30.Visible = false;
+        }
         private void view_N_for_page2()
         {
             matrN.RowCount = stlbA * strC;
@@ -784,12 +795,23 @@ namespace WindowsFormsApplication1
             label31.Location = new System.Drawing.Point(label15.Location.X + 15, matrN.Location.Y + (matrN.Size.Height / 2 - label31.Size.Height / 2));
             label31.Visible = true;
         }
+        private void unview_N_for_page2()
+        {
+            matrN.RowCount = 0;
+            matrN.ColumnCount = 0;
+            matrN.Visible = false;
+            label31.Visible = false;
+        }
         private void view_rankU_for_page2(double[,] U)
         {
             var Us = Matrix.Build.DenseOfArray(U); //формируем библиотечные матрицы
             label32.Location = new System.Drawing.Point(matrU.Location.X + matrU.Size.Width + 15, matrU.Location.Y + (matrU.Size.Height / 2 - label32.Size.Height / 2));
             label32.Visible = true;
             label32.Text = "rgU=" + Us.Rank();
+        }
+        private void unview_rankU_for_page2()
+        {
+            label32.Visible = false;
         }
         private void view_rankN_for_page2(double[,] N)
         {
@@ -798,6 +820,11 @@ namespace WindowsFormsApplication1
             label33.Visible = true;
             label33.Text = "rgN=" + Ns.Rank(); //ранг;
         }
+        private void unview_rankN_for_page2()
+        {
+            label33.Visible = false;
+        }
+
 
         private void buttonA_Click(object sender, EventArgs e)
         {
@@ -847,12 +874,6 @@ namespace WindowsFormsApplication1
                             A.ColumnCount = stlbA;
                             A.ReadOnly = false;
                             A.Enabled = true;
-
-                            //button1.Enabled = true;
-                            //checkBox1.Enabled = true;
-                            //checkBox2.Enabled = true;
-                            //checkBox3.Enabled = true;
-                            //checkBox4.Enabled = true;
                         }
                         else
                         {
@@ -867,67 +888,7 @@ namespace WindowsFormsApplication1
                             else
                                 button9.Enabled = false;
 
-                            a_stroki.Enabled = true;
-                            a_stolbci.Enabled = true;
-                            b_stroki.Enabled = true;
-                            с_stolbci.Enabled = true;
-
-
-                            button1.Enabled = false;
-                            checkBox1.Checked = false;
-                            checkBox2.Checked = false;
-                            checkBox3.Checked = false;
-                            checkBox4.Checked = false;
-                            checkBox1.Enabled = false;
-                            checkBox2.Enabled = false;
-                            checkBox3.Enabled = false;
-                            checkBox4.Enabled = false;
-
-                            buttonA.Text = "ОК";
-                            buttonB.Text = "ОК";
-                            buttonC.Text = "ОК";
-                            button4.Text = "ОК";
-                            button6.Text = "ОК";
-                            button9.Text = "ОК";
-
-                            a_stroki.Clear();
-                            a_stolbci.Clear();
-                            b_stolbci.Clear();
-                            b_stroki.Clear();
-                            с_stolbci.Clear();
-                            с_stroki.Clear();
-                            A.ReadOnly = true;
-                            A.Enabled = false;
-
-                            if (A_view.Visible == true)
-                            {
-                                system_unview();
-                            }
-                            if(matrU.Visible==true)
-                            {
-                                U = null;
-                                matrU.Visible = false;
-                                label30.Visible = false;
-                                label32.Visible = false;
-                                matrU.RowCount = 0;
-                                matrU.ColumnCount = 0;
-                            }
-                            if (matrN.Visible == true)
-                            {
-                                N = null;
-                                matrN.Visible = false;
-                                label31.Visible = false;
-                                label33.Visible = false;
-                                matrN.RowCount = 0;
-                                matrN.ColumnCount = 0;
-                            }
-                            //убиваем матрицы - все, так как матрица А главная.
-                            A.RowCount = 0;
-                            A.ColumnCount = 0;
-                            B.RowCount = 0;
-                            B.ColumnCount = 0;
-                            C.RowCount = 0;
-                            C.ColumnCount = 0;
+                            cleaning();
                         }
                     }
                     else
@@ -973,6 +934,8 @@ namespace WindowsFormsApplication1
 
         private void Form_main_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
             b_stroki.Enabled = false;
             с_stroki.Enabled = false;
             с_stolbci.Enabled = false;
@@ -1042,6 +1005,11 @@ namespace WindowsFormsApplication1
                 checkBox3.Enabled = false;
                 checkBox4.Enabled = false;
                 system_unview();
+                unview_U_for_page2();
+                unview_N_for_page2();
+                unview_rankU_for_page2();
+                unview_rankN_for_page2();
+
             }
         }
 
@@ -1192,6 +1160,10 @@ namespace WindowsFormsApplication1
                 checkBox3.Enabled = false;
                 checkBox4.Enabled = false;
                 system_unview();
+                unview_U_for_page2();
+                unview_N_for_page2();
+                unview_rankU_for_page2();
+                unview_rankN_for_page2();
             }
         }
 
@@ -1343,6 +1315,10 @@ namespace WindowsFormsApplication1
                 checkBox3.Enabled = false;
                 checkBox4.Enabled = false;
                 system_unview();
+                unview_U_for_page2();
+                unview_N_for_page2();
+                unview_rankU_for_page2();
+                unview_rankN_for_page2();
             }
         }
         

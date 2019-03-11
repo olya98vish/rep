@@ -50,6 +50,8 @@
             this.сохранитьСистемуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьГрафикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.matrN = new System.Windows.Forms.DataGridView();
             this.matrU = new System.Windows.Forms.DataGridView();
             this.label33 = new System.Windows.Forms.Label();
@@ -129,8 +131,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -173,7 +173,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1354, 707);
+            this.tabPage1.Size = new System.Drawing.Size(1485, 707);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Файл";
             // 
@@ -193,7 +193,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 3);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1348, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1479, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -299,6 +299,29 @@
             this.tabPage2.Size = new System.Drawing.Size(1485, 707);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Система";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(1359, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 71);
+            this.button1.TabIndex = 384;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(1243, 26);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 71);
+            this.button2.TabIndex = 420;
+            this.button2.Text = "Выделить все";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // matrN
             // 
@@ -417,7 +440,7 @@
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label28.Location = new System.Drawing.Point(417, 117);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(1045, 3);
+            this.label28.Size = new System.Drawing.Size(1028, 3);
             this.label28.TabIndex = 412;
             // 
             // label27
@@ -425,7 +448,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label27.Location = new System.Drawing.Point(762, 3443);
+            this.label27.Location = new System.Drawing.Point(762, 3598);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(28, 32);
             this.label27.TabIndex = 411;
@@ -536,7 +559,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label25.Location = new System.Drawing.Point(1081, 3170);
+            this.label25.Location = new System.Drawing.Point(1081, 3325);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(30, 32);
             this.label25.TabIndex = 407;
@@ -1088,7 +1111,7 @@
             this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1354, 707);
+            this.tabPage3.Size = new System.Drawing.Size(1485, 707);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Вычисления";
             // 
@@ -1234,7 +1257,7 @@
             this.tabPage4.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1354, 707);
+            this.tabPage4.Size = new System.Drawing.Size(1485, 707);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Графики";
             // 
@@ -1244,7 +1267,7 @@
             this.tabPage5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1354, 707);
+            this.tabPage5.Size = new System.Drawing.Size(1485, 707);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "пока не знаю для чего";
             // 
@@ -1268,29 +1291,6 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1359, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 71);
-            this.button1.TabIndex = 384;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(1243, 26);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 71);
-            this.button2.TabIndex = 420;
-            this.button2.Text = "Выделить все";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form_main
             // 
