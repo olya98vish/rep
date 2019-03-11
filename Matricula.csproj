@@ -114,23 +114,22 @@
     <None Include="Resources\Image1.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\1.gif" />
-    <Content Include="Resources\10.gif" />
-    <Content Include="Resources\11.jpg" />
-    <Content Include="Resources\12.jpg" />
-    <Content Include="Resources\13.jpg" />
-    <Content Include="Resources\14.jpg" />
-    <Content Include="Resources\2.gif" />
-    <Content Include="Resources\3.gif" />
-    <Content Include="Resources\4.gif" />
-    <Content Include="Resources\5.gif" />
-    <Content Include="Resources\6.gif" />
-    <Content Include="Resources\7.gif" />
-    <Content Include="Resources\8.gif" />
-    <Content Include="Resources\9.gif" />
+    <None Include="Resources\g1.gif" />
+    <None Include="Resources\g2.gif" />
+    <None Include="Resources\g3.gif" />
+    <None Include="Resources\g4.gif" />
+    <None Include="Resources\g5.gif" />
+    <None Include="Resources\g6.gif" />
+    <None Include="Resources\g7.gif" />
+    <None Include="Resources\g8.gif" />
+    <None Include="Resources\g9.gif" />
+    <None Include="Resources\g10.gif" />
+    <None Include="Resources\im11.jpg" />
+    <None Include="Resources\im12.jpg" />
+    <None Include="Resources\im13.jpg" />
+    <None Include="Resources\im14.jpg" />
     <Content Include="Resources\source.gif" />
     <Content Include="Resources\source.ico" />
-    <Content Include="Resources\Безымянный.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
@@ -149,9 +148,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="картинки\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

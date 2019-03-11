@@ -21,46 +21,51 @@ namespace WindowsFormsApplication1
             this.Text = "Matricula";
             this.labelProductName.Text = String.Format("{0}", AssemblyTitle);
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            var location = System.Reflection.Assembly.GetExecutingAssembly().Location;//путь в проект - откуда запустились
-            //var path = Path.GetDirectoryName(location);
             int k = rnd.Next(1, 14);
-            string directory= @"C:\Users\Евгения\Source\Repos\rep\картинки";
-            if (k <= 11)
+            switch (k)
             {
-                if (k == 1)
-                    path = directory + @"\1.gif";//"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\1.gif";
-                if (k == 2)
-                    path = directory + @"\2.gif";//"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\2.gif";
-                if (k == 3)
-                    path = directory + @"\3.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\3.gif";
-                if (k == 4)
-                    path = directory + @"\4.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\4.gif";
-                if (k == 5)
-                    path = directory + @"\5.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\5.gif";
-                if (k == 6)
-                    path = directory + @"\6.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\6.gif";
-                if (k == 7)
-                    path = directory + @"\7.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\7.gif";
-                if (k == 8)
-                    path = directory + @"\8.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\8.gif";
-                if (k == 9)
-                    path = directory + @"\9.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\9.gif";
-                if (k == 10)
-                    path = directory + @"\10.gif"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\10.gif";
-                logoPictureBox.BackgroundImage = Image.FromStream(new WebClient().OpenRead(path));
-                ImageAnimator.Animate(logoPictureBox.BackgroundImage, OnFrameChanged);
-            }
-            else
-            {
-                if (k == 11)
-                    path = directory + @"\11.jpg"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\11.jpg";
-                if (k == 12)
-                    path = directory + @"\12.jpg"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\12.jpg";
-                if (k == 13)
-                    path = directory + @"\13.jpg"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\13.jpg";
-                if (k == 14)
-                    path = directory + @"\14.jpg"; //"C:\\Users\\megad\\Kursproject--Duble2\\картинки\\14.jpg";
-                logoPictureBox.BackgroundImage = Image.FromStream(new WebClient().OpenRead(path));
+                case 1:
+                    animate(Matricula.Properties.Resources.g1);
+                    break;
+                case 2:
+                    animate(Matricula.Properties.Resources.g2);
+                    break;
+                case 3:
+                    animate(Matricula.Properties.Resources.g3);
+                    break;
+                case 4:
+                    animate(Matricula.Properties.Resources.g4);
+                    break;
+                case 5:
+                    animate(Matricula.Properties.Resources.g5);
+                    break;
+                case 6:
+                    animate(Matricula.Properties.Resources.g6);
+                    break;
+                case 7:
+                    animate(Matricula.Properties.Resources.g7);
+                    break;
+                case 8:
+                    animate(Matricula.Properties.Resources.g8);
+                    break;
+                case 9:
+                    animate(Matricula.Properties.Resources.g9);
+                    break;
+                case 10:
+                    animate(Matricula.Properties.Resources.g10);
+                    break;
+                case 11:
+                    logoPictureBox.BackgroundImage = Matricula.Properties.Resources.im11;
+                    break;
+                case 12:
+                    logoPictureBox.BackgroundImage = Matricula.Properties.Resources.im12;
+                    break;
+                case 13:
+                    logoPictureBox.BackgroundImage = Matricula.Properties.Resources.im13;
+                    break;
+                case 14:
+                    logoPictureBox.BackgroundImage = Matricula.Properties.Resources.im14;
+                    break;
             }
             timer1.Start();
             timer1.Interval = 5000;           
@@ -145,7 +150,11 @@ namespace WindowsFormsApplication1
             }
         }
         #endregion
-
+        public void animate(Bitmap pic)
+        {
+            logoPictureBox.BackgroundImage = pic;
+            ImageAnimator.Animate(logoPictureBox.BackgroundImage, OnFrameChanged);
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.Hide();

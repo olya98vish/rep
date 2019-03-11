@@ -126,3 +126,16 @@ C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula
 C:\Users\Евгения\Source\Repos\Kursproject--Duble2\obj\x86\Debug\Matricula.csproj.CopyComplete
 C:\Users\Евгения\Source\Repos\rep\obj\x86\Debug\Matricula.exe
 C:\Users\Евгения\Source\Repos\rep\obj\x86\Debug\Matricula.pdb
+C:\Users\megad\Source\Repos\rep\obj\x86\Debug\Matricula.csprojAssemblyReference.cache
+C:\Users\megad\Source\Repos\rep\obj\x86\Debug\WindowsFormsApplication1.AboutBox1.resources
+C:\Users\megad\Source\Repos\rep\obj\x86\Debug\WindowsFormsApplication1.Form_main.resources
+C:\Users\megad\Source\Repos\rep\obj\x86\Debug\Matricula.csproj.GenerateResource.cache
+C:\Users\megad\Source\Repos\rep\bin\Debug\Matricula.exe
+C:\Users\megad\Source\Repos\rep\bin\Debug\Matricula.pdb
+C:\Users\megad\Source\Repos\rep\bin\Debug\MathNet.Numerics.dll
+C:\Users\megad\Source\Repos\rep\bin\Debug\MathNet.Numerics.xml
+C:\Users\megad\Source\Repos\rep\obj\x86\Debug\Matricula.Properties.Resources.resources
+C:\Users\megad\Source\Repos\rep\obj\x86\Debug\Matricula.csproj.CoreCompileInputs.cache
+C:\Users\megad\Source\Repos\rep\obj\x86\Debug\Matricula.csproj.CopyComplete
+C:\Users\megad\Source\Repos\rep\obj\x86\Debug\Matricula.exe
+C:\Users\megad\Source\Repos\rep\obj\x86\Debug\Matricula.pdb
